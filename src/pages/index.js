@@ -6,6 +6,7 @@ import Succes from '../components/Succes';
 import Tarieven from '../components/Tarieven';
 
 import './index.css'
+import CTA from '../components/CTA';
 
 const IndexPage = () => {
     return (
@@ -15,6 +16,7 @@ const IndexPage = () => {
             <Hero />
             <Succes />
             <Tarieven />
+            <CTA />
         </div>
     )
 }

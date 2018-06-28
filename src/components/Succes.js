@@ -3,7 +3,7 @@ import React from 'react'
 import dataAnalyse from '../img/data-analyse.jpg'
 import seo from '../img/seo.jpg'
 import socialMedia from '../img/social-media.jpg'
-import Container from './Container';
+import Container from '../layouts/Container';
 
 export default () => {
     const successImage = {

@@ -8,7 +8,7 @@ const Button = (props) => {
         backgroundColor: props.color === "blue" ? "#4d7a95" : "#5AD3A1",
         height: '50px',
         textAlign: 'center',
-        width: '180px',
+        padding: '0 20px',
         marginBottom: '10%',
         borderRadius: '50px',
         boxShadow: '10px 10px 14px 1px rgba(00, 00, 00, 0.2)',
@@ -18,7 +18,8 @@ const Button = (props) => {
         border: 'none',
         fontSize: '0.97em',
         letterSpacing: '0.094em',
-        margin: '0 5px'
+        margin: '0 5px',
+        cursor: 'pointer',
     }
 
     return (

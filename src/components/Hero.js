@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "gatsby-link"
-import Button from './button'
-import Container from './Container';
+import RoundedButton from './RoundedButton'
+import Container from '../layouts/Container';
 
 export default () => {
     const hero = {
@@ -24,12 +24,12 @@ export default () => {
             <section style={hero}>
                 <h1>Web development is onze passie</h1>
                 <p>Bij Luweb is uw online imago in goede handen</p>
-                <Button color="green">
+                <RoundedButton color="green">
                     <Link to="/diensten/" style={linkStyle}>Onze diensten</Link>
-                </Button>
-                <Button color="blue">
+                </RoundedButton>
+                <RoundedButton color="blue">
                     <Link to="/contact/" style={linkStyle}>Contacteer ons</Link>
-                </Button>
+                </RoundedButton>
             </section>
         </Container>
     )

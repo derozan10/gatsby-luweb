@@ -1,5 +1,7 @@
 import React from 'react'
-import wave from '../img/wave.png'
+import Container from '../layouts/Container'
+import Tile from './Tile';
+import RoundedButton from './RoundedButton'
 
 export default () => {
     const tarieven = {
@@ -9,8 +11,35 @@ export default () => {
     }
     return (
         <section style={tarieven}>
-            Tarieven
-            <img src={wave} alt="wave" />
+            <Container >
+                <h2 style={{ color: '#fff' }}>Tarieven</h2>
+                <div className="tileFlex">
+                    <Tile
+                        title={'updaten bestaande website'}
+                        price={'€ 30'}
+                        hourly={true}
+                        usps={['performance optimalisatie', 'content aanpassingen', 'algemeen beheer website']}
+                    />
+                    <Tile
+                        title={'updaten bestaande website'}
+                        price={'€ 249'}
+                        usps={['performance optimalisatie', 'content aanpassingen', 'algemeen beheer website']}
+                    />
+                    <Tile
+                        title={'updaten bestaande website'}
+                        price={'€ 499'}
+                        usps={['performance optimalisatie', 'content aanpassingen', 'algemeen beheer website']}
+                    />
+                    <Tile
+                        title={'updaten bestaande website'}
+                        price={'€ 599'}
+                        usps={['performance optimalisatie', 'content aanpassingen', 'algemeen beheer website']}
+                    />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', margin: '50px 0' }}>
+                    <RoundedButton>Meer info over onze websites</RoundedButton>
+                </div>
+            </Container>
         </section>
     )
 }
