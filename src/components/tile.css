@@ -1,21 +1,25 @@
 .tileFlex {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
     .tileFlex {
         flex-direction: column
     }
-}
+} */
 
 .tile {
     width: 200px;
      border-radius: 5px;
     background-color: #fff;
     margin-bottom: 20px;
+    display: inline-block;
+    margin: 5px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .tile p {
@@ -51,7 +55,8 @@
 }
 
 .usps {
-    margin-top: 15px
+    margin-top: 15px;
+    height: 80px
 }
 .usp {
     /* padding: 5px 0; */

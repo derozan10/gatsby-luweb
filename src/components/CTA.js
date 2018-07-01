@@ -1,5 +1,5 @@
 import React from 'react'
-import RoundedButton from './RoundedButton';
+import Button from './Button';
 import Container from '../layouts/Container';
 
 import waves from '../img/wave.png'
@@ -13,8 +13,8 @@ export default () => {
         padding: '80px 0'
     }
     const wave = {
-        padding: '50px',
         backgroundImage: `url(${waves})`,
+        backgroundSize: '100%',
         backgroundPosition: 'top',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
@@ -27,7 +27,7 @@ export default () => {
                 <div style={cta}>
                     <h2>Overtuigd van onze expertise?</h2>
                     <p style={{ color: 'grey' }}>Aarzel niet om ons te contacteren voor een vrijblijvend gesprek</p>
-                    <RoundedButton>Contacteer ons</RoundedButton>
+                    <Button color={'green'}>Contacteer ons</Button>
                 </div>
             </Container>
         </div>

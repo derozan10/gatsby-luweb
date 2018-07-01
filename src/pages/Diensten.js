@@ -1,11 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Container from '../layouts/Container';
 
 const Diensten = () => {
     return (
         <div>
             <Navbar color={'inverse'} />
-            onze diensten
+            <Container>
+                onze diensten
+            </Container>
+            <Footer />
         </div>
     )
 }

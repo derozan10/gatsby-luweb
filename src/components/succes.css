@@ -1,0 +1,53 @@
+.succes {
+    position: relative;
+    top: -50px;
+}
+
+.successblock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65vw;
+        margin: 20px auto;
+    }
+
+.successImage {
+        width: 200px;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        margin: 0px;
+        padding: 10px;
+    }
+
+.successblock h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.successblock p {
+    color: rgba(14,30,37,.54);
+    line-height: 1.6
+}
+
+.successblock div {
+    margin: 10px 10px;
+    width: 30vw;
+}
+
+@media (max-width: 576px) {
+    .successblock {
+        flex-direction: column;
+    }
+
+    .succesImage {
+        order: 1
+    }
+
+    .successblock div {
+        width: 90vw;
+        order: 2;
+    }
+}
+
+
