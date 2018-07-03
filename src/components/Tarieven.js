@@ -6,8 +6,8 @@ import Button from './Button'
 export default () => {
     const tarieven = {
         background: 'linear-gradient(to right top, #221C67, #00468F, #006DA9)',
-        padding: '20px',
-        width: '100%'
+        width: '100%',
+        padding: '50px 0'
     }
     return (
         <section style={tarieven}>

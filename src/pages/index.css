@@ -1,1 +1,23 @@
 
+.contactForm{
+    background-color: #f2f2f2;
+    width: 50%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+}
+
+.contactForm label{
+    display: block;
+    padding: 5px;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+}
+
+.contactForm textarea {
+    height: 150px;
+}

@@ -37,8 +37,8 @@ export default () => {
                         <img className='successImage' src={dataAnalyse} alt="data analyse bij Luweb" />
                         <div>
                             <h2>Data analyse</h2>
-                            <p>We zorgen ervoor dat je een goed zicht hebt op alles wat zich op je site afspeelt.
-                              Krijg belangrijke inzichten in de bezoekers van je site, zodat je hier nog beter op in zal kunnen spelen.
+                            <p>Meten is weten! We zorgen ervoor dat je inzicht krijgt op alles wat zich afspeelt op je site.
+                                  Zo kan je hier nog beter op in zal kunnen spelen.
                           Handig, toch?</p>
                         </div>
                     </div>
