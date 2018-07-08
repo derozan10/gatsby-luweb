@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const Over = () => {
     return (
         <div>
-            <Navbar color={"inverse"} />
+            <Navbar inverse />
             Over ons
             <Footer />
         </div>

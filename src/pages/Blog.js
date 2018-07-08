@@ -7,7 +7,7 @@ export default class Blog extends Component {
     render() {
         return (
             <div>
-                <Navbar color={"inverse"} />
+                <Navbar inverse />
                 <Container>
                     Luweb is fantastisch
                     </Container>

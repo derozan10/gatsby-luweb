@@ -6,7 +6,7 @@ import Container from '../layouts/Container';
 const Diensten = () => {
     return (
         <div>
-            <Navbar color={'inverse'} />
+            <Navbar inverse />
             <Container>
                 onze diensten
             </Container>

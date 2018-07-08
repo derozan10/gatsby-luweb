@@ -7,7 +7,7 @@ import Button from '../components/Button';
 
 const Contact = () => (
     <div>
-        <Navbar color={'inverse'} />
+        <Navbar inverse />
         <Container>
             <h1>Contacteer ons</h1>
             <h2>We helpen je graag verder</h2>
