@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button';
-import Container from '../layouts/Container';
+import Container from '../components/Container';
 
 import waves from '../img/wave.png'
 

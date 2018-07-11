@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "gatsby-link"
 import Button from './Button'
-import Container from '../layouts/Container';
+import Container from '../components/Container';
 import mac from '../img/mac.png'
 
 export default () => {

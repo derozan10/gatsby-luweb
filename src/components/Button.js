@@ -8,9 +8,9 @@ const Button = (props) => {
         height: 50px;
         text-align: center;
         padding: 0 20px;
-        margin-bottom: 10 %;
+        margin-bottom: 10%;
         border-radius: 50px;
-        box - shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.2);
         letter-spacing: 0.094em;
         display: inline-block;
         position: relative;

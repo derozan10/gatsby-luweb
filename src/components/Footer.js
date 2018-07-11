@@ -1,6 +1,28 @@
 import React, { Component } from 'react'
 import smallLogo from '../img/luweb-logo-blue-small.svg'
 import instagram from '../img/instagram.svg'
+import styled from 'styled-components'
+
+const StyledFooter = styled.div`
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            margin: auto;
+            width: 80vw;
+            ::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-image: ${props => props.inverse ? 'linear-gradient(-90deg,rgba(255,255,255,0) 0,#fff 5%,#fff 90%,rgba(255,255,255,0) 100%)' : 'linear-gradient(-90deg,rgba(14,30,37,0) 0,#0e1e25 5%,#0e1e25 90%,rgba(14,30,37,0) 100%)'};
+                opacity: .08;
+                top: 0;
+            }
+        `
 
 export default class Footer extends Component {
     state = {
@@ -8,15 +30,9 @@ export default class Footer extends Component {
         instagramColor: 'grey'
     }
     render() {
-        const footerFlex = {
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center'
-        }
 
         return (
-            <div style={footerFlex} >
+            <StyledFooter >
                 <img src={smallLogo} style={{ height: "70px", width: "70px" }} alt="luweb logo" />
                 <div>
                     <a href="#">
@@ -48,7 +64,7 @@ export default class Footer extends Component {
                         </svg>
                     </a>
                 </div>
-            </div >
+            </StyledFooter >
         )
     }
 }

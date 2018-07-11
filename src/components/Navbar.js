@@ -61,18 +61,11 @@ const NavContainer = styled.div`
     a.activeLink {
       color: #5AD3A1;
     }
-    hr#line {
-      display: block;
-      width: 80vw;
-      margin: 0 auto;
-      background: linear-gradient(-90deg,rgba(255,255,255,0) 0,rgba(255,255,255,0.3) 5%,rgba(255,255,255,0.3) 90%,rgba(255,255,255,0) 100%);
-      height: 0.5px;
-    }
     ::after {
       content: "";
+      width: 80vw;
       display: block;
       position: absolute;
-      width: 100%;
       height: 2px;
       background-image: ${props => props.inverse ? 'linear-gradient(-90deg,rgba(14,30,37,0) 0,#0e1e25 5%,#0e1e25 90%,rgba(14,30,37,0) 100%)' : 'linear-gradient(-90deg,rgba(255,255,255,0) 0,#fff 5%,#fff 90%,rgba(255,255,255,0) 100%)'};
       opacity: .08;

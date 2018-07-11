@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../layouts/Container'
+import Container from '../components/Container'
 import Tile from './Tile';
 import Button from './Button'
 

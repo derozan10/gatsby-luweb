@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Container from '../layouts/Container';
+import Container from '../components/Container';
 
 export default class Blog extends Component {
     render() {
