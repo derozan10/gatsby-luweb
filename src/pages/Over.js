@@ -49,7 +49,7 @@ const Over = () => {
                     <div id="luwebInfo">
                         <p>LuWeb is een kleine onderneming, opgestart in 2017 door <strong>Lucas Van Remoortere</strong>.</p>
                         <p>Door dagdagelijks bezig te zijn met web development en <strong>Front-End Developer</strong> te zijn van beroep, beschik ik over al de nodige kennis om ook jouw bedrijf vooruit te helpen met het opbouwen en onderhouden van je website.</p>
-                        <p>De onderneming zelf is opgestart als zelfstandige in bijberoep en valt daarom onder de noemer "kleine onderneming onderworpen aan de vrijstellingsregeling van belasting", alsgevolg is <strong>BTW niet toepasselijk</strong>. Voor meer info hierover kan u de <a href="https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/vrijstellingsregeling">website van de Federal Overheidsdienst Financiën</a> raadplegen. </p>
+                        <p>De onderneming zelf is opgestart als zelfstandige in bijberoep en valt daarom onder de noemer "kleine onderneming onderworpen aan de vrijstellingsregeling van belasting", alsgevolg is <strong>BTW niet toepasselijk</strong>. Voor meer info hierover kan u de <a href="https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/vrijstellingsregeling" target="_blank">website van de Federal Overheidsdienst Financiën</a> raadplegen. </p>
                         <p>Verder is de onderneming gevestigd in  <strong>Borgerhout</strong>, maar verkiezen we om ter plaatse te komen tot bij de klant.
                             Zo kunnen we een betere inschatting maken van het type onderneming en mogelijks de website hierop aan te passen.</p>
                     </div>
