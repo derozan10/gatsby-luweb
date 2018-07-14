@@ -14,7 +14,7 @@
 } */
 
 .tile {
-    width: 200px;
+    width: 240px;
      border-radius: 5px;
     background-color: #fff;
     margin-bottom: 20px;
@@ -35,7 +35,7 @@
 
 .tile .tileTop p {
      text-align: center;
-     padding: 20px 0;
+     padding: 20px 10px;
 }
 
 .tile .tileBottom {
@@ -61,5 +61,5 @@
 }
 .usp {
     /* padding: 5px 0; */
-    font-size: 12px;
+    font-size: 14px;
 }

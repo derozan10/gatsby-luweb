@@ -5,9 +5,9 @@ import styled from 'styled-components'
 
 const StyledFooter = styled.div`
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center ;
             position: relative;
             padding: 20px;
             margin: auto;
@@ -19,8 +19,21 @@ const StyledFooter = styled.div`
                 width: 100%;
                 height: 2px;
                 background-image: ${props => props.inverse ? 'linear-gradient(-90deg,rgba(255,255,255,0) 0,#fff 5%,#fff 90%,rgba(255,255,255,0) 100%)' : 'linear-gradient(-90deg,rgba(14,30,37,0) 0,#0e1e25 5%,#0e1e25 90%,rgba(14,30,37,0) 100%)'};
-                opacity: .08;
+                opacity: .4;
                 top: 0;
+            }
+            div {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+            div:nth-of-type(1) {
+                flex-direction: column;
+            }
+            #adres p{
+                margin: 0;
+                font-size: 12px;
+                line-height: 16px;
             }
         `
 
@@ -33,7 +46,15 @@ export default class Footer extends Component {
 
         return (
             <StyledFooter >
-                <img src={smallLogo} style={{ height: "70px", width: "70px" }} alt="luweb logo" />
+                <div id='adres'>
+                    <p>Luweb</p>
+                    <p>Dokter Van de Perrelei 25, 2140 Borgerhout</p>
+                    <p>0496/06.10.42</p>
+                    <p>BE0677875095</p>
+                </div>
+                <div>
+                    <img src={smallLogo} style={{ height: "55px", width: "55px", margin: '0' }} alt="luweb logo" />
+                </div>
                 <div>
                     <a href="#">
                         <svg

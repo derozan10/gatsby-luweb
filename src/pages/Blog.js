@@ -9,8 +9,10 @@ export default class Blog extends Component {
             <div>
                 <Navbar inverse />
                 <Container>
-                    Luweb is fantastisch
-                    </Container>
+                    <h1>Coming Soon...</h1>
+                    <p>Voorlopig hebben we nog geen content op onze blog. <br />
+                        Kom binnenkort zeker nog eens een kijkje nemen!</p>
+                </Container>
                 <Footer />
             </div>
         )

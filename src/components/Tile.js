@@ -14,7 +14,7 @@ export default (props) => {
                     {props.hourly === true ? <span>/ uur</span> : null}
                 </p>
                 <div className="usps">
-                    {props.usps.map(usp => <p className="usp"><span className="checkMark">&#10003;</span> {usp}</p>)}
+                    {props.usps.map((usp, index) => <p key={index + 'card'} className="usp"><span className="checkMark">&#10003;</span> {usp}</p>)}
                 </div>
             </div>
         </div>

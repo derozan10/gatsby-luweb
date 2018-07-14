@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Logo from '../img/luweb-logo-white.svg'
-import BlueLogo from '../img/luweb-logo-blue.svg'
+import BlueLogo from '../img/luweb-logo-blueGradient.svg'
 import styled from "styled-components";
 
 const NavContainer = styled.div`

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import dataAnalyse from '../img/data-analyse.jpg'
-import seo from '../img/seo.jpg'
-import socialMedia from '../img/social-media.jpg'
+import dataAnalyse from '../img/data.svg'
+import seo from '../img/seo.svg'
+import socialMedia from '../img/social.svg'
 import Container from '../components/Container';
 
 import './succes.css'
