@@ -14,7 +14,7 @@ const Contact = () => (
             <p>Laat hieronder even <strong>een berichtje</strong> achter en we contacteren je zo snel mogelijk.<br />
                 Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
             </p>
-            <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <form name="contact" className="contactForm" method="POST" data-netlify="true">
                 <p>
                     <label>Naam
                     <input type="text" autocomplete='name' name="name" />
