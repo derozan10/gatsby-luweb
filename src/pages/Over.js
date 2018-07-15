@@ -17,6 +17,7 @@ const StyledOver = styled.div`
         #luwebInfo {
             width: 50vw;
             margin-left: 10vw;
+            padding-bottom: 12vw;
         }
         p {
             color: #fff;
@@ -31,12 +32,16 @@ const StyledOver = styled.div`
             color: #6adcad;
         }
         #bigwave {
-            position: relative;
+            position: absolute;
             width: 100vw;
             margin: 0;
-            bottom: -10px;
-            right: 0;
+            bottom: -1px;
             z-index: 1;
+        }
+        @media(max-width: 576px) {
+            #luwebInfo {
+                width: 80vw;
+            }
         }
 `
 

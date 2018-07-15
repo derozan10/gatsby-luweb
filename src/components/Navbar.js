@@ -13,6 +13,10 @@ const NavContainer = styled.div`
     align-items: center;
     position: relative;
     z-index: 2;
+    #menu.open {
+      position: fixed;
+      right: 10vw;
+    }
     ul {
       margin: 0;
       list-style: none;
@@ -42,8 +46,9 @@ const NavContainer = styled.div`
         transition: opacity 0ms ease 0s;
       }
     }
-    ul.open {
+    #menu.open ul {
       display: flex;
+      position: fixed;
       flex-direction: column;
       justify-content: space-around;
       align-items: flex-start;
@@ -60,13 +65,15 @@ const NavContainer = styled.div`
       }
       li a {
         font-weight: bold;
+        width: 100%
       }
       ::before {
         opacity: 1;
       }
     }
-    ul.links li {
+    ul li {
       margin: 0;
+      padding: 10px;
     }
     img {
       margin-bottom: 0px;
@@ -95,7 +102,7 @@ const NavContainer = styled.div`
       opacity: .08;
       bottom: 0;
     }
-    #togglemenu {
+    #menu button{
       color: #333;
       padding: 10px 20px;
       border-radius: 10px;
@@ -118,24 +125,35 @@ export default class Navbar extends Component {
         <a href="/">
           <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
         </a>
-        <div onClick={() => this.setState({ menuOpen: !this.state.menuOpen })} id="togglemenu">menu</div>
-        <ul className={this.state.menuOpen ? "open" : "closed"}>
-          <li>
-            <Link to="/" exact activeClassName="activeLink">Home</Link>
-          </li>
-          <li>
-            <Link to="/over" activeClassName="activeLink">Over Luweb</Link>
-          </li>
-          <li>
-            <Link to="/diensten" activeClassName="activeLink">Onze diensten</Link>
-          </li>
-          <li>
-            <Link to="/contact" activeClassName="activeLink">Contact</Link>
-          </li>
-          <li>
-            <Link to="/blog" activeClassName="activeLink">Blog</Link>
-          </li>
-        </ul>
+        <div
+          onClick={() => {
+            this.setState({ menuOpen: !this.state.menuOpen });
+            if (typeof this.props.backdropHandler === 'function') {
+              this.props.backdropHandler()
+            };
+          }}
+          id="menu"
+          className={this.state.menuOpen ? "open" : "closed"}
+        >
+          <button>menu</button>
+          <ul>
+            <li>
+              <Link to="/" exact activeClassName="activeLink">Home</Link>
+            </li>
+            <li>
+              <Link to="/over" activeClassName="activeLink">Over Luweb</Link>
+            </li>
+            <li>
+              <Link to="/diensten" activeClassName="activeLink">Onze diensten</Link>
+            </li>
+            <li>
+              <Link to="/contact" activeClassName="activeLink">Contact</Link>
+            </li>
+            <li>
+              <Link to="/blog" activeClassName="activeLink">Blog</Link>
+            </li>
+          </ul>
+        </div>
       </NavContainer>
     )
   }
