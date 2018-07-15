@@ -10,8 +10,9 @@ const Layout = ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Luweb is gespecialiseerd in web development te Antwerpen. We helpen je graag verder met al je vragen voor jouw nieuwe of reeds bestaande website.' },
+        { name: 'keywords', content: 'website, webdesign, web development, Antwerpen, freelance' },
+        { name: 'theme-color', content: '#567992' },
       ]}
       link={[
         { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }

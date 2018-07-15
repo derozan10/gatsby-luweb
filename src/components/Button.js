@@ -26,7 +26,7 @@ const Button = (props) => {
     `
 
     return (
-        <StyledButton>
+        <StyledButton {...props}>
             {props.children}
         </StyledButton>
     )

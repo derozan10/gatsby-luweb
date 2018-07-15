@@ -28,9 +28,27 @@ const NavContainer = styled.div`
         top: 0px;
         right: 0px;
       }
+      ::before {
+        /* content: ""; */
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(14,30,37,.54);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0ms ease 0s;
+      }
     }
     ul.open {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-top: 50px;
+      height: 50vh;
       padding: 5px;
       border-radius: 5px;
       background-color: #f2f2f2;
@@ -39,6 +57,12 @@ const NavContainer = styled.div`
       width: 80vw;
       a {
         color: #333;
+      }
+      li a {
+        font-weight: bold;
+      }
+      ::before {
+        opacity: 1;
       }
     }
     ul.links li {
@@ -72,6 +96,11 @@ const NavContainer = styled.div`
       bottom: 0;
     }
     #togglemenu {
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      opacity: 0.9;
       @media (min-width: 576px){
         display: none;
       }
@@ -89,7 +118,7 @@ export default class Navbar extends Component {
         <a href="/">
           <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
         </a>
-        <button onClick={() => this.setState({ menuOpen: !this.state.menuOpen })} id="togglemenu">menu</button>
+        <div onClick={() => this.setState({ menuOpen: !this.state.menuOpen })} id="togglemenu">menu</div>
         <ul className={this.state.menuOpen ? "open" : "closed"}>
           <li>
             <Link to="/" exact activeClassName="activeLink">Home</Link>
