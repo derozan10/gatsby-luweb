@@ -14,19 +14,19 @@ const Contact = () => (
             <p>Laat hieronder even <strong>een berichtje</strong> achter en we contacteren je zo snel mogelijk.<br />
                 Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
             </p>
-            <form name="contact" className="contactForm" method="POST" netlify>
+            <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                 <p>
                     <label>Naam
-                    <input type="text" name="name" />
+                    <input type="text" autocomplete='name' name="name" />
                     </label>
                 </p>
                 <p>
                     <label>Organisatie
-                    <input type="text" name="name" />
+                    <input type="text" autocomplete='on' name="organisatie" />
                     </label>
                 </p>
                 <p>
-                    <label>Email <input type="email" name="email" /></label>
+                    <label>Email <input type="email" autocomplete='email' name="email" /></label>
                 </p>
                 <p>
                     <label>Message: <textarea name="message"></textarea></label>
