@@ -29,10 +29,11 @@ const Contact = () => (
                     <label>Email <input type="email" autoComplete='email' name="email" /></label>
                 </p>
                 <p>
-                    <label>Message: <textarea name="message"></textarea></label>
+                    <label>Bericht: <textarea name="bericht"></textarea></label>
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Button color="blue" type="submit">Send</Button>
+                    <button type="submit">Verzend</button>
+                    {/* <Button color="blue" type="submit">Send</Button> */}
                 </div>
             </form>
         </Container>
