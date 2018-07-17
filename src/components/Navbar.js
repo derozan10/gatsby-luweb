@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Aux from '../hoc/Aux'
 import Link from 'gatsby-link'
 import Logo from '../img/luweb-logo-white.svg'
 import BlueLogo from '../img/luweb-logo-blueGradient.svg'
 import styled from "styled-components";
 import Backdrop from './Backdrop';
 
-const NavContainer = styled.div`
+const StyledNavContainer = styled.div`
+    ${props => console.log(props)}
     margin: auto;
     width: 80vw;
     display: flex;
@@ -125,7 +125,7 @@ export default class Navbar extends Component {
     return (
       <div>
         <Backdrop active={this.state.menuOpen} />
-        <NavContainer >
+        <StyledNavContainer {...this.props}>
           <a href="/">
             <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
           </a>
@@ -135,8 +135,7 @@ export default class Navbar extends Component {
           >
             <button onClick={() => {
               this.setState({ menuOpen: !this.state.menuOpen })
-            }
-            }>menu</button>
+            }}>menu</button>
             <ul>
               <li>
                 <Link to="/" exact activeClassName="activeLink">Home</Link>
@@ -155,7 +154,7 @@ export default class Navbar extends Component {
               </li>
             </ul>
           </div>
-        </NavContainer >
+        </StyledNavContainer >
       </div>
     )
   }
