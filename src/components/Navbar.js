@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Backdrop from './Backdrop';
 
 const StyledNavContainer = styled.div`
-    ${props => console.log(props)}
     margin: auto;
     width: 80vw;
     display: flex;
@@ -65,7 +64,7 @@ const StyledNavContainer = styled.div`
       a {
         color: #333;
       }
-      li a {
+      li, li a {
         font-weight: bold;
         width: 100%
       }

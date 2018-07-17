@@ -14,29 +14,28 @@ const Contact = () => (
             <p>Laat hieronder even <strong>een berichtje</strong> achter en we contacteren je zo snel mogelijk.<br />
                 Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
             </p>
-            <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field'>
-                <p>
-                    <label>Naam
-                    <input type="text" autoComplete='name' name="name" />
-                    </label>
-                </p>
-                <p>
-                    <label>Organisatie
-                    <input type="text" autoComplete='on' name="organisatie" />
-                    </label>
-                </p>
-                <p>
-                    <label>Email <input type="email" autoComplete='email' name="email" /></label>
-                </p>
-                <p>
-                    <label>Bericht: <textarea name="bericht"></textarea></label>
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button type="submit">Verzend</button>
-                    {/* <Button color="blue" type="submit">Send</Button> */}
-                </div>
-            </form>
         </Container>
+        <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field'>
+            <p>
+                <label>Naam
+                    <input type="text" autoComplete='name' name="name" />
+                </label>
+            </p>
+            <p>
+                <label>Organisatie
+                    <input type="text" autoComplete='on' name="organisatie" />
+                </label>
+            </p>
+            <p>
+                <label>Email <input type="email" autoComplete='email' name="email" /></label>
+            </p>
+            <p>
+                <label>Bericht: <textarea name="bericht"></textarea></label>
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button color="blue" type="submit">Send</Button>
+            </div>
+        </form>
         <Footer />
     </div >
 
