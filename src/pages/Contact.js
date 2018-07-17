@@ -16,6 +16,7 @@ const Contact = () => (
             </p>
         </Container>
         <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field'>
+            <input type="hidden" name="form-name" value="contact" />
             <p>
                 <label>Naam
                     <input type="text" autoComplete='name' name="name" />
