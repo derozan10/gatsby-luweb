@@ -4,14 +4,5 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Lobster`,
-          `regular\:400` // you can also specify font weights and styles
-        ]
-      }
-    }]
+    'gatsby-plugin-styled-components']
 }

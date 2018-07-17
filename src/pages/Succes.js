@@ -8,7 +8,7 @@ export default () => {
         <div>
             <Navbar inverse />
             <Container >
-                Bedankt voor jouw bericht.
+                Bedankt voor jouw bericht.<br />
                 We contacteren je zo spoedig mogelijk!
             </Container>
             <Footer />

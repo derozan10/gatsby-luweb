@@ -41,7 +41,7 @@ export default () => {
                     </div>
                 </div>
             </Container>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', bottom: '0', width: '100vw', height: '10vw' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', bottom: '-1px', width: '100vw', height: '10vw' }}>
                 <polygon fill="white" points="0,100 100,0 100,100" />
             </svg>
         </section>
