@@ -126,16 +126,13 @@ export default class Navbar extends Component {
           <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
         </a>
         <div
-          onClick={() => {
-            this.setState({ menuOpen: !this.state.menuOpen });
-            if (typeof this.props.backdropHandler === 'function') {
-              this.props.backdropHandler()
-            };
-          }}
           id="menu"
           className={this.state.menuOpen ? "open" : "closed"}
         >
-          <button>menu</button>
+          <button onClick={() => {
+            this.setState({ menuOpen: !this.state.menuOpen });
+            this.props.backdropHandler
+          }}>menu</button>
           <ul>
             <li>
               <Link to="/" exact activeClassName="activeLink">Home</Link>

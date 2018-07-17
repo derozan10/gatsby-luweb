@@ -17,16 +17,16 @@ const Contact = () => (
             <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field'>
                 <p>
                     <label>Naam
-                    <input type="text" autocomplete='name' name="name" />
+                    <input type="text" autoComplete='name' name="name" />
                     </label>
                 </p>
                 <p>
                     <label>Organisatie
-                    <input type="text" autocomplete='on' name="organisatie" />
+                    <input type="text" autoComplete='on' name="organisatie" />
                     </label>
                 </p>
                 <p>
-                    <label>Email <input type="email" autocomplete='email' name="email" /></label>
+                    <label>Email <input type="email" autoComplete='email' name="email" /></label>
                 </p>
                 <p>
                     <label>Message: <textarea name="message"></textarea></label>
