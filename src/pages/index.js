@@ -11,16 +11,10 @@ import CTA from '../components/CTA';
 import Backdrop from '../components/Backdrop';
 
 export default class IndexPage extends Component {
-    state = {
-        backdropActive: false
-    }
-
     render() {
-        console.log(this.state.backdropActive)
         return (
             <div>
-                <Backdrop active={this.state.backdropActive} />
-                <Navbar backdropHandler={() => this.setState({ backdropActive: !this.state.backdropActive })} />
+                <Navbar />
                 <Hero />
                 <Succes />
                 <Tarieven />

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import Aux from '../hoc/Aux'
 import Link from 'gatsby-link'
 import Logo from '../img/luweb-logo-white.svg'
 import BlueLogo from '../img/luweb-logo-blueGradient.svg'
 import styled from "styled-components";
+import Backdrop from './Backdrop';
 
 const NavContainer = styled.div`
     margin: auto;
@@ -117,41 +119,44 @@ const NavContainer = styled.div`
 export default class Navbar extends Component {
   state = {
     menuOpen: false
-  }
+  };
 
   render() {
     return (
-      <NavContainer {...this.props}>
-        <a href="/">
-          <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
-        </a>
-        <div
-          id="menu"
-          className={this.state.menuOpen ? "open" : "closed"}
-        >
-          <button onClick={() => {
-            this.setState({ menuOpen: !this.state.menuOpen });
-            this.props.backdropHandler
-          }}>menu</button>
-          <ul>
-            <li>
-              <Link to="/" exact activeClassName="activeLink">Home</Link>
-            </li>
-            <li>
-              <Link to="/over" activeClassName="activeLink">Over Luweb</Link>
-            </li>
-            <li>
-              <Link to="/diensten" activeClassName="activeLink">Onze diensten</Link>
-            </li>
-            <li>
-              <Link to="/contact" activeClassName="activeLink">Contact</Link>
-            </li>
-            <li>
-              <Link to="/blog" activeClassName="activeLink">Blog</Link>
-            </li>
-          </ul>
-        </div>
-      </NavContainer>
+      <div>
+        <Backdrop active={this.state.menuOpen} />
+        <NavContainer >
+          <a href="/">
+            <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
+          </a>
+          <div
+            id="menu"
+            className={this.state.menuOpen ? "open" : "closed"}
+          >
+            <button onClick={() => {
+              this.setState({ menuOpen: !this.state.menuOpen })
+            }
+            }>menu</button>
+            <ul>
+              <li>
+                <Link to="/" exact activeClassName="activeLink">Home</Link>
+              </li>
+              <li>
+                <Link to="/over" activeClassName="activeLink">Over Luweb</Link>
+              </li>
+              <li>
+                <Link to="/diensten" activeClassName="activeLink">Onze diensten</Link>
+              </li>
+              <li>
+                <Link to="/contact" activeClassName="activeLink">Contact</Link>
+              </li>
+              <li>
+                <Link to="/blog" activeClassName="activeLink">Blog</Link>
+              </li>
+            </ul>
+          </div>
+        </NavContainer >
+      </div>
     )
   }
 }
