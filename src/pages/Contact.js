@@ -15,7 +15,7 @@ const Contact = () => (
                 Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
             </p>
         </Container>
-        <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field'>
+        <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field' action="/succes">
             <input type="hidden" name="form-name" value="contact" />
             <p>
                 <label>Naam
