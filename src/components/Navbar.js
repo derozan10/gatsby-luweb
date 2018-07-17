@@ -97,7 +97,7 @@ const StyledNavContainer = styled.div`
       font-family: 'Segoe UI';
     }
     a.activeLink {
-      color: #5AD3A1;
+      color: #00ff96;
     }
     ::after {
       content: "";

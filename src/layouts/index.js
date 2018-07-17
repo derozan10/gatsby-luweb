@@ -8,6 +8,7 @@ import './layout.css'
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
+      htmlAttributes={{ "lang": "nl-BE" }}
       title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: 'Luweb is gespecialiseerd in web development te Antwerpen. We helpen je graag verder met al je vragen voor jouw nieuwe of reeds bestaande website.' },
