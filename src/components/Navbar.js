@@ -22,7 +22,7 @@ const StyledNavContainer = styled.div`
       margin: 0;
       list-style: none;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: space-between;
       width: 60vw;
       @media (max-width: 576px) {
@@ -52,7 +52,6 @@ const StyledNavContainer = styled.div`
       position: fixed;
       flex-direction: column;
       justify-content: space-around;
-      align-items: flex-start;
       margin-top: 50px;
       height: 50vh;
       padding: 5px;
@@ -70,6 +69,13 @@ const StyledNavContainer = styled.div`
       }
       ::before {
         opacity: 1;
+      }
+      a.activeLink {
+        color: #fff;
+      }
+      a.activeLink li {
+        background-color: #4D7A95;
+        border-radius: 5px;
       }
     }
     ul li {
@@ -136,21 +142,31 @@ export default class Navbar extends Component {
               this.setState({ menuOpen: !this.state.menuOpen })
             }}>menu</button>
             <ul>
-              <li>
-                <Link to="/" exact activeClassName="activeLink">Home</Link>
+              <Link to="/" exact activeClassName="activeLink">
+                <li>
+                  Home
+                </li>
+              </Link>
+              <Link to="/over" activeClassName="activeLink">
+                <li>
+                  Over Luweb
               </li>
-              <li>
-                <Link to="/over" activeClassName="activeLink">Over Luweb</Link>
+              </Link>
+              <Link to="/diensten" activeClassName="activeLink">
+                <li>
+                  Onze diensten
               </li>
-              <li>
-                <Link to="/diensten" activeClassName="activeLink">Onze diensten</Link>
+              </Link>
+              <Link to="/contact" activeClassName="activeLink">
+                <li>
+                  Contact
               </li>
-              <li>
-                <Link to="/contact" activeClassName="activeLink">Contact</Link>
+              </Link>
+              <Link to="/blog" activeClassName="activeLink">
+                <li>
+                  Blog
               </li>
-              <li>
-                <Link to="/blog" activeClassName="activeLink">Blog</Link>
-              </li>
+              </Link>
             </ul>
           </div>
         </StyledNavContainer >
