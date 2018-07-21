@@ -33,7 +33,7 @@ const Contact = () => (
                     <label>Bericht: <textarea name="bericht"></textarea></label>
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Button color="blue" type="submit">Send</Button>
+                    <Button color="blue" type="submit">Verzend</Button>
                 </div>
             </form>
             <div id='adres'>
