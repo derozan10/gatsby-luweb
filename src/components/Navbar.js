@@ -121,6 +121,7 @@ const StyledNavContainer = styled.div`
     }
 `
 
+
 export default class Navbar extends Component {
   state = {
     menuOpen: false

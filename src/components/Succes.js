@@ -5,6 +5,8 @@ import seo from '../img/seo.svg'
 import socialMedia from '../img/social.svg'
 import Container from '../components/Container';
 
+
+
 import './succes.css'
 
 export default () => {

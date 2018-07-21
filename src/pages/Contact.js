@@ -14,29 +14,35 @@ const Contact = () => (
             <p>Laat hieronder even <strong>een berichtje</strong> achter en we contacteren je zo snel mogelijk.<br />
                 Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
             </p>
-        </Container>
-        <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field' action="/succes">
-            <input type="hidden" name="form-name" value="contact" />
-            <p>
-                <label>Naam
+            <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field' action="/bedankt">
+                <input type="hidden" name="form-name" value="contact" />
+                <p>
+                    <label>Naam
                     <input type="text" autoComplete='name' name="name" />
-                </label>
-            </p>
-            <p>
-                <label>Organisatie
+                    </label>
+                </p>
+                <p>
+                    <label>Organisatie
                     <input type="text" autoComplete='on' name="organisatie" />
-                </label>
-            </p>
-            <p>
-                <label>Email <input type="email" autoComplete='email' name="email" /></label>
-            </p>
-            <p>
-                <label>Bericht: <textarea name="bericht"></textarea></label>
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button color="blue" type="submit">Send</Button>
+                    </label>
+                </p>
+                <p>
+                    <label>Email <input type="email" autoComplete='email' name="email" /></label>
+                </p>
+                <p>
+                    <label>Bericht: <textarea name="bericht"></textarea></label>
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Button color="blue" type="submit">Send</Button>
+                </div>
+            </form>
+            <div id='adres'>
+                <p>Luweb</p>
+                <p>Dokter Van de Perrelei 25, 2140 Borgerhout</p>
+                <p>0496/06.10.42</p>
+                <p>BE0677875095</p>
             </div>
-        </form>
+        </Container>
         <Footer />
     </div >
 

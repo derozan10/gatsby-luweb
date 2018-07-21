@@ -8,7 +8,6 @@ export default () => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '80px 0'
     }
 
     return (
