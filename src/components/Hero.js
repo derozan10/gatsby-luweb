@@ -7,7 +7,7 @@ import mac from '../img/mac.png'
 export default () => {
     const hero = {
         position: 'relative',
-        top: '-90px',
+        top: '-126px',
         height: '80vh',
         justifyContent: 'space-around',
         flexDirection: 'column',

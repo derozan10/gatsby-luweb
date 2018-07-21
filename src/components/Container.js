@@ -2,7 +2,7 @@ import React from 'react'
 
 export default (props) => {
     return (
-        <div style={{ width: '80vw', margin: '80px auto' }}>
+        <div style={{ width: '80vw', margin: '0 auto' }}>
             {props.children}
         </div>
     )

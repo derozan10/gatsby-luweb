@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Backdrop from './Backdrop';
 
 const StyledNavContainer = styled.div`
-    margin: auto;
+    margin: 0 auto 40px auto;
     width: 80vw;
     display: flex;
     flex-direction: row;

@@ -10,7 +10,7 @@ const StyledFooter = styled.div`
             align-items: center ;
             position: relative;
             padding: 20px;
-            margin: auto;
+            margin: 40px auto 0 auto;
             ::after {
                 content: "";
                 display: block;
