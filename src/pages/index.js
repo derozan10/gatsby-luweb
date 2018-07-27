@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Succes from '../components/Succes';
-import Tarieven from '../components/Tarieven';
+import Cards from '../components/Cards';
 import Footer from '../components/Footer'
 
 import './index.css'
@@ -17,7 +17,7 @@ export default class IndexPage extends Component {
                 <Navbar />
                 <Hero />
                 <Succes />
-                <Tarieven />
+                <Cards />
                 <CTA />
                 <Footer />
             </div>

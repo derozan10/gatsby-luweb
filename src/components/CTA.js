@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button';
 import Container from '../components/Container';
+import Link from 'gatsby-link'
 
 export default () => {
     const cta = {
@@ -15,7 +16,9 @@ export default () => {
             <div style={cta}>
                 <h2>Overtuigd van onze expertise?</h2>
                 <p style={{ color: 'grey' }}>Aarzel niet om ons te contacteren voor een vrijblijvend gesprek</p>
-                <Button color={'green'}>Contacteer ons</Button>
+                <Link to="/contact" exact activeClassName="activeLink">
+                    <Button color={'green'}>Contacteer ons</Button>
+                </Link>
             </div>
         </Container>
     )
