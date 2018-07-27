@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Button = (props) => {
     const StyledButton = styled.button`
-        color: #fff;
+        color: ${props.color === "green" ? "rgb(53, 83, 102)" : "#fff"};
         height: 50px;
         text-align: center;
         padding: 0 20px;
@@ -19,7 +19,7 @@ const Button = (props) => {
         letter-spacing: 0.094em;
         margin: 5px;
         cursor: pointer;
-        background-color: ${props.color === "green" ? "#5AD3A1" : "#4d7a95"};
+        background-color: ${props.color === "green" ? "rgb(0, 255, 150)" : "#4d7a95"};
         &:hover {
             background-color: ${props.color === "green" ? "#6adcad" : "#5d90af"};
         }

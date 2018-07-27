@@ -20,10 +20,10 @@ export default () => {
         backgroundPosition: 'top left, center',
     }
 
-    const linkStyle = {
-        textDecoration: 'none',
-        color: '#fff'
-    }
+    // const linkStyle = {
+    //     textDecoration: 'none',
+    //     color: '#fff'
+    // }
 
     return (
         <section style={hero}>
@@ -32,12 +32,16 @@ export default () => {
                     <h1 style={{ fontSize: '1.8rem' }}>Web development is onze passie</h1>
                     <p>Bij Luweb is uw online imago in goede handen</p>
                     <div>
-                        <Button color="green">
-                            <Link to="/diensten" style={linkStyle}>Onze diensten</Link>
-                        </Button>
-                        <Button color="blue">
-                            <Link to="/contact" style={linkStyle}>Contacteer ons</Link>
-                        </Button>
+                        <Link to="/diensten" >
+                            <Button color="green">
+                                Onze diensten
+                            </Button>
+                        </Link>
+                        <Link to="/contact">
+                            <Button color="blue">
+                                Contacteer ons
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </Container>
