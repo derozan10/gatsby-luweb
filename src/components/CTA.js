@@ -15,7 +15,7 @@ export default () => {
         <Container>
             <div style={cta}>
                 <h2>Overtuigd van onze expertise?</h2>
-                <p style={{ color: 'grey' }}>Aarzel niet om ons te contacteren voor een vrijblijvend gesprek</p>
+                <p style={{ color: 'rgba(14,30,37,.6)' }}>Aarzel niet om ons te contacteren voor een vrijblijvend gesprek</p>
                 <Link to="/contact" exact activeClassName="activeLink">
                     <Button color={'green'}>Contacteer ons</Button>
                 </Link>
