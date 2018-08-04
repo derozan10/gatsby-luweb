@@ -2,34 +2,68 @@ import React from 'react'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
+import fast from '../img/fast.svg';
+import mobile from '../img/mobile.svg';
+import brush from '../img/brush.svg';
+import waveTop from '../img/waveTop.svg';
+import responsive from '../img/responsive.png'
+import shuttle from '../img/shuttle.svg';
+import key from '../img/key.svg';
+import pensilRuler from '../img/pensil-ruler.png';
+import './Diensten.css'
+import Dienst from '../components/Dienst';
+import { Link } from 'gatsby-link';
+import CTA2 from '../components/CTA2';
 
 const Diensten = () => {
+    console.log(responsive);
+
     return (
         <div>
             <Navbar inverse />
+            <img src={waveTop} id='topwaves' alt="waves" />
             <Container>
                 <h1>Onze diensten</h1>
-                <h2>Optimalisatie bestaande website</h2>
-                <p>
-                    Wist u dat Google inmiddels bijna de helft van de websites geraadpleegd worden van op een smartphone t.o.v. een computer?
-                    En dat Google jouw website lager zal weergegeven in de zoekresultaten indien deze niet snel genoeg is?
-                    Misschien heeft u al wel gemerkt dat websites zonder HTTPS als onveilig gemarkeerd worden? <br />
-                    We bekijken voor al deze zaken voor uw website en waar er verbeterpunten nodig zijn. We bezorgen u hiervan een rapport zodat u zelf kan beslissen welke aanpassingen er effectief dienen te gebeuren.
-                    Uiteraard begeleiden we u bij deze beslissingen vanuit onze eigen oppinie en ervaringen.
-                </p>
-                <h2>Onderhoud van bestaande website</h2>
-                <p>
-                    Indien u nood heeft aan ondersteuning voor uw website staan we ter beschikking. <br />
-                    We kunnen de content van de website voor u aanpassen, afbeeldingen wijzigen,...
-                </p>
                 <h2>Nieuwe website</h2>
                 <p>
-                    Voor het aanmaken van een nieuwe website zijn er heel wat zaken waar je rekening mee moet houden.
-                    Is het nodig om de content zelf aan te passen? Moet de website volledig aangepast worden aan de "look en feel" van uw onderneming?
-                    Wenst u producten te verkopen op deze website?
-                    We nemen al deze zaken mee in overweging om te bepalen hoe we de website opstellen. Soms kan het voldoende zijn om te starten van een template website.
-                    In andere gevallen is een volledig gepersonaliseerde website nodig.
+                    Bij het maken van een nieuwe website zijn komen heel wat zaken kijken en moet er met veel zaken rekening gehouden worden. Bij Luweb zorgen we ervoor dat dit alles in goede banen geleid wordt.
+                    Hieronder enkele zaken die we voor elk van onze websites uitvoerig onder de loep nemen:
                 </p>
+                <Dienst
+                    title="Responsive design"
+                    description="Of het nu gaat om een smartphone, tablet of desktop. We zorgen ervoor dat uw website er goed uitziet op elk device."
+                    explanation={<p className="explanation">Wist je dat inmiddels meer dan de helft van de gebruikers een mobile device of tablet gebruikt om iets online op te zoeken? Daarom heeft Google beslist om alle websites te analyseren op hun mobiele variant, in plaats van de desktop-versie . Wil je goede zoekresultaten op Google? Dan zal je website er dus op alle toestellen goed moeten uitzien.</p>}
+                    image={<img className="img-responsive" src={responsive} alt="responsive device mockup" />}
+                />
+                <Dienst
+                    title="Performance"
+                    description="Een performante website draagt bij tot een aangename gebruikservaring, hogere conversie en betere zoekresultaten."
+                    explanation={<p className="explanation">Elke website waar we aan werken wordt bij Luweb onderwerpen we aan een grondige analyse. We optimaliseren de kritieke punten die hieruit voortkomen wat resulteert in een uiterst perfomante website, waar ook zoekmachines als Google van zullen houden! Interesse in de snelheid van je huidige webite? Gebruik <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed</a> om de huidige score van jouw website te kennen.</p>}
+                    image={<img className="img-responsive" src={shuttle} alt="raket" />}
+                />
+                <Dienst
+                    title="Veiligheid"
+                    description="We zorgen ervoor dat u zich geen zorgen hoeft te  maken over de veiligheid van uw website en de gebruikers ervan."
+                    explanation={<p className="explanation">We dragen veiligheid hoog in het vaandel bij Luweb. Daarom voorzien we al onze websites van een SSL-certificaat. Dit zorgt ervoor dat al de communicatie van en naar je website op een veilige manier gebeurt. Bovendien wordt je website als veilig gemarkeerd in de zoekbalk.</p>}
+                    image={<img className="img-responsive" src={key} alt="sleutel" />}
+                />
+                <Dienst
+                    title="Personalisatie"
+                    description="Een website is het uithangbord van jouw bedrijf of jezelf als persoonlijkheid. Het weerspiegelt jouw imago naar de buitenwereld"
+                    explanation={<p className="explanation">We kunnen je website volledig aanpassen naar wens. Moet de website volledig aangepast worden aan de "look &amp; feel" van jouw onderneming? Misschien heb je elders een website gezien die je erg aanspreekt? We bekijken de mogelijkheden voor elk budget.</p>}
+                    image={<img className="img-responsive" src={pensilRuler} alt="meetlat en potlood" />}
+                />
+            </Container>
+            <CTA2 />
+            <Container>
+                <h2>Heb je al een website?</h2>
+                <p>We bekijken graag hoe we jou kunnen ondersteunen met verschillende taken zoals: </p>
+                <ul>
+                    <li>het onderhoud van je website</li>
+                    <li>performance optimalisatie</li>
+                    <li>het toevoegen van nieuwe features</li>
+                    <li>… </li>
+                </ul>
             </Container>
             <Footer />
         </div>

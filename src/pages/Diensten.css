@@ -1,0 +1,19 @@
+.dienstText {
+    position: relative;
+}
+
+.titleIcon {
+    width: 1.618em;
+    height: 1.618em;
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    margin-top: .146em;
+}
+
+#topwaves {
+    display: flex;
+    width: 100vw;
+    position: relative;
+    top: -40px;
+}
