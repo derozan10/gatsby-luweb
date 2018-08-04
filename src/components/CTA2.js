@@ -35,9 +35,8 @@ const CTA2 = () => {
         <StyledCTA2>
             <img id="construct" src={underConstruction} alt="website under construction" />
             <Container>
-                <h3>Contacteer ons vrijblijvend</h3>
-                <p>We bekijken graag hoe we jou kunnen ondersteunen met het onderhoud hiervan het toevoegen van nieuwe features… </p>
-                <p>Bekijk hieronder wat we zoal kunnen betekenen voor je huidige website.</p>
+                <h3>Overtuigd van onze expertise?</h3>
+                <p>Contacteer ons vrijblijvend, en we bekijken samen met jou hoe we ook jouw website naar een hoger niveau tillen.</p>
                 <Link to="/contact"><p id="contact">Contacteer ons  <img style={{ height: '14px', widht: '14px' }} src={smallArrow} alt="small arrow" /></p> </Link>
             </Container>
         </StyledCTA2>

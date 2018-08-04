@@ -26,7 +26,7 @@ const Diensten = () => {
                 <h1>Onze diensten</h1>
                 <h2>Nieuwe website</h2>
                 <p>
-                    Bij het maken van een nieuwe website zijn komen heel wat zaken kijken en moet er met veel zaken rekening gehouden worden. Bij Luweb zorgen we ervoor dat dit alles in goede banen geleid wordt.
+                    Bij het maken van een nieuwe website komen heel wat zaken kijken. Bij Luweb zorgen we ervoor dat dit al het nodige alles in goede banen geleid wordt.
                     Hieronder enkele zaken die we voor elk van onze websites uitvoerig onder de loep nemen:
                 </p>
                 <Dienst
@@ -38,12 +38,12 @@ const Diensten = () => {
                 <Dienst
                     title="Performance"
                     description="Een performante website draagt bij tot een aangename gebruikservaring, hogere conversie en betere zoekresultaten."
-                    explanation={<p className="explanation">Elke website waar we aan werken wordt bij Luweb onderwerpen we aan een grondige analyse. We optimaliseren de kritieke punten die hieruit voortkomen wat resulteert in een uiterst perfomante website, waar ook zoekmachines als Google van zullen houden! Interesse in de snelheid van je huidige webite? Gebruik <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed</a> om de huidige score van jouw website te kennen.</p>}
+                    explanation={<p className="explanation">Elke website waar we aan werken wordt bij Luweb onderwerpen aan een grondige analyse. We optimaliseren de kritieke punten en creëren een uiterst perfomante website, waar ook zoekmachines als Google van zullen houden! Interesse in de snelheid van je huidige webite? Gebruik <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed</a> om de huidige score van jouw website te kennen.</p>}
                     image={<img className="img-responsive" src={shuttle} alt="raket" />}
                 />
                 <Dienst
                     title="Veiligheid"
-                    description="We zorgen ervoor dat u zich geen zorgen hoeft te  maken over de veiligheid van uw website en de gebruikers ervan."
+                    description="We zorgen ervoor dat u zich geen zorgen hoeft te maken over de veiligheid van uw website en de gebruikers ervan."
                     explanation={<p className="explanation">We dragen veiligheid hoog in het vaandel bij Luweb. Daarom voorzien we al onze websites van een SSL-certificaat. Dit zorgt ervoor dat al de communicatie van en naar je website op een veilige manier gebeurt. Bovendien wordt je website als veilig gemarkeerd in de zoekbalk.</p>}
                     image={<img className="img-responsive" src={key} alt="sleutel" />}
                 />
