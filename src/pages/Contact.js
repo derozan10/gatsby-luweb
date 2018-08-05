@@ -40,6 +40,7 @@ const Contact = () => (
                 <p>Luweb</p>
                 <p>Dokter Van de Perrelei 25, 2140 Borgerhout</p>
                 <p>0496/06.10.42</p>
+                <p>info@luweb.be</p>
                 <p>BE0677875095</p>
             </div>
         </Container>
