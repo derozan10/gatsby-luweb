@@ -14,31 +14,32 @@ import './Diensten.css'
 import Dienst from '../components/Dienst';
 import { Link } from 'gatsby-link';
 import CTA2 from '../components/CTA2';
+const pathStyle = {
+    fill: '#fff',
+    fillOpacity: '.2'
+}
 
 const Diensten = () => {
-    console.log(responsive);
-
     return (
         <div>
             <Navbar inverse />
-            <img src={waveTop} id='topwaves' alt="waves" />
             <Container>
                 <h1>Onze diensten</h1>
                 <h2>Nieuwe website</h2>
                 <p>
-                    Bij het maken van een nieuwe website komen heel wat zaken kijken. Bij Luweb zorgen we ervoor dat dit al het nodige alles in goede banen geleid wordt.
-                    Hieronder enkele zaken die we voor elk van onze websites uitvoerig onder de loep nemen:
+                    Bij het maken van een nieuwe website komen heel wat zaken kijken. Bij Luweb zorgen we ervoor dat al het nodige in goede banen geleid wordt.
+                    Hieronder enkele aspecten die we voor elk van onze websites uitvoerig onder de loep nemen:
                 </p>
                 <Dienst
                     title="Responsive design"
                     description="Of het nu gaat om een smartphone, tablet of desktop. We zorgen ervoor dat uw website er goed uitziet op elk device."
-                    explanation={<p className="explanation">Wist je dat inmiddels meer dan de helft van de gebruikers een mobile device of tablet gebruikt om iets online op te zoeken? Daarom heeft Google beslist om alle websites te analyseren op hun mobiele variant, in plaats van de desktop-versie . Wil je goede zoekresultaten op Google? Dan zal je website er dus op alle toestellen goed moeten uitzien.</p>}
+                    explanation={<p className="explanation">Wist je dat inmiddels meer dan de helft van de gebruikers een mobile device of tablet gebruikt om iets online op te zoeken? Daarom heeft Google beslist om alle websites te analyseren op hun mobiele variant, in plaats van de desktop-versie. Wil je goede zoekresultaten op Google? Dan zal je website er dus op alle toestellen goed moeten uitzien.</p>}
                     image={<img className="img-responsive" src={responsive} alt="responsive device mockup" />}
                 />
                 <Dienst
                     title="Performance"
                     description="Een performante website draagt bij tot een aangename gebruikservaring, hogere conversie en betere zoekresultaten."
-                    explanation={<p className="explanation">Elke website waar we aan werken wordt bij Luweb onderwerpen aan een grondige analyse. We optimaliseren de kritieke punten en creëren een uiterst perfomante website, waar ook zoekmachines als Google van zullen houden! Interesse in de snelheid van je huidige webite? Gebruik <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed</a> om de huidige score van jouw website te kennen.</p>}
+                    explanation={<p className="explanation">Elke website waar we aan werken wordt bij Luweb onderwerpen aan een grondige analyse. We optimaliseren de kritieke punten en creëren een uiterst perfomante website, waar ook zoekmachines als Google van zullen houden!</p>}
                     image={<img className="img-responsive" src={shuttle} alt="raket" />}
                 />
                 <Dienst
@@ -49,7 +50,7 @@ const Diensten = () => {
                 />
                 <Dienst
                     title="Personalisatie"
-                    description="Een website is het uithangbord van jouw bedrijf of jezelf als persoonlijkheid. Het weerspiegelt jouw imago naar de buitenwereld"
+                    description="Een website is het uithangbord van jouw bedrijf of jezelf als persoonlijkheid. Het weerspiegelt jouw imago naar de buitenwereld."
                     explanation={<p className="explanation">We kunnen je website volledig aanpassen naar wens. Moet de website volledig aangepast worden aan de "look &amp; feel" van jouw onderneming? Misschien heb je elders een website gezien die je erg aanspreekt? We bekijken de mogelijkheden voor elk budget.</p>}
                     image={<img className="img-responsive" src={pensilRuler} alt="meetlat en potlood" />}
                 />
@@ -57,7 +58,7 @@ const Diensten = () => {
             <CTA2 />
             <Container>
                 <h2>Heb je al een website?</h2>
-                <p>We bekijken graag hoe we jou kunnen ondersteunen met verschillende taken zoals: </p>
+                <p>We ondersteunen je graag met verschillende taken zoals: </p>
                 <ul>
                     <li>het onderhoud van je website</li>
                     <li>performance optimalisatie</li>
@@ -66,7 +67,7 @@ const Diensten = () => {
                 </ul>
             </Container>
             <Footer />
-        </div>
+        </div >
     )
 }
 
