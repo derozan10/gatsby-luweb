@@ -39,7 +39,7 @@ const Diensten = () => {
                 <Dienst
                     title="Performance"
                     description="Een performante website draagt bij tot een aangename gebruikservaring, hogere conversie en betere zoekresultaten."
-                    explanation={<p className="explanation">Elke website waar we aan werken wordt bij Luweb onderwerpen aan een grondige analyse. We optimaliseren de kritieke punten en creëren een uiterst perfomante website, waar ook zoekmachines als Google van zullen houden!</p>}
+                    explanation={<p className="explanation">Elke website waar we aan werken wordt bij Luweb onderwerpen aan een grondige analyse. We optimaliseren de kritieke punten en creëren een uiterst performante website, waar ook zoekmachines als Google van zullen houden!</p>}
                     image={<img className="img-responsive" src={shuttle} alt="raket" />}
                 />
                 <Dienst
