@@ -18,7 +18,7 @@ const Contact = () => (
                 <input type="hidden" name="form-name" value="contact" />
                 <p>
                     <label>Naam
-                    <input type="text" autoComplete='name' name="name" />
+                    <input type="text" autoComplete='name' name="name" required />
                     </label>
                 </p>
                 <p>
@@ -27,10 +27,10 @@ const Contact = () => (
                     </label>
                 </p>
                 <p>
-                    <label>Email <input type="email" autoComplete='email' name="email" /></label>
+                    <label>Email <input type="email" autoComplete='email' name="email" required /></label>
                 </p>
                 <p>
-                    <label>Bericht: <textarea name="bericht"></textarea></label>
+                    <label>Bericht: <textarea name="bericht" required></textarea></label>
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Button color="blue" type="submit">Verzend</Button>
