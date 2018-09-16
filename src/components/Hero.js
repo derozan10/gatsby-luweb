@@ -1,53 +1,37 @@
 import React from 'react';
-import Link from "gatsby-link"
-import Button from './Button'
+import Link from "gatsby-link";
+import Button from './Button';
 import Container from '../components/Container';
-import mac from '../img/mac.png'
+import laptop from "../img/mac.png"
+
+import "../stylesheets/hero.sass"
 
 export default () => {
-    const hero = {
-        position: 'relative',
-        top: '-126px',
-        height: '80vh',
-        justifyContent: 'space-around',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        color: '#fff',
-        fontFamily: 'Segoe UI',
-        display: 'flex',
-        backgroundImage: `url(${mac}), linear-gradient(to right top, #221C67, #00468F, #006DA9)`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'top left, center',
-    }
-
-    // const linkStyle = {
-    //     textDecoration: 'none',
-    //     color: '#fff'
-    // }
-
     return (
-        <section style={hero}>
-            <Container>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <h1 style={{ fontSize: '1.8rem' }}>Web development is onze passie</h1>
-                    <p>Bij Luweb is uw online imago in goede handen</p>
-                    <div>
-                        <Link to="/diensten" >
-                            <Button color="green">
-                                Onze diensten
+        <header id="hero">
+            <div id="hero_gradient">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div className="heroText">
+                <h1>Web development is onze passie</h1>
+                <p>Bij Luweb kan u terecht voor alles wat u nodig heeft om uw online verhaal tot een succes te maken. We zijn gespecialiseerd in uiterst performante websites, met een goed ook voor design</p>
+                <div>
+                    <Link to="/diensten" >
+                        <Button color="white">
+                            Onze diensten
                             </Button>
-                        </Link>
-                        <Link to="/contact">
-                            <Button color="blue">
-                                Contacteer ons
+                    </Link>
+                    <Link to="/contact">
+                        <Button color="blue">
+                            Contacteer ons
                             </Button>
-                        </Link>
-                    </div>
+                    </Link>
                 </div>
-            </Container>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', bottom: '-1px', width: '100vw', height: '10vw' }}>
-                <polygon fill="white" points="0,100 100,0 100,100" />
-            </svg>
-        </section>
+            </div>
+            <img src={laptop} alt="laptop" />
+        </header>
     )
 }

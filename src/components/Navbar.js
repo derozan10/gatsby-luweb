@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import styled from "styled-components";
+import Zoom from 'react-reveal/Zoom';
+
+import Backdrop from './Backdrop';
+import '../stylesheets/navbar.sass'
 import Logo from '../img/luweb-logo-white.svg'
 import BlueLogo from '../img/luweb-logo-blueGradient.svg'
-import styled from "styled-components";
-import Backdrop from './Backdrop';
 
-const StyledNavContainer = styled.div`
-    margin: 0 auto 40px auto;
+
+const StyledNavContainer = styled.nav`
+    margin-left: 10vw;
     width: 80vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 2;
-    #menu.open {
-      position: fixed;
-      right: 10vw;
+    @media (max-width: 576px){
+      width: 90vw;
+      margin: 0 auto;
+    }
+    #menu {
+      z-index: 1;
     }
     ul {
       margin: 0;
@@ -27,9 +33,10 @@ const StyledNavContainer = styled.div`
       width: 60vw;
       @media (max-width: 576px) {
         display: none;
-        margin: 30px 0;
+        margin-top: 60px;
+        margin-left: 10vw;
+        margin-right: 10vw;
         flex-direction: column;
-        position: absolute;
         top: 0px;
         right: 0px;
       }
@@ -134,40 +141,27 @@ export default class Navbar extends Component {
           <a href="/">
             <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
           </a>
-          <div
-            id="menu"
-            className={this.state.menuOpen ? "open" : "closed"}
-          >
-            <button onClick={() => {
-              this.setState({ menuOpen: !this.state.menuOpen })
-            }}>menu</button>
-            <ul>
-              <Link to="/" exact activeClassName="activeLink">
-                <li>
-                  Home
-                </li>
-              </Link>
-              <Link to="/over" activeClassName="activeLink">
-                <li>
-                  Over Luweb
-              </li>
-              </Link>
-              <Link to="/diensten" activeClassName="activeLink">
-                <li>
-                  Onze diensten
-              </li>
-              </Link>
-              <Link to="/contact" activeClassName="activeLink">
-                <li>
-                  Contact
-              </li>
-              </Link>
-              <Link to="/blog" activeClassName="activeLink">
-                <li>
-                  Blog
-              </li>
-              </Link>
-            </ul>
+          <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
+            <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
+            <Zoom>
+              <ul>
+                <Link to="/" exact activeClassName="activeLink">
+                  <li>Home</li>
+                </Link>
+                <Link to="/over" activeClassName="activeLink">
+                  <li>Over Luweb</li>
+                </Link>
+                <Link to="/diensten" activeClassName="activeLink">
+                  <li>Onze diensten</li>
+                </Link>
+                <Link to="/contact" activeClassName="activeLink">
+                  <li>Contact</li>
+                </Link>
+                <Link to="/blog" activeClassName="activeLink">
+                  <li>Blog</li>
+                </Link>
+              </ul>
+            </Zoom>
           </div>
         </StyledNavContainer >
         {this.props.inverse &&

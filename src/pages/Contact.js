@@ -1,9 +1,11 @@
 import React from 'react'
+
 import Container from '../components/Container'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
 import Button from '../components/Button';
+
+import "../stylesheets/contact.sass"
 
 const Contact = () => (
     <div>

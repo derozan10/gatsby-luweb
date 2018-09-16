@@ -6,10 +6,14 @@ import CardButton from './CardButton'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import waves from '../img/wave.png'
-import responsive from '../img/responsive.png'
+// import responsive from '../img/responsive.png'
 import shuttle from '../img/shuttle.png'
 import key from '../img/key.png'
 import pensilRuler from '../img/pensil-ruler.png'
+import performance from '../img/performance.svg'
+import personalization from '../img/personalization.svg'
+import responsive from '../img/responsive.svg'
+import safety from '../img/safety.svg'
 
 const StyledCards = styled.div`
     ::after {
@@ -40,32 +44,28 @@ export default () => {
                     <h2 style={{ color: '#fff', textAlign: 'center', margin: '5vh 0 10vh 0' }}>Web development met een sterke focus op</h2>
                     <div className="cardFlex">
                         <Card
-                            title={'Responsive design'}
                             img={responsive}
-                            altText={'device mockup'}
-                            usps={['Laptop', 'Tablet', 'Smartphone', '...']}
-                            btn={<CardButton text="ondek meer" link="/diensten" />}
+                            titleColor="#3360A6"
+                            title='Responsive design'
+                            text='Een responsive website is een website die er goed uitziet op alle schermen. Al onze websites zijn geoptimaliseerd voor zowat alle soorten schermen, zodat deze er even goed uitziet op je smartphone, tablet, laptop of desktop'
                         />
                         <Card
-                            title={'Performance'}
-                            img={shuttle}
-                            altText={'space shuttle'}
-                            usps={['Snelle werking', 'korte laadtijd', 'alle nodige optimalisaties']}
-                            btn={<CardButton text="ondek meer" link="/diensten" />}
+                            img={performance}
+                            titleColor="#A61308"
+                            title='Performantie'
+                            text='We zorgen steeds voor de meest performante oplossing voor jouw type website. Door gebruik te maken van de nieuwste technologieën, zal jouw website razendsnel zijn. Hierdoor verhoog je conversie, SEO, gebruiksgemak...'
                         />
                         <Card
-                            title={'Veiligheid'}
-                            img={key}
-                            altText={'key'}
-                            usps={['nieuwste technologiëen', 'correcte implementaties', 'met SSL encryptie']}
-                            btn={<CardButton text="ondek meer" link="/diensten" />}
+                            img={safety}
+                            titleColor="#4D870D"
+                            title='Veiligheid'
+                            text='We begrijpen maar al te goed dat een veilige website van het grootste belang is. Wees gerust, we zorgen ervoor dat elke website voldoende beveiligd wordt.'
                         />
                         <Card
-                            title={'Personalisatie'}
-                            img={pensilRuler}
-                            altText={'potlood en meetlat'}
-                            usps={['volledig naar eigen smaak', '100% unieke website']}
-                            btn={<CardButton text="ondek meer" link="/diensten" />}
+                            img={personalization}
+                            titleColor="#6321AE"
+                            title='Personalisatie'
+                            text='Heb je niet voldoende aan de zoveelste WordPress-template? Wil je een uniek design? Ook hiervoor ben je bij ons ben je aan het juiste adres. We creëren een website volledig op maat en maken jouw ideeën realiteit.'
                         />
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', margin: '50px 0' }}>

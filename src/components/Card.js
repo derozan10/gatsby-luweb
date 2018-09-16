@@ -1,20 +1,18 @@
 import React from 'react'
-import './card.css'
+import Fade from 'react-reveal/Fade';
+import '../stylesheets/card.sass'
 
 const Card = (props) => {
     return (
-        <div className="card">
-            <div className="cardImage">
-                <img className="img-responsive" src={props.img} alt={props.altText} />
-            </div>
-            <div className="cardText">
-                <p className="cardTitle">{props.title}</p>
-                <div className="usps">
-                    {props.usps.map((usp, index) => <div key={index + 'card'} className="uspContainer"><span className="checkMark">&#10003;</span><p className="usp">{usp}</p></div>)}
+        <Fade>
+            <div className="card">
+                <img className="cardImage" src={props.img} alt="icon" />
+                <div className="cardText">
+                    <h2 style={{ color: props.titleColor }}>{props.title} →</h2>
+                    <p>{props.text}</p>
                 </div>
-                {props.btn}
             </div>
-        </div>
+        </Fade>
     )
 }
 

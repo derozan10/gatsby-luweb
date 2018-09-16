@@ -12,7 +12,7 @@ const StyledOver = styled.div`
         background-image: url(${ diamond}), linear-gradient(to right top, #221C67, #00468F, #006DA9);
         position: relative;
         #overContainer {
-            margin-top: 40px;
+            padding: 40px 0;
         }
         #luwebInfo {
             width: 50vw;

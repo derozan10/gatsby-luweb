@@ -6,7 +6,6 @@ import Succes from '../components/Succes';
 import Cards from '../components/Cards';
 import Footer from '../components/Footer'
 
-import './index.css'
 import CTA from '../components/CTA';
 import Backdrop from '../components/Backdrop';
 
