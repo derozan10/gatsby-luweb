@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import styled from "styled-components";
-import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
 
 import Backdrop from './Backdrop';
 import '../stylesheets/navbar.sass'
@@ -24,6 +24,11 @@ const StyledNavContainer = styled.nav`
     #menu {
       z-index: 1;
     }
+    @media (min-width: 576px){
+      .react-reveal {
+        opacity: 1!important
+       }
+    }
     ul {
       margin: 0;
       list-style: none;
@@ -34,8 +39,6 @@ const StyledNavContainer = styled.nav`
       @media (max-width: 576px) {
         display: none;
         margin-top: 60px;
-        margin-left: 10vw;
-        margin-right: 10vw;
         flex-direction: column;
         top: 0px;
         right: 0px;
@@ -66,7 +69,7 @@ const StyledNavContainer = styled.nav`
       background-color: #f2f2f2;
       position: absolute;
       top: 20px;
-      width: 80vw;
+      width: 90vw;
       a {
         color: #333;
       }
@@ -143,7 +146,7 @@ export default class Navbar extends Component {
           </a>
           <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
             <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
-            <Zoom>
+            <Fade top opposite when={this.state.menuOpen}>
               <ul>
                 <Link to="/" exact activeClassName="activeLink">
                   <li>Home</li>
@@ -161,7 +164,7 @@ export default class Navbar extends Component {
                   <li>Blog</li>
                 </Link>
               </ul>
-            </Zoom>
+            </Fade>
           </div>
         </StyledNavContainer >
         {this.props.inverse &&

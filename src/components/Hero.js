@@ -2,7 +2,7 @@ import React from 'react';
 import Link from "gatsby-link";
 import Button from './Button';
 import Container from '../components/Container';
-import laptop from "../img/mac.png"
+import laptop from "../img/mac.svg"
 
 import "../stylesheets/hero.sass"
 
@@ -31,7 +31,7 @@ export default () => {
                     </Link>
                 </div>
             </div>
-            <img src={laptop} alt="laptop" />
+            <img id="laptop" src={laptop} alt="laptop" />
         </header>
     )
 }
