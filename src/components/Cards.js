@@ -47,7 +47,7 @@ export default () => {
                             img={responsive}
                             titleColor="#3360A6"
                             title='Responsive design'
-                            text='Een responsive website is een website die er goed uitziet op alle schermen. Al onze websites zijn geoptimaliseerd voor zowat alle soorten schermen, zodat deze er even goed uitziet op je smartphone, tablet, laptop of desktop'
+                            text='Een responsive website is een website die er goed uitziet op alle schermen. Je kan er vanuit gaan dat al onze websites mooi schalen op elke toestel. Of het nu om een smartphone, tablet, laptop of desktop gaat.'
                         />
                         <Card
                             img={performance}

@@ -17,7 +17,7 @@ export default () => {
             </div>
             <div className="heroText">
                 <h1>Web development is onze passie</h1>
-                <p>Bij Luweb kan u terecht voor alles wat u nodig heeft om uw online verhaal tot een succes te maken. We zijn gespecialiseerd in uiterst performante websites, met een goed ook voor design</p>
+                <p>Bij Luweb kan u terecht voor alles wat u nodig heeft om uw online verhaal tot een succes te maken. We zijn gespecialiseerd in uiterst performante websites, met een goed ook voor design.</p>
                 <div>
                     <Link to="/diensten" >
                         <Button color="white">
