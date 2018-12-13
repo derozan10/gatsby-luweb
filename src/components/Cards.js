@@ -2,14 +2,14 @@ import React from 'react'
 import Container from './Container'
 import Card from './Card'
 import Button from './Button'
-import CardButton from './CardButton'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import waves from '../img/wave.png'
 // import responsive from '../img/responsive.png'
-import shuttle from '../img/shuttle.png'
-import key from '../img/key.png'
-import pensilRuler from '../img/pensil-ruler.png'
+// import CardButton from './CardButton'
+// import shuttle from '../img/shuttle.png'
+// import key from '../img/key.png'
+// import pensilRuler from '../img/pensil-ruler.png'
 import performance from '../img/performance.svg'
 import personalization from '../img/personalization.svg'
 import responsive from '../img/responsive.svg'
@@ -21,14 +21,14 @@ const StyledCards = styled.div`
         height: 50px;
         width: 100vw;
         display: block;
-        background-image: url(${ waves});
+        background-image: url(${waves});
         background-position: top right;
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
         top: -45px
     }
-}`
+`
 
 export default () => {
     const tarieven = {
@@ -65,7 +65,7 @@ export default () => {
                             img={personalization}
                             titleColor="#6321AE"
                             title='Personalisatie'
-                            text='Heb je niet voldoende aan de zoveelste WordPress-template? Wil je een uniek design? Ook hiervoor ben je bij ons ben je aan het juiste adres. We creëren een website volledig op maat en maken jouw ideeën realiteit.'
+                            text='Heb je niet voldoende aan de zoveelste WordPress-template? Wil je een uniek design? Ook hiervoor ben je bij Luweb aan het juiste adres. We creëren een website volledig op maat en maken jouw ideeën realiteit.'
                         />
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', margin: '50px 0' }}>

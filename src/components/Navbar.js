@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import styled from "styled-components";
-import Fade from 'react-reveal/Fade';
 
 import Backdrop from './Backdrop';
 import '../stylesheets/navbar.sass'
@@ -63,7 +62,6 @@ const StyledNavContainer = styled.nav`
       flex-direction: column;
       justify-content: space-around;
       margin-top: 50px;
-      height: 50vh;
       padding: 5px;
       border-radius: 5px;
       background-color: #f2f2f2;
@@ -89,7 +87,7 @@ const StyledNavContainer = styled.nav`
       }
     }
     ul li {
-      margin: 0;
+      margin: 10px 0;
       padding: 10px;
     }
     img {
@@ -146,9 +144,9 @@ export default class Navbar extends Component {
           </a>
           <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
             <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
-            <Fade top opposite when={this.state.menuOpen}>
+            {/* <Fade top opposite when={this.state.menuOpen}> */}
               <ul>
-                <Link to="/" exact activeClassName="activeLink">
+                <Link to="/" activeClassName="activeLink">
                   <li>Home</li>
                 </Link>
                 <Link to="/over" activeClassName="activeLink">
@@ -164,7 +162,7 @@ export default class Navbar extends Component {
                   <li>Blog</li>
                 </Link>
               </ul>
-            </Fade>
+            {/* </Fade> */}
           </div>
         </StyledNavContainer >
         {this.props.inverse &&

@@ -1,15 +1,13 @@
 import React from 'react'
 
+import Layout from '../components/Layout'
 import Container from '../components/Container'
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Button from '../components/Button';
 
 import "../stylesheets/contact.sass"
 
 const Contact = () => (
-    <div>
-        <Navbar inverse />
+    <Layout inverse>
         <Container>
             <h1>Contacteer ons</h1>
             <h4>We helpen je graag verder.</h4>
@@ -46,9 +44,7 @@ const Contact = () => (
                 <p>BE0677875095</p>
             </div>
         </Container>
-        <Footer />
-    </div >
-
+    </Layout>
 )
 
 export default Contact

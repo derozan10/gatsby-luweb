@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import smallLogo from '../img/luweb-logo-blue-small.svg'
-import instagram from '../img/instagram.svg'
+// import instagram from '../img/instagram.svg'
 import styled from 'styled-components'
 
 const StyledFooter = styled.div`
@@ -16,8 +16,8 @@ const StyledFooter = styled.div`
                 display: block;
                 position: absolute;
                 width: 100%;
-                height: 2px;
-                background-image: ${props => props.inverse ? 'linear-gradient(-90deg,rgba(255,255,255,0) 0,#fff 5%,#fff 90%,rgba(255,255,255,0) 100%)' : 'linear-gradient(-90deg,rgba(14,30,37,0) 0,#0e1e25 5%,#0e1e25 90%,rgba(14,30,37,0) 100%)'};
+                height: 1px;
+                background: ${props => props.inverse ? 'linear-gradient(-90deg,rgba(255,255,255,0) 0,#fff 5%,#fff 90%,rgba(255,255,255,0) 100%)' : 'linear-gradient(-90deg,rgba(14,30,37,0) 0,#0e1e25 5%,#0e1e25 90%,rgba(14,30,37,0) 100%)'};
                 opacity: .4;
                 top: 0;
             }
@@ -43,7 +43,7 @@ export default class Footer extends Component {
                     <img src={smallLogo} style={{ height: "55px", width: "55px", margin: '0' }} alt="luweb logo" />
                 </div>
                 <div>
-                    <a href="https://www.facebook.com/LuWebDevelopment" target='_blank' rel="noopener">
+                    <a href="https://www.facebook.com/LuWebDevelopment" target='_blank' rel="noopener noreferrer">
                         <svg
                             className="social"
                             xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export default class Footer extends Component {
                             <path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z" />
                         </svg>
                     </a>
-                    <a href="https://www.instagram.com/luwebdevelopement" target='_blank' rel="noopener">
+                    <a href="https://www.instagram.com/luwebdevelopement" target='_blank' rel="noopener noreferrer">
                         <svg
                             className="social"
                             xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-import Button from './Button';
+// import Button from './Button';
 import Link from 'gatsby-link'
 import smallArrow from '../img/smallArrow.svg'
 import underConstruction from '../img/under-construction.svg'

@@ -1,54 +1,55 @@
 #hero
     color: #fff
-    font-family: Segoe UI
     height: 60vh
+    position: relative
     @media(max-width: 400px)
-        height: 75vh
+        height: 400px
     #hero_gradient
-        top: -100px
+        top: -50%
         z-index: -1
-        height: 90vh
-        width: 100vw
-        background: linear-gradient(150deg, #221C67 15%, #4163fc 70%, #00def5 94%)
+        height: 150%
+        width: 100%
+        background: linear-gradient(to right top, #221C67, #00468F, #006DA9)
         background-position: top left, center
-        transform: skewY(-10deg)
+        transform: skewY(-6deg)
         transform-origin: 0
         position: absolute
-        @media(max-width: 400px)
-            height: 110vh
         span
             position: absolute
             height: 190px
-            &:nth-of-type(1)
-                top: 25vh
-                width: 20%
-                left: -12%
-                background: linear-gradient(150deg, #242e7e 15%, #3262e1 94%)
-            &:nth-of-type(2)
-                width: 25%
-                right: 10%
-                top: 15vh
-                background: linear-gradient(150deg, #2e53c4 15%, #2d52c2 94%)
-            &:nth-of-type(3)
-                width: 33.33333%
-                bottom: 0
-                left: 20%
-                background: linear-gradient(150deg,#3439a6 20%, #2d52c2 94%)
-            &:nth-of-type(4)
-                width: 33.33333%
-                bottom: 20%
-                right: -10%
-                background: linear-gradient(150deg, #2587f9 15%, #00def5 94%)
+            @media(max-width: 576px)
+                display: none
+            // &:nth-of-type(1)
+            //     top: 25vh
+            //     width: 20%
+            //     left: -12%
+            //     background: linear-gradient(150deg, #054089 15%, #0f59a3 94%)
+            // &:nth-of-type(2)
+            //     width: 25%
+            //     right: 10%
+            //     top: 15vh
+            //     background: linear-gradient(150deg, #000d1d00 15%, #3F51B5 94%)
+            // &:nth-of-type(3)
+            //     width: 33.33333%
+            //     bottom: 0
+            //     left: 20%
+            //     background: linear-gradient(150deg, #242e7e 15%, #00279000 94%)
+            // &:nth-of-type(4)
+            //     width: 33.33333%
+            //     bottom: 10%
+            //     right: -10%
+            //     background: linear-gradient(150deg, #02054200 20%, #2d52c2 94%)
     .heroText
         position: relative
-        margin: 8vh 0
-        width: 40vw
-        margin-left: 15vw
+        margin: 20px 0
+        width: 40%
         display: flex
         flex-direction: column
         @media(max-width: 576px)
-            width: 90vw
-            margin-left: 5vw
+            width: 100%
+            padding: 10px
+        @media(min-width: 768px)
+            margin-left: 15%
         h1
             font-weight: 400
             font-size: 40px

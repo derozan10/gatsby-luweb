@@ -1,15 +1,15 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Container from '../components/Container';
+import Layout from '../components/Layout'
 import styled from 'styled-components';
-import diamond from '../img/diamond.svg'
-import bigWave from '../img/big-wave.svg'
+// import diamond from '../img/diamond.svg'
+// import bigWave from '../img/big-wave.svg'
 import LuwebMap from '../components/LuwebMap'
 
+// import Link from 'gatsby-link'
+// import Container from '../components/Container';
+
 const StyledOver = styled.div`
-        background-image: url(${ diamond}), linear-gradient(to right top, #221C67, #00468F, #006DA9);
+        /* background: linear-gradient(to right top, #221C67, #00468F, #006DA9); */
         position: relative;
         #overContainer {
             padding: 40px 0;
@@ -19,13 +19,10 @@ const StyledOver = styled.div`
             margin-left: 10vw;
             padding-bottom: 12vw;
         }
-        p {
-            color: #fff;
-        }
         p a {
             font-weight: bold;
             text-decoration: underline;
-            color: #fff;
+            color: #4D7A95;
             cursor: pointer;
         }
         p a:hover {
@@ -47,22 +44,19 @@ const StyledOver = styled.div`
 
 const Over = () => {
     return (
-        <div>
+        <Layout inverse>
             <StyledOver>
-                <Navbar />
                 <div id="overContainer">
                     <div id="luwebInfo">
-                        <p>Luweb is een kleine onderneming, opgestart in 2017 door <a href="https://www.lucasvanremoortere.com" target="_blank"><strong>Lucas Van Remoortere</strong></a>.</p>
+                        <p>Luweb is een kleine onderneming, opgestart in 2017 door <a href="https://www.lucasvanremoortere.com" target="_blank" rel="noopener noreferrer"><strong>Lucas Van Remoortere</strong></a>.</p>
                         <p>Door dagdagelijks bezig te zijn met web development en <strong>Front-End Developer</strong> te zijn van beroep, beschik ik over al de nodige kennis om ook jouw bedrijf vooruit te helpen met het opbouwen en onderhouden van je website.</p>
-                        <p>De onderneming zelf is opgestart als zelfstandige in bijberoep en valt daarom onder de noemer "kleine onderneming onderworpen aan de vrijstellingsregeling van belasting", alsgevolg is <strong>BTW niet toepasselijk</strong>. Voor meer info hierover kan u de <a href="https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/vrijstellingsregeling" target="_blank">website van de Federale Overheidsdienst Financiën</a> raadplegen.</p>
+                        <p>De onderneming zelf is opgestart als zelfstandige in bijberoep en valt daarom onder de noemer "kleine onderneming onderworpen aan de vrijstellingsregeling van belasting", alsgevolg is <strong>BTW niet toepasselijk</strong>. Voor meer info hierover kan u de <a href="https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/vrijstellingsregeling" target="_blank" rel="noopener noreferrer">website van de Federale Overheidsdienst Financiën</a> raadplegen.</p>
                         <p>Verder is de onderneming gevestigd te <strong>Antwerpen</strong>, Borgerhout.</p>
                     </div>
-                    <img src={bigWave} alt="big wave" id='bigwave' />
                 </div>
             </StyledOver>
             <LuwebMap />
-            <Footer />
-        </div >
+        </Layout >
     )
 }
 

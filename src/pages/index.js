@@ -1,25 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import Navbar from '../components/Navbar';
+import Layout from '../components/Layout'
 import Hero from '../components/Hero';
 import Succes from '../components/Succes';
 import Cards from '../components/Cards';
-import Footer from '../components/Footer'
-
 import CTA from '../components/CTA';
-import Backdrop from '../components/Backdrop';
 
-export default class IndexPage extends Component {
-    render() {
-        return (
-            <div>
-                <Navbar />
-                <Hero />
-                <Succes />
-                <Cards />
-                <CTA />
-                <Footer />
-            </div>
-        )
-    }
+// import Footer from '../components/Footer'
+// import Navbar from '../components/Navbar';
+// import Backdrop from '../components/Backdrop';
+
+const index = () => {
+  return (
+    <Layout>
+        <Hero />
+        <Succes />
+        <Cards />
+        <CTA />
+    </Layout>
+  )
 }
+
+export default index

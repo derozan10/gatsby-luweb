@@ -1,28 +1,20 @@
 import React from 'react'
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
+import Layout from '../components/Layout'
 import Container from '../components/Container';
-import fast from '../img/fast.svg';
-import mobile from '../img/mobile.svg';
-import brush from '../img/brush.svg';
-import waveTop from '../img/waveTop.svg';
+import Dienst from '../components/Dienst';
+import CTA2 from '../components/CTA2';
+
 import responsive from '../img/responsive.png'
 import shuttle from '../img/shuttle.svg';
 import key from '../img/key.svg';
 import pensilRuler from '../img/pensil-ruler.png';
+
 import './Diensten.css'
-import Dienst from '../components/Dienst';
-import { Link } from 'gatsby-link';
-import CTA2 from '../components/CTA2';
-const pathStyle = {
-    fill: '#fff',
-    fillOpacity: '.2'
-}
 
 const Diensten = () => {
     return (
-        <div>
-            <Navbar inverse />
+        <Layout inverse>
             <Container>
                 <h1>Onze diensten</h1>
                 <h2>Nieuwe website</h2>
@@ -66,8 +58,7 @@ const Diensten = () => {
                     <li>… </li>
                 </ul>
             </Container>
-            <Footer />
-        </div >
+        </Layout>
     )
 }
 
