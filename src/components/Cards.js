@@ -2,7 +2,7 @@ import React from 'react'
 import Container from './Container'
 import Card from './Card'
 import Button from './Button'
-import Link from 'gatsby-link'
+import { Link } from "gatsby"
 import styled from 'styled-components'
 import waves from '../img/wave.png'
 // import responsive from '../img/responsive.png'

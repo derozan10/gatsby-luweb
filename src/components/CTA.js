@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button';
 import Container from '../components/Container';
-import Link from 'gatsby-link'
+import { Link } from "gatsby"
 
 export default () => {
     const cta = {
