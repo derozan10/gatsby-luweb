@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "gatsby";
+
 import Container from './Container';
-// import Button from './Button';
-import { Link } from "gatsby"
 import smallArrow from '../img/smallArrow.svg'
 import underConstruction from '../img/under-construction.svg'
 

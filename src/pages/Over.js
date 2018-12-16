@@ -1,12 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import styled from 'styled-components';
-// import diamond from '../img/diamond.svg'
-// import bigWave from '../img/big-wave.svg'
 import LuwebMap from '../components/LuwebMap'
-
-// import Link from 'gatsby-link'
-// import Container from '../components/Container';
 
 const StyledOver = styled.div`
         /* background: linear-gradient(to right top, #221C67, #00468F, #006DA9); */
