@@ -8,7 +8,7 @@ import "../stylesheets/contact.sass"
 
 const Contact = () => (
     <Layout inverse>
-        <Container>
+        <Container style={{minHeight: '60vh'}}>
             <h1>Contacteer ons</h1>
             <h4>We helpen je graag verder.</h4>
             <p>Laat hieronder even <strong>een berichtje</strong> achter en we contacteren je zo snel mogelijk.<br />

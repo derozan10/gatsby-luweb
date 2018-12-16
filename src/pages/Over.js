@@ -12,7 +12,6 @@ const StyledOver = styled.div`
         #luwebInfo {
             width: 50vw;
             margin-left: 10vw;
-            padding-bottom: 12vw;
         }
         p a {
             font-weight: bold;
