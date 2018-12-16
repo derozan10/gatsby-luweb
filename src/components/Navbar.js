@@ -149,16 +149,16 @@ export default class Navbar extends Component {
                 <Link to="/" activeClassName="activeLink">
                   <li>Home</li>
                 </Link>
-                <Link to="/over" activeClassName="activeLink">
+                <Link to="/Over" activeClassName="activeLink">
                   <li>Over Luweb</li>
                 </Link>
-                <Link to="/diensten" activeClassName="activeLink">
+                <Link to="/Diensten" activeClassName="activeLink">
                   <li>Onze diensten</li>
                 </Link>
-                <Link to="/contact" activeClassName="activeLink">
+                <Link to="/Contact" activeClassName="activeLink">
                   <li>Contact</li>
                 </Link>
-                <Link to="/blog" activeClassName="activeLink">
+                <Link to="/Blog" activeClassName="activeLink">
                   <li>Blog</li>
                 </Link>
               </ul>
