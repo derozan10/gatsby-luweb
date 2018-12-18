@@ -7,7 +7,8 @@ import smallArrow from '../img/smallArrow.svg'
 import underConstruction from '../img/under-construction.svg'
 
 const StyledCTA2 = styled.div`
-    background: linear-gradient(to right, #88F3E2 , #50E3C2 10%);
+    /* background: linear-gradient(to right, #88F3E2 , #50E3C2 10%); */
+    background: linear-gradient(to right, #1A246D, #4d7a94 90%);
     color: #fff;
     padding: 80px 0 20px 0;
     margin: 120px 0 40px 0;

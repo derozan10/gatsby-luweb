@@ -5,6 +5,7 @@ import Button from './Button';
 // import laptop from "../img/mac.svg"
 
 import "../stylesheets/hero.sass"
+import Container from './Container';
 
 export default () => {
     return (
@@ -15,22 +16,24 @@ export default () => {
                 <span></span>
                 <span></span>
             </div>
-            <div className="heroText">
-                <h1>Web development is onze passie</h1>
-                <p>We zijn gespecialiseerd in uiterst performante websites, <br/>met een goed oog voor design.</p>
-                <div>
-                    <Link to="/diensten" >
-                        <Button color="white">
-                            Onze diensten
+            <Container>
+                <div className="heroText">
+                    <h1>Web development is onze passie</h1>
+                    <p>We zijn gespecialiseerd in uiterst performante websites, <br/>met een goed oog voor design.</p>
+                    <div>
+                        <Link to="/diensten" >
+                            <Button color="white">
+                                Onze diensten
+                                </Button>
+                        </Link>
+                        <Link to="/contact">
+                            <Button color="blue">
+                                Contacteer ons
                             </Button>
-                    </Link>
-                    <Link to="/contact">
-                        <Button color="blue">
-                            Contacteer ons
-                        </Button>
-                    </Link>
+                        </Link>
+                    </div>
                 </div>
-            </div>
+            </Container>
             {/* <img id="laptop" src={laptop} alt="laptop" /> */}
         </header>
     )

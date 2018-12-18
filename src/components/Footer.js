@@ -20,8 +20,10 @@ const StyledFooter = styled.div`
                 opacity: .4;
                 top: 0;
             }
-            #address, #logo, #socials {
-                width: 25%;
+            @media(min-width: 577px){
+                #address, #logo, #socials {
+                    width: 25%;
+                }
             }
             #address {
                 font-size: 14px;
@@ -33,8 +35,14 @@ const StyledFooter = styled.div`
             #logo {
                 text-align: center
             }
+            @media(max-width: 576px){
+                #logo{
+                    display: none;
+                }
+            }
             #socials {
-                text-align: right;
+                display: flex;
+                justify-content: flex-end;
             }
             .social {
                 fill: #aba5a5;
