@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import styled from 'styled-components';
-import LuwebMap from '../components/LuwebMap'
 
 const StyledOver = styled.div`
         /* background: linear-gradient(to right top, #221C67, #00468F, #006DA9); */
@@ -49,7 +48,6 @@ const Over = () => {
                     </div>
                 </div>
             </StyledOver>
-            <LuwebMap />
         </Layout >
     )
 }

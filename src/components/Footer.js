@@ -5,12 +5,11 @@ import styled from 'styled-components'
 
 const StyledFooter = styled.div`
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center ;
+            justify-content: space-around;
+            align-items: flex-start ;
             position: relative;
             padding: 20px;
-            margin: 40px auto 0 auto;
+            margin-top: 40px;
             ::after {
                 content: "";
                 display: block;
@@ -21,9 +20,21 @@ const StyledFooter = styled.div`
                 opacity: .4;
                 top: 0;
             }
-            div:nth-of-type(2) {
-                position: absolute;
-                right: 5vw;
+            #address, #logo, #socials {
+                width: 25%;
+            }
+            #address {
+                font-size: 14px;
+            }
+            #address > span {
+                display: block;
+                font-style: normal
+            }
+            #logo {
+                text-align: center
+            }
+            #socials {
+                text-align: right;
             }
             .social {
                 fill: #aba5a5;
@@ -39,10 +50,17 @@ export default class Footer extends Component {
 
         return (
             <StyledFooter >
-                <div>
+                <address id="address">
+                    <span>Luweb</span>
+                    <span>Dokter Van de Perrelei 25, 2140 Borgerhout</span>
+                    <span>0496/06.10.42</span>
+                    <span>info@luweb.be</span>
+                    <span>BE0677875095</span>
+                </address>
+                <div id="logo">
                     <img src={smallLogo} style={{ height: "55px", width: "55px", margin: '0' }} alt="luweb logo" />
                 </div>
-                <div>
+                <div id="socials">
                     <a href="https://www.facebook.com/LuWebDevelopment" target='_blank' rel="noopener noreferrer">
                         <svg
                             className="social"
