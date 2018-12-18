@@ -10,7 +10,6 @@ import shuttle from '../img/shuttle.svg';
 import key from '../img/key.svg';
 import pensilRuler from '../img/pensil-ruler.png';
 
-import './Diensten.css'
 
 const Diensten = () => {
     return (
