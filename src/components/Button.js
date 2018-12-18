@@ -6,7 +6,7 @@ const Button = (props) => {
         color: ${props.color === "white" ? "#221C67" : "#fff"};
         text-align: center;
         padding: 10px 20px;
-        border-radius: 3px;
+        border-radius: 18px;
         margin-bottom: 10%;
         box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.2);
         letter-spacing: 0.094em;
