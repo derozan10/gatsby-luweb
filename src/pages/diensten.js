@@ -9,11 +9,13 @@ import responsive from '../img/responsive.png'
 import shuttle from '../img/shuttle.svg';
 import key from '../img/key.svg';
 import pensilRuler from '../img/pensil-ruler.png';
+import SEO from '../components/SEO';
 
 
 const Diensten = () => {
     return (
         <Layout inverse>
+        <SEO title="Onze diensten"/>
             <Container>
                 <h1>Onze diensten</h1>
                 <h2>Nieuwe website</h2>

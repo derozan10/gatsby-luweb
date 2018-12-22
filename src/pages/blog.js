@@ -2,10 +2,12 @@ import React from 'react'
 
 import Layout from '../components/Layout'
 import Container from '../components/Container';
+import SEO from '../components/SEO';
 
 const Blog = () => {
   return (
         <Layout inverse>
+            <SEO title="Onze blog"/>
             <Container>
                 <h1>Coming Soon...</h1>
                 <p>Voorlopig hebben we nog geen content op onze blog. <br />

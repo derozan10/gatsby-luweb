@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import styled from 'styled-components';
 import Container from '../components/Container';
+import SEO from '../components/SEO';
 
 const StyledOver = styled.div`
         /* background: linear-gradient(to right top, #221C67, #00468F, #006DA9); */
@@ -35,6 +36,7 @@ const StyledOver = styled.div`
 const Over = () => {
     return (
         <Layout inverse>
+        <SEO title="Over ons"/>
             <Container>
                 <StyledOver>
                     <div id="overContainer">

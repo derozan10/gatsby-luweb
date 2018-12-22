@@ -4,11 +4,13 @@ import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Button from '../components/Button';
 import LuwebMap from '../components/LuwebMap'
+import SEO from '../components/SEO'
 
 import "../stylesheets/contact.sass"
 
 const Contact = () => (
     <Layout inverse>
+        <SEO title="Contacteer ons"/>
         <Container style={{ minHeight: '60vh' }}>
             <h1>Contacteer ons</h1>
             <div id="contactFlex">
