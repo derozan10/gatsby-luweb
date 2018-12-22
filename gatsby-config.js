@@ -1,16 +1,11 @@
 module.exports = {
   siteMetadata: {
-<<<<<<< HEAD
     title: "Luweb",
     titleTemplate: "%s · Web Development Antwerp",
     description:
       "Web development te Antwerpen - gespecialiseerd in performante websites met een goed oog voor design",
-    url: "https://www.luweb.com", // No trailing slash allowed!
+    siteUrl: "https://www.luweb.com", // sitemap
     image: "/luweb-logo-blueGradient-small.png"
-=======
-    title: 'Luweb',
-    siteUrl: `https://www.luweb.be`,
->>>>>>> 30b5182a79c1c0b0a0f11ae9ad450b01eb88b077
   },
   plugins: [
     'gatsby-plugin-react-helmet',
