@@ -88,7 +88,6 @@ const StyledNavContainer = styled.nav`
     }
     ul li {
       margin: 10px 0;
-      padding: 10px;
     }
     img {
       margin-bottom: 0px;
@@ -101,11 +100,11 @@ const StyledNavContainer = styled.nav`
     a {
       display: inline-block;
       text-decoration: none;
-      color: ${props => props.inverse ? '#162866' : '#fff'};
+      color: ${props => props.inverse ? '#477898' : '#fff'};
       font-family: 'Segoe UI';
     }
     a.activeLink {
-      color: #00ff96;
+      border-bottom: ${props => props.inverse ? 'solid 2px' : 'none'};
     }
     ::after {
       content: "";
@@ -145,23 +144,26 @@ export default class Navbar extends Component {
           <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
             <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
             {/* <Fade top opposite when={this.state.menuOpen}> */}
-              <ul>
-                <Link to="/" activeClassName="activeLink">
-                  <li>Home</li>
-                </Link>
-                <Link to="/over" activeClassName="activeLink">
-                  <li>Over Luweb</li>
-                </Link>
-                <Link to="/diensten" activeClassName="activeLink">
-                  <li>Onze diensten</li>
-                </Link>
-                <Link to="/contact" activeClassName="activeLink">
-                  <li>Contact</li>
-                </Link>
-                <Link to="/blog" activeClassName="activeLink">
-                  <li>Blog</li>
-                </Link>
-              </ul>
+            <ul>
+              <Link to="/" activeClassName="activeLink">
+                <li>Home</li>
+              </Link>
+              <Link to="/over" activeClassName="activeLink">
+                <li>Over Luweb</li>
+              </Link>
+              <Link to="/diensten" activeClassName="activeLink">
+                <li>Onze diensten</li>
+              </Link>
+              <Link to="/realisaties" activeClassName="activeLink">
+                <li>Realisaties</li>
+              </Link>
+              <Link to="/contact" activeClassName="activeLink">
+                <li>Contact</li>
+              </Link>
+              <Link to="/blog" activeClassName="activeLink">
+                <li>Blog</li>
+              </Link>
+            </ul>
             {/* </Fade> */}
           </div>
         </StyledNavContainer >

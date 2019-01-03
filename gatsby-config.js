@@ -10,9 +10,10 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
-    `gatsby-plugin-sitemap`,
     'gatsby-plugin-sass',
     'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -33,6 +34,13 @@ module.exports = {
         display: `standalone`,
         icon: `src/img/luweb-logo-blueGradient-small.png`, // This path is relative to the root of the site.
         legacy: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `realisatieImages`,
+        path: `${__dirname}/src/img/realisaties`,
       },
     },
     {
