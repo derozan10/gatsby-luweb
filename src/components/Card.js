@@ -8,7 +8,7 @@ const Card = (props) => {
             <div className="card">
                 <img className="cardImage" src={props.img} alt="icon" />
                 <div className="cardText">
-                    <h2 style={{ color: props.titleColor }}>{props.title} →</h2>
+                    <h3 style={{ color: props.titleColor }}>{props.title} →</h3>
                     <p>{props.text}</p>
                 </div>
             </div>

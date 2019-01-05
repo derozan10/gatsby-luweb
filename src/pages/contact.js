@@ -10,7 +10,7 @@ import "../stylesheets/contact.sass"
 
 const Contact = () => (
     <Layout inverse>
-        <SEO title="Contacteer ons"/>
+        <SEO title="Contacteer ons" />
         <Container style={{ minHeight: '60vh' }}>
             <h1>Contacteer ons</h1>
             <div id="contactFlex">
@@ -38,7 +38,7 @@ const Contact = () => (
                     <label>Bericht:</label>
                     <textarea name="bericht" required></textarea>
 
-                    <Button color="blue" type="submit" style={{ width: '100%', marginTop: '20px' }}>Verzend</Button>
+                    <Button primary type="submit" style={{ width: '100%', marginTop: '20px' }}>Verzend</Button>
                 </form>
             </div>
         </Container>

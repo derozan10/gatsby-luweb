@@ -3,12 +3,11 @@ import { Link } from "gatsby"
 import styled from "styled-components";
 
 import Backdrop from './Backdrop';
-import '../stylesheets/navbar.sass'
 import Logo from '../img/luweb-logo-white.svg'
 import BlueLogo from '../img/luweb-logo-blueGradient.svg'
 
 
-const StyledNavContainer = styled.nav`
+const StyledNav = styled.nav`
     margin-left: 10vw;
     width: 80vw;
     display: flex;
@@ -43,7 +42,6 @@ const StyledNavContainer = styled.nav`
         right: 0px;
       }
       ::before {
-        /* content: ""; */
         display: block;
         position: fixed;
         top: 0;
@@ -79,7 +77,7 @@ const StyledNavContainer = styled.nav`
         opacity: 1;
       }
       a.activeLink {
-        color: #fff;
+        color: ${props => props.theme.lightGreen};
       }
       a.activeLink li {
         background-color: #4D7A95;
@@ -100,11 +98,12 @@ const StyledNavContainer = styled.nav`
     a {
       display: inline-block;
       text-decoration: none;
-      color: ${props => props.inverse ? '#477898' : '#fff'};
+      color: ${props => props.inverse ? props.theme.blue : '#fff'};
       font-family: 'Segoe UI';
     }
     a.activeLink {
-      border-bottom: ${props => props.inverse ? 'solid 2px' : 'none'};
+      color: ${props => props.theme.lightGreen};
+      /* border-bottom: ${props => props.inverse ? 'solid 2px' : 'none'}; */
     }
     ::after {
       content: "";
@@ -128,6 +127,38 @@ const StyledNavContainer = styled.nav`
     }
 `
 
+const StyledWaves = styled.div`
+    #topwaves {
+      display: block;
+      width: 100%;
+      height: 100px;
+      transform: rotate(180deg);
+      #path1 {
+          animation: flow 10s infinite alternate ease-in-out;
+          fill: #4D7A95;
+          fill-opacity: 0.4;
+      }
+      #path2{
+          animation: flow 15s infinite alternate ease-in-out;
+          fill: #4D7A95;
+          fill-opacity: 0.4;
+      }
+      #path3{
+          animation: flow 20s infinite alternate ease-in-out;
+          fill: #4D7A95;
+          fill-opacity: 0.4;
+      }
+      @keyframes flow {
+        0% {
+          transform: translate(30%,0)
+        }
+        100% {
+          transform: translate(-30%,0)
+        }
+      }
+    }
+  `
+
 export default class Navbar extends Component {
   state = {
     menuOpen: false
@@ -137,7 +168,7 @@ export default class Navbar extends Component {
     return (
       <div>
         <Backdrop active={this.state.menuOpen} />
-        <StyledNavContainer {...this.props}>
+        <StyledNav {...this.props}>
           <a href="/">
             <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
           </a>
@@ -166,13 +197,16 @@ export default class Navbar extends Component {
             </ul>
             {/* </Fade> */}
           </div>
-        </StyledNavContainer >
+        </StyledNav >
         {this.props.inverse &&
-          <svg id='topwaves' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" version="1.1" preserveAspectRatio="none">
-            <path id="path1" d="m-100 1.041s61.625-4.5064 99.75 5.2333 70.594 15.391 124.5 16.312c55.25 0.9437 75.75-8.8513 75.75-8.8513v16.266h-300v-28.959z" />
-            <path id="path2" d="m-100 30h300v-6.6791s-16.526 2.7112-62.25 2.3702c-58.5-0.436-97.875-12.245-153.75-15.599-55.875-3.3549-84-0.2745-84-0.2745v20.182z" />
-            <path id="path3" d="m200 16.232s-24.625-5.6378-84.5-3.7495c-59.875 1.8882-74.962 15.943-144 16.562-50.75 0.455-71.5-3.7697-71.5-3.7697v4.7252h300v-13.768z" />
-          </svg>}
+          <StyledWaves>
+            <svg id='topwaves' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" version="1.1" preserveAspectRatio="none">
+              <path id="path1" d="m-100 1.041s61.625-4.5064 99.75 5.2333 70.594 15.391 124.5 16.312c55.25 0.9437 75.75-8.8513 75.75-8.8513v16.266h-300v-28.959z" />
+              <path id="path2" d="m-100 30h300v-6.6791s-16.526 2.7112-62.25 2.3702c-58.5-0.436-97.875-12.245-153.75-15.599-55.875-3.3549-84-0.2745-84-0.2745v20.182z" />
+              <path id="path3" d="m200 16.232s-24.625-5.6378-84.5-3.7495c-59.875 1.8882-74.962 15.943-144 16.562-50.75 0.455-71.5-3.7697-71.5-3.7697v4.7252h300v-13.768z" />
+            </svg>
+          </StyledWaves>
+        }
       </div>
     )
   }

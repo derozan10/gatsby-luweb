@@ -12,7 +12,71 @@ import responsive from '../img/responsive.svg'
 import safety from '../img/safety.svg'
 
 const StyledCards = styled.div`
-    ::after {
+h2 {
+    color: #fff;
+    text-align: center;
+    margin: 5vh 0 10vh 0;
+}
+.cardFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    @media(max-width: 576px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 45%;
+        border-radius: 3px;
+        background-color: #fff;
+        margin-bottom: 20px;
+        box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+        font-size: 17px;
+        padding: 20px;
+        height: 240px;
+        @media(max-width: 576px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            align-items: center;
+        }
+        h3 {
+            font-size: 17px;
+            text-transform: uppercase;
+            @media(max-width: 576px) {
+                text-align: center;
+            }
+        }
+        p {
+            margin-bottom: 0px;
+        }
+        .cardImage {
+            height: auto;
+            width: 100px;
+            position: absolute;
+            @media(max-width: 576px) {
+                position: relative;
+            }
+            img {
+                width: 200px;
+            }
+        }
+        .cardText {
+            padding: 10px 10px 10px 120px;
+            color: #6F787C;
+            @media(max-width: 576px) {
+                padding: 0
+            }
+        }
+        .cardTitle {
+            font-weight: bold;
+        }
+    }
+}
+&:after {
         content: '';
         height: 50px;
         width: 100vw;
@@ -37,7 +101,7 @@ export default () => {
         <StyledCards>
             <section style={tarieven}>
                 <Container >
-                    <h2 style={{ color: '#fff', textAlign: 'center', margin: '5vh 0 10vh 0' }}>Web development met een sterke focus op</h2>
+                    <h2>Web development met een sterke focus op</h2>
                     <div className="cardFlex">
                         <Card
                             img={responsive}
