@@ -2,25 +2,22 @@ import React, { Component } from 'react'
 import { Link } from "gatsby"
 import styled from "styled-components";
 
+import Container from "../components/Container"
 import Backdrop from './Backdrop';
-import Logo from '../img/luweb-logo-white.svg'
-import BlueLogo from '../img/luweb-logo-blueGradient.svg'
+import Logo from '../img/logos/luweb-logo-white.svg'
+import BlueLogo from '../img/logos/luweb-logo-blueGradient.svg'
 
 
 const StyledNav = styled.nav`
-    margin-left: 10vw;
-    width: 80vw;
     display: flex;
+    padding: 32px 0;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    @media (max-width: 576px){
-      width: 90vw;
-      margin: 0 auto;
-    }
     #menu {
       z-index: 1;
+
     }
     @media (min-width: 576px){
       .react-reveal {
@@ -30,10 +27,6 @@ const StyledNav = styled.nav`
     ul {
       margin: 0;
       list-style: none;
-      display: flex;
-      align-items: stretch;
-      justify-content: space-between;
-      width: 60vw;
       @media (max-width: 576px) {
         display: none;
         margin-top: 60px;
@@ -52,6 +45,9 @@ const StyledNav = styled.nav`
         z-index: -1;
         opacity: 0;
         transition: opacity 0ms ease 0s;
+      }
+      a {
+        margin: 0 20px;
       }
     }
     #menu.open ul {
@@ -72,6 +68,7 @@ const StyledNav = styled.nav`
       li, li a {
         font-weight: bold;
         width: 100%
+
       }
       ::before {
         opacity: 1;
@@ -86,6 +83,7 @@ const StyledNav = styled.nav`
     }
     ul li {
       margin: 10px 0;
+      font-size: 18px;
     }
     img {
       margin-bottom: 0px;
@@ -93,13 +91,11 @@ const StyledNav = styled.nav`
       height: auto;
       position: relative;
       z-index: 2;
-      margin: 20px;
     }
     a {
       display: inline-block;
       text-decoration: none;
       color: ${props => props.inverse ? props.theme.blue : '#fff'};
-      font-family: 'Segoe UI';
     }
     a.activeLink {
       color: ${props => props.theme.lightGreen};
@@ -107,7 +103,7 @@ const StyledNav = styled.nav`
     }
     ::after {
       content: "";
-      width: 80vw;
+      width: 100%;
       display: block;
       position: absolute;
       height: 2px;
@@ -168,36 +164,38 @@ export default class Navbar extends Component {
     return (
       <div>
         <Backdrop active={this.state.menuOpen} />
-        <StyledNav {...this.props}>
-          <a href="/">
-            <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
-          </a>
-          <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
-            <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
-            {/* <Fade top opposite when={this.state.menuOpen}> */}
-            <ul>
-              <Link to="/" activeClassName="activeLink">
-                <li>Home</li>
-              </Link>
-              <Link to="/over" activeClassName="activeLink">
-                <li>Over Luweb</li>
-              </Link>
-              <Link to="/diensten" activeClassName="activeLink">
-                <li>Onze diensten</li>
-              </Link>
-              <Link to="/realisaties" activeClassName="activeLink">
-                <li>Realisaties</li>
-              </Link>
-              <Link to="/contact" activeClassName="activeLink">
-                <li>Contact</li>
-              </Link>
-              <Link to="/blog" activeClassName="activeLink">
-                <li>Blog</li>
-              </Link>
-            </ul>
-            {/* </Fade> */}
-          </div>
-        </StyledNav >
+        <Container>
+          <StyledNav {...this.props}>
+            <a href="/">
+              <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
+            </a>
+            <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
+              <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
+              {/* <Fade top opposite when={this.state.menuOpen}> */}
+              <ul>
+                <Link to="/" activeClassName="activeLink">
+                  <li>Home</li>
+                </Link>
+                <Link to="/over" activeClassName="activeLink">
+                  <li>Over Luweb</li>
+                </Link>
+                <Link to="/diensten" activeClassName="activeLink">
+                  <li>Onze diensten</li>
+                </Link>
+                <Link to="/realisaties" activeClassName="activeLink">
+                  <li>Realisaties</li>
+                </Link>
+                <Link to="/contact" activeClassName="activeLink">
+                  <li>Contact</li>
+                </Link>
+                <Link to="/blog" activeClassName="activeLink">
+                  <li>Blog</li>
+                </Link>
+              </ul>
+              {/* </Fade> */}
+            </div>
+          </StyledNav >
+        </Container>
         {this.props.inverse &&
           <StyledWaves>
             <svg id='topwaves' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" version="1.1" preserveAspectRatio="none">

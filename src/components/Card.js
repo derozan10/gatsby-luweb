@@ -1,6 +1,6 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade';
-import '../stylesheets/card.sass'
+// import '../stylesheets/card.sass'
 
 const Card = (props) => {
     return (

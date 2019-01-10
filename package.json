@@ -35,6 +35,7 @@
     "styled-components": "^3.3.3",
     "typeface-amiko": "0.0.54",
     "typeface-hind": "0.0.54",
+    "typeface-lato": "0.0.54",
     "typeface-roboto": "0.0.54"
   },
   "keywords": [

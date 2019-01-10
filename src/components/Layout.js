@@ -7,7 +7,7 @@ import Footer from './Footer'
 import 'typeface-roboto'
 import './layout.css'
 import SEO from './SEO';
-import 'typeface-hind';
+import 'typeface-lato';
 
 const colorPalette = {
   green: "#42C6B6",
@@ -28,8 +28,10 @@ const Layout = props => {
     <ThemeProvider theme={colorPalette}>
       <>
         <SEO />
-        <Navbar inverse={props.inverse ? true : false} />
-        {props.children}
+        <div style={{ overflow: "hidden" }}>
+          <Navbar inverse={props.inverse ? true : false} />
+          {props.children}
+        </div>
         <Footer />
       </>
     </ThemeProvider>

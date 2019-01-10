@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import smallLogo from '../img/luweb-logo-blue-small.svg'
+import smallLogo from '../img/logos/luweb-logo-blue-small.svg'
 // import instagram from '../img/instagram.svg'
 import styled from 'styled-components'
 

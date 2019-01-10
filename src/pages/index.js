@@ -1,6 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { Fade } from 'react-reveal';
 
 import Layout from '../components/Layout'
 import Hero from '../components/Hero';
@@ -10,90 +11,52 @@ import CTA from '../components/CTA';
 import SEO from '../components/SEO'
 import Container from '../components/Container';
 import arrowRight from '../img/arrow-right.svg'
+import design from '../img/design-round.svg';
+import code from '../img/code-round.svg';
+import performance from '../img/performance-round.svg';
+import analytics from '../img/analytics-round.svg';
 
 
-const StyledServices = styled.div`
+const StyledServices = styled.section`
+  overflow: hidden;
   position:relative;
+  height: 100%;
+  padding: 20px;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(to bottom right, #fff 50%, #eaeaea);
+    transform: rotate(-7deg);
+    transform-origin: left top;
+    left: -10%;
+    height: 100%;
+    width: 150%;
+    z-index: -1;
+}
   #services {
+    margin: 24px 0 48px 0;
     display: flex;
-    justify-content: space-between;
-    list-style-type: none;
+    justify-content: space-around;
     flex-wrap: wrap;
-    li {
-      padding: 10px;
-      margin: 10px;
-      width: 300px;
-      position: relative;
-      img{
-        height: 200px;
-        width: 100%;
-      }
+    .service {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px;
+      margin: 0 12px;
+      width: 240px;
       h2, p {
-        color: #333;
+        text-align: center;
       }
       h2 {
-        font-size: 25px;
+        margin: 12px 0;
       }
       p {
-        color: ${props => props.theme.lightGray}
-      }
-      &:hover {
-        background: ${props => props.theme.blue};
-        h2, p {
-          color: #fff;
-        }
-      }
-      .arrow {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        height: 20px;
-        width: 20px;
-        &:before {
-          content: "";
-          display: block;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-          border-left: 1px solid #dcdcdc;
-          border-top: 1px solid #dcdcdc;
-          width: 38px;
-          height: 38px;
-          position: absolute;
-          z-index: 1;
-        }
+        font-size: 16px;
+        color: ${props => props.theme.gray}
       }
     }
-  }
-  #sideCtaContainer{
-    display: flex;
-    justify-content: flex-end;
-  #sideCTA {
-    position: relative;
-    right: 0;
-    top: -40px;
-    width: 300px;
-    padding: 80px;
-    z-index: 1;
-    &:before{
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transform: skewX(-10deg) rotate(-10deg);
-      transform-origin: top left;
-      background-color: ${props => props.theme.lightGreen};
-      z-index: -1;
-    }
-    p {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #fff;
-    }
-  }
   }
 `
 const index = () => {
@@ -103,7 +66,7 @@ const index = () => {
       <Hero />
       <StyledServices>
         <Container>
-          <h1>Wat we doen</h1>
+          {/* <h1>Wat we doen</h1>
           <p>Voor een nieuwe of bestaande website ben je bij ons aan het juiste adres. </p>
           <ul id="services">
             <li>
@@ -154,13 +117,33 @@ const index = () => {
                 </p>
               </Link>
             </li>
-          </ul>
+          </ul> */}
+          <h1>Wat we doen</h1>
+          <Fade bottom cascade>
+            <div id="services">
+              <div className="service">
+                <img src={design} alt="design" />
+                <h2>Web design</h2>
+                <p>Een goede website vertrekt steeds van een sterk design. De website moet een mooi, gebruiksvriendelijk en functioneel geheel vormen.</p>
+              </div>
+              <div className="service">
+                <img src={code} alt="code" />
+                <h2>Web development</h2>
+                <p>We vertalen designs naar code, rekening houdend met alle hedendaagse devices. Hiervoor maken we uitsluitend gebruik van de nieuwste technologieeën.</p>
+              </div>
+              <div className="service">
+                <img src={performance} alt="performance" />
+                <h2>Performance</h2>
+                <p>We geven je website een boost om een supersnelle laadtijd te bekomen. Hiedoor scoor je nog hoger in Google en verhoog je het gebruiksgemak van je website. </p>
+              </div>
+              <div className="service">
+                <img src={analytics} alt="analytics" />
+                <h2>Analytics</h2>
+                <p>Met tools als Google Analytics kom je alles te weten van je bezoekers zodat je strategische inzichten krijgt en hierop doorslaggevende beslissingen kan maken.</p>
+              </div>
+            </div>
+          </Fade>
         </Container>
-        <div id="sideCtaContainer">
-          <div id="sideCTA">
-            <p>versterk je online imago met een KICKASS website</p>
-          </div>
-        </div>
       </StyledServices>
       <Succes />
       <Cards />

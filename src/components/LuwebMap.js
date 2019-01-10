@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Logo from '../img/luweb-logo-blue.svg';
+import Logo from '../img/logos/luweb-logo-blue.svg';
 
 const LuwebMapLogo = () => <img src={Logo} style={{ width: '100px', height: 'auto' }} alt="luweb logo" />
 
