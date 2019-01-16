@@ -34,6 +34,11 @@ const StyledServices = styled.section`
   .serviceCards {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @media(max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `
 

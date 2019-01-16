@@ -9,6 +9,7 @@ const StyledCard = styled.div`
     box-shadow: ${props => props.theme.boxShadow};
     overflow: hidden;
     background-color: #fff;
+    margin: 20px 0;
     h3 {
         font-size: 24px;
         font-weight: bold;
@@ -16,6 +17,7 @@ const StyledCard = styled.div`
     }
     p {
         margin-bottom: 20px;
+        height: 150px;
     }
     &:before {
         content: '';
