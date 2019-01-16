@@ -74,7 +74,7 @@ const StyledNav = styled.nav`
         opacity: 1;
       }
       a.activeLink {
-        color: ${props => props.theme.lightGreen};
+        color: ${props => props.theme.colors.primary.eight};
       }
       a.activeLink li {
         background-color: #4D7A95;
@@ -95,10 +95,10 @@ const StyledNav = styled.nav`
     a {
       display: inline-block;
       text-decoration: none;
-      color: ${props => props.inverse ? props.theme.blue : '#fff'};
+      color: ${props => props.inverse ? props.theme.colors.blue : '#fff'};
     }
     a.activeLink {
-      color: ${props => props.theme.lightGreen};
+      color: ${props => props.theme.colors.lightGreen};
       /* border-bottom: ${props => props.inverse ? 'solid 2px' : 'none'}; */
     }
     ::after {
