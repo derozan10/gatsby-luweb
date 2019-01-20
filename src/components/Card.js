@@ -4,20 +4,25 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
     position: relative;
-    width: 200px;
+    width: 240px;
     padding: 20px;
     box-shadow: ${props => props.theme.boxShadow};
     overflow: hidden;
     background-color: #fff;
     margin: 20px 0;
+    border-top: solid 4px transparent;
+    transition: border 0.3s;
+    border-radius: 5px;
     h3 {
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 20px;
+        color: #414042;
     }
     p {
         margin-bottom: 20px;
         height: 150px;
+        color: #727272;
     }
     &:before {
         content: '';
@@ -31,12 +36,15 @@ const StyledCard = styled.div`
         transform-origin: center center;
         background: ${props => props.theme.blueGradient};
     }
-    img{
+    .cardIcon{
         position: relative;
         display: block;
         z-index: 1;
         margin: 0 auto;
         width: 60px;
+    }
+    &:hover {
+        border-top: solid 4px #005fa4;
     }
 `
 

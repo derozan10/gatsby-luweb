@@ -4,9 +4,9 @@ import { Link } from "gatsby";
 
 import Container from './Container';
 import Button from './Button';
-import { relative } from 'path';
+// import { relative } from 'path';
 // import Container from '../components/Container';
-import bg from "../img/bg.jpg"
+// import bg from "../img/bg.jpg"
 
 const StyledHero = styled.header`
     color: #fff;
@@ -33,6 +33,9 @@ const StyledHero = styled.header`
     .heroText {
         position: relative;
         padding: 128px 0 256px;
+        @media (max-width: 768px) {
+            padding: 96px 0 128px;
+        }
         @media(max-width: 576px) {
             width: 100%;
             padding: 10px 0 20px 0;
@@ -41,13 +44,15 @@ const StyledHero = styled.header`
             font-weight: 400;
             font-size: 48px;
             margin-bottom: 48px;
-            @media(max-width: 576px) {
-                font-size: 30px
+            @media (max-width: 768px) {
+                font-size: 30px;
+                margin-bottom: 32px;
             }
         }
         p {
             margin-bottom: 48px;
-            font-size: 25px;
+            padding-right: 20px;
+            font-size: 24px;
             font-weight: 200;
             line-height: 1.4;
         }
@@ -60,6 +65,9 @@ const StyledHero = styled.header`
         justify-content: space-between;
         z-index: 20;
         align-items: center;
+        @media (max-width: 768px) {
+            margin-top: 30px;
+        }
         @media(max-width: 576px) {
             display: none;
         }
@@ -102,7 +110,7 @@ export default () => {
                                 <Link to="/contact">
                                     <Button secondary>
                                         Contacteer ons
-                                </Button>
+                                    </Button>
                                 </Link>
                             </div>
                         </div>

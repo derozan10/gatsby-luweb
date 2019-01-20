@@ -48,14 +48,14 @@ const theme = {
   boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)'
 }
 
-const Layout = props => {
+const Layout = ({ children, location, inverse }) => {
   return (
-    <ThemeProvider theme={{ ...theme, colors }} >
+    <ThemeProvider theme={{ ...theme, colors }}>
       <>
         <SEO />
         <div style={{ overflow: "hidden" }}>
-          <Navbar inverse={props.inverse ? true : false} />
-          {props.children}
+          <Navbar inverse={inverse ? true : false} />
+          {children}
         </div>
         <Footer />
       </>
