@@ -4,12 +4,11 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
     position: relative;
-    width: 240px;
+    /* width: 100%; */
     padding: 20px;
     box-shadow: ${props => props.theme.boxShadow};
     overflow: hidden;
     background-color: #fff;
-    margin: 20px 0;
     border-top: solid 4px transparent;
     transition: border 0.3s;
     border-radius: 5px;
