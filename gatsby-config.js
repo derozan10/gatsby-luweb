@@ -4,7 +4,7 @@ module.exports = {
     titleTemplate: "Luweb | %s",
     description:
       "Web development te Antwerpen - gespecialiseerd in performante websites met een goed oog voor design",
-    siteUrl: "https://www.luweb.com", // sitemap
+    siteUrl: "https://www.luweb.be", // sitemap
     image: "/luweb-logo-blueGradient-small.png"
   },
   plugins: [
