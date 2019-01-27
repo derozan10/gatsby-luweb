@@ -64,6 +64,10 @@ const StyledBranding = styled.div`
     }
     p {
       color: #6D6D6D;
+      margin-bottom: 10px;
+    }
+    a {
+      font-weight: 400;
     }
   }
 `
