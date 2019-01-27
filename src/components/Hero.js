@@ -53,7 +53,7 @@ const StyledHero = styled.header`
             margin-bottom: 48px;
             padding-right: 20px;
             font-size: 24px;
-            font-weight: 200;
+            font-weight: 300;
             line-height: 1.4;
         }
     }
