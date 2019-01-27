@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const StyledDienst = styled.div`
     display: flex;
-    width: 50vw;
     margin: 0 auto;
     padding: 20px 0;
     h3, p {

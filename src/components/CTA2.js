@@ -3,24 +3,30 @@ import styled from 'styled-components';
 import { Link } from "gatsby";
 
 import Container from './Container';
-import smallArrow from '../img/smallArrow.svg'
+import smallArrow from '../img/icons/smallArrow.svg'
 import underConstruction from '../img/under-construction.svg'
 
 const StyledCTA2 = styled.div`
-    /* background: linear-gradient(to right, #88F3E2 , #50E3C2 10%); */
     background: linear-gradient(to right, #1A246D, #4d7a94 90%);
     color: #fff;
-    padding: 80px 0 20px 0;
-    margin: 120px 0 40px 0;
+    padding: 40px 0;
+    margin: 80px 0 40px 0;
     position: relative;
+    @media(max-width: 768px) {
+        margin-top: 120px;
+    }
     img#construct {
-        width: 180px;
         position: absolute;
         top: -120px;
-        right: 2vw;
-        @media(min-width: 576px){
-            width: 250px;
+        width: 200px;
+            right: 40px;
+        @media(max-width: 768px){
+            width: 160px;
+            right: 20px;
         }
+    }
+    a:active {
+        color: #fff;
     }
     #contact {
         color: #fff;
@@ -28,6 +34,13 @@ const StyledCTA2 = styled.div`
         img {
             margin: 0 5px;
         }
+    }
+    h3 {
+        margin: 20px 0;
+    }
+    p#contact {
+        max-width: 100%;
+        margin-top: 20px;
     }
 `
 
@@ -38,7 +51,12 @@ const CTA2 = () => {
             <Container>
                 <h3>Overtuigd van onze expertise?</h3>
                 <p>Contacteer ons vrijblijvend, en we bekijken samen met jou hoe we ook jouw website naar een hoger niveau tillen.</p>
-                <Link to="/contact"><p id="contact">Contacteer ons  <img style={{ height: '14px', widht: '14px' }} src={smallArrow} alt="small arrow" /></p> </Link>
+                <Link to="/contact">
+                    <p id="contact">
+                        Contacteer ons
+                        <img style={{ height: '14px', width: '14px' }} src={smallArrow} alt="small arrow" />
+                    </p>
+                </Link>
             </Container>
         </StyledCTA2>
     )
