@@ -7,11 +7,10 @@ import smallArrow from '../img/smallArrow.svg'
 import underConstruction from '../img/under-construction.svg'
 
 const StyledCTA2 = styled.div`
-    /* background: linear-gradient(to right, #88F3E2 , #50E3C2 10%); */
     background: linear-gradient(to right, #1A246D, #4d7a94 90%);
     color: #fff;
-    padding: 80px 0 20px 0;
-    margin: 120px 0 40px 0;
+    padding: 40px 0;
+    margin: 80px 0 40px 0;
     position: relative;
     img#construct {
         width: 180px;
@@ -19,7 +18,8 @@ const StyledCTA2 = styled.div`
         top: -120px;
         right: 2vw;
         @media(min-width: 576px){
-            width: 250px;
+            width: 220px;
+            right: 40px;
         }
     }
     #contact {
@@ -28,6 +28,13 @@ const StyledCTA2 = styled.div`
         img {
             margin: 0 5px;
         }
+    }
+    h3 {
+        margin-bottom: 20px;
+    }
+    p#contact {
+        max-width: 100%;
+        margin-top: 20px;
     }
 `
 

@@ -16,6 +16,7 @@ const StyledServices = styled.div`
     .dienstNav {
         display: flex;
         justify-content: space-around;
+        margin: 20px 0;
     }
     svg {
         cursor: pointer;
@@ -23,8 +24,17 @@ const StyledServices = styled.div`
     svg.active .circleFill {
         fill: #08599A;
     }
+    h2, p {
+        margin-bottom: 10px;
+    }
+    h3 {
+        margin-bottom: 8px;
+    }
     .serviceSection {
         display: none;
+        p {
+            max-width: 50em
+        }
     }
     .serviceSection.active {
         display: block;
@@ -37,11 +47,8 @@ class Diensten extends Component {
         activeService: "design"
     }
 
-    setActiveService = (service) => {
-        this.setState({ activeService: service })
-    }
+    setActiveService = (service) => { this.setState({ activeService: service }) }
     render() {
-
         return (
             <Layout inverse>
                 <SEO title="Onze diensten" />
@@ -92,16 +99,39 @@ class Diensten extends Component {
 
                         </div>
                         <section id="analytics" className={`serviceSection ${this.state.activeService === "analytics" ? "active" : "inactive"}`}>
-                            analytics
+                            <h2>Analytics</h2>
+                            <p>
+                                Performance vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat snelle websites hoger scoren in zoekmachines, een hogere conversie hebben, een verhoogd gebruiksgemak kennen, sneller laden bij slechte internetverbindingen... En ga zo maar door. We analyseren onze websites steeds trachten tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen.
+                                Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
+                            </p>
                         </section>
                         <section id="development" className={`serviceSection ${this.state.activeService === "development" ? "active" : "inactive"}`}>
-                            development
+                            <h2>Web Development</h2>
+                            <h3>De juiste tool voor de job</h3>
+                            <p>
+                                Door onze expertise in development weten we precies welke technologieën, framework, libraries... het beste gebruikt kunnen worden voor jouw website. Dit is grotendeels wat ons onderscheid van andere web agencies, die voornamelijk met een CMS als Wordpress, Drupal... werken. In vele gevallen zijn dergelijke systemen te zwaar en te ingewikkeld voor wat je juist als onderneming nodig hebt. Door in dergelijke gevallen te kiezen voor de een statische site, zal je site vele voordelen genieten zoals betere page speed, hogere conversie, SEO... In sommige gevallen  is dergelijke CMS uiteraard wel de beste keuze en leveren we hier ook zeer kwalitatieve website.
+                            </p>
+                            <h3>Best practices</h3>
+                            <p>
+                                We volgen steeds de richtlijnen die vooropgesteld worden voor het maken van websites. We houden ook rekening met dingen die meestal niet zo voor de hand liggend zijn, zoals ondersteuning voor mensen met een slecht zicht, een aangepast tekst voor wanneer afbeeldingen niet laden, de juiste html-tags voor titels...
+                            </p>
+                            <h3>Browsers</h3>
+                            <p>
+                                Chrome, Firefox, Opera ,Safari, Edge... We testen onze websites op zowat elke browser die vandaag de dag gebruikt wordt zodat we niet voor verrassingen komen te staan van zodra we de website lanceren.
+                            </p>
                         </section>
                         <section id="design" className={`serviceSection ${this.state.activeService === "design" ? "active" : "inactive"}`}>
-                            design
+                            <h2>Web design</h2>
+                            <p>
+                                Bij het maken van een website start alles met een sterk design. Een website moet er niet alleen goed uitzien, maar moet vooral erg gebruiksvriendelijk zijn.  Verder zetten we de sterktes van jouw onderneming extra in de verf. Het spreekt voor zich dat alle design ook perfect schalen op elk device, van smartphone tot desktop.
+                            </p>
                         </section>
                         <section id="performance" className={`serviceSection ${this.state.activeService === "performance" ? "active" : "inactive"}`}>
-                            performance
+                            <h2>Performance optimalisatie</h2>
+                            <p>
+                                Performance vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat snelle websites hoger scoren in zoekmachines, een hogere conversie hebben, een verhoogd gebruiksgemak kennen, sneller laden bij slechte internetverbindingen... En ga zo maar door. We analyseren onze websites steeds trachten tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen.
+                                Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
+                           </p>
                         </section>
                     </StyledServices>
                 </Container>

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
     position: relative;
-    /* width: 100%; */
     padding: 20px;
     box-shadow: ${props => props.theme.boxShadow};
     overflow: hidden;
@@ -12,6 +11,9 @@ const StyledCard = styled.div`
     border-top: solid 4px transparent;
     transition: border 0.3s;
     border-radius: 5px;
+    @media(min-width: 577px) {
+        min-height: 300px;
+    }
     h3 {
         font-size: 24px;
         font-weight: bold;
@@ -19,8 +21,7 @@ const StyledCard = styled.div`
         color: #414042;
     }
     p {
-        margin-bottom: 20px;
-        height: 150px;
+        margin-bottom: 80px;
         color: #727272;
     }
     &:before {
@@ -36,11 +37,13 @@ const StyledCard = styled.div`
         background: ${props => props.theme.blueGradient};
     }
     .cardIcon{
-        position: relative;
+        position: absolute;
         display: block;
         z-index: 1;
         margin: 0 auto;
         width: 60px;
+        bottom: 20px;
+        left: calc(50% - 30px);
     }
     &:hover {
         border-top: solid 4px #005fa4;

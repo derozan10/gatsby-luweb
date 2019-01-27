@@ -6,6 +6,7 @@ import Footer from './Footer'
 
 import 'typeface-roboto'
 import './layout.css'
+import 'normalize.css'
 import SEO from './SEO';
 import 'typeface-lato';
 

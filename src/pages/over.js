@@ -11,13 +11,32 @@ const StyledOver = styled.div`
             margin-bottom: 12px;
         }
         p a {
-            font-weight: bold;
-            text-decoration: underline;
-            color: #4D7A95;
-            cursor: pointer;
-        }
-        p a:hover {
-            color: ${props => props.theme.green}
+            display: inline-block;
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            &:before {
+                will-change: transform;
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+            }
+            &:before {
+                transition: 100ms ease-out 50ms;
+                transform-origin: 0 24px;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 15%;
+                background: rgba(92,214,163,0.5);
+            }
+            &:hover, &:active {
+                &:before {
+                transition: 100ms ease-out;
+                background: #5CD6A3;
+                }
+            }
         }
         #bigwave {
             position: absolute;

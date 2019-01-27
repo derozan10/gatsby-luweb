@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { Fade } from 'react-reveal';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
-import LinkUnderlined from '../components/LinkUnderlined'
-// import Succes from '../components/Succes';
-// import CTA from '../components/CTA';
-import SEO from '../components/SEO'
+import LinkUnderlined from '../components/LinkUnderlined';
+import SEO from '../components/SEO';
 import Container from '../components/Container';
 
 import design from '../img/design.svg';
@@ -70,33 +68,6 @@ const StyledBranding = styled.div`
   }
 `
 
-const StyledFooterCta = styled.div`
-    background-color: ${props => props.theme.colors.neutral.three};
-    #footerCtaWrap {
-      display: flex;
-      justify-content: space-between;
-      #footerCtaText{
-        padding: 20px 0;
-          h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-          }
-          p {
-            color: ${props => props.theme.colors.neutral.eight};
-            font-size: 24px;
-          }
-      }
-      #footerCtaImage{
-          /* position: relative; */
-          transform: skewX(-30deg);
-          width: 400px;
-          height: 200px;
-          background-color: pink;
-      }
-
-    }
-
-`
 const index = () => {
   return (
     <Layout>
@@ -155,28 +126,12 @@ const index = () => {
             </div>
             <div>
               <h3>Seo</h3>
-              <p>Eens je een website hebt waar je 100% tevreden van bent, wil je uiteraard veel bezoekers. Hoog scoren in zoek- machines is dan een vereiste. We houden rekening met alle best-practices en optimaliseren je site zodat je meer kans maakt gevonden te worden.</p>
+              <p>Eens je een website hebt waar je 100% tevreden van bent, wil je uiteraard veel bezoekers. Hoog scoren in zoekmachines is dan een vereiste. We houden rekening met alle best-practices en optimaliseren je site zodat je meer kans maakt gevonden te worden.</p>
               <LinkUnderlined to="diensten">Meer over SEO</LinkUnderlined>
             </div>
           </div>
         </StyledBranding>
       </Container>
-      <StyledFooterCta>
-
-        <Container>
-          <div id="footerCtaWrap">
-            <div id="footerCtaText">
-              <h2>Heb je al een website?</h2>
-              <p>Krijg gratis en vrijblijvend een volledige analyse van je bestaande website!</p>
-              <input type="email" />
-              <input type="url" />
-            </div>
-            <div id="footerCtaImage">
-              <img src="https://www.source.unsplash.com/random" alt="random" />
-            </div>
-          </div>
-        </Container>
-      </StyledFooterCta>
     </Layout >
   )
 }

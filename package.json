@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^3.9.0",
+    "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.10.0",
     "core-js": "^2.6.2",
     "gatsby": "^2.0.91",
@@ -22,7 +23,10 @@
     "gatsby-source-filesystem": "^2.0.16",
     "gatsby-transformer-sharp": "^2.1.10",
     "google-map-react": "^1.1.2",
+    "lighthouse": "^4.0.0",
     "node-sass": "^4.11.0",
+    "normalize.css": "^8.0.1",
+    "pagespeed-insights": "^1.0.2",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
@@ -36,7 +40,8 @@
     "typeface-amiko": "0.0.54",
     "typeface-hind": "0.0.54",
     "typeface-lato": "0.0.54",
-    "typeface-roboto": "0.0.54"
+    "typeface-roboto": "0.0.54",
+    "webpagetest": "^0.3.9"
   },
   "keywords": [
     "gatsby"

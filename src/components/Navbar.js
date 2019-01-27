@@ -83,7 +83,7 @@ const StyledNav = styled.nav`
     }
     ul li {
       margin: 10px 0;
-      font-size: 18px;
+      font-size: 16px;
     }
     img {
       margin-bottom: 0px;
@@ -96,10 +96,33 @@ const StyledNav = styled.nav`
       display: inline-block;
       text-decoration: none;
       color: ${props => props.inverse ? props.theme.colors.blue : '#fff'};
+      content: "";
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right,#221C67,#00468F,#006DA9);
+        transition: -webkit-transform .3s ease-in-out;
+        transition: transform .3s ease-in-out;
+        transform-origin: right top;
+        transform: scaleX(0);
+      }
+      &:hover {
+        &:after {
+          transform: scale(1);
+          transform-origin: left top;
+        }
+      }
     }
     a.activeLink {
-      color: ${props => props.theme.colors.lightGreen};
-      /* border-bottom: ${props => props.inverse ? 'solid 2px' : 'none'}; */
+      &:after {
+        transform: scale(1);
+        transform-origin: left top;
+      }
     }
     ::after {
       content: "";
@@ -177,10 +200,10 @@ export default class Navbar extends Component {
                   <li>Home</li>
                 </Link>
                 <Link to="/over" activeClassName="activeLink">
-                  <li>Over Luweb</li>
+                  <li>Over</li>
                 </Link>
                 <Link to="/diensten" activeClassName="activeLink">
-                  <li>Onze diensten</li>
+                  <li>Diensten</li>
                 </Link>
                 <Link to="/realisaties" activeClassName="activeLink">
                   <li>Realisaties</li>

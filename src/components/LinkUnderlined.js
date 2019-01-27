@@ -34,11 +34,11 @@ const StyledUnderline = styled.div`
     }
 `
 
-const LinkUnderlined = (props) => {
+const LinkUnderlined = ({ to, children }) => {
   return (
     <StyledUnderline>
-      <Link to={props.to}>
-        {props.children}
+      <Link to={to}>
+        {children}
       </Link>
     </StyledUnderline>
   )
