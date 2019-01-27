@@ -10,10 +10,10 @@ import LinkUnderlined from '../components/LinkUnderlined';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 
-import design from '../img/design.svg';
-import code from '../img/code.svg';
-import speed from '../img/speed.svg';
-import analytics from '../img/analytics.svg';
+import design from '../img/icons/design.svg';
+import code from '../img/icons/code.svg';
+import speed from '../img/icons/speed.svg';
+import analytics from '../img/icons/analytics.svg';
 
 
 const StyledServices = styled.section`
@@ -117,17 +117,20 @@ const index = () => {
             <div>
               <h3>Branding</h3>
               <p>Een uiterst zakelijke, formele website? Of liever net wat speels? Een website moet het imago van je bedrijf weerspiegelen. We trekken je huidige huisstijl door naar je site, of creëren er 1 voor jou.</p>
-              <LinkUnderlined to="diensten">Meer over branding</LinkUnderlined>
+              <LinkUnderlined to="diensten">Meer</LinkUnderlined>
+              {/* <LinkUnderlined to="diensten">Meer over branding</LinkUnderlined> */}
             </div>
             <div>
               <h3>Social Media</h3>
               <p>Sociale media is niet meer weg te denken uit ons dagdagelijkse leven en kan heel wat mogelijkheiden bieden voor ondernemingen. We kunnen de sociale media helpen opzetten en integreren in je website.</p>
-              <LinkUnderlined to="diensten">Meer over social</LinkUnderlined>
+              {/* <LinkUnderlined to="diensten">Meer over social</LinkUnderlined> */}
+              <LinkUnderlined to="diensten">Meer</LinkUnderlined>
             </div>
             <div>
               <h3>Seo</h3>
               <p>Eens je een website hebt waar je 100% tevreden van bent, wil je uiteraard veel bezoekers. Hoog scoren in zoekmachines is dan een vereiste. We houden rekening met alle best-practices en optimaliseren je site zodat je meer kans maakt gevonden te worden.</p>
-              <LinkUnderlined to="diensten">Meer over SEO</LinkUnderlined>
+              {/* <LinkUnderlined to="diensten">Meer over SEO</LinkUnderlined> */}
+              <LinkUnderlined to="diensten">Meer</LinkUnderlined>
             </div>
           </div>
         </StyledBranding>

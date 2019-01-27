@@ -9,39 +9,33 @@ import SEO from '../components/SEO'
 
 
 const StyledContact = styled.div`
-  #contactFlex, #name-mail {
-      display: flex;
-      justify-content: space-between;
-      @media(max-width: 992px) {
-          flex-direction: column;
+  #contactFlex {
+      display: grid;
+      grid-template-columns: 1.5fr 2fr;
+      grid-gap: 20px;
+      @media(max-width: 576px){
+        grid-template-columns: 1fr;
       }
-      #contactIntro {
-          @media(min-width: 992px) {
-              width: 40%;
-          }
+      h2 {
+          margin-bottom: 10px;
       }
       .contactForm {
-          @media(min-width: 992px) {
-              width: 50%;
-              max-width: 600px;
-          }
+          flex-grow: grow;
           background-color: #fff;
           padding: 20px;
           border-radius: 10px;
           box-shadow: 0 2px 4px 0 rgba(14,30,37,.12);
-          @media(max-width: 768px) {
-              width: 100%;
-          }
+          box-sizing: border-box;
           label {
               display: block;
               margin: 10px 0 5px 0;
           }
-          #name-mail > div {
-              width: 48%;
-          }
           input, textarea {
-              background-color: #f4f4f4;
+              background-color: #E1E7EC;
+              padding: 10px 0;
               border-radius: 5px;
+              border-color: #fff;
+              margin: 10px 0;
               display: block;
               width: 100%;
           }
@@ -60,30 +54,39 @@ const Contact = () => (
                 <h1>Contacteer ons</h1>
                 <div id="contactFlex">
                     <div id="contactIntro">
-                        <h4>We helpen je graag verder.</h4>
+                        <h2>We helpen je graag verder.</h2>
                         <p>Laat hieronder even <strong>een berichtje</strong> achter en we contacteren je zo snel mogelijk.<br />
                             Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
                         </p>
                     </div>
-                    <form name="contact" className="contactForm" method="POST" data-netlify="true" data-netlify-honeypot='bot-field' action="/bedankt">
+                    <form
+                        name="contact"
+                        className="contactForm"
+                        method="POST"
+                        data-netlify="true"
+                        data-netlify-honeypot='bot-field'
+                        action="/bedankt"
+                    >
+                        <p style={{ visibility: "hidden", height: 0 }}>
+                            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
                         <input type="hidden" name="form-name" value="contact" />
-                        <div id="name-mail">
-                            <div>
-                                <label>Naam</label>
-                                <input type="text" autoComplete='name' name="name" required />
-                            </div>
-                            <div>
-                                <label>Email</label>
-                                <input type="email" autoComplete='email' name="email" required />
-                            </div>
+                        <div>
+                            <label>Naam</label>
+                            <input type="text" autoComplete='name' name="name" required />
                         </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="email" autoComplete='email' name="email" required />
+                        </div>
+
                         <label>Organisatie</label>
                         <input type="text" autoComplete='on' name="organisatie" />
 
                         <label>Bericht:</label>
                         <textarea name="bericht" required></textarea>
-
-                        <Button primary type="submit" style={{ width: '100%', marginTop: '20px' }}>Verzend</Button>
+                        <div data-netlify-recaptcha="true" />
+                        <Button primary type="submit" style={{ width: '250px', margin: '20px auto' }}>Verzend</Button>
                     </form>
                 </div>
             </StyledContact>

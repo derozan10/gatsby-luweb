@@ -55,20 +55,15 @@ const StyledNav = styled.nav`
       position: fixed;
       flex-direction: column;
       justify-content: space-around;
-      margin-top: 50px;
+      margin-top: 60px;
       padding: 5px;
       border-radius: 5px;
       background-color: #f2f2f2;
       position: absolute;
       top: 20px;
-      width: 90vw;
+      width: 100%;
       a {
         color: #333;
-      }
-      li, li a {
-        font-weight: bold;
-        width: 100%
-
       }
       ::before {
         opacity: 1;
@@ -84,6 +79,34 @@ const StyledNav = styled.nav`
     ul li {
       margin: 10px 0;
       font-size: 16px;
+      @media(max-width: 576px) {
+        font-size: 20px;
+        padding: 10px;
+      }
+    }
+    ul a {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right,#221C67,#00468F,#006DA9);
+        transition: -webkit-transform .3s ease-in-out;
+        transition: transform .3s ease-in-out;
+        transform-origin: right top;
+        transform: scaleX(0);
+        @media (max-width: 576px) {
+          display: none;
+        }
+      }
+      &:hover {
+        &:after {
+          transform: scale(1);
+          transform-origin: left top;
+        }
+      }
     }
     img {
       margin-bottom: 0px;
@@ -98,25 +121,6 @@ const StyledNav = styled.nav`
       color: ${props => props.inverse ? props.theme.colors.blue : '#fff'};
       content: "";
       position: relative;
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        display: block;
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(to right,#221C67,#00468F,#006DA9);
-        transition: -webkit-transform .3s ease-in-out;
-        transition: transform .3s ease-in-out;
-        transform-origin: right top;
-        transform: scaleX(0);
-      }
-      &:hover {
-        &:after {
-          transform: scale(1);
-          transform-origin: left top;
-        }
-      }
     }
     a.activeLink {
       &:after {
@@ -137,9 +141,10 @@ const StyledNav = styled.nav`
     #menu button{
       color: #333;
       padding: 10px 20px;
-      border-radius: 10px;
+      border-radius: 25px;
       background-color: #fff;
       opacity: 0.9;
+      border: solid 1px #00468F;
       @media (min-width: 576px){
         display: none;
       }
@@ -189,16 +194,11 @@ export default class Navbar extends Component {
         <Backdrop active={this.state.menuOpen} />
         <Container>
           <StyledNav {...this.props}>
-            <a href="/">
-              <img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" />
-            </a>
+            <Link to="/"><img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" /></Link>
             <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
               <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
               {/* <Fade top opposite when={this.state.menuOpen}> */}
               <ul>
-                <Link to="/" activeClassName="activeLink">
-                  <li>Home</li>
-                </Link>
                 <Link to="/over" activeClassName="activeLink">
                   <li>Over</li>
                 </Link>

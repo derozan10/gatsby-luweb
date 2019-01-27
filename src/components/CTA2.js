@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "gatsby";
 
 import Container from './Container';
-import smallArrow from '../img/smallArrow.svg'
+import smallArrow from '../img/icons/smallArrow.svg'
 import underConstruction from '../img/under-construction.svg'
 
 const StyledCTA2 = styled.div`
@@ -12,14 +12,17 @@ const StyledCTA2 = styled.div`
     padding: 40px 0;
     margin: 80px 0 40px 0;
     position: relative;
+    @media(max-width: 768px) {
+        margin-top: 120px;
+    }
     img#construct {
-        width: 180px;
         position: absolute;
         top: -120px;
-        right: 2vw;
-        @media(min-width: 576px){
-            width: 220px;
+        width: 200px;
             right: 40px;
+        @media(max-width: 768px){
+            width: 160px;
+            right: 20px;
         }
     }
     #contact {
@@ -30,7 +33,7 @@ const StyledCTA2 = styled.div`
         }
     }
     h3 {
-        margin-bottom: 20px;
+        margin: 20px 0;
     }
     p#contact {
         max-width: 100%;

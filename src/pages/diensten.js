@@ -7,10 +7,10 @@ import Container from '../components/Container';
 import CTA2 from '../components/CTA2';
 import SEO from '../components/SEO';
 
-import design from '../img/navicon-design.svg';
-import code from '../img/navicon-code.svg';
-import performance from '../img/navicon-performance.svg';
-import analytics from '../img/navicon-analytics.svg';
+// import design from '../img/navicon-design.svg';
+// import code from '../img/navicon-code.svg';
+// import performance from '../img/navicon-performance.svg';
+// import analytics from '../img/navicon-analytics.svg';
 
 const StyledServices = styled.div`
     .dienstNav {
@@ -35,6 +35,7 @@ const StyledServices = styled.div`
         p {
             max-width: 50em
         }
+        margin-bottom: 120px;
     }
     .serviceSection.active {
         display: block;
@@ -136,7 +137,7 @@ class Diensten extends Component {
                     </StyledServices>
                 </Container>
                 <CTA2 />
-                <Container>
+                {/* <Container>
                     <h2>Heb je al een website?</h2>
                     <p>We ondersteunen je graag met verschillende taken zoals: </p>
                     <ul>
@@ -152,7 +153,7 @@ class Diensten extends Component {
                         Dit zorgt ervoor dat al de communicatie van en naar je website op een veilige manier gebeurt.
                         Bovendien wordt je website als veilig gemarkeerd in de zoekbalk.
                     </p>
-                </Container>
+                </Container> */}
             </Layout>
         )
 
