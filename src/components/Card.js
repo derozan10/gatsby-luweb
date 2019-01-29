@@ -4,23 +4,21 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
     position: relative;
-    padding: 20px;
+    padding: 20px 20px 80px 20px;
     box-shadow: ${props => props.theme.boxShadow};
     overflow: hidden;
     background-color: #fff;
     border-top: solid 4px transparent;
     transition: border 0.3s;
     border-radius: 5px;
-    @media(min-width: 577px) {
-        min-height: 260px;
-    }
+    min-height: 200px;
     h3 {
         font-weight: bold;
         margin-bottom: 20px;
         color: #414042;
     }
     p {
-        margin-bottom: 40px;
+        margin-top: 20px;
         color: #727272;
     }
     &:before {

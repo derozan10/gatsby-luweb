@@ -38,6 +38,7 @@ const StyledHero = styled.header`
             margin: 80px 0;
         }
         @media(max-width: 576px) {
+            margin: 40px 0;
             width: 100%;
         }
         h1{

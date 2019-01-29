@@ -69,7 +69,7 @@ const StyledNav = styled.nav`
         opacity: 1;
       }
       a.activeLink {
-        color: ${props => props.theme.colors.primary.eight};
+        color: #fff;
       }
       a.activeLink li {
         background-color: #4D7A95;
