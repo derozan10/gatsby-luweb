@@ -46,7 +46,7 @@ class Diensten extends Component {
     setActiveService = (service) => { this.setState({ activeService: service }) }
 
     componentDidMount() {
-        this.props.location.state.service && this.setActiveService(this.props.location.state.service)
+        this.props.location.state && this.props.location.state.service && this.setActiveService(this.props.location.state.service)
     }
 
     render() {
