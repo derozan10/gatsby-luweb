@@ -35,17 +35,15 @@ const StyledHero = styled.header`
         position: relative;
         margin: 60px 0 120px 0;
         @media (max-width: 768px) {
-            padding: 96px 0 128px;
-            margin-top: 30px;
+            margin: 80px 0;
         }
         @media(max-width: 576px) {
             width: 100%;
-            padding: 10px 0 20px 0;
         }
         h1{
             font-weight: 400;
-            font-size: 48px;
-            margin: 0 0 48px 0;
+            font-size: 42px;
+            margin: 0 0 32px 0;
             @media (max-width: 768px) {
                 font-size: 30px;
                 margin-bottom: 32px;
@@ -62,7 +60,7 @@ const StyledHero = styled.header`
     #socialBar {
         display: flex;
         flex-direction: column;
-        height: 250px;
+        height: 230px;
         margin-top: 60px;
         justify-content: space-between;
         z-index: 20;
@@ -70,9 +68,6 @@ const StyledHero = styled.header`
         svg {
             height: 18px;
             width: 18px;
-        }
-        @media (max-width: 768px) {
-            margin-top: 30px;
         }
         @media(max-width: 576px) {
             display: none;
@@ -105,18 +100,14 @@ export default () => {
                 <Container>
                     <div id="heroContainer">
                         <div className="heroText">
-                            <h1>Freelance web development & design</h1>
+                            <h1>Freelance web design & development</h1>
                             <p>Gespecialiseerd in uiterst performante websites, <br/>met een goed oog voor design.</p>
                             <div>
                                 <Link to="/diensten" >
-                                    <Button primary style={{marginRight: "15px"}}>
-                                        Onze diensten
-                                    </Button>
+                                    <Button primary style={{margin: "0 15px 15px 0"}}>Onze diensten</Button>
                                 </Link>
                                 <Link to="/contact">
-                                    <Button secondary>
-                                        Contacteer ons
-                                    </Button>
+                                    <Button secondary style={{margin: "0 15px 15px 0"}}>Contacteer ons</Button>
                                 </Link>
                             </div>
                         </div>

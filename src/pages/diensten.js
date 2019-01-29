@@ -133,6 +133,8 @@ class Diensten extends Component {
                             <h2>Analytics</h2>
                             <p>
                                 Krijg meer inzichten in je bezoekers zodat je hier beter op kan inspelen.
+                            </p>
+                            <p>
                                 Tools als Google Analytics laten je zien hoe oud je doelgroep is, waar ze zich bevinden, op welk tijdstip ze op je site zitten... Door het surfgedrag van bezoekers te analyseren kan je jouw strategie online en offline aanpassen. We helpen jouw dan ook graag om deze tools op te zetten en je wegwijs te maken.
                             </p>
                         </section>

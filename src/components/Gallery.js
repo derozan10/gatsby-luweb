@@ -36,7 +36,7 @@ class GalleryComposition extends Component {
     const { photos } = this.props
     return (
       <>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 3, 900: 5 }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 600: 2, 800: 4}}>
           <Masonry gutter="1rem">
             {photos.map((photo, i) => (
               <a

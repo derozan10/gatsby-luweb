@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 
 const StyledOver = styled.div`
     position: relative;
+    margin-bottom: 40px;
     p {
         margin-bottom: 12px;
         max-width: 50em;
