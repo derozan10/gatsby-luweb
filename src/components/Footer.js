@@ -7,7 +7,6 @@ import smallLogo from '../img/logos/luweb-logo-white-small.svg'
 const StyledFooter = styled.div`
     background-color: ${props => props.theme.colors.neutral.eight};
     padding: 20px 0;
-    margin-top: 40px;
     #footerContainer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

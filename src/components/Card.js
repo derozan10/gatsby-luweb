@@ -12,16 +12,15 @@ const StyledCard = styled.div`
     transition: border 0.3s;
     border-radius: 5px;
     @media(min-width: 577px) {
-        min-height: 300px;
+        min-height: 260px;
     }
     h3 {
-        font-size: 24px;
         font-weight: bold;
         margin-bottom: 20px;
         color: #414042;
     }
     p {
-        margin-bottom: 80px;
+        margin-bottom: 40px;
         color: #727272;
     }
     &:before {

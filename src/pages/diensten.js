@@ -16,7 +16,7 @@ const StyledServices = styled.div`
     .dienstNav {
         display: flex;
         justify-content: space-around;
-        margin: 20px 0;
+        margin: 40px 0;
     }
     svg {
         cursor: pointer;
@@ -24,7 +24,7 @@ const StyledServices = styled.div`
     svg.active .circleFill {
         fill: #08599A;
     }
-    h2, p {
+    p {
         margin-bottom: 10px;
     }
     h3 {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from "gatsby-image";
+// import Img from "gatsby-image";
+import Gallery from '../components/Gallery'
 import styled from "styled-components";
 
 import Layout from '../components/Layout';
@@ -30,19 +31,15 @@ const StyledRealisaties = styled.div`
 `
 
 const realisaties = ({ data }) => {
-  const images = data.allFile.edges;
+  const images = data.allFile.edges.map(edge => edge.node.childImageSharp);
+
   return (
     <StyledRealisaties>
       <SEO title="Web development is onze passie." />
       <Layout inverse>
         <Container>
           <h1>Realisaties</h1>
-          <div className="realisatieImages">
-            {images.map(image => (
-              <Img key={image.node.name} fluid={image.node.childImageSharp.fluid} />
-            ))
-            }
-          </div>
+          <Gallery photos={images} />
         </Container>
       </Layout>
     </StyledRealisaties>
@@ -58,8 +55,9 @@ export const REALISATIEQUERY = graphql`
         node {
           name
           childImageSharp {
-            fluid(maxWidth: 400) {
+            fluid {
               ...GatsbyImageSharpFluid
+              src
             }
           }
         }

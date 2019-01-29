@@ -7,6 +7,11 @@ import Button from '../components/Button';
 import LuwebMap from '../components/LuwebMap'
 import SEO from '../components/SEO'
 
+//icons
+import telephone from '../img/icons/_ionicons_svg_ios-call.svg';
+import send from '../img/icons/_ionicons_svg_ios-send.svg';
+import home from '../img/icons/_ionicons_svg_md-home.svg';
+
 
 const StyledContact = styled.div`
   #contactFlex {
@@ -18,6 +23,27 @@ const StyledContact = styled.div`
       }
       h2 {
           margin-bottom: 10px;
+      }
+      #contactIntro {
+          #contactData {
+              margin-top: 20px;
+            img {
+                height: 20px;
+                width: 20px;
+                margin-right: 10px;
+            }
+          }
+          #contactData > div {
+              display: flex;
+              align-items: center;
+              padding: 4px;
+          }
+          address, a {
+            font-style: normal;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+          }
       }
       .contactForm {
           flex-grow: grow;
@@ -55,9 +81,24 @@ const Contact = () => (
                 <div id="contactFlex">
                     <div id="contactIntro">
                         <h2>We helpen je graag verder.</h2>
-                        <p>Laat hieronder even <strong>een berichtje</strong> achter en we contacteren je zo snel mogelijk.<br />
-                            Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
+                        <p>Contacteer ons via de contactgegevens hieronder of laat <strong>een berichtje</strong> via het contactformulier en we nemen zo snel mogelijk contact met je op.<br />
+                        Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
                         </p>
+                        <div id="contactData">
+                        <div>
+                            <img src={telephone} alt="telephone"/><a href="tel:+496061042"> 0496/06.10.42</a>
+                        </div>
+                        <div>
+                            <img src={send} alt="send"/>
+                            <a href="mailto:lucas@luweb.be">lucas@luweb.be</a>
+                        </div>
+                        <div>
+                            <img src={home} alt="home"/>
+                            <address>
+                                Dokter Van de Perrelei 25 <br/> 2140 Borgerhout
+                            </address>
+                        </div>
+                        </div>
                     </div>
                     <form
                         name="contact"

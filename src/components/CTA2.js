@@ -25,6 +25,9 @@ const StyledCTA2 = styled.div`
             right: 20px;
         }
     }
+    a {
+        text-decoration: none;
+    }
     a:active {
         color: #fff;
     }

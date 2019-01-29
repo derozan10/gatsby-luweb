@@ -25,16 +25,18 @@ const StyledHero = styled.header`
         bottom: 0;
         left: 0;
         right: 0;
-        transform: rotate(-7deg) scale(1.2);
+        width: 150%;
+        transform: rotate(-5deg) scale(1.2);
         transform-origin: bottom left;
         background: ${props => props.theme.blueGradient};
         z-index: -1;
     }
     .heroText {
         position: relative;
-        padding: 128px 0 256px;
+        margin: 60px 0 120px 0;
         @media (max-width: 768px) {
             padding: 96px 0 128px;
+            margin-top: 30px;
         }
         @media(max-width: 576px) {
             width: 100%;
@@ -43,7 +45,7 @@ const StyledHero = styled.header`
         h1{
             font-weight: 400;
             font-size: 48px;
-            margin-bottom: 48px;
+            margin: 0 0 48px 0;
             @media (max-width: 768px) {
                 font-size: 30px;
                 margin-bottom: 32px;
@@ -60,11 +62,15 @@ const StyledHero = styled.header`
     #socialBar {
         display: flex;
         flex-direction: column;
-        height: 300px;
-        margin-top: 100px;
+        height: 250px;
+        margin-top: 60px;
         justify-content: space-between;
         z-index: 20;
         align-items: center;
+        svg {
+            height: 18px;
+            width: 18px;
+        }
         @media (max-width: 768px) {
             margin-top: 30px;
         }
@@ -99,11 +105,11 @@ export default () => {
                 <Container>
                     <div id="heroContainer">
                         <div className="heroText">
-                            <h1>Web development is onze passie</h1>
-                            <p>We zijn gespecialiseerd in uiterst performante websites, <br />met een goed oog voor design.</p>
+                            <h1>Freelance web development & design</h1>
+                            <p>Gespecialiseerd in uiterst performante websites, <br/>met een goed oog voor design.</p>
                             <div>
                                 <Link to="/diensten" >
-                                    <Button primary>
+                                    <Button primary style={{marginRight: "15px"}}>
                                         Onze diensten
                                     </Button>
                                 </Link>

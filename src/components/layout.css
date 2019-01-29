@@ -16,11 +16,12 @@ html {
 
 h1 {
   font-size: 28px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 24px
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -181,4 +182,8 @@ select[multiple]
 {
 	/* Move the label to the top */
 	vertical-align:top;
+}
+
+section {
+	margin-top: 20px;
 }

@@ -23,12 +23,12 @@ const StyledServices = styled.section`
     display: block;
     position: absolute;
     background: linear-gradient(to bottom right, #fff 50%, #eaeaea);
-    transform: rotate(-7deg);
+    transform: rotate(-5deg);
     transform-origin: left top;
     left: -10%;
     height: 100%;
     width: 150%;
-    z-index: -1;
+    z-index: -2;
 }
   .serviceCards {
     margin: 10px;
@@ -46,7 +46,7 @@ const StyledServices = styled.section`
 `
 
 const StyledBranding = styled.div`
-  margin: 40px 0;
+  margin: 80px 0 80px 0;
   .brandingCards {
     margin: 10px;
     display: grid;
@@ -78,8 +78,9 @@ const index = () => {
       <SEO title="Web development is onze passie." />
       <Hero />
       <StyledServices>
+        <section>
         <Container>
-          <h1>Wat we doen</h1>
+          <h2>Wat we doen</h2>
           <Fade bottom cascade>
             <div className="serviceCards">
               <Link to="/diensten#design" style={{ textDecoration: "none" }}>
@@ -113,10 +114,11 @@ const index = () => {
             </div>
           </Fade>
         </Container>
+        </section>
       </StyledServices>
       <Container>
         <StyledBranding>
-          <h1>Zet je merk op de kaart</h1>
+          <h2>Zet je merk op de kaart</h2>
           <div className="brandingCards">
             <div>
               <h3>Branding</h3>

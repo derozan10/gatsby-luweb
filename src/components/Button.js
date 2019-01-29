@@ -8,7 +8,6 @@ const Button = (props) => {
         text-align: center;
         padding: 12px 24px;
         border-radius: 20px;
-        margin-bottom: 10%;
         box-shadow: ${props => props.theme.boxShadow};
         letter-spacing: 0.094em;
         display: inline-block;
@@ -16,7 +15,6 @@ const Button = (props) => {
         border: none;
         font-size: 18px;
         letter-spacing: 0.094em;
-        margin: 5px;
         cursor: pointer;
         border: ${props => props.primary ? 'none' : props.theme.darkBlue};
         :hover {
