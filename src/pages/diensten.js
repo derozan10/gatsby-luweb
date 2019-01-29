@@ -7,11 +7,6 @@ import Container from '../components/Container';
 import CTA2 from '../components/CTA2';
 import SEO from '../components/SEO';
 
-// import design from '../img/navicon-design.svg';
-// import code from '../img/navicon-code.svg';
-// import performance from '../img/navicon-performance.svg';
-// import analytics from '../img/navicon-analytics.svg';
-
 const StyledServices = styled.div`
     .dienstNav {
         display: flex;
@@ -57,7 +52,16 @@ class Diensten extends Component {
                     <StyledServices>
                         <h1>Onze diensten</h1>
                         <div className="dienstNav">
-                            <svg fill="none" height="60" viewBox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg" id="design" onClick={() => this.setActiveService("design")} className={this.state.activeService === "design" ? "active" : "inactive"}>
+                            <svg
+                                fill="none"
+                                height="60"
+                                viewBox="0 0 60 60"
+                                width="60"
+                                xmlns="http://www.w3.org/2000/svg"
+                                id="design"
+                                onClick={() => this.setActiveService("design")}
+                                className={this.state.activeService === "design" ? "active" : "inactive"}
+                            >
                                 <g clipRule="evenodd" fillRule="evenodd">
                                     <path d="m30 0c16.569 0 30 13.4314 30 29.9998 0 16.5683-13.431 30.0002-30 30.0002-16.5685 0-30-13.4319-30-30.0002 0-16.5684 13.4315-29.9998 30-29.9998z" fill="#ebebeb" className="circleFill" />
                                     <path d="m30 3c14.9121 0 27 12.0883 27 26.9998s-12.0879 27.0002-27 27.0002c-14.9116 0-27-12.0887-27-27.0002s12.0884-26.9998 27-26.9998z" fill="#ebebeb" stroke="#fff" className="circleFill" />
@@ -68,7 +72,16 @@ class Diensten extends Component {
                                     </g>
                                 </g>
                             </svg>
-                            <svg fill="none" height="60" viewBox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg" id="development" onClick={() => this.setActiveService("development")} className={this.state.activeService === "development" ? "active" : "inactive"}>
+                            <svg
+                                fill="none"
+                                height="60"
+                                viewBox="0 0 60 60"
+                                width="60"
+                                xmlns="http://www.w3.org/2000/svg"
+                                id="development"
+                                onClick={() => this.setActiveService("development")}
+                                className={this.state.activeService === "development" ? "active" : "inactive"}
+                            >
                                 <g clipRule="evenodd" fillRule="evenodd">
                                     <path d="m30 0c16.569 0 30 13.4314 30 29.9998 0 16.5683-13.431 30.0002-30 30.0002-16.5685 0-30-13.4319-30-30.0002 0-16.5684 13.4315-29.9998 30-29.9998z" fill="#ebebeb" className="circleFill" />
                                     <path d="m30 3c14.9121 0 27 12.0883 27 26.9998s-12.0879 27.0002-27 27.0002c-14.9116 0-27-12.0887-27-27.0002s12.0884-26.9998 27-26.9998z" fill="#ebebeb" stroke="#fff" className="circleFill" />
@@ -76,14 +89,32 @@ class Diensten extends Component {
                                 </g>
                             </svg>
 
-                            <svg fill="none" height="60" viewBox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg" id="performance" onClick={() => this.setActiveService("performance")} className={this.state.activeService === "performance" ? "active" : "inactive"}>
+                            <svg
+                                fill="none"
+                                height="60"
+                                viewBox="0 0 60 60"
+                                width="60"
+                                xmlns="http://www.w3.org/2000/svg"
+                                id="performance"
+                                onClick={() => this.setActiveService("performance")}
+                                className={this.state.activeService === "performance" ? "active" : "inactive"}
+                            >
                                 <path clipRule="evenodd" d="m30 0c16.569 0 30 13.4314 30 29.9998 0 16.5683-13.431 30.0002-30 30.0002-16.5685 0-30-13.4319-30-30.0002 0-16.5684 13.4315-29.9998 30-29.9998z" fill="#ebebeb" fillRule="evenodd" className="circleFill" />
                                 <path clipRule="evenodd" d="m30 3c14.9121 0 27 12.0883 27 26.9998s-12.0879 27.0002-27 27.0002c-14.9116 0-27-12.0887-27-27.0002s12.0884-26.9998 27-26.9998z" fill="#ebebeb" fillRule="evenodd" stroke="#fff" className="circleFill" />
                                 <g fill="#fff">
                                     <path d="m42.8887 16.4691c-.0259-.11-.1035-.1941-.2136-.22-3.5209-.8608-11.6565 2.207-16.0641 6.6146-.8608.8608-1.5663 1.7087-2.1423 2.5306-1.3592-.1229-2.7183-.0194-3.8769.4855-3.2684 1.4368-4.2199 5.1907-4.4852 6.8023-.0647.3819.2524.7119.6343.6731l5.2489-.576c.0065.5048.0389.9061.0712 1.1844.0259.2718.1489.5243.3431.7184l2.0323 2.0323c.1941.1942.4465.3171.7184.343.2783.0324.6796.0648 1.1779.0712l-.576 5.2425c-.0388.3819.2912.6991.6731.6343 1.6116-.2589 5.372-1.2103 6.8023-4.4788.5049-1.1585.6084-2.5112.4919-3.8639.822-.576 1.6763-1.2815 2.5371-2.1423 4.4271-4.4011 7.4755-12.3555 6.6276-16.0512zm-10.5627 10.3491c-1.0808-1.0808-1.0808-2.8283 0-3.9092 1.0809-1.0809 2.8284-1.0809 3.9093 0 1.0808 1.0809 1.0808 2.8284 0 3.9092-1.0809 1.0809-2.8284 1.0809-3.9093 0z" /><path d="m24.2941 37.6269c-.2719.2718-.7573.4272-1.2815.5178-1.178.2006-2.2071-.8285-2.0064-2.0064.0906-.5243.2394-1.0097.5113-1.2751l.0064-.0064c.1489-.1489.0259-.3948-.1812-.3689-.6343.0776-1.2556.3624-1.741.8478-1.165 1.165-1.275 5.4885-1.275 5.4885s4.3299-.11 5.4949-1.2751c.4919-.4918.7702-1.1067.8479-1.741.0194-.2071-.233-.3301-.3754-.1812z" />
                                 </g>
                             </svg>
-                            <svg fill="none" height="60" viewBox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg" id="analytics" onClick={() => this.setActiveService("analytics")} className={this.state.activeService === "analytics" ? "active" : "inactive"}>
+                            <svg
+                                fill="none"
+                                height="60"
+                                viewBox="0 0 60 60"
+                                width="60"
+                                xmlns="http://www.w3.org/2000/svg"
+                                id="analytics"
+                                onClick={() => this.setActiveService("analytics")}
+                                className={this.state.activeService === "analytics" ? "active" : "inactive"}
+                            >
                                 <g clipRule="evenodd" fillRule="evenodd">
                                     <path d="m30 0c16.569 0 30 13.4314 30 29.9998 0 16.5683-13.431 30.0002-30 30.0002-16.5685 0-30-13.4319-30-30.0002 0-16.5684 13.4315-29.9998 30-29.9998z" fill="#ebebeb" className="circleFill" />
                                     <path d="m30 3c14.9121 0 27 12.0883 27 26.9998s-12.0879 27.0002-27 27.0002c-14.9116 0-27-12.0887-27-27.0002s12.0884-26.9998 27-26.9998z" fill="#ebebeb" stroke="#fff" className="circleFill" />
@@ -97,28 +128,33 @@ class Diensten extends Component {
                                     </g>
                                 </g>
                             </svg>
-
                         </div>
                         <section id="analytics" className={`serviceSection ${this.state.activeService === "analytics" ? "active" : "inactive"}`}>
                             <h2>Analytics</h2>
                             <p>
-                                Performance vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat snelle websites hoger scoren in zoekmachines, een hogere conversie hebben, een verhoogd gebruiksgemak kennen, sneller laden bij slechte internetverbindingen... En ga zo maar door. We analyseren onze websites steeds trachten tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen.
-                                Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
+                                Krijg meer inzichten in je bezoekers zodat je hier beter op kan inspelen.
+                                Tools als Google Analytics laten je zien hoe oud je doelgroep is, waar ze zich bevinden, op welk tijdstip ze op je site zitten... Door het surfgedrag van bezoekers te analyseren kan je jouw strategie online en offline aanpassen. We helpen jouw dan ook graag om deze tools op te zetten en je wegwijs te maken.
                             </p>
                         </section>
                         <section id="development" className={`serviceSection ${this.state.activeService === "development" ? "active" : "inactive"}`}>
                             <h2>Web Development</h2>
                             <h3>De juiste tool voor de job</h3>
                             <p>
-                                Door onze expertise in development weten we precies welke technologieën, framework, libraries... het beste gebruikt kunnen worden voor jouw website. Dit is grotendeels wat ons onderscheid van andere web agencies, die voornamelijk met een CMS als Wordpress, Drupal... werken. In vele gevallen zijn dergelijke systemen te zwaar en te ingewikkeld voor wat je juist als onderneming nodig hebt. Door in dergelijke gevallen te kiezen voor de een statische site, zal je site vele voordelen genieten zoals betere page speed, hogere conversie, SEO... In sommige gevallen  is dergelijke CMS uiteraard wel de beste keuze en leveren we hier ook zeer kwalitatieve website.
+                                Door onze expertise in development weten we precies welke technologieën, frameworks, libraries... het beste gebruikt kunnen worden voor jouw website.
+                            </p>
+                            <p>
+                                Hoewel vandaag erg snel gegrepen wordt naar een CMS (<i>Content Management System</i>) als WordPress, Drupal, Wix... , om een website op te zetten, coderen wij zo veel mogelijk websites zelf. Dit geeft ons de mogelijkheid om erg flexibel te zijn en makkelijk aanpassingen te doen tot op de pixel, snellere oplossingen te bieden en goedkoper hosting aan te bieden.
+                            </p>
+                            <p>
+                                Uiteraard is een CMS in sommige gevallen wel de beste optie, en helpen we jou graag de beste keuze te maken in het grote aanbod.
                             </p>
                             <h3>Best practices</h3>
                             <p>
-                                We volgen steeds de richtlijnen die vooropgesteld worden voor het maken van websites. We houden ook rekening met dingen die meestal niet zo voor de hand liggend zijn, zoals ondersteuning voor mensen met een slecht zicht, een aangepast tekst voor wanneer afbeeldingen niet laden, de juiste html-tags voor titels...
+                                We volgen steeds de richtlijnen die vooropgesteld worden voor het opstellen van websites en gaan hiervoor erg tot in detail. Het gebruiken van de juiste titels op de juiste plaats, alternatieve teksten bij afbeeldingen... zijn bijvoorbeeld dingen die erg belangrijk zijn om de gebruiksvriendelijkheid van je website te verhogen. Hiernaast merkt ook Google dit op, en zal je beloond worden met een hogere ranking in zoekmachines.
                             </p>
                             <h3>Browsers</h3>
                             <p>
-                                Chrome, Firefox, Opera ,Safari, Edge... We testen onze websites op zowat elke browser die vandaag de dag gebruikt wordt zodat we niet voor verrassingen komen te staan van zodra we de website lanceren.
+                                Chrome, Firefox, Opera ,Safari, Edge... We testen onze websites op zowat elke browser die vandaag de dag gebruikt wordt, zodat je website altijd en overal toegankelijk is.
                             </p>
                         </section>
                         <section id="design" className={`serviceSection ${this.state.activeService === "design" ? "active" : "inactive"}`}>
@@ -130,8 +166,10 @@ class Diensten extends Component {
                         <section id="performance" className={`serviceSection ${this.state.activeService === "performance" ? "active" : "inactive"}`}>
                             <h2>Performance optimalisatie</h2>
                             <p>
-                                Performance vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat snelle websites hoger scoren in zoekmachines, een hogere conversie hebben, een verhoogd gebruiksgemak kennen, sneller laden bij slechte internetverbindingen... En ga zo maar door. We analyseren onze websites steeds trachten tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen.
-                                Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
+                                De laadtijd van je website vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat deze een grote impact heeft op het gebruiksgemak, je vindbaarheid in zoekmachines, conversie... En ga zo maar door.
+                            </p>
+                            <p>
+                                We analyseren onze websites steeds tot op het bot en trachten deze tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen. Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
                            </p>
                         </section>
                     </StyledServices>

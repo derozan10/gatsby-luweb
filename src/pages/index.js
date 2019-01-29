@@ -94,7 +94,7 @@ const index = () => {
                 <Card
                   icon={code}
                   title='Web development'
-                  text='We vertalen designs naar code, rekening houdend met alle hedendaagse devices. Hiervoor maken we uitsluitend gebruik van de nieuwste technologieeën.'
+                  text='We vertalen designs naar code, rekening houdend met alle hedendaagse devices. Hiervoor maken we uitsluitend gebruik van de nieuwste technologieën.'
                 />
               </Link>
               <Link to="/diensten#performance" style={{ textDecoration: "none" }}>
@@ -108,7 +108,7 @@ const index = () => {
                 <Card
                   icon={analytics}
                   title='Analytics'
-                  text='We helpen je inzichten te krijgen in je bezoekers zodat je strategische inzichten krijgt en hierop doorslaggevende beslissingen kan maken.'
+                  text='We helpen je inzichten te krijgen in de bezoekers van je website zodat je strategische inzichten krijgt en hierop doorslaggevende beslissingen kan maken.'
                 />
               </Link>
             </div>
@@ -128,7 +128,7 @@ const index = () => {
             </div>
             <div>
               <h3>Social Media</h3>
-              <p>Sociale media is niet meer weg te denken uit ons dagdagelijkse leven en kan heel wat mogelijkheiden bieden voor ondernemingen. We kunnen de sociale media helpen opzetten en integreren in je website.</p>
+              <p>Sociale media is niet meer weg te denken uit ons dagdagelijkse leven en kan heel wat mogelijkheden bieden voor ondernemingen. We kunnen de sociale media helpen opzetten en integreren in je website.</p>
               {/* <LinkUnderlined to="diensten">Meer over social</LinkUnderlined> */}
               <LinkUnderlined to="diensten">Meer</LinkUnderlined>
             </div>
