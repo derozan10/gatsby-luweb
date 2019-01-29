@@ -29,7 +29,10 @@ const StyledServices = styled.section`
     height: 100%;
     width: 150%;
     z-index: -2;
-}
+  }
+  a {
+      text-decoration: none
+    }
   .serviceCards {
     margin: 10px;
     display: grid;
@@ -83,28 +86,28 @@ const index = () => {
           <h2>Wat we doen</h2>
           <Fade bottom cascade>
             <div className="serviceCards">
-              <Link to="/diensten#design" style={{ textDecoration: "none" }}>
+              <Link to="/diensten" state={{service: "design"}}>
                 <Card
                   icon={design}
                   title='Web design'
                   text='Een goede website vertrekt steeds van een sterk design. De website moet een mooi, gebruiksvriendelijk en functioneel geheel vormen.'
                 />
               </Link>
-              <Link to="/diensten#development" style={{ textDecoration: "none" }}>
+              <Link to="/diensten" state={{service: "development"}}>
                 <Card
                   icon={code}
                   title='Web development'
                   text='We vertalen designs naar code, rekening houdend met alle hedendaagse devices. Hiervoor maken we uitsluitend gebruik van de nieuwste technologieën.'
                 />
               </Link>
-              <Link to="/diensten#performance" style={{ textDecoration: "none" }}>
+              <Link to="/diensten" state={{service: "performance"}}>
                 <Card
                   icon={speed}
                   title='Performance'
                   text='We geven je website een boost om een supersnelle laadtijd te bekomen. Hiedoor scoor je nog hoger in Google en verhoog je het gebruiksgemak van je website. '
                 />
               </Link>
-              <Link to="/diensten#analytics" style={{ textDecoration: "none" }}>
+              <Link to="/diensten" state={{service: "analytics"}}>
                 <Card
                   icon={analytics}
                   title='Analytics'
