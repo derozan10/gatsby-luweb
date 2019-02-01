@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from '../components/Layout'
 import styled from 'styled-components';
 import Container from '../components/Container';
-import SEO from '../components/SEO';
 
 const StyledOver = styled.div`
     position: relative;
@@ -51,8 +50,7 @@ const StyledOver = styled.div`
 
 const Over = () => {
     return (
-        <Layout inverse>
-            <SEO title="Over ons" />
+        <Layout inverse title="Over ons">
             <Container>
                 <StyledOver>
                     <h1>Over Luweb</h1>

@@ -44,16 +44,17 @@ const colors = {
 }
 
 const theme = {
-  blueGradient: 'linear-gradient(to right bottom,#221C67,#00468F,#006DA9)',
+  blueGradient: 'linear-gradient(175deg,#006DA9,#00468F,#221C67)',
   greenGradient: 'linear-gradient(to right bottom,#42C6B6,#25f4db)',
-  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)'
+  sharpShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+  boxShadow: '0 8px 24px 0 rgba(0,0,0,.11)'
 }
 
-const Layout = ({ children, location, inverse }) => {
+const Layout = ({ children, location, inverse, title }) => {
   return (
     <ThemeProvider theme={{ ...theme, colors }}>
       <>
-        <SEO />
+        <SEO title={title} />
         <div style={{ overflow: "hidden" }}>
           <Navbar inverse={inverse ? true : false} />
           {children}

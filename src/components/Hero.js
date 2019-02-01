@@ -14,7 +14,9 @@ const StyledHero = styled.header`
     #heroContainer {
         display: flex;
         justify-content: space-between;
-        /* align-items: center; */
+    }
+    @media(min-width: 577px) {
+        padding: 20px 0 80px 0;
     }
     &:after {
         overflow: hidden;
@@ -33,20 +35,13 @@ const StyledHero = styled.header`
     }
     .heroText {
         position: relative;
-        margin: 60px 0 120px 0;
-        @media (max-width: 768px) {
-            margin: 80px 0;
-        }
-        @media(max-width: 576px) {
-            margin: 40px 0;
-            width: 100%;
-        }
         h1{
             font-weight: 400;
             font-size: 42px;
             margin: 0 0 32px 0;
+            -webkit-font-smoothing: antialiased;
             @media (max-width: 768px) {
-                font-size: 30px;
+                font-size: 28px;
                 margin-bottom: 32px;
             }
         }
@@ -56,13 +51,15 @@ const StyledHero = styled.header`
             font-size: 24px;
             font-weight: 300;
             line-height: 1.4;
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
         }
     }
     #socialBar {
         display: flex;
         flex-direction: column;
         height: 230px;
-        margin-top: 60px;
         justify-content: space-between;
         z-index: 20;
         align-items: center;
@@ -98,17 +95,17 @@ export default () => {
     return (
         <StyledHero>
             <div style={{ position: "relative" }}>
-                <Container>
+                <Container withPaddingTop>
                     <div id="heroContainer">
                         <div className="heroText">
                             <h1>Freelance web design & development</h1>
-                            <p>Gespecialiseerd in uiterst performante websites, <br/>met een goed oog voor design.</p>
+                            <p>Gespecialiseerd in uiterst performante websites, <br />met een goed oog voor design.</p>
                             <div>
                                 <Link to="/diensten" >
-                                    <Button primary style={{margin: "0 15px 15px 0"}}>Onze diensten</Button>
+                                    <Button primary style={{ margin: "0 15px 15px 0" }}>Onze diensten</Button>
                                 </Link>
                                 <Link to="/contact">
-                                    <Button secondary style={{margin: "0 15px 15px 0"}}>Contacteer ons</Button>
+                                    <Button secondary style={{ margin: "0 15px 15px 0" }}>Contacteer ons</Button>
                                 </Link>
                             </div>
                         </div>

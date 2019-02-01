@@ -5,7 +5,6 @@ import Gallery from '../components/Gallery'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
-import SEO from '../components/SEO'
 import Container from '../components/Container'
 
 const StyledRealisaties = styled.div`
@@ -24,8 +23,7 @@ const realisaties = ({ data }) => {
 
   return (
     <>
-      <SEO title="Web development is onze passie." />
-      <Layout inverse>
+      <Layout inverse title="Onze realisaties">
         <StyledRealisaties>
           <Container>
             <h1>Realisaties</h1>

@@ -1,39 +1,55 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Transition from 'react-transition-group/Transition';
 
 import Layout from '../components/Layout'
 import Container from '../components/Container';
 // import Dienst from '../components/Dienst';
 import CTA2 from '../components/CTA2';
-import SEO from '../components/SEO';
+
+const duration = 500;
+
+const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
+    display: 'none',
+}
+
+const transitionStyles = {
+    entering: { display: 'block' },
+    entered: { display: 'block', opacity: 1 },
+    exiting: { position: 'absolute', top: 0, display: 'block', opacity: 0 },
+    // exited: { display: 'none' }
+};
 
 const StyledServices = styled.div`
-    .dienstNav {
+    .serviceNav {
         display: flex;
         justify-content: space-around;
         margin: 40px 0;
-    }
-    svg {
-        cursor: pointer;
-    }
-    svg.active .circleFill {
-        fill: #08599A;
-    }
-    p {
-        margin-bottom: 10px;
-    }
-    h3 {
-        margin-bottom: 8px;
-    }
-    .serviceSection {
-        display: none;
-        p {
-            max-width: 50em
+        svg {
+            cursor: pointer;
         }
-        margin-bottom: 120px;
+        svg.active .circleFill {
+            fill: #08599A;
+        }
     }
-    .serviceSection.active {
-        display: block;
+    #serviceSections{
+        position: relative;
+        max-width: 50em;
+        margin: 0 auto 120px;
+        min-height: 35vh;
+        .serviceSection {
+            position: relative;
+            top: 0;
+            h3 {
+                margin-bottom: 8px;
+            }
+            p {
+
+                margin-bottom: 10px;
+            }
+        }
     }
 `
 
@@ -51,12 +67,11 @@ class Diensten extends Component {
 
     render() {
         return (
-            <Layout inverse>
-                <SEO title="Onze diensten" />
+            <Layout inverse title="Onze diensten">
                 <Container>
                     <StyledServices>
                         <h1>Onze diensten</h1>
-                        <div className="dienstNav">
+                        <div className="serviceNav">
                             <svg
                                 fill="none"
                                 height="60"
@@ -134,51 +149,86 @@ class Diensten extends Component {
                                 </g>
                             </svg>
                         </div>
-                        <section id="analytics" className={`serviceSection ${this.state.activeService === "analytics" ? "active" : "inactive"}`}>
-                            <h2>Analytics</h2>
-                            <p>
-                                Krijg meer inzichten in je bezoekers zodat je hier beter op kan inspelen.
+                        <div id="serviceSections">
+                            <Transition in={this.state.activeService === "design"} timeout={duration} >
+                                {(state) => (
+                                    <section
+                                        className="serviceSection"
+                                        id="design"
+                                        style={{ ...defaultStyle, ...transitionStyles[state] }}
+                                    >
+                                        <h2>Web design</h2>
+                                        <p>
+                                            Bij het maken van een website start alles met een sterk design. Een website moet er niet alleen goed uitzien, maar moet vooral erg gebruiksvriendelijk zijn.  Verder zetten we de sterktes van jouw onderneming extra in de verf. Het spreekt voor zich dat alle design ook perfect schalen op elk device, van smartphone tot desktop.
                             </p>
-                            <p>
-                                Tools als Google Analytics laten je zien hoe oud je doelgroep is, waar ze zich bevinden, op welk tijdstip ze op je site zitten... Door het surfgedrag van bezoekers te analyseren kan je jouw strategie online en offline aanpassen. We helpen jouw dan ook graag om deze tools op te zetten en je wegwijs te maken.
+                                    </section>
+                                )}
+                            </Transition>
+                            <Transition in={this.state.activeService === "development"} timeout={duration}>
+                                {(state) => (
+                                    <section
+                                        className="serviceSection"
+                                        id="development"
+                                        style={{ ...defaultStyle, ...transitionStyles[state] }}
+                                    >
+                                        <h2>Web Development</h2>
+                                        <h3>De juiste tool voor de job</h3>
+                                        <p>
+                                            Door onze expertise in development weten we precies welke technologieën, frameworks, libraries... het beste gebruikt kunnen worden voor jouw website.
                             </p>
-                        </section>
-                        <section id="development" className={`serviceSection ${this.state.activeService === "development" ? "active" : "inactive"}`}>
-                            <h2>Web Development</h2>
-                            <h3>De juiste tool voor de job</h3>
-                            <p>
-                                Door onze expertise in development weten we precies welke technologieën, frameworks, libraries... het beste gebruikt kunnen worden voor jouw website.
+                                        <p>
+                                            Hoewel vandaag erg snel gegrepen wordt naar een CMS (<i>Content Management System</i>) als WordPress, Drupal, Wix... , om een website op te zetten, coderen wij zo veel mogelijk websites zelf. Dit geeft ons de mogelijkheid om erg flexibel te zijn en makkelijk aanpassingen te doen tot op de pixel, snellere oplossingen te bieden en goedkoper hosting aan te bieden.
                             </p>
-                            <p>
-                                Hoewel vandaag erg snel gegrepen wordt naar een CMS (<i>Content Management System</i>) als WordPress, Drupal, Wix... , om een website op te zetten, coderen wij zo veel mogelijk websites zelf. Dit geeft ons de mogelijkheid om erg flexibel te zijn en makkelijk aanpassingen te doen tot op de pixel, snellere oplossingen te bieden en goedkoper hosting aan te bieden.
+                                        <p>
+                                            Uiteraard is een CMS in sommige gevallen wel de beste optie, en helpen we jou graag de beste keuze te maken in het grote aanbod.
                             </p>
-                            <p>
-                                Uiteraard is een CMS in sommige gevallen wel de beste optie, en helpen we jou graag de beste keuze te maken in het grote aanbod.
+                                        <h3>Best practices</h3>
+                                        <p>
+                                            We volgen steeds de richtlijnen die vooropgesteld worden voor het opstellen van websites en gaan hiervoor erg tot in detail. Het gebruiken van de juiste titels op de juiste plaats, alternatieve teksten bij afbeeldingen... zijn bijvoorbeeld dingen die erg belangrijk zijn om de gebruiksvriendelijkheid van je website te verhogen. Hiernaast merkt ook Google dit op, en zal je beloond worden met een hogere ranking in zoekmachines.
                             </p>
-                            <h3>Best practices</h3>
-                            <p>
-                                We volgen steeds de richtlijnen die vooropgesteld worden voor het opstellen van websites en gaan hiervoor erg tot in detail. Het gebruiken van de juiste titels op de juiste plaats, alternatieve teksten bij afbeeldingen... zijn bijvoorbeeld dingen die erg belangrijk zijn om de gebruiksvriendelijkheid van je website te verhogen. Hiernaast merkt ook Google dit op, en zal je beloond worden met een hogere ranking in zoekmachines.
+                                        <h3>Browsers</h3>
+                                        <p>
+                                            Chrome, Firefox, Opera ,Safari, Edge... We testen onze websites op zowat elke browser die vandaag de dag gebruikt wordt, zodat je website altijd en overal toegankelijk is.
                             </p>
-                            <h3>Browsers</h3>
-                            <p>
-                                Chrome, Firefox, Opera ,Safari, Edge... We testen onze websites op zowat elke browser die vandaag de dag gebruikt wordt, zodat je website altijd en overal toegankelijk is.
+                                    </section>
+                                )}
+                            </Transition>
+
+                            <Transition in={this.state.activeService === "performance"} timeout={duration} >
+                                {(state) => (
+                                    <section
+                                        className="serviceSection"
+                                        id="performance"
+                                        style={{ ...defaultStyle, ...transitionStyles[state] }}
+                                    >
+                                        <h2>Performance optimalisatie</h2>
+                                        <p>
+                                            De laadtijd van je website vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat deze een grote impact heeft op het gebruiksgemak, je vindbaarheid in zoekmachines, conversie... En ga zo maar door.
                             </p>
-                        </section>
-                        <section id="design" className={`serviceSection ${this.state.activeService === "design" ? "active" : "inactive"}`}>
-                            <h2>Web design</h2>
-                            <p>
-                                Bij het maken van een website start alles met een sterk design. Een website moet er niet alleen goed uitzien, maar moet vooral erg gebruiksvriendelijk zijn.  Verder zetten we de sterktes van jouw onderneming extra in de verf. Het spreekt voor zich dat alle design ook perfect schalen op elk device, van smartphone tot desktop.
-                            </p>
-                        </section>
-                        <section id="performance" className={`serviceSection ${this.state.activeService === "performance" ? "active" : "inactive"}`}>
-                            <h2>Performance optimalisatie</h2>
-                            <p>
-                                De laadtijd van je website vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat deze een grote impact heeft op het gebruiksgemak, je vindbaarheid in zoekmachines, conversie... En ga zo maar door.
-                            </p>
-                            <p>
-                                We analyseren onze websites steeds tot op het bot en trachten deze tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen. Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
+                                        <p>
+                                            We analyseren onze websites steeds tot op het bot en trachten deze tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen. Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
                            </p>
-                        </section>
+                                    </section>
+                                )}
+                            </Transition>
+                            <Transition in={this.state.activeService === "analytics"} timeout={duration} mountOnEnter>
+                                {(state) => (
+                                    <section
+                                        id="analytics"
+                                        className="serviceSection"
+                                        style={{ ...defaultStyle, ...transitionStyles[state] }}
+                                    >
+                                        <h2>Analytics</h2>
+                                        <p>
+                                            Krijg meer inzichten in je bezoekers zodat je hier beter op kan inspelen.
+                                        </p>
+                                        <p>
+                                            Tools als Google Analytics laten je zien hoe oud je doelgroep is, waar ze zich bevinden, op welk tijdstip ze op je site zitten... Door het surfgedrag van bezoekers te analyseren kan je jouw strategie online en offline aanpassen. We helpen jouw dan ook graag om deze tools op te zetten en je wegwijs te maken.
+                                        </p>
+                                    </section>
+                                )}
+                            </Transition>
+                        </div>
                     </StyledServices>
                 </Container>
                 <CTA2 />
@@ -199,7 +249,7 @@ class Diensten extends Component {
                         Bovendien wordt je website als veilig gemarkeerd in de zoekbalk.
                     </p>
                 </Container> */}
-            </Layout>
+            </Layout >
         )
 
     }

@@ -5,7 +5,6 @@ import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Button from '../components/Button';
 import LuwebMap from '../components/LuwebMap'
-import SEO from '../components/SEO'
 
 //icons
 import telephone from '../img/icons/_ionicons_svg_ios-call.svg';
@@ -73,8 +72,7 @@ const StyledContact = styled.div`
 `
 
 const Contact = () => (
-    <Layout inverse>
-        <SEO title="Contacteer ons" />
+    <Layout inverse title="Contacteer ons">
         <Container style={{ minHeight: '60vh' }}>
             <StyledContact>
                 <h1>Contacteer ons</h1>
@@ -82,22 +80,22 @@ const Contact = () => (
                     <div id="contactIntro">
                         <h2>We helpen je graag verder.</h2>
                         <p>Contacteer ons via de contactgegevens hieronder of laat <strong>een berichtje</strong> via het contactformulier en we nemen zo snel mogelijk contact met je op.<br />
-                        Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
+                            Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
                         </p>
                         <div id="contactData">
-                        <div>
-                            <img src={telephone} alt="telephone"/><a href="tel:+496061042"> 0496/06.10.42</a>
-                        </div>
-                        <div>
-                            <img src={send} alt="send"/>
-                            <a href="mailto:lucas@luweb.be">lucas@luweb.be</a>
-                        </div>
-                        <div>
-                            <img src={home} alt="home"/>
-                            <address>
-                                Dokter Van de Perrelei 25 <br/> 2140 Borgerhout
+                            <div>
+                                <img src={telephone} alt="telephone" /><a href="tel:+496061042"> 0496/06.10.42</a>
+                            </div>
+                            <div>
+                                <img src={send} alt="send" />
+                                <a href="mailto:lucas@luweb.be">lucas@luweb.be</a>
+                            </div>
+                            <div>
+                                <img src={home} alt="home" />
+                                <address>
+                                    Dokter Van de Perrelei 25 <br /> 2140 Borgerhout
                             </address>
-                        </div>
+                            </div>
                         </div>
                     </div>
                     <form

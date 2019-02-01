@@ -7,7 +7,6 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
 import LinkUnderlined from '../components/LinkUnderlined';
-import SEO from '../components/SEO';
 import Container from '../components/Container';
 
 import design from '../img/icons/design.svg';
@@ -34,16 +33,25 @@ const StyledServices = styled.section`
       text-decoration: none
     }
   .serviceCards {
-    margin: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    @media(max-width: 768px) {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 40px;
+    margin: 40px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    a {
+      width: 25%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    @media(max-width: 960px) {
+      a {
+        width: 50%;
+        margin: 20px 0;
+      }
     }
     @media(max-width: 576px) {
-      grid-template-columns: 1fr;
+      a {
+        width: 100%;
+      }
     }
   }
 `
@@ -51,10 +59,10 @@ const StyledServices = styled.section`
 const StyledBranding = styled.div`
   margin: 80px 0 80px 0;
   .brandingCards {
-    margin: 10px;
+    margin: 40px 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 40px;
     @media(max-width: 768px) {
       grid-gap: 40px;
     }
@@ -77,46 +85,45 @@ const StyledBranding = styled.div`
 
 const index = () => {
   return (
-    <Layout>
-      <SEO title="Web development is onze passie." />
+    <Layout title="Web development is onze passie.">
       <Hero />
       <StyledServices>
         <section>
-        <Container>
-          <h2>Wat we doen</h2>
-          <Fade bottom cascade>
-            <div className="serviceCards">
-              <Link to="/diensten" state={{service: "design"}}>
-                <Card
-                  icon={design}
-                  title='Web design'
-                  text='Een goede website vertrekt steeds van een sterk design. De website moet een mooi, gebruiksvriendelijk en functioneel geheel vormen.'
-                />
-              </Link>
-              <Link to="/diensten" state={{service: "development"}}>
-                <Card
-                  icon={code}
-                  title='Web development'
-                  text='We vertalen designs naar code, rekening houdend met alle hedendaagse devices. Hiervoor maken we uitsluitend gebruik van de nieuwste technologieën.'
-                />
-              </Link>
-              <Link to="/diensten" state={{service: "performance"}}>
-                <Card
-                  icon={speed}
-                  title='Performance'
-                  text='We geven je website een boost om een supersnelle laadtijd te bekomen. Hiedoor scoor je nog hoger in Google en verhoog je het gebruiksgemak van je website. '
-                />
-              </Link>
-              <Link to="/diensten" state={{service: "analytics"}}>
-                <Card
-                  icon={analytics}
-                  title='Analytics'
-                  text='We helpen je inzichten te krijgen in de bezoekers van je website zodat je strategische inzichten krijgt en hierop doorslaggevende beslissingen kan maken.'
-                />
-              </Link>
-            </div>
-          </Fade>
-        </Container>
+          <Container withPadding>
+            <h2>Wat we doen</h2>
+            <Fade bottom cascade>
+              <div className="serviceCards">
+                <Link to="/diensten" state={{ service: "design" }}>
+                  <Card
+                    icon={design}
+                    title='Web design'
+                    text='Een goede website vertrekt steeds van een sterk design. De website moet een mooi, gebruiksvriendelijk en functioneel geheel vormen.'
+                  />
+                </Link>
+                <Link to="/diensten" state={{ service: "development" }}>
+                  <Card
+                    icon={code}
+                    title='Web development'
+                    text='We vertalen designs naar code, rekening houdend met alle hedendaagse devices. Hiervoor maken we uitsluitend gebruik van de nieuwste technologieën.'
+                  />
+                </Link>
+                <Link to="/diensten" state={{ service: "performance" }}>
+                  <Card
+                    icon={speed}
+                    title='Performance'
+                    text='We geven je website een boost om een supersnelle laadtijd te bekomen. Hiedoor scoor je nog hoger in Google en verhoog je het gebruiksgemak van je website. '
+                  />
+                </Link>
+                <Link to="/diensten" state={{ service: "analytics" }}>
+                  <Card
+                    icon={analytics}
+                    title='Analytics'
+                    text='We helpen je inzichten te krijgen in de bezoekers van je website zodat je strategische inzichten krijgt en hierop doorslaggevende beslissingen kan maken.'
+                  />
+                </Link>
+              </div>
+            </Fade>
+          </Container>
         </section>
       </StyledServices>
       <Container>

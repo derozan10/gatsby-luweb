@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Luweb",
-    titleTemplate: "Luweb | %s",
+    titleTemplate: "%s | Luweb",
     description:
       "Web development te Antwerpen - gespecialiseerd in performante websites met een goed oog voor design",
     siteUrl: "https://www.luweb.be", // sitemap
