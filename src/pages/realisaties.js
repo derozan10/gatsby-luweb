@@ -23,7 +23,7 @@ const realisaties = ({ data }) => {
 
   return (
     <>
-      <Layout inverse title="Onze realisaties">
+      <Layout inverse title="Onze realisaties - trots op wat we maken">
         <StyledRealisaties>
           <Container>
             <h1>Realisaties</h1>

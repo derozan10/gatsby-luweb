@@ -85,7 +85,7 @@ const StyledBranding = styled.div`
 
 const index = () => {
   return (
-    <Layout title="Web development is onze passie.">
+    <Layout title="Freelance web design &amp; development">
       <Hero />
       <StyledServices>
         <section>

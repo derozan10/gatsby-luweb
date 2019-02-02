@@ -70,7 +70,7 @@ class Diensten extends Component {
             <Layout inverse title="Onze diensten">
                 <Container>
                     <StyledServices>
-                        <h1>Onze diensten</h1>
+                        <h1>Onze diensten - altijd een oplossing op maat</h1>
                         <div className="serviceNav">
                             <svg
                                 fill="none"

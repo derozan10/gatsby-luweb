@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 
 export default () => {
     return (
-        <Layout inverse>
+        <Layout title="Bedankt voor jouw bericht" inverse>
             <Container >
                 <div style={{ minHeight: "35vh" }}>
                     <h1>Bedankt voor jouw bericht.</h1><br />
