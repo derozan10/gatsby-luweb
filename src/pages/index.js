@@ -111,7 +111,7 @@ const index = () => {
                   <Card
                     icon={speed}
                     title='Performance'
-                    text='We geven je website een boost om een supersnelle laadtijd te bekomen. Hiedoor scoor je nog hoger in Google en verhoog je het gebruiksgemak van je website. '
+                    text='We geven je website een boost om een supersnelle laadtijd te bekomen. Hierdoor scoor je nog hoger in Google en verhoog je het gebruiksgemak van je website. '
                   />
                 </Link>
                 <Link to="/diensten" state={{ service: "analytics" }}>
