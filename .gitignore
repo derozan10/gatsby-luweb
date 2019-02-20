@@ -58,3 +58,6 @@ public
 
 #sketch files
 *.sketch
+
+#macos files
+.DS_Store
