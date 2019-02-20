@@ -5,7 +5,8 @@ module.exports = {
     description:
       "Web development te Antwerpen - gespecialiseerd in performante websites met een goed oog voor design",
     siteUrl: "https://www.luweb.be", // sitemap
-    image: "/luweb-logo-blueGradient-small.png"
+    image: "/luweb-logo-blueGradient-small.png",
+    author: "Lucas Van Remoortere"
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -44,6 +45,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
@@ -76,5 +84,13 @@ module.exports = {
         sv: 6
       },
     },
+    `gatsby-transformer-remark`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/src/pages`,
+    //     name: "pages",
+    //   },
+    // },
   ]
 }
