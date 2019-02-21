@@ -5,12 +5,12 @@ import Layout from '../components/Layout'
 import Container from '../components/Container';
 
 const Blog = ({ data }) => {
-    const posts = data.allMarkdownRemark.edges;
-    return (
-        <Layout inverse title="Onze blog">
-            <Container withPaddingTop>
-                <div className="posts">
-                    {posts.map(post => {
+  // const posts = data.allMarkdownRemark.edges;
+  return (
+    <Layout inverse title="Onze blog">
+      <Container withPaddingTop>
+        <div className="posts">
+          {/* {posts.map(post => {
                         const { title } = post.node.frontmatter;
                         const { slug } = post.node.fields;
                         return (
@@ -21,31 +21,32 @@ const Blog = ({ data }) => {
                             </Link>
                         )
                     }
-                    )}
+                    )} */}
+          blogposts
                 </div>
-            </Container>
-        </Layout >
-    )
+      </Container>
+    </Layout >
+  )
 }
 
 export default Blog
 
-export const query = graphql`
-    query {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-    }
-`
+// export const query = graphql`
+//     query {
+//         allMarkdownRemark(
+//           sort: { fields: [frontmatter___date], order: DESC }
+//           limit: 1000
+//         ) {
+//           edges {
+//             node {
+//               fields {
+//                 slug
+//               }
+//               frontmatter {
+//                 title
+//               }
+//             }
+//           }
+//         }
+//     }
+// `

@@ -45,12 +45,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts`,
+        spaceId: `laawkh2e48v0`,
+        accessToken: `ae692d6b434ee7d980d2bd5bfe8346aaf90ae2a8ceb953ba5310849252fd0c45`,
       },
     },
+    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

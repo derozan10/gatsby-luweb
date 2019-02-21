@@ -6,7 +6,7 @@ import Container from './Container';
 import Button from './Button';
 // import { relative } from 'path';
 // import Container from '../components/Container';
-// import bg from "../img/bg.jpg"
+import bg from "../img/mac.png"
 
 const StyledHero = styled.header`
     color: #fff;
@@ -30,7 +30,8 @@ const StyledHero = styled.header`
         width: 150%;
         transform: rotate(-5deg) scale(1.2);
         transform-origin: bottom left;
-        background: ${props => props.theme.blueGradient};
+        background: url(${bg}), ${props => props.theme.blueGradient};
+        background-repeat: no-repeat;
         z-index: -1;
     }
     .heroText {

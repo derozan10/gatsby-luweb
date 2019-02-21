@@ -9,13 +9,14 @@ import SEO from "../components/SEO";
 
 
 const service = ({ data, location }) => {
-  const { excerpt, html, frontmatter } = data.markdownRemark;
-  const { title } = data.site.siteMetadata
+  // const { excerpt, html, frontmatter } = data.markdownRemark;
+  // const { title } = data.site.siteMetadata
   return (
     <Layout inverse>
-      <SEO title={title} description={excerpt} />
+      {/* <SEO title={title} description={excerpt} /> */}
       <Container>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
+        post
       </Container>
     </Layout>
   )
@@ -24,20 +25,21 @@ const service = ({ data, location }) => {
 export default service
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    query BlogPostById($id: String!) {
+      contentfulBlogpost(id: {eq: $id}) {
       id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
+      datumTijd
+      meta
+      title
+      headerImage {
+        fluid {
+          src
+        }
+      }
+      childContentfulBlogpostContentRichTextNode {
+        childContentfulRichText {
+          html
+        }
       }
     }
   }

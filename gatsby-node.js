@@ -1,64 +1,53 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const axios = require('axios');
+// const _ = require('lodash')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  return graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
+  const slugify = (text) => {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
+  }
+
+
+  return new Promise((resolve, reject) => {
+    const teamTemplate = path.resolve(`src/templates/blog-post.js`)
+
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulBlogpost {
+              edges {
+                node {
+                  id
+                }
               }
             }
           }
-        }
-      }
-    `
-  ).then(result => {
-    if (result.errors) {
-      throw result.errors
-    }
+          `
+      )
+        .then(result => {
+          if (result.errors) {
+            reject(result.errors)
+          }
+          result.data.allContentfulPloeg.edges.forEach(({ node }) => {
+            const path = slugify(node.naam)
+            createPage({
+              path,
+              component: teamTemplate,
+              context: {
+                guid: node.guid
+              }
+            })
+          })
+        })
 
-    // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
-
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
-
-      createPage({
-        path: post.node.fields.slug,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
-      })
-    })
+    )
   })
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
 }
