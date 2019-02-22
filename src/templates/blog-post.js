@@ -9,14 +9,16 @@ import SEO from "../components/SEO";
 
 
 const service = ({ data, location }) => {
+
+  // console.log(data)
   // const { excerpt, html, frontmatter } = data.markdownRemark;
   // const { title } = data.site.siteMetadata
   return (
     <Layout inverse>
       {/* <SEO title={title} description={excerpt} /> */}
       <Container>
-        {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
-        post
+
+        <div dangerouslySetInnerHTML={{ __html: data.contentfulBlogpost.childContentfulBlogpostContentRichTextNode.childContentfulRichText.html }}></div>
       </Container>
     </Layout>
   )
