@@ -1,12 +1,30 @@
+const config = require('./src/utils/siteConfig')
+let contentfulConfig
+
+try {
+  contentfulConfig = require('./.contentful')
+} catch (e) {
+  contentfulConfig = {
+    production: {
+      spaceId: process.env.SPACE_ID,
+      accessToken: process.env.ACCESS_TOKEN,
+    },
+  }
+} finally {
+  const { spaceId, accessToken } = contentfulConfig.production
+  if (!spaceId || !accessToken) {
+    throw new Error('Contentful space ID and access token need to be provided.')
+  }
+}
+
 module.exports = {
   siteMetadata: {
-    title: "Luweb",
-    titleTemplate: "%s | Luweb",
-    description:
-      "Web development te Antwerpen - gespecialiseerd in performante websites met een goed oog voor design",
-    siteUrl: "https://www.luweb.be", // sitemap
-    image: "/luweb-logo-blueGradient-small.png",
-    author: "Lucas Van Remoortere"
+    title: config.siteTitle,
+    titleTemplate: `%s | ${config.siteTitle}`,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
+    image: config.siteLogo,
+    author: config.author,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -25,16 +43,32 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Luweb`,
-        short_name: `Luweb`,
+        name: config.siteTitle,
+        short_name: config.siteTitle,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#3950D3`,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
         icon: `static/luweb-logo-blueGradient-small.png`, // This path is relative to the root of the site.
         legacy: true,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 650,
+              backgroundColor: 'white',
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
       },
     },
     {
@@ -45,13 +79,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `laawkh2e48v0`,
-        accessToken: `ae692d6b434ee7d980d2bd5bfe8346aaf90ae2a8ceb953ba5310849252fd0c45`,
-      },
+      resolve: 'gatsby-source-contentful',
+      options:
+        process.env.NODE_ENV === 'development'
+          ? contentfulConfig.development
+          : contentfulConfig.production,
     },
-    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
@@ -85,13 +118,6 @@ module.exports = {
         sv: 6
       },
     },
-    `gatsby-transformer-remark`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/pages`,
-    //     name: "pages",
-    //   },
-    // },
+    `gatsby-plugin-catch-links`,
   ]
 }
