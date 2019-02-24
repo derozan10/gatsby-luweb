@@ -15,13 +15,6 @@ const Body = styled.div`
 
   h1 {
     text-transform: capitalize;
-    font-size: 1.5em;
-  }
-  h2 {
-    font-size: 1.25em;
-  }
-  h3 {
-    font-size: 1em;
   }
 
   p {

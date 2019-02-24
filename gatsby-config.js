@@ -66,7 +66,7 @@ module.exports = {
               maxWidth: 650,
               backgroundColor: 'white',
               // linkImagesToOriginal: false,
-              wrapperStyle: 'margin-left: 0!important; padding: 40px;'
+              wrapperStyle: 'padding: 40px;'
             },
           },
         ],
