@@ -27,10 +27,11 @@ const StyledFooter = styled.div`
         }
         #address > span {
             display: block;
-            font-style: normal
+            font-style: normal;
         }
         #logo {
-            text-align: center
+            text-align: center;
+            margin: 0 auto;
         }
         @media(max-width: 576px){
             #logo{

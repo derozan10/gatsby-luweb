@@ -13,6 +13,7 @@ import design from '../img/icons/design.svg';
 import code from '../img/icons/code.svg';
 import speed from '../img/icons/speed.svg';
 import analytics from '../img/icons/analytics.svg';
+import marketing from '../img/icons/marketing.svg';
 
 
 const StyledServices = styled.section`
@@ -35,17 +36,18 @@ const StyledServices = styled.section`
   .serviceCards {
     margin: 40px 10px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
     a {
       width: 25%;
+      min-width: 350px;
       padding: 0 10px;
       box-sizing: border-box;
+      margin: 20px 0;
     }
     @media(max-width: 960px) {
       a {
         width: 50%;
-        margin: 20px 0;
       }
     }
     @media(max-width: 576px) {
@@ -85,7 +87,7 @@ const StyledBranding = styled.div`
 
 const index = () => {
   return (
-    <Layout title="Freelance web design &amp; development">
+    <Layout title="Freelance webdesign &amp; development">
       <Hero />
       <StyledServices>
         <section>
@@ -96,7 +98,7 @@ const index = () => {
                 <Link to="/diensten" state={{ service: "design" }}>
                   <Card
                     icon={design}
-                    title='Web design'
+                    title='Webdesign'
                     text='Een goede website vertrekt steeds van een sterk design. De website moet een mooi, gebruiksvriendelijk en functioneel geheel vormen.'
                   />
                 </Link>
@@ -119,6 +121,13 @@ const index = () => {
                     icon={analytics}
                     title='Analytics'
                     text='We helpen je inzichten te krijgen in de bezoekers van je website zodat je strategische inzichten krijgt en hierop doorslaggevende beslissingen kan maken.'
+                  />
+                </Link>
+                <Link to="/diensten" state={{ service: "development" }}>
+                  <Card
+                    icon={marketing}
+                    title='Digitale marketing'
+                    text='Alle online kanalen worden op elkaar afgestemd en vormen een gestroomlijnd geheel, dat jouw bedrijf tot een succesverhaal brengt.'
                   />
                 </Link>
               </div>

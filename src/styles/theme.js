@@ -37,7 +37,7 @@ const theme = {
   },
   sizes: {
     maxWidth: '1050px',
-    maxWidthCentered: '650px',
+    maxWidthCentered: '40em',
   },
   responsive: {
     small: '35em',

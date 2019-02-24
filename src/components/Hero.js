@@ -40,6 +40,7 @@ const StyledHero = styled.header`
             font-weight: 400;
             font-size: 42px;
             margin: 0 0 32px 0;
+            text-transform: capitalize;
             -webkit-font-smoothing: antialiased;
             @media (max-width: 768px) {
                 font-size: 28px;
@@ -99,7 +100,7 @@ export default () => {
                 <Container withPaddingTop>
                     <div id="heroContainer">
                         <div className="heroText">
-                            <h1>Freelance web design & development</h1>
+                            <h1>Freelance webdesign & development</h1>
                             <p>Gespecialiseerd in uiterst performante websites, <br />met een goed oog voor design.</p>
                             <div>
                                 <Link to="/diensten" >

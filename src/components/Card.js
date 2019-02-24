@@ -14,6 +14,7 @@ const StyledCard = styled.div`
     border-radius: 5px;
     min-height: 200px;
     height: 100%;
+
     h3 {
         font-weight: bold;
         margin-bottom: 20px;
@@ -41,7 +42,7 @@ const StyledCard = styled.div`
         z-index: 1;
         margin: 0 auto;
         width: 60px;
-        bottom: 20px;
+        bottom: 15px;
         left: calc(50% - 30px);
     }
     &:hover {

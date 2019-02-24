@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   margin: 0 auto 2em;
-  /* max-width: ${props => props.theme.sizes.maxWidthCentered}; */
+  max-width: ${props => props.theme.sizes.maxWidthCentered};
 `
 
 const Date = styled.p`

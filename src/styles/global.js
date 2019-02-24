@@ -125,7 +125,7 @@ html {
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: #333;
 	-webkit-font-smooting: antialiased;
-
+  font-size: 20px;
 }
 
 .img-responsive {
@@ -135,21 +135,23 @@ html {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 20px
+  font-size: 24px
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1.2;
 }
 
 .textCenter {
