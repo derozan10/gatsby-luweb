@@ -32,7 +32,7 @@ const service = ({ data, pageContext }) => {
       <Helmet>
         <title>{`${title}`}</title>
       </Helmet>
-      <BlogSEO pagePath={slug} postNode={postNode} postSEO />
+      <BlogSEO pagePath={`blog/${slug}`} postNode={postNode} postSEO />
       {/* <SEO pagePath={slug} description={metaDescription.internal.content} postNode={postNode} postSEO /> */}
       <BlogHero title={title} image={heroImage} height={'20vh'} />
       <Container>
