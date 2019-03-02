@@ -33,7 +33,8 @@ const theme = {
     gray: "#666666",
     blueGray: '#4d7a95',
     blue: "#3360a6",
-    darkBlue: "#221C67"
+    darkBlue: "#221C67",
+    orange: "#f7c224"
   },
   sizes: {
     maxWidth: '1050px',

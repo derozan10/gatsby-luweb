@@ -53,9 +53,6 @@ textarea
 	vertical-align:middle;
 	white-space:normal;
 	background:none;
-	line-height:1;
-	font-size:13px;
-	font-family:Arial;
 }
 
 /* Remove the stupid outer glow in Webkit */
@@ -110,28 +107,6 @@ input[type=week]
 {
 }
 
-/* Button Controls
------------------------------------------------*/
-
-input[type=checkbox],
-input[type=radio]
-{
-	width:13px;
-	height:13px;
-}
-
-/* File Uploads
------------------------------------------------*/
-
-input[type=file]
-{
-
-}
-
-/* Search Input
------------------------------------------------*/
-
-/* Make webkit render the search input like a normal text field */
 input[type=search]
 {
 	-webkit-appearance:textfield;

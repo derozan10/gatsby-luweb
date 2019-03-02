@@ -21,14 +21,17 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
   }
 
   /* Added to Fix Footer to bottom of viewport */
-  html, body {
+  html {
     height: 100%;
+  }
+
+  body {
+    min-height: 100%;
   }
   .siteRoot {
     height: 100vh;
@@ -84,7 +87,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: white;
     line-height: 1;
-    font-size: 100%;
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
@@ -178,8 +180,6 @@ textarea
 	white-space:normal;
 	background:none;
 	line-height:1;
-	font-size:13px;
-	font-family:Arial;
 }
 
 /* Remove the stupid outer glow in Webkit */

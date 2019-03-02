@@ -12,6 +12,7 @@
     "gatsby": "^2.0.91",
     "gatsby-image": "^2.0.26",
     "gatsby-plugin-catch-links": "^2.0.11",
+    "gatsby-plugin-crisp-chat": "^2.1.0",
     "gatsby-plugin-google-analytics": "^2.0.9",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-hotjar": "^1.0.1",

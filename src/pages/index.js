@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Image from 'gatsby-image'
 import { Fade } from 'react-reveal';
 
 import Layout from '../components/Layout';
@@ -9,27 +10,19 @@ import Card from '../components/Card';
 import LinkUnderlined from '../components/LinkUnderlined';
 import Container from '../components/Container';
 
+import designImage from '../img/design.jpg'
+import developementImage from '../img/development.jpg'
+import optimalisatieImage from '../img/optimalisatie.jpg'
+
 import design from '../img/icons/design.svg';
 import code from '../img/icons/code.svg';
 import speed from '../img/icons/speed.svg';
 import analytics from '../img/icons/analytics.svg';
 import marketing from '../img/icons/marketing.svg';
+import wave from '../img/wave.svg';
 
 
 const StyledServices = styled.section`
-  position: relative;
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    background: linear-gradient(to bottom right, #fff 50%, #eaeaea);
-    transform: rotate(-5deg);
-    transform-origin: left top;
-    left: -10%;
-    height: 100%;
-    width: 150%;
-    z-index: -2;
-  }
   a {
       text-decoration: none
     }
@@ -40,7 +33,6 @@ const StyledServices = styled.section`
     flex-wrap: wrap;
     a {
       width: 25%;
-      min-width: 350px;
       padding: 0 10px;
       box-sizing: border-box;
       margin: 20px 0;
@@ -54,6 +46,40 @@ const StyledServices = styled.section`
       a {
         width: 100%;
       }
+    }
+  }
+`
+
+const StyledImages = styled.div`
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    height: 140px;
+    width: 100%;
+    background: url(${wave}) bottom center no-repeat;
+    background-size: cover;
+    z-index: 2;
+    position: absolute;
+    top: -140px;
+  }
+  img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      top: 2px;
+      height: 2px;
+      width: 100px;
+      transform: rotate(5deg);
+      background-color: blue;
     }
   }
 `
@@ -87,8 +113,15 @@ const StyledBranding = styled.div`
 
 const index = () => {
   return (
-    <Layout title="Freelance webdesign &amp; development">
+    <Layout title="Freelance webdesign &amp; development" inverse withoutWaves>
       <Hero />
+      <StyledImages>
+        <Container>
+          <img src={designImage} alt="" />
+          <img src={developementImage} alt="" />
+          <img src={optimalisatieImage} alt="" />
+        </Container>
+      </StyledImages>
       <StyledServices>
         <section>
           <Container withPadding>

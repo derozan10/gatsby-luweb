@@ -20,9 +20,6 @@ const StyledContact = styled.div`
       @media(max-width: 576px){
         grid-template-columns: 1fr;
       }
-      h2 {
-          margin-bottom: 10px;
-      }
       #contactIntro {
           #contactData {
               margin-top: 20px;
@@ -35,13 +32,13 @@ const StyledContact = styled.div`
           #contactData > div {
               display: flex;
               align-items: center;
-              padding: 4px;
+              padding: 8px;
           }
           address, a {
             font-style: normal;
             color: #333;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 18px;
           }
       }
       .contactForm {
@@ -57,12 +54,13 @@ const StyledContact = styled.div`
           }
           input, textarea {
               background-color: #E1E7EC;
-              padding: 10px 0;
+              padding: 10px;
               border-radius: 5px;
               border-color: #fff;
               margin: 10px 0;
               display: block;
               width: 100%;
+              box-sizing: border-box;
           }
           textarea {
               height: 80px;
@@ -79,9 +77,9 @@ const Contact = () => (
                 <div id="contactFlex">
                     <div id="contactIntro">
                         <h2>We helpen je graag verder.</h2>
-                        <p>Contacteer ons via de contactgegevens hieronder of laat <strong>een berichtje</strong> via het contactformulier en we nemen zo snel mogelijk contact met je op.<br />
-                            Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
-                        </p>
+                        <p>Contacteer ons via de contactgegevens hieronder of laat <strong>een berichtje</strong> via het contactformulier en we nemen zo snel mogelijk contact met je op.</p>
+                        <br />
+                        <p>Voor je het weet, staat je splinternieuwe site <strong>online</strong>!</p>
                         <div id="contactData">
                             <div>
                                 <img src={telephone} alt="telephone" /><a href="tel:+496061042"> 0496/06.10.42</a>

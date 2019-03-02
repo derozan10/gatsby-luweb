@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 
 import Container from './Container';
 import Button from './Button';
+import bol from '../img/bol.svg'
 // import { relative } from 'path';
 // import Container from '../components/Container';
 import bg from "../img/mac.png"
@@ -11,35 +12,21 @@ import bg from "../img/mac.png"
 const StyledHero = styled.header`
     color: #fff;
     position: relative;
+    background: ${props => props.theme.blueGradient};
     #heroContainer {
         display: flex;
         justify-content: space-between;
     }
     @media(min-width: 577px) {
-        padding: 20px 0 80px 0;
-    }
-    &:after {
-        overflow: hidden;
-        content: '';
-        display: block;
-        position: absolute;
-        top: -10%;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 150%;
-        transform: rotate(-5deg) scale(1.2);
-        transform-origin: bottom left;
-        background: url(${bg}), ${props => props.theme.blueGradient};
-        background-repeat: no-repeat;
-        z-index: -1;
+        padding: 0px 0 100px 0;
     }
     .heroText {
         position: relative;
+        z-index: 100;
         h1{
             font-weight: 400;
-            font-size: 42px;
-            margin: 0 0 32px 0;
+            font-size: 48px;
+            margin: 0 0 48px 0;
             text-transform: capitalize;
             -webkit-font-smoothing: antialiased;
             @media (max-width: 768px) {
@@ -48,26 +35,29 @@ const StyledHero = styled.header`
             }
         }
         p {
-            margin-bottom: 48px;
+            margin-bottom: 64px;
             padding-right: 20px;
-            font-size: 24px;
+            font-size: 30px;
             font-weight: 300;
             line-height: 1.4;
             @media (max-width: 768px) {
                 font-size: 20px;
+            }
+            @media(min-width :768px) {
+                max-width: 80%;
             }
         }
     }
     #socialBar {
         display: flex;
         flex-direction: column;
-        height: 230px;
         justify-content: space-between;
         z-index: 20;
         align-items: center;
+        margin: 10px 0;
         svg {
-            height: 18px;
-            width: 18px;
+            height: 24px;
+            width: 24px;
         }
         @media(max-width: 576px) {
             display: none;
@@ -100,14 +90,14 @@ export default () => {
                 <Container withPaddingTop>
                     <div id="heroContainer">
                         <div className="heroText">
-                            <h1>Freelance webdesign & development</h1>
-                            <p>Gespecialiseerd in uiterst performante websites, <br />met een goed oog voor design.</p>
+                            <h1>Jouw partner in webdesign en developement</h1>
+                            <p>We maken, onderhouden en optimaliseren van websites die jouw bedrijf vooruit helpen</p>
                             <div>
-                                <Link to="/diensten" >
-                                    <Button primary style={{ margin: "0 15px 15px 0" }}>Onze diensten</Button>
-                                </Link>
                                 <Link to="/contact">
-                                    <Button secondary style={{ margin: "0 15px 15px 0" }}>Contacteer ons</Button>
+                                    <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
+                                </Link>
+                                <Link to="/diensten" >
+                                    <Button style={{ margin: "0 15px 15px 0" }}>Onze diensten</Button>
                                 </Link>
                             </div>
                         </div>

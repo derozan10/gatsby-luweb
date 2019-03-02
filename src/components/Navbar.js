@@ -7,7 +7,6 @@ import Backdrop from './Backdrop';
 import Logo from '../img/logos/luweb-logo-white.svg'
 import BlueLogo from '../img/logos/luweb-logo-blueGradient.svg'
 
-
 const StyledNav = styled.nav`
     display: flex;
     padding: 32px 0;
@@ -219,8 +218,8 @@ export default class Navbar extends Component {
             </div>
           </StyledNav >
         </Container>
-        {this.props.inverse &&
-          <StyledWaves>
+        {this.props.inverse && !this.props.withoutWaves &&
+          < StyledWaves >
             <svg id='topwaves' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" version="1.1" preserveAspectRatio="none">
               <path id="path1" d="m-100 1.041s61.625-4.5064 99.75 5.2333 70.594 15.391 124.5 16.312c55.25 0.9437 75.75-8.8513 75.75-8.8513v16.266h-300v-28.959z" />
               <path id="path2" d="m-100 30h300v-6.6791s-16.526 2.7112-62.25 2.3702c-58.5-0.436-97.875-12.245-153.75-15.599-55.875-3.3549-84-0.2745-84-0.2745v20.182z" />

@@ -5,57 +5,58 @@ import Container from '../components/Container';
 import smallLogo from '../img/logos/luweb-logo-white-small.svg'
 
 const StyledFooter = styled.div`
-    background-color: ${props => props.theme.colors.neutral.eight};
-    padding: 20px 0;
-    #footerContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        @media(max-width: 576px){
-            grid-template-columns: 1fr 1fr;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    #address,#logo,#socials {
+        width: 30%;
+    }
+    #address {
+        color: ${props => props.theme.colors.neutral.five};
+        font-weight: 300;
+        line-height: 1.5;
+        font-size: 14px;
+        #name {
+            color: ${props => props.theme.colors.neutral.two};
+            font-size: 16px;
         }
-        #address {
-            color: ${props => props.theme.colors.neutral.five};
-            font-weight: 300;
-            line-height: 1.4;
-            #name {
-                color: ${props => props.theme.colors.neutral.two};
-                font-size: 16px;
-            }
-        }
-        #address {
-            font-size: 14px;
-        }
-        #address > span {
+        span {
             display: block;
             font-style: normal;
         }
-        #logo {
-            text-align: center;
-            margin: 0 auto;
-        }
-        @media(max-width: 576px){
-            #logo{
-                display: none;
-            }
-        }
-        #socials {
-            display: flex;
-            justify-content: flex-end;
-        }
-        .social {
-            fill: #fff;
-        }
-        .social:hover {
-            fill: #333;
+    }
+    #logo {
+       display: flex;
+       justify-content: center;
+    }
+    #socials {
+        display: flex;
+        justify-content: flex-end;
+    }
+    @media(max-width: 576px){
+        #logo{
+            display: none;
         }
     }
-
+    .social {
+        fill: #333;
+        border-radius: 50%;
+        background-color: #fff;
+        margin: 10px;
+        height: 40px;
+        width: 40px;
+        padding: 5px;
+        &:hover {
+            background-color: #333;
+            fill: #FFF;
+        }
+    }
 `
 
 const Footer = () => (
-    <StyledFooter >
+    <div style={{ backgroundColor: "#0b1542" }}>
         <Container>
-            <div id="footerContainer">
+            <StyledFooter>
                 <address id="address">
                     <span id="name">Luweb</span>
                     <span>Dokter Van de Perrelei 25, 2140 Borgerhout</span>
@@ -92,9 +93,9 @@ const Footer = () => (
                         </svg>
                     </a>
                 </div>
-            </div>
+            </StyledFooter >
         </Container>
-    </StyledFooter >
+    </div>
 )
 
 export default Footer
