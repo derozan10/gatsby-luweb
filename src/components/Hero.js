@@ -12,13 +12,15 @@ import bg from "../img/mac.png"
 const StyledHero = styled.header`
     color: #fff;
     position: relative;
+    border-radius: 0 0 15% 0;
     background: ${props => props.theme.blueGradient};
     #heroContainer {
         display: flex;
         justify-content: space-between;
     }
     @media(min-width: 577px) {
-        padding: 0px 0 100px 0;
+        /* padding: 0px 0 100px 0; */
+
     }
     .heroText {
         position: relative;

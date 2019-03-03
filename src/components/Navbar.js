@@ -204,8 +204,8 @@ export default class Navbar extends Component {
                 <Link to="/diensten" activeClassName="activeLink">
                   <li>Diensten</li>
                 </Link>
-                <Link to="/realisaties" activeClassName="activeLink">
-                  <li>Realisaties</li>
+                <Link to="/projecten" activeClassName="activeLink">
+                  <li>Projecten</li>
                 </Link>
                 <Link to="/contact" activeClassName="activeLink">
                   <li>Contact</li>

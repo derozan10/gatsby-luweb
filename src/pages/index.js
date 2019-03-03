@@ -29,7 +29,6 @@ const StyledServices = styled.section`
   .serviceCards {
     margin: 40px 10px;
     display: flex;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
     a {
       width: 25%;
@@ -51,7 +50,7 @@ const StyledServices = styled.section`
 `
 
 const StyledImages = styled.div`
-  position: relative;
+  /* position: relative;
   &:before {
     content: '';
     display: block;
@@ -62,7 +61,7 @@ const StyledImages = styled.div`
     z-index: 2;
     position: absolute;
     top: -140px;
-  }
+  } */
   img {
     max-width: 100%;
     width: 400px;

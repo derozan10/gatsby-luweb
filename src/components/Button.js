@@ -13,7 +13,7 @@ const Button = (props) => {
         display: inline-block;
         position: relative;
         border: none;
-        font-size: 20px;
+        font-size: 18px;
         letter-spacing: 0.094em;
         cursor: pointer;
         border: ${props => props.primary ? 'none' : props.theme.darkBlue};
