@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
+    position: relative;
+    height: 100%;
     padding: ${props => props.withPaddingTop ? '100px 40px' : '0 40px'};
     margin: 0 auto;
     max-width: 1200px;

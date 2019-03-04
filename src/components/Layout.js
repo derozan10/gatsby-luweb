@@ -7,7 +7,6 @@ import 'normalize.css';
 
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
-import Navbar from './Navbar'
 import Footer from './Footer'
 import SEO from './SEO';
 import { Helmet } from "react-helmet"
@@ -27,7 +26,6 @@ export class Layout extends Component {
         <SEO title={this.props.title} />
         <ThemeProvider theme={theme}>
           <>
-            <Navbar {...this.props} />
             {this.props.children}
             <Footer />
           </>
