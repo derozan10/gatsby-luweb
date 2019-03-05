@@ -1,234 +1,179 @@
 import React, { Component } from 'react'
-import { Link } from "gatsby"
-import styled from "styled-components";
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import Slide from 'react-reveal/Slide';
+import Container from '../components/Container'
 
-import Container from "../components/Container"
-import Backdrop from './Backdrop';
-import Logo from '../img/logos/luweb-logo-white.svg'
-import BlueLogo from '../img/logos/luweb-logo-blueGradient.svg'
+import Logo from '../img/logos/luweb-logo-blueGradient.svg'
 
-const StyledNav = styled.nav`
+const StyledNavbar = styled.div`
+  position: fixed;
+  z-index: 1000;
+  background-color: #fff;
+  width: 100%;
+  nav {
     display: flex;
-    padding: 32px 0;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    #menu {
-      z-index: 1;
-
-    }
-    @media (min-width: 576px){
-      .react-reveal {
-        opacity: 1!important
-       }
-    }
-    ul {
+    box-sizing: border-box;
+    padding: 20px 0;
+    #logo {
+      height: 40px;
+      width: auto;
       margin: 0;
-      list-style: none;
-      @media (max-width: 576px) {
-        display: none;
-        margin-top: 60px;
-        flex-direction: column;
-        top: 0px;
-        right: 0px;
-      }
-      ::before {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(14,30,37,.54);
-        z-index: -1;
+      text-decoration: none;
+    }
+    a, li, li > span, li > ul > li {
+        color: ${props => props.theme.colors.base};
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    a.active {
+      font-weight: bold;
+    }
+    .dropdown {
+      position: relative;
+      > ul {
+        visibility: hidden;
         opacity: 0;
-        transition: opacity 0ms ease 0s;
-      }
-      a {
-        margin: 0 20px;
+        transition: visibility 0s, opacity 0.5s linear;
+        position: absolute;
+        left: -25%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        background-color: #fff;
+        border-radius: 5px;
+        li {
+          padding: 0;
+          a {
+            color: #737373;
+            display: block;
+            padding: 10px 20px;
+          }
+          a.active {
+            background-color: #f4f4f4;
+            color: #222831;
+            font-weight: bold;
+          }
+          a.active:hover {
+            color: #222831;
+          }
+          &:hover {
+            background-color: #FCC72C;
+            a {
+              color: #fff;
+            }
+          }
+        }
       }
     }
-    #menu.open ul {
+    .dropdown:hover > ul {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    button {
+      border: none;
+      background: transparent;
+      padding: 0;
+    }
+    .hamburger {
       display: flex;
-      position: fixed;
       flex-direction: column;
       justify-content: space-around;
-      margin-top: 60px;
-      padding: 5px;
-      border-radius: 5px;
-      background-color: #f2f2f2;
+      height: 24px;
+      width: 30px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      box-sizing: border-box;
+      &:focus {
+        outline: none;
+      }
+      span.line {
+        width: 30px;
+        height: 2px;
+        background: ${props => props.theme.colors.base};
+      }
+    }
+    ul {
+      display: flex;
+      list-style-type: none;
+      li {
+        padding: 0 20px;
+        font-size: 18px;
+      }
+    }
+    ul.mobile {
+      display: none;
+    }
+    ul.mobile#active {
+      display: flex;
+      flex-direction: column;
       position: absolute;
-      top: 20px;
+      top: 85px;
+      height: 100vh;
+      padding: 10px;
+      left: 0;
       width: 100%;
-      a {
-        color: #333;
-      }
-      ::before {
-        opacity: 1;
-      }
-      a.activeLink {
-        color: #fff;
-      }
-      a.activeLink li {
-        background-color: #4D7A95;
-        border-radius: 5px;
+      background-color: rgba(255,255,255,1);
+      z-index: 10;
+      li {
+        text-align: center;
+        padding: 20px 0;
       }
     }
-    ul li {
-      margin: 10px 0;
-      font-size: 16px;
-      @media(max-width: 576px) {
-        font-size: 20px;
-        padding: 10px;
-      }
-    }
-    ul a {
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        display: block;
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(to right,#221C67,#00468F,#006DA9);
-        transition: -webkit-transform .3s ease-in-out;
-        transition: transform .3s ease-in-out;
-        transform-origin: right top;
-        transform: scaleX(0);
-        @media (max-width: 576px) {
-          display: none;
-        }
-      }
-      &:hover {
-        &:after {
-          transform: scale(1);
-          transform-origin: left top;
-        }
-      }
-    }
-    img {
-      margin-bottom: 0px;
-      width: 100px;
-      height: auto;
-      position: relative;
-      z-index: 2;
-    }
-    a {
-      display: inline-block;
-      text-decoration: none;
-      color: ${props => props.inverse ? props.theme.colors.blue : '#fff'};
-      content: "";
-      position: relative;
-    }
-    a.activeLink {
-      &:after {
-        transform: scale(1);
-        transform-origin: left top;
-      }
-    }
-    ::after {
-      content: "";
-      width: 100%;
-      display: block;
-      position: absolute;
-      height: 2px;
-      background-image: ${props => props.inverse ? 'linear-gradient(-90deg,rgba(14,30,37,0) 0,#0e1e25 5%,#0e1e25 90%,rgba(14,30,37,0) 100%)' : 'linear-gradient(-90deg,rgba(255,255,255,0) 0,#fff 5%,#fff 90%,rgba(255,255,255,0) 100%)'};
-      opacity: .08;
-      bottom: 0;
-    }
-    #menu button{
-      color: #333;
-      padding: 10px 20px;
-      border-radius: 25px;
-      background-color: #fff;
-      opacity: 0.9;
-      border: solid 1px #00468F;
-      @media (min-width: 576px){
-        display: none;
-      }
-    }
+  }
 `
 
-const StyledWaves = styled.div`
-    #topwaves {
-      display: block;
-      width: 100%;
-      height: 100px;
-      transform: rotate(180deg);
-      #path1 {
-          animation: flow 10s infinite alternate ease-in-out;
-          fill: #4D7A95;
-          fill-opacity: 0.4;
-      }
-      #path2{
-          animation: flow 15s infinite alternate ease-in-out;
-          fill: #4D7A95;
-          fill-opacity: 0.4;
-      }
-      #path3{
-          animation: flow 20s infinite alternate ease-in-out;
-          fill: #4D7A95;
-          fill-opacity: 0.4;
-      }
-      @keyframes flow {
-        0% {
-          transform: translate(30%,0)
-        }
-        100% {
-          transform: translate(-30%,0)
-        }
-      }
-    }
-  `
-
-export default class Navbar extends Component {
-  state = {
-    menuOpen: false
-  };
-
-  render() {
-    return (
-      <div>
-        <Backdrop active={this.state.menuOpen} />
-        <Container>
-          <StyledNav {...this.props}>
-            <Link to="/"><img src={this.props.inverse ? BlueLogo : Logo} alt="luweb logo" /></Link>
-            <div id="menu" className={this.state.menuOpen ? "open" : "closed"}>
-              <button onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>menu</button>
-              {/* <Fade top opposite when={this.state.menuOpen}> */}
-              <ul>
-                <Link to="/over" activeClassName="activeLink">
-                  <li>Over</li>
-                </Link>
-                <Link to="/diensten" activeClassName="activeLink">
-                  <li>Diensten</li>
-                </Link>
-                <Link to="/projecten" activeClassName="activeLink">
-                  <li>Projecten</li>
-                </Link>
-                <Link to="/contact" activeClassName="activeLink">
-                  <li>Contact</li>
-                </Link>
-                <Link to="/blog" activeClassName="activeLink">
-                  <li>Blog</li>
-                </Link>
-              </ul>
-              {/* </Fade> */}
-            </div>
-          </StyledNav >
-        </Container>
-        {this.props.inverse && !this.props.withoutWaves &&
-          < StyledWaves >
-            <svg id='topwaves' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" version="1.1" preserveAspectRatio="none">
-              <path id="path1" d="m-100 1.041s61.625-4.5064 99.75 5.2333 70.594 15.391 124.5 16.312c55.25 0.9437 75.75-8.8513 75.75-8.8513v16.266h-300v-28.959z" />
-              <path id="path2" d="m-100 30h300v-6.6791s-16.526 2.7112-62.25 2.3702c-58.5-0.436-97.875-12.245-153.75-15.599-55.875-3.3549-84-0.2745-84-0.2745v20.182z" />
-              <path id="path3" d="m200 16.232s-24.625-5.6378-84.5-3.7495c-59.875 1.8882-74.962 15.943-144 16.562-50.75 0.455-71.5-3.7697-71.5-3.7697v4.7252h300v-13.768z" />
-            </svg>
-          </StyledWaves>
-        }
-      </div>
-    )
-  }
+const Navbar = (props) => {
+  return (
+    <StyledNavbar {...props}>
+      <Container>
+        <nav>
+          <Link to="/">
+            <img id="logo" src={Logo} alt="Luweb logo" />
+          </Link>
+          {
+            props.mobile && (
+              <button aria-label="Menu" onClick={props.hamburgerClick}>
+                <div className="hamburger">
+                  <span className="line" />
+                  <span className="line" />
+                  <span className="line" />
+                </div>
+              </button>
+            )
+          }
+          <Slide right>
+            <ul className={props.mobile ? 'mobile' : 'desktop'} id={props.active ? 'active' : ''}>
+              <li><Link to="/over" activeClassName="activeLink">Over</Link></li>
+              <li className="dropdown">
+                <span>
+                  Diensten
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style={{ position: 'relative', top: '2px', left: '2px' }}>
+                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill={props.inverse ? '#333' : '#fff'} />
+                  </svg>
+                </span>
+                <ul>
+                  <li>web design</li>
+                  <li>web development</li>
+                  <li>SEO</li>
+                  <li>Performance optimalisatie</li>
+                </ul>
+              </li>
+              <li><Link to="/projecten" activeClassName="activeLink">Projecten</Link></li>
+              <li><Link to="/contact" activeClassName="activeLink">Contact</Link></li>
+              <li><Link to="/blog" activeClassName="activeLink">Blog</Link></li>
+            </ul>
+          </Slide>
+        </nav>
+      </Container>
+    </StyledNavbar>
+  )
 }
 
+export default Navbar

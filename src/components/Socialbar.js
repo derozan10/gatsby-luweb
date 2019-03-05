@@ -10,7 +10,7 @@ const StyledSocialbar = styled.ul`
   justify-content: space-between;
   z-index: 20;
   align-items: center;
-  margin: 20px 0;
+  margin: 0 20px ;
   li {
     margin: 10px 0;
   }

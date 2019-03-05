@@ -18,10 +18,6 @@ const StyledHero = styled.header`
         display: flex;
         justify-content: space-between;
     }
-    @media(min-width: 577px) {
-        /* padding: 0px 0 100px 0; */
-
-    }
     .heroText {
         position: relative;
         z-index: 100;

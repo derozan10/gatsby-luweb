@@ -5,7 +5,7 @@ import Image from 'gatsby-image'
 import { Fade } from 'react-reveal';
 
 import Layout from '../components/Layout';
-import Hero from '../components/Hero';
+import Hero from '../components/Hero2';
 import Card from '../components/Card';
 import LinkUnderlined from '../components/LinkUnderlined';
 import Container from '../components/Container';
@@ -55,6 +55,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBo
 `
 
 const StyledPitch = styled.div`
+  z-index: 3;
   position: relative;
   img {
     max-width: 100%;
@@ -64,7 +65,7 @@ const StyledPitch = styled.div`
     padding: 20px;
     box-sizing: border-box;
     /* opacity: 0.2; */
-    &:after {
+    /* &:after {
       content: '';
       position: absolute;
       display: block;
@@ -75,10 +76,10 @@ const StyledPitch = styled.div`
       transform: rotate(5deg);
       background-color: blue;
       z-index: 20;
-    }
+    } */
   }
   #line {
-    position: absolute;
+    /* position: absolute; */
     bottom: -40px;
     right: -40px;
     background-color: blue;

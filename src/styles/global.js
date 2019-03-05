@@ -57,7 +57,6 @@ const GlobalStyle = createGlobalStyle`
   @media screen and (min-width: 35em) {
     html {
       margin-right: calc(-100vw + 100%);
-      overflow-x: hidden;
     }
   }
 
