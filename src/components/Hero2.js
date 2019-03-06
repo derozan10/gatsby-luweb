@@ -19,11 +19,11 @@ const StyledHero2 = styled.div`
     top: 0; left: 0;
     right: 0;
     bottom: 0;
-    background:linear-gradient(175deg,#474747,#000000,#f8f8f8);
+    background: linear-gradient(to top,#474747,#000000,#474747);
     opacity: 0.7;
   }
   #siteTitle {
-    padding: 20% 10%;
+    padding: 20vh 10vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +46,7 @@ const StyledHero2 = styled.div`
     transform: skewY(-5deg);
     transform-origin: left bottom;
     height: 100%;
-    bottom: -90%;
+    bottom: -100%;
     left: 0;
     right: 0;
     background: #fff;
@@ -58,7 +58,7 @@ const Hero2 = (props) => {
     <StyledHero2>
       <Container>
         <div id="siteTitle">
-          <h1>Jouw partner in webdesign en developement</h1>
+          <h1>Jouw partner voor een online succes</h1>
           <Link to="/contact">
             <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
           </Link>

@@ -45,6 +45,7 @@
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-images": "^0.5.19",
+    "react-masonry-component": "^6.2.1",
     "react-pose": "^4.0.5",
     "react-responsive-masonry": "^2.0.0",
     "react-reveal": "^1.2.2",

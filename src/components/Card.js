@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
     position: relative;
-    padding: 40px 40px 90px 40px;
+    padding: 30px 30px 90px 30px;
     box-shadow: ${props => props.theme.boxShadow};
     box-sizing: border-box;
     overflow: hidden;
@@ -14,8 +14,8 @@ const StyledCard = styled.div`
     border-radius: 5px;
     min-height: 200px;
     height: 100%;
-
     h3 {
+        text-align: center;
         font-weight: bold;
         margin-bottom: 20px;
         color: #414042;
@@ -48,6 +48,9 @@ const StyledCard = styled.div`
     &:hover {
         border-top: solid 4px #005fa4;
     }
+    li {
+        list-style-type: disc;
+    }
 `
 
 const Card = ({ icon, title, text }) => {
@@ -55,7 +58,7 @@ const Card = ({ icon, title, text }) => {
         <Fade>
             <StyledCard>
                 <h3>{title}</h3>
-                <p>{text}</p>
+                {text}
                 <img className="cardIcon" src={icon} alt="icon" />
             </StyledCard>
         </Fade>
