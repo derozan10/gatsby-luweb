@@ -73,30 +73,51 @@ const StyledNavbar = styled.div`
         visibility: visible;
         opacity: 1;
     }
-
-    button {
-      border: none;
-      background: transparent;
-      padding: 0;
-    }
     .hamburger {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
       height: 24px;
-      width: 30px;
-      background: transparent;
-      border: none;
+      width: 40px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
       cursor: pointer;
-      padding: 0;
-      box-sizing: border-box;
-      &:focus {
-        outline: none;
-      }
-      span.line {
-        width: 30px;
-        height: 2px;
+      span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
         background: ${props => props.theme.colors.base};
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+      }
+      span:nth-child(1) {
+        top: 0px;
+      }
+      span:nth-child(2), span:nth-child(3) {
+        top: 10px;
+      }
+      span:nth-child(4) {
+        top: 20px;
+      }
+    }
+    .hamburger.cross {
+      span:nth-child(1) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+      }
+      span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      span:nth-child(4) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
       }
     }
     ul {
@@ -114,10 +135,10 @@ const StyledNavbar = styled.div`
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 85px;
+      top: 80px;
       height: 100vh;
       padding: 10px;
-      left: 0;
+      right: 0;
       width: 100%;
       background-color: rgba(255,255,255,1);
       z-index: 10;
@@ -139,13 +160,12 @@ const Navbar = (props) => {
           </Link>
           {
             props.mobile && (
-              <button aria-label="Menu" onClick={props.hamburgerClick}>
-                <div className="hamburger">
-                  <span className="line" />
-                  <span className="line" />
-                  <span className="line" />
-                </div>
-              </button>
+              <div className={`hamburger ${props.active ? 'cross' : ''}`} aria-label="Menu" onClick={props.hamburgerClick}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             )
           }
           <Slide right>

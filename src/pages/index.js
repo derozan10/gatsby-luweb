@@ -42,6 +42,8 @@ const StyledServices = styled.section`
       }
     }
     @media(max-width: 576px) {
+      flex-direction: column;
+      justify-content: center;
       a {
         width: 100%;
       }
@@ -121,7 +123,6 @@ const StyledBranding = styled.div`
 `
 
 const index = ({ data }) => {
-  console.log(data)
   return (
     <Layout title="Freelance webdesign &amp; development" inverse withoutWaves>
       <Hero />
@@ -182,6 +183,7 @@ export const realisatieQuery = graphql`
   allContentfulRealisatie {
     edges {
       node {
+        id
         highlightImage {
           fluid {
             src

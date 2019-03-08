@@ -30,7 +30,7 @@ export class Layout extends Component {
   }
 
   checkMobile = () => {
-    if (window.innerWidth <= 576) {
+    if (window.outerWidth <= 576) {
       this.setState({ mobile: true })
     } else {
       this.setState({ mobile: false })

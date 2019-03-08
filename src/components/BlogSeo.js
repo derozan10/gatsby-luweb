@@ -27,13 +27,10 @@ class SEO extends Component {
 
     // Replace with Page Parameters if post or page
     if (postSEO || pageSEO) {
-      title = postNode.title
-      description =
-        postNode.metaDescription === null
-          ? postNode.body.childMarkdownRemark.excerpt
-          : postNode.metaDescription.internal.content
+      title = postNode.title;
+      description = postNode.metaDescription === null ? postNode.body.childMarkdownRemark.excerpt : postNode.metaDescription.internal.content;
 
-      pageUrl = config.siteUrl + '/' + pagePath + '/'
+      pageUrl = config.siteUrl + '/' + pagePath + '/';
     }
     // Use Hero Image for OpenGraph
     if (postSEO) {

@@ -11,11 +11,11 @@ const imagesLoadedOptions = { background: '.my-bg-image-el' }
 class Gallery extends Component {
     render() {
         const childElements = this.props.elements.map(element => (
-            <a href={element.projectUrl} target="_blank" rel="noopener noreferrer">
-                <li className="image-element-class">
-                    <img src={element.highlightImage.fluid.src} />
-                </li>
-            </a>
+            <li key={element.id} className="image-element-class">
+                {/* <a href={element.projectUrl} target="_blank" rel="noopener noreferrer"> */}
+                <img src={element.highlightImage.fluid.src} />
+                {/* </a> */}
+            </li>
         ))
 
         return (

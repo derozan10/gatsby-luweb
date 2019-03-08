@@ -14,13 +14,18 @@ import home from '../img/icons/_ionicons_svg_md-home.svg';
 
 const StyledContact = styled.div`
   #contactFlex {
-      display: grid;
-      grid-template-columns: 1.5fr 2fr;
-      grid-gap: 20px;
+      display: flex;
+      justify-content: space-between;
       @media(max-width: 576px){
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        justify-content: center;
       }
       #contactIntro {
+          width: 50%;
+          padding: 20px;
+          @media(max-width: 576px) {
+              width: 100%;
+          }
           #contactData {
               margin-top: 20px;
             img {
@@ -42,7 +47,10 @@ const StyledContact = styled.div`
           }
       }
       .contactForm {
-          flex-grow: grow;
+          width: 45%;
+          @media (max-width: 576px) {
+              width: 100%;
+          }
           background-color: #fff;
           padding: 20px;
           border-radius: 10px;

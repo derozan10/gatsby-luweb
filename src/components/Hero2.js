@@ -24,6 +24,9 @@ const StyledHero2 = styled.div`
   }
   #siteTitle {
     padding: 20vh 10vw;
+    @media(max-width: 576px) {
+      padding: 15vh 0 20vh 0;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;

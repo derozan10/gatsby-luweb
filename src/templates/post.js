@@ -30,15 +30,15 @@ const service = ({ data, pageContext }) => {
   return (
     <Layout inverse>
       <Helmet>
-        <title>{`${title}`}</title>
+        {title && <title>{`${title}`}</title>}
       </Helmet>
       <BlogSEO pagePath={`blog/${slug}`} postNode={postNode} postSEO />
       {/* <SEO pagePath={slug} description={metaDescription.internal.content} postNode={postNode} postSEO /> */}
-      <BlogHero title={title} image={heroImage} height={'20vh'} />
+      {title && heroImage && <BlogHero title={title} image={heroImage} height={'20vh'} />}
       <Container>
         {tags && <TagList tags={tags} />}
-        <PostDate date={publishDate} />
-        <PageBody body={body} />
+        {publishDate && <PostDate date={publishDate} />}
+        {body && <PageBody body={body} />}
       </Container>
       <PostLinks previous={previous} next={next} />
     </Layout>

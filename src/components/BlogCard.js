@@ -57,16 +57,14 @@ const Excerpt = styled.p`
 const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
   return (
     <Post featured={props.featured}>
-      <Link to={`/blog/${slug}/`}>
-        <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
-        <Title>{title}</Title>
-        <Date>{publishDate}</Date>
-        <Excerpt
-          dangerouslySetInnerHTML={{
-            __html: body.childMarkdownRemark.excerpt,
-          }}
-        />
-      </Link>
+      {slug && (
+        <Link to={`/blog/${slug}/`}>
+          {heroImage && (<Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />)}
+          {title && <Title>{title}</Title>}
+          {publishDate && <Date>{publishDate}</Date>}
+          {body && (<Excerpt dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.excerpt }} />)}
+        </Link>
+      )}
     </Post>
   )
 }
