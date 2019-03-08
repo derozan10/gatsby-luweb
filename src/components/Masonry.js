@@ -1,36 +1,38 @@
 import React, { Component } from 'react';
-import Masonry from 'react-masonry-component';
+import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 
-const masonryOptions = {
-    transitionDuration: 0
-};
+import Masonry from 'react-masonry-component';
 
-const imagesLoadedOptions = { background: '.my-bg-image-el' }
+import './showcase.sass'
 
-class Gallery extends Component {
-    render() {
-        const childElements = this.props.elements.map(element => (
-            <li key={element.id} className="image-element-class">
-                {/* <a href={element.projectUrl} target="_blank" rel="noopener noreferrer"> */}
-                <img src={element.highlightImage.fluid.src} />
-                {/* </a> */}
-            </li>
-        ))
+const Gallery = ({ elements }) => (
+    <Masonry className='showcase'>
+        {elements.map(element => (
+            <div key={element.node.id} className="showcase__item">
+                <figure className="card">
+                    {/* <Link to={`/projecten/${element.node.slug}`} className="card__image"> */}
+                    <a href={element.node.projectUrl} target="_blank">
+                        <Img fluid={element.node.highlightImage.fluid} />
+                    </a>
+                    {/* </Link> */}
 
-        return (
-            <Masonry
-                className={'my-gallery-class'} // default ''
-                elementType={'ul'} // default 'div'
-                options={masonryOptions} // default {}
-                disableImagesLoaded={false} // default false
-                updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-                imagesLoadedOptions={imagesLoadedOptions} // default {}
-            >
-                {childElements}
-            </Masonry>
-        );
-    }
-}
+                    <figcaption className="card__caption">
+                        <h6 className="card__title">
+                            {/* <Link to={`/projecten/${element.node.slug}`}> */}
+                            <a href={element.node.projectUrl} target="_blank">
+                                {element.node.text.text}
+                            </a>
+                            {/* </Link> */}
+                        </h6>
+                        <div className="card__description">
+                            <p>{element.node.slug}</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        ))}
+    </Masonry>
+)
 
 export default Gallery;

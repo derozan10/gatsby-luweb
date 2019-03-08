@@ -31,6 +31,7 @@ const StyledServices = styled.section`
     margin: 40px 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     a {
       width: 24%;
       box-sizing: border-box;
@@ -38,7 +39,7 @@ const StyledServices = styled.section`
     }
     @media(max-width: 960px) {
       a {
-        width: 50%;
+        width: 48%;
       }
     }
     @media(max-width: 576px) {
@@ -60,29 +61,7 @@ padding: 40px 0;
   h1 {
     color: #fff;
   }
-  img {
-    max-width: 100%;
-    width: 35vw;
-    height: auto;
-    position: relative;
-    padding: 20px;
-    box-sizing: border-box;
-    /* opacity: 0.2; */
-    /* &:after {
-      content: '';
-      position: absolute;
-      display: block;
-      bottom: 0;
-      top: 2px;
-      height: 2px;
-      width: 100px;
-      transform: rotate(5deg);
-      background-color: blue;
-      z-index: 20;
-    } */
-  }
   #line {
-    /* position: absolute; */
     bottom: -40px;
     right: -40px;
     background-color: blue;
@@ -91,33 +70,6 @@ padding: 40px 0;
     color: #fff;
     ul li{
       list-style-type: circle;
-    }
-  }
-`
-
-const StyledBranding = styled.div`
-  margin: 80px 0 80px 0;
-  .brandingCards {
-    margin: 40px 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px;
-    @media(max-width: 768px) {
-      grid-gap: 40px;
-    }
-    @media(max-width: 576px) {
-      grid-template-columns: 1fr;
-    }
-    h3 {
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-    p {
-      color: #6D6D6D;
-      margin-bottom: 10px;
-    }
-    a {
-      font-weight: 400;
     }
   }
 `
@@ -169,7 +121,7 @@ const index = ({ data }) => {
       <StyledProjects>
         <Container>
           <h1>Onze realisaties</h1>
-          <Masonry elements={data.allContentfulRealisatie.edges.map(edge => edge.node)} />
+          <Masonry elements={data.allContentfulRealisatie.edges} />
         </Container>
       </StyledProjects>
     </Layout >
@@ -184,9 +136,12 @@ export const realisatieQuery = graphql`
     edges {
       node {
         id
+        text {
+          text
+        }
         highlightImage {
           fluid {
-            src
+            ...GatsbyContentfulFluid_withWebp
           }
         }
         projectUrl
