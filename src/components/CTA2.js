@@ -7,8 +7,8 @@ import smallArrow from '../img/icons/smallArrow.svg'
 import underConstruction from '../img/under-construction.svg'
 
 const StyledCTA2 = styled.div`
-    background: linear-gradient(to right, #1A246D, #4d7a94 90%);
-    color: #fff;
+    background: ${props => props.theme.colors.tertiary};
+    color: ${props => props.theme.colors.base};
     padding: 40px 0;
     margin: 80px 0 40px 0;
     position: relative;
@@ -27,14 +27,24 @@ const StyledCTA2 = styled.div`
     }
     a {
         text-decoration: none;
-    }
-    a:active {
-        color: #fff;
+        color: #333;
+        font-weight: 600;
     }
     #contact {
-        color: #fff;
         text-align: center;
+        position: relative;
+        display: inline-block;
+        &:after {
+            content: url(${smallArrow});
+            height: 16px;
+            width: 16px;
+            display: inline-block;
+            margin: 0 12px;
+        }
         img {
+            position: absolute;
+            right: 0;
+            bottom: 0;
             margin: 0 5px;
         }
     }
@@ -55,10 +65,7 @@ const CTA2 = () => {
                 <h3>Overtuigd van onze expertise?</h3>
                 <p>Contacteer ons vrijblijvend, en we bekijken samen met jou hoe we ook jouw website naar een hoger niveau tillen.</p>
                 <Link to="/contact">
-                    <p id="contact">
-                        Contacteer ons
-                        <img style={{ height: '14px', width: '14px' }} src={smallArrow} alt="small arrow" />
-                    </p>
+                    <p id="contact">Contacteer ons</p>
                 </Link>
             </Container>
         </StyledCTA2>

@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Button from '../components/Button';
 import LuwebMap from '../components/LuwebMap'
+import Form from '../components/CTAform'
 
 //icons
 import telephone from '../img/icons/_ionicons_svg_ios-call.svg';
@@ -15,67 +16,36 @@ import home from '../img/icons/_ionicons_svg_md-home.svg';
 const StyledContact = styled.div`
     padding: 20px 0;
     #contactFlex {
-    display: flex;
-    justify-content: space-between;
-    @media(max-width: 576px) {
-        flex-direction: column;
-        justify-content: center;
-    }
-    #contactIntro {
-        width: 50%;
-        padding: 20px;
+        display: flex;
         @media(max-width: 576px) {
-            width: 100%;
+            flex-direction: column;
+            justify-content: center;
         }
-        #contactData {
-            margin-top: 20px;
-            img {
-                height: 20px;
-                width: 20px;
-                margin-right: 10px;
+        #contactIntro {
+            @media(max-width: 576px) {
+                width: 100%;
+            }
+            #contactData {
+                margin-top: 20px;
+                img {
+                    height: 20px;
+                    width: 20px;
+                    margin-right: 10px;
+                }
+            }
+            #contactData > div {
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+            address, a {
+                font-style: normal;
+                color: #333;
+                text-decoration: none;
+                font-size: 18px;
             }
         }
-        #contactData > div {
-            display: flex;
-            align-items: center;
-            padding: 8px;
-        }
-        address, a {
-            font-style: normal;
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-        }
     }
-    .contactForm {
-        width: 45%;
-        @media (max-width: 576px) {
-            width: 100%;
-        }
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px 0 rgba(14,30,37,.12);
-        box-sizing: border-box;
-        label {
-            display: block;
-            margin: 10px 0 5px 0;
-        }
-        input, textarea {
-            background-color: #E1E7EC;
-            padding: 10px;
-            border-radius: 5px;
-            border-color: #fff;
-            margin: 10px 0;
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        textarea {
-            height: 80px;
-        }
-    }
-}
 `
 
 const Contact = () => (
@@ -84,8 +54,8 @@ const Contact = () => (
             <StyledContact>
                 <h1>Contacteer ons</h1>
                 <div id="contactFlex">
+                    <Form />
                     <div id="contactIntro">
-                        <h2>We helpen je graag verder.</h2>
                         <p>Contacteer ons via de contactgegevens hieronder of laat <strong>een berichtje</strong> via het contactformulier en we nemen zo snel mogelijk contact met je op.</p>
                         <br />
                         <p>Voor je het weet, staat je splinternieuwe site <strong>online</strong>!</p>
@@ -105,35 +75,7 @@ const Contact = () => (
                             </div>
                         </div>
                     </div>
-                    <form
-                        name="contact"
-                        className="contactForm"
-                        method="POST"
-                        data-netlify="true"
-                        data-netlify-honeypot='bot-field'
-                        action="/bedankt"
-                    >
-                        <p style={{ visibility: "hidden", height: 0 }}>
-                            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-                        </p>
-                        <input type="hidden" name="form-name" value="contact" />
-                        <div>
-                            <label>Naam</label>
-                            <input type="text" autoComplete='name' name="name" required />
-                        </div>
-                        <div>
-                            <label>Email</label>
-                            <input type="email" autoComplete='email' name="email" required />
-                        </div>
 
-                        <label>Organisatie</label>
-                        <input type="text" autoComplete='on' name="organisatie" />
-
-                        <label>Bericht:</label>
-                        <textarea name="bericht" required></textarea>
-                        <div data-netlify-recaptcha="true" />
-                        <Button primary type="submit" style={{ width: '250px', margin: '20px auto' }}>Verzend</Button>
-                    </form>
                 </div>
             </StyledContact>
         </Container>

@@ -51,7 +51,7 @@ export class Layout extends Component {
         <ThemeProvider theme={theme}>
           <>
             <Navbar hamburgerClick={this.toggleNav} mobile={this.state.mobile} active={this.state.navActive} />
-            <div style={{ padding: "80px 0 40px 0", minHeight: "80vh" }}>
+            <div style={{ paddingTop: "80px", minHeight: "80vh" }}>
               {this.props.children}
             </div>
             <Footer />

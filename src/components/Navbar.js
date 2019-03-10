@@ -133,7 +133,7 @@ const Navbar = (props) => {
       <li><Link to="/" activeClassName="active">Home</Link></li>
       <li><Link to="/over" activeClassName="active">Over</Link></li>
       <li><Link to="/diensten" activeClassName="active">Diensten</Link></li>
-      <li><Link to="/projecten" activeClassName="active">Projecten</Link></li>
+      {/* <li><Link to="/projecten" activeClassName="active">Projecten</Link></li> */}
       <li><Link to="/contact" activeClassName="active">Contact</Link></li>
       <li><Link to="/blog" activeClassName="active">Blog</Link></li>
     </ul>

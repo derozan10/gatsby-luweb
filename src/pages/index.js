@@ -8,13 +8,14 @@ import Hero from '../components/Hero';
 import Card from '../components/Card';
 import Container from '../components/Container';
 import Masonry from '../components/Masonry';
+import Checklist from '../components/Checklist'
 
 import speed from '../img/icons/speed.svg';
 import search from '../img/icons/search.svg';
 import analytics from '../img/icons/analytics.svg';
 import marketing from '../img/icons/marketing.svg';
 import CTAform from '../components/CTAform';
-import check from '../img/icons/_ionicons_svg_md-checkmark.svg'
+
 
 const StyledServices = styled.section`
   z-index: 5;
@@ -59,25 +60,15 @@ const StyledServices = styled.section`
       text-transform: uppercase;
     }
     #usp {
-      ul.checkmark li {
-        padding: 8px 0 24px 16px;
-        color: #232525;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
+        li {
+          padding-top: 8px;
+          padding-bottom:24px;
+          color: #232525;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        }
       }
-      ul.checkmark li:before {
-        vertical-align: middle;
-        color: #e85555;
-        content: url(${check});
-        box-sizing: border-box;
-        display: inline-block;
-        font-family: 'ionicons';
-        position: relative;
-        left: -16px;
-
-      }
-    }
   }
 `
 
@@ -145,21 +136,27 @@ const index = ({ data }) => {
               </Link>
             </section>
           </Fade>
-          <Fade bottom cascade>
-            <section className="contactSection">
-              <div id="usp">
-                <h2>Een strategie op maat</h2>
-                <ul className="checkmark">
+          <section className="contactSection">
+            <div id="usp">
+              <h2>Een strategie op maat</h2>
+              <Fade bottom cascade>
+                <Checklist>
                   <li>Doelgerichte, performante website</li>
-                  <li>Technische ondersteuning en onderhoud</li>
-                  <li>Actieve aanwezigheid op Sociale media</li>
                   <li>Zichtbaarheid in Google</li>
+                  <li>Actieve aanwezigheid op Sociale media</li>
                   <li>Meer inzicht in je klanten</li>
-                </ul>
+                  <li>Technische ondersteuning en onderhoud</li>
+                </Checklist>
+              </Fade>
+            </div>
+            <Fade right>
+              <div>
+                <h2 style={{ textAlign: "center" }}>Vraag een offerte aan</h2>
+                {/* <p>De eerste stap naar meer klanten: vul onderstaande gegevens in.</p> */}
+                <CTAform cta='Jouw gratis offerte aanvragen' />
               </div>
-              <CTAform />
-            </section>
-          </Fade>
+            </Fade>
+          </section>
         </Container>
       </StyledServices>
       <StyledProjects>

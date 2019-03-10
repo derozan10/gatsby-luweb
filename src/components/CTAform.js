@@ -12,7 +12,7 @@ const StyledCtaForm = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     label {
       height: 1px;
@@ -33,6 +33,7 @@ const StyledCtaForm = styled.div`
         font-size: 14px;
         font-weight: 300;
         padding: 20px;
+        box-sizing: border-box;
         width: 100%;
     }
   }
@@ -42,11 +43,9 @@ const StyledCtaForm = styled.div`
     }
 `
 
-const CTAform = () => {
+const CTAform = (props) => {
   return (
-    <StyledCtaForm>
-      <h2 style={{ textAlign: "center" }}>Vraag een offerte aan</h2>
-      <p>De eerste stap naar meer klanten: vul onderstaande gegevens in.</p>
+    <StyledCtaForm {...props}>
       <form
         name="contact"
         className="contactForm"
@@ -55,7 +54,7 @@ const CTAform = () => {
         data-netlify-honeypot='bot-field'
         action="/bedankt"
       >
-        <p style={{ visibility: "hidden", height: 0 }}>
+        <p style={{ visibility: "hidden", height: 0, margin: 0, padding: 0 }}>
           <label>Vul dit niet in <input name="bot-field" /></label>
         </p>
         <input type="hidden" name="form-name" value="contact" />
@@ -69,7 +68,7 @@ const CTAform = () => {
         <label htmlFor="mailbox">E-Mail</label>
         <input type="email" id="mailbox" name="email" placeholder="E-Mail" autoComplete='email' required />
 
-        <Button primary type="submit" >Jouw gratis offerte aanvragen</Button>
+        <Button primary type="submit" >{props.cta ? props.cta : 'Contacteer ons'}</Button>
       </form>
       <p className="policy"><small>Door bovenstaande gegevens in te vullen ga je akkoord met onze <a href="/privacy-policy">Privacy Policy</a>.</small></p>
     </StyledCtaForm>
