@@ -1,13 +1,12 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import CardList from '../components/CardList'
-import BlogCard from '../components/BlogCard'
-import Helmet from 'react-helmet'
-import Container from '../components/Container'
-import Pagination from '../components/Pagination'
-import SEO from '../components/SEO'
-import config from '../utils/siteConfig'
+import React from 'react';
+import { graphql } from 'gatsby';
+
+import Layout from '../components/Layout';
+import CardList from '../components/CardList';
+import BlogCard from '../components/BlogCard';
+import Container from '../components/Container';
+import Pagination from '../components/Pagination';
+import SEO from '../components/SEO';
 
 const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges

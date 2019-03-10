@@ -26,6 +26,9 @@ const theme = {
       eight: "#404B59",
       nine: "#212933"
     },
+    orange: '#da3434',
+    yellow: '#fdd14d',
+    darkYellow: '#fac421',
     green: "#42C6B6",
     lightGreen: "#25f4db",
     black: "#33333",
@@ -33,8 +36,8 @@ const theme = {
     gray: "#666666",
     blueGray: '#4d7a95',
     blue: "#3360a6",
-    darkBlue: "#221C67",
-    orange: "#f7c224"
+    darkBlue: "#1f0eee",
+    lightBlue: "#0074d5",
   },
   sizes: {
     maxWidth: '1050px',

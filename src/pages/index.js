@@ -1,21 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'gatsby-image'
 import { Link, graphql } from 'gatsby';
 import { Fade } from 'react-reveal';
 
 import Layout from '../components/Layout';
-import Hero from '../components/Hero2';
+import Hero from '../components/Hero';
 import Card from '../components/Card';
 import Container from '../components/Container';
 import Masonry from '../components/Masonry';
 
-import designImage from '../img/design.jpg'
 import speed from '../img/icons/speed.svg';
+import search from '../img/icons/search.svg';
 import analytics from '../img/icons/analytics.svg';
 import marketing from '../img/icons/marketing.svg';
-
-
+import CTAform from '../components/CTAform';
+import check from '../img/icons/_ionicons_svg_md-checkmark.svg'
 
 const StyledServices = styled.section`
   z-index: 5;
@@ -47,6 +46,36 @@ const StyledServices = styled.section`
       justify-content: center;
       a {
         width: 100%;
+      }
+    }
+  }
+  .contactSection{
+    display: flex;
+    > div {
+      width: 50%;
+    }
+    h2 {
+      text-align: left;
+      text-transform: uppercase;
+    }
+    #usp {
+      ul.checkmark li {
+        padding: 8px 0 24px 16px;
+        color: #232525;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      ul.checkmark li:before {
+        vertical-align: middle;
+        color: #e85555;
+        content: url(${check});
+        box-sizing: border-box;
+        display: inline-block;
+        font-family: 'ionicons';
+        position: relative;
+        left: -16px;
+
       }
     }
   }
@@ -82,7 +111,7 @@ const index = ({ data }) => {
         <Container withPadding>
           <h2>Wat we doen</h2>
           <Fade bottom cascade>
-            <div className="serviceCards">
+            <section className="serviceCards">
               <Link to="/diensten" state={{ service: "development" }}>
                 <Card
                   icon={speed}
@@ -95,7 +124,7 @@ const index = ({ data }) => {
               </Link>
               <Link to="/diensten" state={{ service: "performance" }}>
                 <Card
-                  icon={speed}
+                  icon={search}
                   title='SEO'
                   text={<p>We verbeteren je online zichtbaarheid door actief aan 'Search Engine Optimization' te doen. Zo scoor je beter in zoekmachines als Google</p>}
                 />
@@ -114,7 +143,22 @@ const index = ({ data }) => {
                   text={<p>We verhogen de zichtbaarheid van jouw onderneming en betrekken klanten door slim gebruik te maken van allerlei kanalen.</p>}
                 />
               </Link>
-            </div>
+            </section>
+          </Fade>
+          <Fade bottom cascade>
+            <section className="contactSection">
+              <div id="usp">
+                <h2>Een strategie op maat</h2>
+                <ul className="checkmark">
+                  <li>Doelgerichte, performante website</li>
+                  <li>Technische ondersteuning en onderhoud</li>
+                  <li>Actieve aanwezigheid op Sociale media</li>
+                  <li>Zichtbaarheid in Google</li>
+                  <li>Meer inzicht in je klanten</li>
+                </ul>
+              </div>
+              <CTAform />
+            </section>
           </Fade>
         </Container>
       </StyledServices>

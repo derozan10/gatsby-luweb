@@ -9,7 +9,7 @@ import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 
 const StyledRealisaties = styled.div`
-    margin-bottom: 40px;
+    padding: 20px 0;
     img {
       width: 500px;
       height: auto;

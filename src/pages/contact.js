@@ -13,68 +13,69 @@ import home from '../img/icons/_ionicons_svg_md-home.svg';
 
 
 const StyledContact = styled.div`
-  #contactFlex {
-      display: flex;
-      justify-content: space-between;
-      @media(max-width: 576px){
+    padding: 20px 0;
+    #contactFlex {
+    display: flex;
+    justify-content: space-between;
+    @media(max-width: 576px) {
         flex-direction: column;
         justify-content: center;
-      }
-      #contactIntro {
-          width: 50%;
-          padding: 20px;
-          @media(max-width: 576px) {
-              width: 100%;
-          }
-          #contactData {
-              margin-top: 20px;
+    }
+    #contactIntro {
+        width: 50%;
+        padding: 20px;
+        @media(max-width: 576px) {
+            width: 100%;
+        }
+        #contactData {
+            margin-top: 20px;
             img {
                 height: 20px;
                 width: 20px;
                 margin-right: 10px;
             }
-          }
-          #contactData > div {
-              display: flex;
-              align-items: center;
-              padding: 8px;
-          }
-          address, a {
+        }
+        #contactData > div {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+        }
+        address, a {
             font-style: normal;
             color: #333;
             text-decoration: none;
             font-size: 18px;
-          }
-      }
-      .contactForm {
-          width: 45%;
-          @media (max-width: 576px) {
-              width: 100%;
-          }
-          background-color: #fff;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 2px 4px 0 rgba(14,30,37,.12);
-          box-sizing: border-box;
-          label {
-              display: block;
-              margin: 10px 0 5px 0;
-          }
-          input, textarea {
-              background-color: #E1E7EC;
-              padding: 10px;
-              border-radius: 5px;
-              border-color: #fff;
-              margin: 10px 0;
-              display: block;
-              width: 100%;
-              box-sizing: border-box;
-          }
-          textarea {
-              height: 80px;
-          }
-      }
-  }
+        }
+    }
+    .contactForm {
+        width: 45%;
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px 0 rgba(14,30,37,.12);
+        box-sizing: border-box;
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+        }
+        input, textarea {
+            background-color: #E1E7EC;
+            padding: 10px;
+            border-radius: 5px;
+            border-color: #fff;
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 80px;
+        }
+    }
+}
 `
 
 const Contact = () => (

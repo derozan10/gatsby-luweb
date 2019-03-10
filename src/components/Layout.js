@@ -44,13 +44,14 @@ export class Layout extends Component {
       <>
         <Helmet>
           <script src="https://client.crisp.chat/l.js" async />
+          <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"></link>
         </Helmet>
         <Backdrop active={this.state.navActive} closeNav={() => this.setState({ navActive: false })} />
         <SEO title={this.props.title} />
         <ThemeProvider theme={theme}>
           <>
             <Navbar hamburgerClick={this.toggleNav} mobile={this.state.mobile} active={this.state.navActive} />
-            <div style={{ paddingTop: "80px" }}>
+            <div style={{ padding: "80px 0 40px 0", minHeight: "80vh" }}>
               {this.props.children}
             </div>
             <Footer />

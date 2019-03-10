@@ -1,76 +1,76 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Socialbar from './Socialbar';
+import Container from './Container';
 import { Link } from "gatsby";
 
-import Container from './Container';
+import headerImage from '../img/hero-bg.jpg'
 import Button from './Button';
-import bol from '../img/bol.svg'
-// import { relative } from 'path';
-// import Container from '../components/Container';
-import bg from "../img/mac.png"
 
-const StyledHero = styled.header`
-    color: #fff;
-    position: relative;
-    background-image:  url(${bg}), ${props => props.theme.blueGradient};
-    background-repeat: no-repeat;
-    #heroContainer {
-        display: flex;
-        justify-content: space-between;
+const StyledHero = styled.div`
+  position: relative;
+  height: 70vh;
+  min-height: 600px;
+  z-index: 1;
+  background: url(${headerImage}) fixed center no-repeat;
+  background-size: cover;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top,#474747,#000000,#474747);
+    opacity: 0.7;
+  }
+  #siteTitle {
+    padding: 20vh 10vw;
+    @media(max-width: 576px) {
+      padding: 15vh 0 20vh 0;
     }
-    .heroText {
-        position: relative;
-        z-index: 100;
-        h1{
-            font-weight: 400;
-            font-size: 48px;
-            margin: 0 0 48px 0;
-            text-transform: capitalize;
-            -webkit-font-smoothing: antialiased;
-            @media (max-width: 768px) {
-                font-size: 28px;
-                margin-bottom: 32px;
-            }
-        }
-        p {
-            margin-bottom: 64px;
-            padding-right: 20px;
-            font-size: 30px;
-            font-weight: 300;
-            line-height: 1.4;
-            @media (max-width: 768px) {
-                font-size: 20px;
-            }
-            @media(min-width :768px) {
-                max-width: 80%;
-            }
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    h1 {
+      color: #fff;
+      text-align: center;
+      font-size: 48px;
+      text-transform: uppercase;
+      @media(max-width: 576px) {
+        font-size: 32px;
+      }
     }
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    transform: skewY(-5deg);
+    transform-origin: left bottom;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+  }
 `
 
-
-export default () => {
-    return (
-        <StyledHero>
-            <div style={{ position: "relative" }}>
-                <Container withPaddingTop>
-                    <div id="heroContainer">
-                        <div className="heroText">
-                            <h1>Jouw partner in webdesign en developement</h1>
-                            <p>We maken, onderhouden en optimaliseren websites die jouw bedrijf vooruit helpen</p>
-                            <div>
-                                <Link to="/contact">
-                                    <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
-                                </Link>
-                                <Link to="/diensten" >
-                                    <Button style={{ margin: "0 15px 15px 0" }}>Onze diensten</Button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </div>
-
-        </StyledHero>
-    )
+const Hero2 = (props) => {
+  return (
+    <StyledHero>
+      <Container>
+        <div id="siteTitle">
+          <h1>Jouw partner voor een online succes</h1>
+          <Link to="/contact">
+            <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
+          </Link>
+        </div>
+        <Socialbar />
+      </Container>
+    </StyledHero>
+  )
 }
+
+export default Hero2

@@ -126,7 +126,7 @@ html {
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: #333;
 	-webkit-font-smooting: antialiased;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .img-responsive {
@@ -135,14 +135,19 @@ html {
   display: block;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
 h1 {
   font-size: 36px;
-  margin-bottom: 20px;
 }
 
 h2 {
   font-size: 30px;
-  margin-bottom: 20px;
 }
 
 h3 {
@@ -160,8 +165,21 @@ h4 {
 }
 
 p {
-  line-height: 1.5em;
+  line-height: 2;
+  max-width: 50em;
 }
+
+p a {
+  border-bottom: 1px solid #232525;
+  text-decoration: none;
+  color: #333;
+}
+
+p a:hover {
+  border-bottom: 1px solid #1f0eee;
+  color: #1f0eee;
+}
+
 
 
 /* Super Form Reset */

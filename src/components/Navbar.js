@@ -16,7 +16,8 @@ const StyledNavbar = styled.div`
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 20px 0;
+    padding: 10px 0;
+    position: relative;
     #logo {
       height: 40px;
       width: auto;
@@ -26,52 +27,18 @@ const StyledNavbar = styled.div`
     a, li, li > span, li > ul > li {
         color: ${props => props.theme.colors.base};
         text-decoration: none;
+        border-bottom-width: 0;
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 10px;
         text-transform: uppercase;
-        font-size: 16px;
+        transition: all 0.1s ease-in;
     }
-    a.active {
+    a.active, a:hover {
       font-weight: bold;
-    }
-    .dropdown {
-      position: relative;
-      > ul {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.5s linear;
-        position: absolute;
-        left: -25%;
-        display: flex;
-        flex-direction: column;
-        padding: 10px 0;
-        background-color: #fff;
-        border-radius: 5px;
-        li {
-          padding: 0;
-          a {
-            color: #737373;
-            display: block;
-            padding: 10px 20px;
-          }
-          a.active {
-            background-color: #f4f4f4;
-            color: #222831;
-            font-weight: bold;
-          }
-          a.active:hover {
-            color: #222831;
-          }
-          &:hover {
-            background-color: #FCC72C;
-            a {
-              color: #fff;
-            }
-          }
-        }
-      }
-    }
-    .dropdown:hover > ul {
-        visibility: visible;
-        opacity: 1;
+      color: ${props => props.theme.colors.darkBlue};
     }
     .hamburger {
       height: 24px;
@@ -147,10 +114,31 @@ const StyledNavbar = styled.div`
         padding: 20px 0;
       }
     }
+    &:after {
+      content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0px, rgb(0, 0, 0) 5%, rgb(0, 0, 0) 90%, rgba(0, 0,0, 0) 100%);
+      opacity: 0.08;
+      bottom: 0px;
+    }
   }
 `
 
 const Navbar = (props) => {
+  const navLinks = (
+    <ul className={props.mobile ? 'mobile' : 'desktop'} id={props.active ? 'active' : ''}>
+      <li><Link to="/" activeClassName="active">Home</Link></li>
+      <li><Link to="/over" activeClassName="active">Over</Link></li>
+      <li><Link to="/diensten" activeClassName="active">Diensten</Link></li>
+      <li><Link to="/projecten" activeClassName="active">Projecten</Link></li>
+      <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+      <li><Link to="/blog" activeClassName="active">Blog</Link></li>
+    </ul>
+  );
+
   return (
     <StyledNavbar {...props}>
       <Container>
@@ -168,31 +156,10 @@ const Navbar = (props) => {
               </div>
             )
           }
-          <Slide right>
-            <ul className={props.mobile ? 'mobile' : 'desktop'} id={props.active ? 'active' : ''}>
-              <li><Link to="/over" activeClassName="activeLink">Over</Link></li>
-              <li className="dropdown">
-                <span>
-                  Diensten
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style={{ position: 'relative', top: '2px', left: '2px' }}>
-                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill={props.inverse ? '#333' : '#fff'} />
-                  </svg>
-                </span>
-                <ul>
-                  <li>web design</li>
-                  <li>web development</li>
-                  <li>SEO</li>
-                  <li>Performance optimalisatie</li>
-                </ul>
-              </li>
-              <li><Link to="/projecten" activeClassName="activeLink">Projecten</Link></li>
-              <li><Link to="/contact" activeClassName="activeLink">Contact</Link></li>
-              <li><Link to="/blog" activeClassName="activeLink">Blog</Link></li>
-            </ul>
-          </Slide>
+          {props.mobile ? <Slide right>{navLinks}</Slide> : navLinks}
         </nav>
       </Container>
-    </StyledNavbar>
+    </StyledNavbar >
   )
 }
 
