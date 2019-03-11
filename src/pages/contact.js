@@ -14,37 +14,36 @@ import home from '../img/icons/_ionicons_svg_md-home.svg';
 
 
 const StyledContact = styled.div`
-    padding: 20px 0;
-    #contactFlex {
+    padding-top: 20px;
+    #contactData {
+        padding: 40px 0;
         display: flex;
+        justify-content: space-between;
         @media(max-width: 576px) {
             flex-direction: column;
-            justify-content: center;
-        }
-        #contactIntro {
-            @media(max-width: 576px) {
-                width: 100%;
-            }
-            #contactData {
-                margin-top: 20px;
-                img {
-                    height: 20px;
-                    width: 20px;
-                    margin-right: 10px;
-                }
-            }
-            #contactData > div {
-                display: flex;
-                align-items: center;
-                padding: 8px;
-            }
-            address, a {
-                font-style: normal;
-                color: #333;
-                text-decoration: none;
-                font-size: 18px;
+            align-items: flex-start;
+            div {
+                padding: 4px 0;
             }
         }
+    }
+    #contactData a {
+        display: block;
+        line-height: 1.6;
+    }
+    form {
+        padding: 20px 0;
+        max-width: 50em;
+    }
+    address, a {
+        line-height: 1.6;
+        font-style: normal;
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    #btw {
+        letter-spacing: 0.9px;
     }
 `
 
@@ -53,27 +52,20 @@ const Contact = () => (
         <Container style={{ minHeight: '60vh' }}>
             <StyledContact>
                 <h1>Contacteer ons</h1>
-                <div id="contactFlex">
-                    <Form />
-                    <div id="contactIntro">
-                        <p>Contacteer ons via de contactgegevens hieronder of laat <strong>een berichtje</strong> via het contactformulier en we nemen zo snel mogelijk contact met je op.</p>
-                        <br />
-                        <p>Voor je het weet, staat je splinternieuwe site <strong>online</strong>!</p>
-                        <div id="contactData">
-                            <div>
-                                <img src={telephone} alt="telephone" /><a href="tel:+496061042"> 0496/06.10.42</a>
-                            </div>
-                            <div>
-                                <img src={send} alt="send" />
-                                <a href="mailto:lucas@luweb.be">lucas@luweb.be</a>
-                            </div>
-                            <div>
-                                <img src={home} alt="home" />
-                                <address>
-                                    Dokter Van de Perrelei 25 <br /> 2140 Borgerhout
-                            </address>
-                            </div>
-                        </div>
+                <p>Contacteer ons via de contactgegevens hieronder of laat <strong>een berichtje</strong> via het contactformulier en we nemen zo snel mogelijk contact met je op.</p>
+                <br />
+                <p>Voor je het weet, staat je splinternieuwe site <strong>online</strong>!</p>
+                <Form />
+                <div id="contactData">
+                    <div>
+                        <a href="mailto:lucas@luweb.be">lucas@luweb.be</a>
+                        <a href="tel:+496061042">0496/06.10.42</a>
+                    </div>
+                    <div>
+                        <address>Dokter Van de Perrelei 25 <br /> 2140 Borgerhout</address>
+                    </div>
+                    <div id='btw'>
+                        BE 0677 875 095
                     </div>
 
                 </div>

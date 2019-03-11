@@ -34,6 +34,8 @@ const StyledCTA2 = styled.div`
         text-align: center;
         position: relative;
         display: inline-block;
+        width: 100%;
+        padding: 20px 0;
         &:after {
             content: url(${smallArrow});
             height: 16px;
@@ -50,6 +52,12 @@ const StyledCTA2 = styled.div`
     }
     h3 {
         margin: 20px 0;
+        text-align: center;
+    }
+    p {
+        max-width: 35em;
+    margin: 0 auto;
+    text-align: center;
     }
     p#contact {
         max-width: 100%;
@@ -64,9 +72,7 @@ const CTA2 = () => {
             <Container>
                 <h3>Overtuigd van onze expertise?</h3>
                 <p>Contacteer ons vrijblijvend, en we bekijken samen met jou hoe we ook jouw website naar een hoger niveau tillen.</p>
-                <Link to="/contact">
-                    <p id="contact">Contacteer ons</p>
-                </Link>
+                <Link to="/contact" id="contact">Contacteer ons</Link>
             </Container>
         </StyledCTA2>
     )

@@ -143,19 +143,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 36px;
+    font-size: 30px;
 }
 
 h2 {
-  font-size: 30px;
+    font-size: 24px;
 }
 
 h3 {
-  font-size: 24px
+    font-size: 20px;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 1.2;
 }
@@ -333,6 +333,11 @@ section {
 
 .react-reveal {
 	height: 100%;
+}
+
+p a.gatsby-resp-image-link, p a.gatsby-resp-image-link:hover  {
+  text-decoration:none;
+  border-bottom: none;
 }
 `
 export default GlobalStyle

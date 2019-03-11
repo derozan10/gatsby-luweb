@@ -6,17 +6,15 @@
 
 .showcase__item
   margin-bottom: 30px
+  padding: 0 10px
+  width: (100% / 3)
+  hyphens: auto
 
-@media screen and (min-width: 401px)
+@media (max-width: 576px)
   .showcase__item
     box-sizing: border-box
-    width: (100% / 2)
-    float: left
-    padding-left: 15px
-
-@media screen and (min-width: 1400px)
-  .showcase__item
-    width: (100% / 3)
+    width: 100%
+    padding: 0 10px
 
 .card
   box-shadow: 0 0 5px #ccc

@@ -36,13 +36,32 @@ const StyledNavbar = styled.div`
         text-transform: uppercase;
         transition: all 0.1s ease-in;
     }
+    a {
+      position: relative;
+    }
+    /* a::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 10px;
+      right: 10px;
+      bottom: 0px;
+      height: 1px;
+      transform-origin: right top;
+      transform: scaleX(0);
+      background: ${props => props.theme.colors.darkBlue};
+      transition: transform 0.3s ease-in-out 0s;
+    }
+    a.active::after, a:hover::after {
+      transform: scale(1);
+      transform-origin: left top;
+    } */
     a.active, a:hover {
-      font-weight: bold;
       color: ${props => props.theme.colors.darkBlue};
     }
     .hamburger {
       height: 24px;
-      width: 40px;
+      width: 36px;
       position: relative;
       transform: rotate(0deg);
       transition: .5s ease-in-out;

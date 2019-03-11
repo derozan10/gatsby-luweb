@@ -10,6 +10,9 @@ const StyledFooter = styled.div`
     justify-content: space-between;
     #address,#logo,#socials {
         width: 30%;
+        @media(max-width: 576px) {
+            width: 50%;
+        }
     }
     #address {
         color: ${props => props.theme.colors.neutral.five};

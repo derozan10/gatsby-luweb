@@ -10,10 +10,12 @@ import Button from './Button';
 const StyledHero = styled.div`
   position: relative;
   height: 70vh;
-  min-height: 600px;
   z-index: 1;
   background: url(${headerImage}) fixed center no-repeat;
   background-size: cover;
+  @media (min-width: 991px) {
+    min-height: 600px;
+  }
   &:before {
     content: "";
     position: absolute;

@@ -17,9 +17,11 @@ const Body = styled.div`
     text-transform: capitalize;
   }
 
-  p {
+  p, li {
     line-height: 1.6;
+    font-size: 18px;
     margin: 0 0 1em 0;
+    overflow-wrap: break-word;
   }
 
   a {

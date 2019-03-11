@@ -52,8 +52,15 @@ const StyledServices = styled.section`
   }
   .contactSection{
     display: flex;
+    @media (max-width: 576px) {
+      flex-direction: column;
+      justify-content: center;
+    }
     > div {
       width: 50%;
+      @media (max-width: 576px) {
+        width: 100%;
+      }
     }
     h2 {
       text-align: left;
@@ -139,20 +146,17 @@ const index = ({ data }) => {
           <section className="contactSection">
             <div id="usp">
               <h2>Een strategie op maat</h2>
-              <Fade bottom cascade>
-                <Checklist>
-                  <li>Doelgerichte, performante website</li>
-                  <li>Zichtbaarheid in Google</li>
-                  <li>Actieve aanwezigheid op Sociale media</li>
-                  <li>Meer inzicht in je klanten</li>
-                  <li>Technische ondersteuning en onderhoud</li>
-                </Checklist>
-              </Fade>
+              <Checklist>
+                <li>Doelgerichte, performante website</li>
+                <li>Zichtbaarheid in Google</li>
+                <li>Actieve aanwezigheid op Sociale media</li>
+                <li>Meer inzicht in je klanten</li>
+                <li>Technische ondersteuning en onderhoud</li>
+              </Checklist>
             </div>
             <Fade right>
               <div>
                 <h2 style={{ textAlign: "center" }}>Vraag een offerte aan</h2>
-                {/* <p>De eerste stap naar meer klanten: vul onderstaande gegevens in.</p> */}
                 <CTAform cta='Jouw gratis offerte aanvragen' />
               </div>
             </Fade>

@@ -20,6 +20,9 @@ const StyledServices = styled.div`
     #serviceSections{
         display: inline-block;
         width: 70%;
+        @media(max-width: 576px) {
+            width: 100%;
+        }
         .serviceSection {
             svg, .serviceDescription {
                 vertical-align: top;
@@ -67,12 +70,16 @@ const StyledServices = styled.div`
         padding: 20px;
         border: solid 1px lightgray;
         border-radius: 5px;
+        @media(max-width: 576px) {
+            width: 100%;
+        }
     }
 `
 
 
 class Diensten extends Component {
     render() {
+        console.log(this.props)
         return (
             <Layout inverse title="Onze diensten">
                 <Container>
@@ -86,20 +93,17 @@ class Diensten extends Component {
                                             <img src={speed} alt="icoontje van een raket" />
                                             <h2>Webdesign en development</h2>
                                         </div>
-                                        <p>
+                                        <Checklist>
                                             Onze websites hebben volgende eigenschappen:
-                                            <Checklist>
-                                                <li>responsive design (zodat deze op alle toestellen, van smartphone tot computer te gebruiken is)</li>
-                                                <li>gebruiksvriendelijk</li>
-                                                <li>snelle laadtijd</li>
-                                                <li></li>
-                                                <li></li>
-                                            </Checklist>
-                                        </p>
+                                            <li>responsive design</li>
+                                            <li>gebruiksvriendelijk</li>
+                                            <li>snelle laadtijd</li>
+                                            <li>gepersonaliseerd design</li>
+                                            <li>mogelijkheid zelf aanpassingen te doen</li>
+                                        </Checklist>
                                         <p>
-                                            Door onze erg brede kennis van web development kunnen we met verschillende tools werken. We bekijken voor elk project wat de beste tool is en gaan er mee aan de slag. Meestal maken we gebruik van React of WordPress.
+                                            Door onze expertise in web development kunnen we met verschillende tools werken. We bekijken welke hiervan de beste is voor jouw project. Meestal maken we gebruik van ReactJS of WordPress.
                                         </p>
-                                        <img class="img-responsive" src={designImg} alt="jouw design hier" />
                                     </div>
                                 </section>
                                 <section className="serviceSection" id="seo">
@@ -108,24 +112,9 @@ class Diensten extends Component {
                                             <img src={search} alt="vergrootglas icoontje" />
                                             <h2>SEO optimalisatie</h2>
                                         </div>
-                                        <h3>De juiste tool voor de job</h3>
                                         <p>
-                                            Door onze expertise in development weten we precies welke technologieën, frameworks, libraries... het beste gebruikt kunnen worden voor jouw website.
-                                    </p>
-                                        <p>
-                                            Hoewel vandaag erg snel gegrepen wordt naar een CMS (<i>Content Management System</i>) als WordPress, Drupal, Wix... , om een website op te zetten, coderen wij zo veel mogelijk websites zelf. Dit geeft ons de mogelijkheid om erg flexibel te zijn en makkelijk aanpassingen te doen tot op de pixel, snellere oplossingen te bieden en goedkoper hosting aan te bieden.
-                                    </p>
-                                        <p>
-                                            Uiteraard is een CMS in sommige gevallen wel de beste optie, en helpen we jou graag de beste keuze te maken in het grote aanbod.
-                                    </p>
-                                        <h3>Best practices</h3>
-                                        <p>
-                                            We volgen steeds de richtlijnen die vooropgesteld worden voor het opstellen van websites en gaan hiervoor erg tot in detail. Het gebruiken van de juiste titels op de juiste plaats, alternatieve teksten bij afbeeldingen... zijn bijvoorbeeld dingen die erg belangrijk zijn om de gebruiksvriendelijkheid van je website te verhogen. Hiernaast merkt ook Google dit op, en zal je beloond worden met een hogere ranking in zoekmachines.
-                                    </p>
-                                        <h3>Browsers</h3>
-                                        <p>
-                                            Chrome, Firefox, Opera ,Safari, Edge... We testen onze websites op zowat elke browser die vandaag de dag gebruikt wordt, zodat je website altijd en overal toegankelijk is.
-                                    </p>
+                                            Websites die mobielvriendelijk, performant, zorgvuldig opgesteld, inhoudelijk sterk... zijn, worden hoger weergegeven in zoekmachines als Google. We houden dan ook rekening met al deze zaken voor jouw website. Daarnaast kunnen we nog extra advertenties inzetten om nog hoger te eindigen in zoekmachines.
+                                        </p>
                                     </div>
                                 </section>
                                 <section className="serviceSection" id="analyse">
@@ -135,26 +124,19 @@ class Diensten extends Component {
                                             <h2>Analyse en optimalisatie</h2>
                                         </div>
                                         <p>
-                                            De laadtijd van je website vinden we erg belangrijk bij Luweb. Misschien omdat we weten dat deze een grote impact heeft op het gebruiksgemak, je vindbaarheid in zoekmachines, conversie... En ga zo maar door.
-                                    </p>
-                                        <p>
-                                            We analyseren onze websites steeds tot op het bot en trachten deze tot op de milliseconde te versnellen, zodat je kan genieten van al deze voordelen. Om te bewijzen dat we effectief de meest performante oplossing bieden, krijg je een gedetailleerd rapport bij elke website dat aantoont hoe goed je site scoort op performance.
-                                    </p>
+                                            Bij de lancering van je website zetten we tracking tools op, waarmee we inzichten verwerven over de bezoekers en hun gedrag. We analyseren zo wat werkt (en wat niet) en gebruiken deze kennis om alle online kanalen aan te passen en zo de conversie te verhogen.
+                                        </p>
                                     </div>
                                 </section>
                                 <section className="serviceSection" id="analytics">
-
                                     <div className="serviceDescription">
                                         <div className="title">
                                             <img src={marketing} alt="" />
                                             <h2>Online marketing</h2>
                                         </div>
                                         <p>
-                                            Krijg meer inzichten in je bezoekers zodat je hier beter op kan inspelen.
-                                </p>
-                                        <p>
-                                            Tools als Google Analytics laten je zien hoe oud je doelgroep is, waar ze zich bevinden, op welk tijdstip ze op je site zitten... Door het surfgedrag van bezoekers te analyseren kan je jouw strategie online en offline aanpassen. We helpen jouw dan ook graag om deze tools op te zetten en je wegwijs te maken.
-                                </p>
+                                            Facebook, Instagram, LinkedIn... We bekijken welke kanalen voor jou het meeste relevant zijn en zetten hier maximaal op in. We optimaliseren de conversie door je doelgroep zo specifiek mogelijk te maken. Op deze manier optimaliseren we jouw marketing-budget.
+                                        </p>
                                     </div>
                                 </section>
                             </div>

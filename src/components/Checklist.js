@@ -1,20 +1,18 @@
 import React from 'react'
 import styled from 'styled-components';
-import check from '../img/icons/_ionicons_svg_md-checkmark.svg'
 
 const StyledChecklist = styled.ul`
+  list-style: none;
+  margin-left: 10px;
   li {
-    padding-left: 28px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
   li:before {
-    vertical-align: middle;
-    color: #e85555;
-    content: url(${check});
-    box-sizing: border-box;
-    display: inline-block;
-    font-family: 'ionicons';
-    position: relative;
-    left: -16px;
+    content: '✓';
+    color: ${props => props.theme.colors.darkBlue};
+    margin-right: 10px;
+    font-size: 1.4em;
   }
 `
 const Checklist = (props) => {

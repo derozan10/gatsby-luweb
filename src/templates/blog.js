@@ -21,7 +21,7 @@ const Index = ({ data, pageContext }) => {
         description={'Op de blog van Luweb kan je artikels vinden over web development, webdesign, en veel meer. Verdiep je in onze inzichten'}
       />
       <Container>
-        <h1>{`Blog ${currentPage !== 1 ? `pagina ${currentPage}` : ''}`}</h1>
+        <h1 style={{ paddingTop: "20px" }}>{`Blog ${currentPage !== 1 ? `pagina ${currentPage}` : ''}`}</h1>
         {isFirstPage ? (
           <CardList>
             <BlogCard {...featuredPost} featured />
@@ -54,7 +54,7 @@ export const query = graphql`
           title
           id
           slug
-          publishDate(formatString: "DD MMMM, YYYY")
+          publishDate(formatString: "DD/MM/YYYY")
           heroImage {
             title
             fluid(maxWidth: 1800) {
