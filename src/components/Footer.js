@@ -62,7 +62,7 @@ const Footer = () => (
             <StyledFooter>
                 <address id="address">
                     <span id="name">Luweb</span>
-                    <span>Dokter Van de Perrelei 25, 2140 Borgerhout</span>
+                    <span>Zwaluwstraat 21, 2530 Boechout</span>
                     <span>0496/06.10.42</span>
                     <span>info@luweb.be</span>
                     <span>BE0677875095</span>

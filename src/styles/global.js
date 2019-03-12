@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    font-family: "Lato", apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji";
   }
 
   /* Added to Fix Footer to bottom of viewport */
@@ -60,10 +61,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  ol, ul, li {
-    list-style: none;
-  }
-
   blockquote, q {
     quotes: none;
   }
@@ -85,12 +82,12 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: white;
-    line-height: 1;
+    line-height: 1.6;
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
     font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Lato", apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji";
   }
 
   img {
@@ -101,7 +98,7 @@ const GlobalStyle = createGlobalStyle`
 
   button,
   input {
-    font-family: inherit;
+    font-family: "Lato", apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji";
     font-size: inherit;
     background: none;
     border: none;
@@ -123,7 +120,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html {
-  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji";
 	color: #333;
 	-webkit-font-smooting: antialiased;
   font-size: 16px;
@@ -138,8 +135,9 @@ html {
 h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.6;
     margin: 0 0 20px;
+    font-family: "Lato", apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji";
 }
 
 h1 {
@@ -164,7 +162,7 @@ h4 {
   text-align: center;
 }
 
-p {
+p, ul li {
   line-height: 2;
   max-width: 50em;
 }
@@ -176,8 +174,8 @@ p a {
 }
 
 p a:hover {
-  border-bottom: 1px solid #1f0eee;
-  color: #1f0eee;
+  border-bottom: 1px solid #3b69a1;
+  color: #3b69a1;
 }
 
 
@@ -196,7 +194,7 @@ textarea
 	vertical-align:middle;
 	white-space:normal;
 	background:none;
-	line-height:1;
+	line-height:1.6;
 }
 
 /* Remove the stupid outer glow in Webkit */

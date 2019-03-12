@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import 'typeface-roboto';
-// import './layout.css';
+import { Helmet } from "react-helmet"
+import CookieConsent from "react-cookie-consent";
+import Footer from './Footer'
+import SEO from './SEO';
+import Navbar from './Navbar'
+import Backdrop from './Backdrop';
+
 import 'typeface-lato';
-import 'normalize.css';
+// import 'normalize.css';
 
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
-import Footer from './Footer'
-import SEO from './SEO';
-import { Helmet } from "react-helmet"
-import Navbar from './Navbar'
-import Backdrop from './Backdrop';
 
 export class Layout extends Component {
   state = {
@@ -19,8 +19,8 @@ export class Layout extends Component {
     mobile: false
   }
   componentDidMount() {
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "0dd42ec7-d066-4701-8099-c141a5526b8b";
+    // window.$crisp = [];
+    // window.CRISP_WEBSITE_ID = "0dd42ec7-d066-4701-8099-c141a5526b8b";
     this.checkMobile();
     window.addEventListener('resize', this.checkMobile);
   }
@@ -50,11 +50,21 @@ export class Layout extends Component {
         <SEO title={this.props.title} />
         <ThemeProvider theme={theme}>
           <>
-            <Navbar hamburgerClick={this.toggleNav} mobile={this.state.mobile} active={this.state.navActive} />
+            <Navbar hamburgerClick={this.toggleNav} mobile={this.state.mobile ? 'true' : 'false'} active={this.state.navActive} />
             <div style={{ paddingTop: "80px", minHeight: "80vh" }}>
               {this.props.children}
             </div>
             <Footer />
+            <CookieConsent
+              buttonText="Melding sluiten"
+              location="bottom"
+              cookieName="GDPRCookie"
+              style={{ background: "#2B373B" }}
+              buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+              expires={150}
+            >
+              Deze website gebruikt cookies om de gebruikerservaring te verbeteren.
+            </CookieConsent>
           </>
         </ThemeProvider >
         <GlobalStyle />

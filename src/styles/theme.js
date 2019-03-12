@@ -37,7 +37,7 @@ const theme = {
     blueGray: '#4d7a95',
     blue: "#3360a6",
     darkBlue: "#1f0eee",
-    lightBlue: "#0074d5",
+    lightBlue: "#3b69a1",
   },
   sizes: {
     maxWidth: '1050px',

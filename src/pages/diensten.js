@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Container from '../components/Container';
-import CTA2 from '../components/CTA2';
+import CTA from '../components/CTA';
 import Form from '../components/CTAform';
-import ServiceIcon from '../components/serviceIcon'
+// import ServiceIcon from '../components/serviceIcon'
 import speed from '../img/icons/speed.svg';
 import search from '../img/icons/search.svg';
 import analytics from '../img/icons/analytics.svg';
 import marketing from '../img/icons/marketing.svg';
 
-import designImg from '../img/design.jpg'
+// import designImg from '../img/design.jpg'
 import { Fade } from 'react-reveal';
 import Checklist from '../components/Checklist';
 
@@ -49,7 +49,6 @@ const StyledServices = styled.div`
                 margin-bottom: 8px;
             }
             p {
-
                 margin-bottom: 10px;
             }
             img {
@@ -79,7 +78,6 @@ const StyledServices = styled.div`
 
 class Diensten extends Component {
     render() {
-        console.log(this.props)
         return (
             <Layout inverse title="Onze diensten">
                 <Container>
@@ -93,13 +91,13 @@ class Diensten extends Component {
                                             <img src={speed} alt="icoontje van een raket" />
                                             <h2>Webdesign en development</h2>
                                         </div>
+                                        <p>Onze websites hebben volgende eigenschappen:</p>
                                         <Checklist>
-                                            Onze websites hebben volgende eigenschappen:
                                             <li>responsive design</li>
                                             <li>gebruiksvriendelijk</li>
                                             <li>snelle laadtijd</li>
                                             <li>gepersonaliseerd design</li>
-                                            <li>mogelijkheid zelf aanpassingen te doen</li>
+                                            <li>goed beveiligd (SSL-encryptie)</li>
                                         </Checklist>
                                         <p>
                                             Door onze expertise in web development kunnen we met verschillende tools werken. We bekijken welke hiervan de beste is voor jouw project. Meestal maken we gebruik van ReactJS of WordPress.
@@ -142,14 +140,14 @@ class Diensten extends Component {
                             </div>
                             <Fade right>
                                 <section id="form">
-                                    <h2>Krijg je gratis offerte</h2>
+                                    <h2>Contacteer ons voor je gratis offerte</h2>
                                     <Form cta="offerte aanvragen" />
                                 </section>
                             </Fade>
                         </StyledServices>
                     </div>
                 </Container>
-                <CTA2 />
+                <CTA />
                 {/* <Container>
                     <h2>Heb je al een website?</h2>
                     <p>We ondersteunen je graag met verschillende taken zoals: </p>

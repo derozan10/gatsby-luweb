@@ -11,6 +11,7 @@ const StyledNavbar = styled.div`
   z-index: 1000;
   background-color: #fff;
   width: 100%;
+  box-shadow: 0 29px 60px 0 rgba(54,57,73,.09);
   nav {
     display: flex;
     justify-content: space-between;
@@ -57,7 +58,7 @@ const StyledNavbar = styled.div`
       transform-origin: left top;
     } */
     a.active, a:hover {
-      color: ${props => props.theme.colors.darkBlue};
+      color: ${props => props.theme.colors.lightBlue};
     }
     .hamburger {
       height: 24px;
@@ -133,22 +134,14 @@ const StyledNavbar = styled.div`
         padding: 20px 0;
       }
     }
-    &:after {
-      content: "";
-      width: 100%;
-      display: block;
-      position: absolute;
-      height: 2px;
-      background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0px, rgb(0, 0, 0) 5%, rgb(0, 0, 0) 90%, rgba(0, 0,0, 0) 100%);
-      opacity: 0.08;
-      bottom: 0px;
-    }
   }
 `
 
 const Navbar = (props) => {
+  const mobile = props.mobile === 'true' ? true : false;
+
   const navLinks = (
-    <ul className={props.mobile ? 'mobile' : 'desktop'} id={props.active ? 'active' : ''}>
+    <ul className={mobile ? 'mobile' : 'desktop'} id={props.active ? 'active' : ''}>
       <li><Link to="/" activeClassName="active">Home</Link></li>
       <li><Link to="/over" activeClassName="active">Over</Link></li>
       <li><Link to="/diensten" activeClassName="active">Diensten</Link></li>
@@ -166,7 +159,7 @@ const Navbar = (props) => {
             <img id="logo" src={Logo} alt="Luweb logo" />
           </Link>
           {
-            props.mobile && (
+            mobile && (
               <div className={`hamburger ${props.active ? 'cross' : ''}`} aria-label="Menu" onClick={props.hamburgerClick}>
                 <span></span>
                 <span></span>
@@ -175,7 +168,7 @@ const Navbar = (props) => {
               </div>
             )
           }
-          {props.mobile ? <Slide right>{navLinks}</Slide> : navLinks}
+          {mobile ? <Slide right>{navLinks}</Slide> : navLinks}
         </nav>
       </Container>
     </StyledNavbar >

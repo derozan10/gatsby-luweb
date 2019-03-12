@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 
 const Post = styled.li`
   position: relative;
-  border: 1px solid gray;
   border-radius: 2px;
   margin: 0 0 1em 0;
   width: 100%;
@@ -59,7 +58,7 @@ const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
     <Post featured={props.featured}>
       {slug && (
         <Link to={`/blog/${slug}/`}>
-          {heroImage && (<Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />)}
+          {heroImage && heroImage.fluid && (<Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />)}
           {title && <Title>{title}</Title>}
           {publishDate && <Date>{publishDate}</Date>}
           {body && (<Excerpt dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.excerpt }} />)}

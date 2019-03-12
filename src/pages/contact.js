@@ -62,7 +62,7 @@ const Contact = () => (
                         <a href="tel:+496061042">0496/06.10.42</a>
                     </div>
                     <div>
-                        <address>Dokter Van de Perrelei 25 <br /> 2140 Borgerhout</address>
+                        <address>Zwaluwstraat 21<br /> 2530 Boechout</address>
                     </div>
                     <div id='btw'>
                         BE 0677 875 095

@@ -68,9 +68,12 @@ const CTAform = (props) => {
         <label htmlFor="mailbox">E-Mail</label>
         <input type="email" id="mailbox" name="email" placeholder="E-Mail" autoComplete='email' required />
 
+        <label htmlFor="phone">Telefoon</label>
+        <input type="tel" id="phone" name="phone" placeholder="Telefoon" autoComplete='tel' required />
+
         <Button primary type="submit" >{props.cta ? props.cta : 'Contacteer ons'}</Button>
       </form>
-      <p className="policy"><small>Door bovenstaande gegevens in te vullen ga je akkoord met onze <a href="/privacy-policy">Privacy Policy</a>.</small></p>
+      {/* <p className="policy"><small>Door bovenstaande gegevens in te vullen ga je akkoord met onze <a href="/privacy-policy">Privacy Policy</a>.</small></p> */}
     </StyledCtaForm>
 
 

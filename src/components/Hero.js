@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Socialbar from './Socialbar';
 import Container from './Container';
 import { Link } from "gatsby";
+import Fade from 'react-reveal';
 
 import headerImage from '../img/hero-bg.jpg'
 import Button from './Button';
@@ -63,12 +64,14 @@ const Hero2 = (props) => {
   return (
     <StyledHero>
       <Container>
-        <div id="siteTitle">
-          <h1>Jouw partner voor een online succes</h1>
-          <Link to="/contact">
-            <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
-          </Link>
-        </div>
+        <Fade bottom cascade>
+          <div id="siteTitle">
+            <h1>Jouw partner voor een online succes</h1>
+            <Link to="/contact">
+              <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
+            </Link>
+          </div>
+        </Fade>
         <Socialbar />
       </Container>
     </StyledHero>

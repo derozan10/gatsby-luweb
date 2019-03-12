@@ -42,6 +42,7 @@
     "postcss-reporter": "^6.0.1",
     "react": "^16.7.0",
     "react-bootstrap": "^1.0.0-beta.5",
+    "react-cookie-consent": "^2.2.2",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-images": "^0.5.19",

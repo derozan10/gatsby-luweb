@@ -10,9 +10,18 @@ const StyledChecklist = styled.ul`
   }
   li:before {
     content: '✓';
-    color: ${props => props.theme.colors.darkBlue};
     margin-right: 10px;
-    font-size: 1.4em;
+    font-size: 1em;
+    left: -2.4em;
+    top: 0.4em;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    color: #fff;
+    background-color: ${props => props.theme.colors.lightBlue};
   }
 `
 const Checklist = (props) => {
