@@ -12,7 +12,9 @@ const StyledHero = styled.div`
   position: relative;
   height: 70vh;
   z-index: 1;
-  background: url(${headerImage}) fixed center no-repeat;
+  background-image: url(${headerImage});
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   @media (min-width: 991px) {
     min-height: 600px;
