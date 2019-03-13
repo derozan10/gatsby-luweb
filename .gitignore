@@ -61,3 +61,6 @@ public
 
 #macos files
 .DS_Store
+
+.contentful.json
+.eslintrc.json
