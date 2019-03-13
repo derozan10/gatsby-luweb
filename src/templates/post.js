@@ -47,8 +47,8 @@ const service = ({ data, pageContext }) => {
 export default service
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulPost(slug: { eq: $slug }) {
+  query($id: String!) {
+    contentfulPost(slug: { eq: $id }) {
       title
       slug
       metaDescription {

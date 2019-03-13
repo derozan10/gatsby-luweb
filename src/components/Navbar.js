@@ -142,12 +142,12 @@ const Navbar = (props) => {
 
   const navLinks = (
     <ul className={mobile ? 'mobile' : 'desktop'} id={props.active ? 'active' : ''}>
-      <li><Link to="/" activeClassName="active">Home</Link></li>
-      <li><Link to="/over" activeClassName="active">Over</Link></li>
-      <li><Link to="/diensten" activeClassName="active">Diensten</Link></li>
-      {/* <li><Link to="/projecten" activeClassName="active">Projecten</Link></li> */}
-      <li><Link to="/contact" activeClassName="active">Contact</Link></li>
-      <li><Link to="/blog" activeClassName="active">Blog</Link></li>
+      <li><Link to="/nl/" activeClassName="active">Home</Link></li>
+      <li><Link to="/nl/over" activeClassName="active">Over</Link></li>
+      <li><Link to="/nl/diensten" activeClassName="active">Diensten</Link></li>
+      {/* <li><Link to="/nl/projecten" activeClassName="active">Projecten</Link></li> */}
+      <li><Link to="/nl/contact" activeClassName="active">Contact</Link></li>
+      <li><Link to="/nl/blog" activeClassName="active">Blog</Link></li>
     </ul>
   );
 
@@ -155,7 +155,7 @@ const Navbar = (props) => {
     <StyledNavbar {...props}>
       <Container>
         <nav>
-          <Link to="/">
+          <Link to="/nl">
             <img id="logo" src={Logo} alt="Luweb logo" />
           </Link>
           {

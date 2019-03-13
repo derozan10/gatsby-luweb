@@ -53,12 +53,13 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `
 
-const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
+const Card = ({ slug, node_locale, heroImage, title, publishDate, body, ...props }) => {
+  console.log(node_locale)
   return (
     <Post featured={props.featured}>
       {slug && (
-        <Link to={`/blog/${slug}/`}>
-          {heroImage && heroImage.fluid && (<Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />)}
+        <Link to={`/${node_locale}/blog/${slug}/`}>
+          {heroImage && heroImage.fluid && heroImage.fluid.aspectRatio && (<Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />)}
           {title && <Title>{title}</Title>}
           {publishDate && <Date>{publishDate}</Date>}
           {body && (<Excerpt dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.excerpt }} />)}

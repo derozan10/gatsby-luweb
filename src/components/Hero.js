@@ -69,7 +69,7 @@ const Hero2 = (props) => {
         <Fade bottom cascade>
           <div id="siteTitle">
             <h1>Jouw partner voor een online succes</h1>
-            <Link to="/contact">
+            <Link to="/nl/contact">
               <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
             </Link>
           </div>

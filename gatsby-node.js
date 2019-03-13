@@ -15,53 +15,30 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               slug
               publishDate
+              node_locale
             }
           }
         }
       }
     `).then(result => {
-      const posts = result.data.allContentfulPost.edges
-      const postsPerFirstPage = config.postsPerHomePage
-      const postsPerPage = config.postsPerPage
-      const numPages = Math.ceil(
-        posts.slice(postsPerFirstPage).length / postsPerPage
-      )
+      if (result.errors) {
+        reject(result.errors)
+      }
 
-      // Create main blog page
-      createPage({
-        path: `/blog`,
-        component: path.resolve(`./src/templates/blog.js`),
-        context: {
-          limit: postsPerFirstPage,
-          skip: 0,
-          numPages: numPages + 1,
-          currentPage: 1,
-        },
-      })
-
-      // Create additional pagination on home page if needed
-      Array.from({ length: numPages }).forEach((_, i) => {
-        createPage({
-          path: `/blog/${i + 2}/`,
-          component: path.resolve(`./src/templates/blog.js`),
-          context: {
-            limit: postsPerPage,
-            skip: i * postsPerPage + postsPerFirstPage,
-            numPages: numPages + 1,
-            currentPage: i + 2,
-          },
-        })
-      })
+      const posts = result.data.allContentfulPost.edges;
+      const postsPerFirstPage = config.postsPerHomePage;
+      const postsPerPage = config.postsPerPage;
+      // const numPages = Math.ceil(posts.slice(postsPerFirstPage).length / postsPerPage);
 
       // Create each individual post
       posts.forEach((edge, i) => {
         const prev = i === 0 ? null : posts[i - 1].node
         const next = i === posts.length - 1 ? null : posts[i + 1].node
         createPage({
-          path: `/blog/${edge.node.slug}/`,
+          path: `/${edge.node.node_locale}/blog/${edge.node.slug}/`,
           component: path.resolve(`./src/templates/post.js`),
           context: {
-            slug: edge.node.slug,
+            id: edge.node.id,
             prev,
             next,
           },
@@ -86,13 +63,17 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const tags = result.data.allContentfulTag.edges
-      const postsPerPage = config.postsPerPage
+      if (result.errors) {
+        reject(result.errors)
+      }
+
+      const tags = result.data.allContentfulTag.edges;
+      const postsPerPage = config.postsPerPage;
 
       // Create tag pages with pagination if needed
       tags.map(({ node }) => {
-        const totalPosts = node.post !== null ? node.post.length : 0
-        const numPages = Math.ceil(totalPosts / postsPerPage)
+        const totalPosts = node.post !== null ? node.post.length : 0;
+        const numPages = Math.ceil(totalPosts / postsPerPage);
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
             path:

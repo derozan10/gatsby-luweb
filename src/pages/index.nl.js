@@ -136,7 +136,7 @@ const index = (props) => {
           <h2>Wat we doen</h2>
           <Fade bottom cascade>
             <section className="serviceCards">
-              <Link to="/diensten" state={{ service: "development" }}>
+              <Link to="/nl/diensten" state={{ service: "development" }}>
                 <Card
                   icon={speed}
                   title='Website'
@@ -145,21 +145,21 @@ const index = (props) => {
                   }
                 />
               </Link>
-              <Link to="/diensten" state={{ service: "performance" }}>
+              <Link to="/nl/diensten" state={{ service: "performance" }}>
                 <Card
                   icon={search}
                   title='SEO'
                   text={<p>We verbeteren je online zichtbaarheid door actief aan 'Search Engine Optimization' te doen. Zo scoor je beter in zoekmachines als Google</p>}
                 />
               </Link>
-              <Link to="/diensten" state={{ service: "analytics" }}>
+              <Link to="/nl/diensten" state={{ service: "analytics" }}>
                 <Card
                   icon={analytics}
                   title='Analyse en optimalisatie'
                   text={<p>Meten is weten. We zoeken wat werkt (en wat niet) zodat we onze strategie hierop kunnen aanpassen.</p>}
                 />
               </Link>
-              <Link to="/diensten" state={{ service: "development" }}>
+              <Link to="/nl/diensten" state={{ service: "development" }}>
                 <Card
                   icon={marketing}
                   title='Online marketing'

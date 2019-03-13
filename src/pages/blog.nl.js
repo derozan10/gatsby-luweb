@@ -17,11 +17,11 @@ const Index = ({ data, pageContext }) => {
   return (
     <Layout inverse>
       <SEO
-        title={`Blog ${currentPage !== 1 ? `pagina ${currentPage}` : ''}`}
+        title={`Blog ${currentPage && currentPage !== 1 ? `pagina ${currentPage}` : ''}`}
         description={'Op de blog van Luweb kan je artikels vinden over web development, webdesign, en veel meer. Verdiep je in onze inzichten'}
       />
       <Container>
-        <h1 style={{ paddingTop: "20px" }}>{`Blog ${currentPage !== 1 ? `pagina ${currentPage}` : ''}`}</h1>
+        <h1 style={{ paddingTop: "20px" }}>{`Blog ${currentPage && currentPage !== 1 ? `pagina ${currentPage}` : ''}`}</h1>
         {isFirstPage ? (
           <CardList>
             <BlogCard {...featuredPost} featured />
@@ -43,14 +43,11 @@ const Index = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query($skip: Int!, $limit: Int!) {
-    allContentfulPost(
-      sort: { fields: [publishDate], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+query nlPostQuery  {
+    allContentfulPost(filter: {node_locale: {eq: "nl"}}, sort: {fields: [publishDate], order: DESC}) {
       edges {
         node {
+          node_locale
           title
           id
           slug

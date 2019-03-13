@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Helmet } from "react-helmet"
 import CookieConsent from "react-cookie-consent";
 import Footer from './Footer'
 import SEO from './SEO';
@@ -42,10 +41,6 @@ export class Layout extends Component {
   render() {
     return (
       <>
-        <Helmet>
-          <script src="https://client.crisp.chat/l.js" async />
-          <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"></link>
-        </Helmet>
         <Backdrop active={this.state.navActive} closeNav={() => this.setState({ navActive: false })} />
         <SEO title={this.props.title} />
         <ThemeProvider theme={theme}>
@@ -73,4 +68,4 @@ export class Layout extends Component {
   }
 }
 
-export default Layout
+export default withNamespaces()(Layout);
