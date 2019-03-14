@@ -8,6 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
     graphql(`
       {
         allContentfulPost(
+          filter: {node_locale: {eq: "nl"}}
           sort: { fields: [publishDate], order: DESC }
           limit: 10000
         ) {
@@ -74,7 +75,7 @@ exports.createPages = ({ graphql, actions }) => {
   const loadTags = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulTag {
+        allContentfulTag(filter: {node_locale: {eq: "nl"}}) {
           edges {
             node {
               slug
