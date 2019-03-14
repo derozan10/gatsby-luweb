@@ -7,7 +7,7 @@ const Button = (props) => {
         background-color: ${props => props.primary ? props.theme.colors.darkYellow : '#fff'};
         text-align: center;
         text-transform: uppercase;
-        padding: 20px 32px;
+        padding: 15px 32px;
         border-radius: 35px;
         box-shadow: ${props => props.theme.boxShadow};
         letter-spacing: 0.094em;
