@@ -68,4 +68,4 @@ export class Layout extends Component {
   }
 }
 
-export default withNamespaces()(Layout);
+export default Layout;

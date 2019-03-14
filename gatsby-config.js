@@ -45,7 +45,8 @@ module.exports = {
       options: {
         langKeyForNull: 'any',
         langKeyDefault: 'nl',
-        useLangKeyLayout: false
+        useLangKeyLayout: false,
+        prefixDefault: true
       }
     },
     {
