@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const StyledCard = styled.div`
     position: relative;
     padding: 30px 30px 90px 30px;
-    /* box-shadow: ${props => props.theme.boxShadow}; */
+    box-shadow: ${props => props.theme.boxShadow};
     box-sizing: border-box;
     overflow: hidden;
     background-color: #fff;
