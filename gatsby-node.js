@@ -21,7 +21,8 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const posts = result.data.allContentfulPost.edges;
+      const posts = result.data.allContentfulPost.edges.filter(pst => pst.node.publishDate && pst.node.body);
+      console.log(posts);
       const postsPerFirstPage = config.postsPerHomePage;
       const postsPerPage = config.postsPerPage;
       const numPages = Math.ceil(posts.slice(postsPerFirstPage).length / postsPerPage);
