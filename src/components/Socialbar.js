@@ -11,6 +11,7 @@ const StyledSocialbar = styled.ul`
   z-index: 20;
   align-items: center;
   margin: 0 20px ;
+  list-style: none;
   li {
     margin: 10px 0;
   }
