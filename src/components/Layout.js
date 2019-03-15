@@ -43,7 +43,8 @@ export class Layout extends Component {
     return (
       <>
         <Helmet>
-          <script src="https://client.crisp.chat/l.js" async />
+          //<script src="https://client.crisp.chat/l.js" async />
+          <meta name="google-site-verification" content="8L5sdDFtnEJpqybB7QuO7CMBaJW25pArhsZnKBr5EFI" />
           <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"></link>
         </Helmet>
         <Backdrop active={this.state.navActive} closeNav={() => this.setState({ navActive: false })} />
