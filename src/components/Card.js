@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import Fade from 'react-reveal/Fade';
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
     position: relative;
     padding: 30px 30px 90px 30px;
-    /* box-shadow: ${props => props.theme.boxShadow}; */
+    box-shadow: ${ props => props.theme.boxShadow };
     box-sizing: border-box;
     overflow: hidden;
     background-color: #fff;
@@ -34,7 +34,7 @@ const StyledCard = styled.div`
         height: 80px;
         transform: rotate(-7deg);
         transform-origin: center center;
-        background: ${props => props.theme.blueGradient};
+        background: ${ props => props.theme.blueGradient };
     }
     .cardIcon{
         position: absolute;
@@ -51,18 +51,18 @@ const StyledCard = styled.div`
     li {
         list-style-type: disc;
     }
-`
+`;
 
 const Card = ({ icon, title, text }) => {
-    return (
-        <Fade>
-            <StyledCard>
-                <h3>{title}</h3>
-                {text}
-                <img className="cardIcon" src={icon} alt="icon" />
-            </StyledCard>
-        </Fade>
-    )
-}
+  return (
+    <Fade>
+      <StyledCard>
+        <h3>{title}</h3>
+        {text}
+        <img className="cardIcon" src={icon} alt="icon" />
+      </StyledCard>
+    </Fade>
+  );
+};
 
-export default Card
+export default Card;

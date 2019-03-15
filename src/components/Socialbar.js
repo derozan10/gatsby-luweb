@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledSocialbar = styled.ul`
   position: absolute;
@@ -11,6 +11,7 @@ const StyledSocialbar = styled.ul`
   z-index: 20;
   align-items: center;
   margin: 0 20px ;
+  list-style: none;
   li {
     margin: 10px 0;
   }
@@ -36,9 +37,9 @@ const StyledSocialbar = styled.ul`
           transform: scale(0.7);
       }
   }
-`
+`;
 
-const Socialbar = (props) => {
+const Socialbar = props => {
   return (
     <StyledSocialbar>
       <li>
@@ -57,7 +58,7 @@ const Socialbar = (props) => {
         </a>
       </li>
     </StyledSocialbar>
-  )
-}
+  );
+};
 
-export default Socialbar
+export default Socialbar;

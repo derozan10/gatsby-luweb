@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import Img from 'gatsby-image'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import React, { Component } from 'react';
+import Img from 'gatsby-image';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 class GalleryComposition extends Component {
-
-  render() {
-    const { photos } = this.props
+  render () {
+    const { photos } = this.props;
     return (
       <>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2, 800: 4 }}>
@@ -22,8 +21,9 @@ class GalleryComposition extends Component {
           </Masonry>
         </ResponsiveMasonry>
       </>
-    )
+    );
   }
 }
 
 export default GalleryComposition
+;

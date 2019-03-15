@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import Socialbar from './Socialbar';
 import Container from './Container';
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
 import Fade from 'react-reveal';
 
-import headerImage from '../img/hero-bg.jpg'
+import headerImage from '../img/hero-bg.jpg';
 import Button from './Button';
 
 const StyledHero = styled.div`
   position: relative;
   height: 70vh;
   z-index: 1;
-  background-image: url(${headerImage});
+  background-image: url(${ headerImage });
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,9 +60,9 @@ const StyledHero = styled.div`
     right: 0;
     background: #fff;
   }
-`
+`;
 
-const Hero2 = (props) => {
+const Hero2 = props => {
   return (
     <StyledHero>
       <Container>
@@ -70,14 +70,14 @@ const Hero2 = (props) => {
           <div id="siteTitle">
             <h1>Jouw partner voor een online succes</h1>
             <Link to="/nl/contact">
-              <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
+              <Button primary style={{ margin: '0 15px 15px 0' }}>Offerte opvragen</Button>
             </Link>
           </div>
         </Fade>
         <Socialbar />
       </Container>
     </StyledHero>
-  )
-}
+  );
+};
 
-export default Hero2
+export default Hero2;

@@ -231,7 +231,7 @@ export default index
 
 export const realisatieQuery = graphql`
  query realisatieQuery {
-  allContentfulRealisatie {
+  allContentfulRealisatie(filter: {node_locale: {eq: "nl"}}) {
     edges {
       node {
         id

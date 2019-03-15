@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const StyledDienst = styled.div`
     display: flex;
@@ -22,19 +22,19 @@ const StyledDienst = styled.div`
     @media(max-width: 768px) {
         width: 100%;
     }
-`
+`;
 
-const Dienst = (props) => {
-    return (
-        <StyledDienst>
-            {props.image}
-            <div >
-                <h3>{props.title}</h3>
-                <p className="description">{props.description}</p>
-                {props.explanation}
-            </div>
-        </StyledDienst>
-    )
-}
+const Dienst = props => {
+  return (
+    <StyledDienst>
+      {props.image}
+      <div >
+        <h3>{props.title}</h3>
+        <p className="description">{props.description}</p>
+        {props.explanation}
+      </div>
+    </StyledDienst>
+  );
+};
 
-export default Dienst
+export default Dienst;

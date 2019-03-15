@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
 import Slide from 'react-reveal/Slide';
-import Container from '../components/Container'
+import Container from '../components/Container';
 
-import Logo from '../img/logos/luweb-logo-blueGradient.svg'
+import Logo from '../img/logos/luweb-logo-blueGradient.svg';
 
 const StyledNavbar = styled.div`
   position: fixed;
@@ -15,10 +15,18 @@ const StyledNavbar = styled.div`
   nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 10px 0;
-    position: relative;
+    @media (min-width: 577px) {
+      align-items: center;
+    }
+    @media(max-width: 576px) {
+      flex-direction: column;
+    }
+    .flex {
+      padding: ${ props => props.smaller ? '10px 0' : '20px 0' };
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     #logo {
       height: 40px;
       width: auto;
@@ -26,39 +34,21 @@ const StyledNavbar = styled.div`
       text-decoration: none;
     }
     a, li, li > span, li > ul > li {
-        color: ${props => props.theme.colors.base};
+        color: ${ props => props.theme.colors.base };
         text-decoration: none;
         border-bottom-width: 0;
         display: block;
         font-size: 14px;
         font-weight: 600;
         letter-spacing: 0.5px;
-        padding: 10px;
         text-transform: uppercase;
         transition: all 0.1s ease-in;
     }
     a {
       position: relative;
     }
-    /* a::after {
-      content: "";
-      position: absolute;
-      display: block;
-      left: 10px;
-      right: 10px;
-      bottom: 0px;
-      height: 1px;
-      transform-origin: right top;
-      transform: scaleX(0);
-      background: ${props => props.theme.colors.darkBlue};
-      transition: transform 0.3s ease-in-out 0s;
-    }
-    a.active::after, a:hover::after {
-      transform: scale(1);
-      transform-origin: left top;
-    } */
     a.active, a:hover {
-      color: ${props => props.theme.colors.lightBlue};
+      color: ${ props => props.theme.colors.lightBlue };
     }
     .hamburger {
       height: 24px;
@@ -67,12 +57,15 @@ const StyledNavbar = styled.div`
       transform: rotate(0deg);
       transition: .5s ease-in-out;
       cursor: pointer;
+      @media (min-width: 577px) {
+        display: none;
+      }
       span {
         display: block;
         position: absolute;
         height: 3px;
         width: 100%;
-        background: ${props => props.theme.colors.base};
+        background: ${ props => props.theme.colors.base };
         border-radius: 9px;
         opacity: 1;
         left: 0;
@@ -90,89 +83,84 @@ const StyledNavbar = styled.div`
       }
     }
     .hamburger.cross {
-      span:nth-child(1) {
-        top: 10px;
-        width: 0%;
-        left: 50%;
+        span:nth-child(1) {
+          top: 10px;
+          width: 0%;
+          left: 50%;
+        }
+        span:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+        span:nth-child(4) {
+          top: 10px;
+          width: 0%;
+          left: 50%;
+        }
       }
-      span:nth-child(2) {
-        transform: rotate(45deg);
-      }
-      span:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-      span:nth-child(4) {
-        top: 10px;
-        width: 0%;
-        left: 50%;
-      }
-    }
+
     ul {
       display: flex;
       list-style-type: none;
+      top: 80px;
+      box-sizing: border-box;
       li {
         padding: 0 20px;
         font-size: 18px;
       }
+      @media (max-width: 576px) {
+        height: 0px;
+        flex-direction: column;
+        background-color: rgba(255,255,255,1);
+        z-index: 10;
+        li {
+          display: none;
+        }
+      }
     }
-    ul.mobile {
-      display: none;
-    }
-    ul.mobile#active {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 80px;
-      height: 100vh;
-      padding: 10px;
-      right: 0;
-      width: 100%;
-      background-color: rgba(255,255,255,1);
-      z-index: 10;
-      li {
-        text-align: center;
-        padding: 20px 0;
+    ul#active {
+      @media(max-width: 576px) {
+        height: auto;
+        li {
+          display: block;
+          text-align: center;
+          padding: 20px 0;
+        }
       }
     }
   }
-`
+`;
 
-const Navbar = (props) => {
-  const mobile = props.mobile === 'true' ? true : false;
-
-  const navLinks = (
-    <ul className={mobile ? 'mobile' : 'desktop'} id={props.active ? 'active' : ''}>
-      <li><Link to="/nl/" activeClassName="active">Home</Link></li>
-      <li><Link to="/nl/over" activeClassName="active">Over</Link></li>
-      <li><Link to="/nl/diensten" activeClassName="active">Diensten</Link></li>
-      {/* <li><Link to="/nl/projecten" activeClassName="active">Projecten</Link></li> */}
-      <li><Link to="/nl/contact" activeClassName="active">Contact</Link></li>
-      <li><Link to="/nl/blog" activeClassName="active">Blog</Link></li>
-    </ul>
-  );
-
+const Navbar = props => {
   return (
     <StyledNavbar {...props}>
       <Container>
         <nav>
-          <Link to="/nl">
-            <img id="logo" src={Logo} alt="Luweb logo" />
-          </Link>
-          {
-            mobile && (
-              <div className={`hamburger ${props.active ? 'cross' : ''}`} aria-label="Menu" onClick={props.hamburgerClick}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            )
-          }
-          {mobile ? <Slide right>{navLinks}</Slide> : navLinks}
+          <div className="flex">
+            <Link to="/">
+              <img id="logo" src={Logo} alt="Luweb logo" />
+            </Link>
+            <div className={`hamburger ${ props.active ? 'cross' : '' }`} aria-label="Menu" onClick={props.hamburgerClick}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <ul id={props.active ? 'active' : ''}>
+            <li><Link to="/" activeClassName="active">Home</Link></li>
+            <li><Link to="/over" activeClassName="active">Over</Link></li>
+            <li><Link to="/diensten" activeClassName="active">Diensten</Link></li>
+            {/* <li><Link to="/projecten" activeClassName="active">Projecten</Link></li> */}
+            <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+            <li><Link to="/blog" activeClassName="active">Blog</Link></li>
+          </ul>
         </nav>
       </Container>
     </StyledNavbar >
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

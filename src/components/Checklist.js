@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledChecklist = styled.ul`
@@ -21,15 +21,15 @@ const StyledChecklist = styled.ul`
     display: inline-block;
     border-radius: 50%;
     color: #fff;
-    background-color: ${props => props.theme.colors.lightBlue};
+    background-color: ${ props => props.theme.colors.lightBlue };
   }
-`
-const Checklist = (props) => {
+`;
+const Checklist = props => {
   return (
     <StyledChecklist>
       {props.children}
     </StyledChecklist>
-  )
-}
+  );
+};
 
-export default Checklist
+export default Checklist;

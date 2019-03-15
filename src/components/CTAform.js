@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import Button from './Button';
+import TextField from '@material-ui/core/TextField';
 
 const StyledCtaForm = styled.div`
   p {
@@ -24,9 +25,7 @@ const StyledCtaForm = styled.div`
     }
     input {
         letter-spacing: 0.5px;
-        text-transform: uppercase;
         margin-bottom: 30px;
-        text-align: center;
         background-color: #f5f5f5;
         border: 1px solid #f5f5f5;
         color: #5b5e5e;
@@ -38,12 +37,12 @@ const StyledCtaForm = styled.div`
     }
   }
   p.policy, p.policy a  {
-      color: ${props => props.theme.colors.lightGray};
+      color: ${ props => props.theme.colors.lightGray };
       margin-top: 20px;
     }
-`
+`;
 
-const CTAform = (props) => {
+const CTAform = props => {
   return (
     <StyledCtaForm {...props}>
       <form
@@ -54,11 +53,10 @@ const CTAform = (props) => {
         data-netlify-honeypot='bot-field'
         action="/bedankt"
       >
-        <p style={{ visibility: "hidden", height: 0, margin: 0, padding: 0 }}>
+        <p style={{ visibility: 'hidden', height: 0, margin: 0, padding: 0 }}>
           <label>Vul dit niet in <input name="bot-field" /></label>
         </p>
         <input type="hidden" name="form-name" value="contact" />
-
         <label htmlFor="namebox">Naam</label>
         <input type="text" id="nameBox" autoComplete='name' name="name" placeholder="Naam" required />
 
@@ -73,28 +71,8 @@ const CTAform = (props) => {
 
         <Button primary type="submit" >{props.cta ? props.cta : 'Contacteer ons'}</Button>
       </form>
-      {/* <p className="policy"><small>Door bovenstaande gegevens in te vullen ga je akkoord met onze <a href="/privacy-policy">Privacy Policy</a>.</small></p> */}
     </StyledCtaForm>
+  );
+};
 
-
-    //     <div>
-    //         <label>Naam</label>
-    //         <input type="text" autoComplete='name' name="name" required />
-    //     </div>
-    //     <div>
-    //         <label>Email</label>
-    //         <input type="email" autoComplete='email' name="email" required />
-    //     </div>
-
-    //     <label>Organisatie</label>
-    //     <input type="text" autoComplete='on' name="organisatie" />
-
-    //     <label>Bericht:</label>
-    //     <textarea name="bericht" required></textarea>
-    //     <div data-netlify-recaptcha="true" />
-    //     <Button primary type="submit" style={{ width: '250px', margin: '20px auto' }}>Verzend</Button>
-    // </form>
-  )
-}
-
-export default CTAform
+export default CTAform;

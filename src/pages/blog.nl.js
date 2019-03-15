@@ -43,8 +43,18 @@ const Index = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
+<<<<<<< HEAD:src/pages/blog.nl.js
 query nlPostQuery  {
     allContentfulPost(filter: {node_locale: {eq: "nl"}}, sort: {fields: [publishDate], order: DESC}) {
+=======
+  query($skip: Int!, $limit: Int!) {
+    allContentfulPost(
+      filter: {node_locale: {eq: "nl"}}
+      sort: { fields: [publishDate], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+>>>>>>> master:src/templates/blog.js
       edges {
         node {
           node_locale

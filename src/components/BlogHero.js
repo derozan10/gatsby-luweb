@@ -1,12 +1,12 @@
-import React from 'react'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
+import React from 'react';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
 import Container from './Container';
 
 const Wrapper = styled.section`
   position: relative;
   min-height: 300px;
-`
+`;
 const BgImg = styled(Img)`
   position: absolute;
   top: 0;
@@ -16,11 +16,11 @@ const BgImg = styled(Img)`
   min-height: 300px;
   height: auto;
   @media (min-width: 576px) {
-    height: ${props => props.height || 'auto'};
+    height: ${ props => props.height || 'auto' };
   }
   & > img {
-    object-fit: ${props => props.fit || 'cover'} !important;
-    object-position: ${props => props.position || '50% 50%'} !important;
+    object-fit: ${ props => props.fit || 'cover' } !important;
+    object-position: ${ props => props.position || '50% 50%' } !important;
   }
   &::before {
     content: '';
@@ -34,7 +34,7 @@ const BgImg = styled(Img)`
     width: 100%;
     z-index: 1;
   }
-`
+`;
 
 const Title = styled.h1`
   font-size: 48px;
@@ -53,7 +53,7 @@ const Title = styled.h1`
   @media (max-width: 576px) {
     font-size: 36px;
   }
-`
+`;
 
 const Hero = props => (
   <Wrapper>
@@ -66,6 +66,6 @@ const Hero = props => (
       {props.title}
     </Title>
   </Wrapper>
-)
+);
 
-export default Hero
+export default Hero;

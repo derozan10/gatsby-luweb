@@ -4,10 +4,17 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
+  const locales = new Promise((res, rej) => {
+    graphql(`
+      allContent
+    `)
+  })
+
   const loadPosts = new Promise((resolve, reject) => {
     graphql(`
       {
         allContentfulPost(
+          filter: {node_locale: {eq: "nl"}}
           sort: { fields: [publishDate], order: DESC }
           limit: 10000
         ) {
@@ -26,8 +33,8 @@ exports.createPages = ({ graphql, actions }) => {
       }
 
       const posts = result.data.allContentfulPost.edges;
-      const postsPerFirstPage = config.postsPerHomePage;
-      const postsPerPage = config.postsPerPage;
+      // const postsPerFirstPage = config.postsPerHomePage;
+      // const postsPerPage = config.postsPerPage;
       // const numPages = Math.ceil(posts.slice(postsPerFirstPage).length / postsPerPage);
 
       // Create each individual post
@@ -51,7 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
   const loadTags = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulTag {
+        allContentfulTag(filter: {node_locale: {eq: "nl"}}) {
           edges {
             node {
               slug

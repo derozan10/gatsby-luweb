@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
 
 import Container from './Container';
-import smallArrow from '../img/icons/smallArrow.svg'
-import underConstruction from '../img/under-construction.svg'
+import smallArrow from '../img/icons/smallArrow.svg';
+import underConstruction from '../img/under-construction.svg';
 
 const StyledCTA2 = styled.div`
-    background: ${props => props.theme.colors.tertiary};
-    color: ${props => props.theme.colors.base};
+    background: ${ props => props.theme.colors.tertiary };
+    color: ${ props => props.theme.colors.base };
     padding: 40px 0;
     margin: 80px 0 40px 0;
     position: relative;
@@ -37,7 +37,7 @@ const StyledCTA2 = styled.div`
         width: 100%;
         padding: 20px 0;
         &:after {
-            content: url(${smallArrow});
+            content: url(${ smallArrow });
             height: 16px;
             width: 16px;
             display: inline-block;
@@ -63,19 +63,22 @@ const StyledCTA2 = styled.div`
         max-width: 100%;
         margin-top: 20px;
     }
-`
+`;
 
 const CTA2 = () => {
-    return (
-        <StyledCTA2>
-            {/* <img id="construct" src={underConstruction} alt="website under construction" /> */}
-            <Container>
-                <h3>Overtuigd van onze expertise?</h3>
-                <p>Contacteer ons vrijblijvend, en we bekijken samen met jou hoe we ook jouw website naar een hoger niveau tillen.</p>
-                <Link to="/contact" id="contact">Contacteer ons</Link>
-            </Container>
-        </StyledCTA2>
-    )
-}
+  return (
+    <StyledCTA2>
+      {/* <img id="construct" src={underConstruction} alt="website under construction" /> */}
+      <Container>
+        <h3>Overtuigd van onze expertise?</h3>
+        <p>
+                    Contacteer ons vrijblijvend, en we bekijken samen met jou hoe we
+                    ook jouw website naar een hoger niveau tillen.
+        </p>
+        <Link to="/contact" id="contact">Contacteer ons</Link>
+      </Container>
+    </StyledCTA2>
+  );
+};
 
-export default CTA2
+export default CTA2;
