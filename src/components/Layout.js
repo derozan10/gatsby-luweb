@@ -20,7 +20,6 @@ export class Layout extends Component {
   componentDidMount() {
     // window.$crisp = [];
     // window.CRISP_WEBSITE_ID = "0dd42ec7-d066-4701-8099-c141a5526b8b";
-    NProgress.start();
   }
 
   toggleNav = () => this.setState({ navActive: !this.state.navActive })
@@ -29,9 +28,8 @@ export class Layout extends Component {
     return (
       <>
         <Helmet>
-          <script src='nprogress.js'></script>
-          <link rel='stylesheet' href='nprogress.css' />
           {/* <script src="https://client.crisp.chat/l.js" async /> */}
+          <meta name="google-site-verification" content="8L5sdDFtnEJpqybB7QuO7CMBaJW25pArhsZnKBr5EFI" />
           {/* <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"></link> */}
         </Helmet>
         <Backdrop active={this.state.navActive} closeNav={() => this.setState({ navActive: false })} />
