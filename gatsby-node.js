@@ -21,12 +21,10 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const posts = result.data.allContentfulPost.edges
-      const postsPerFirstPage = config.postsPerHomePage
-      const postsPerPage = config.postsPerPage
-      const numPages = Math.ceil(
-        posts.slice(postsPerFirstPage).length / postsPerPage
-      )
+      const posts = result.data.allContentfulPost.edges;
+      const postsPerFirstPage = config.postsPerHomePage;
+      const postsPerPage = config.postsPerPage;
+      const numPages = Math.ceil(posts.slice(postsPerFirstPage).length / postsPerPage);
 
       // Create main blog page
       createPage({
