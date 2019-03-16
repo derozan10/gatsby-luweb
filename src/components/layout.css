@@ -33,7 +33,6 @@ h3 {
   text-align: center;
 }
 
-
 /* Super Form Reset */
 input,
 label,
@@ -54,8 +53,7 @@ input:focus
 	outline:0;
 }
 
-/* Box Sizing Reset
------------------------------------------------*/
+/*-- Box Sizing Reset --*/
 
 /* All of our custom controls should be what we expect them to be */
 input,

@@ -10,14 +10,14 @@ const Post = styled.li`
   width: 100%;
   transition: background 0.2s;
   @media screen and (min-width: 576px) {
-    flex: ${ props => (props.featured ? '0 0 100%' : '0 0 49%') };
+    flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
     margin: 0 0 2vw 0;
   }
   @media screen and (min-width: 768px) {
-    flex: ${ props => (props.featured ? '0 0 100%' : '0 0 32%') };
+    flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
   }
   &:hover {
-    background: #F3F3F3;
+    background: #f3f3f3;
   }
   a {
     display: flex;
@@ -30,7 +30,7 @@ const Post = styled.li`
       height: 0;
       padding-bottom: 60%;
       @media screen and (min-width: 576px) {
-        padding-bottom: ${ props => (props.featured ? '40%' : '60%') };
+        padding-bottom: ${props => (props.featured ? '40%' : '60%')};
       }
     }
   }
@@ -53,24 +53,19 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `;
 
-const Card = ({ slug, node_locale, heroImage, title, publishDate, body, ...props }) => {
-  console.log(node_locale);
-  return (
-    <Post featured={props.featured}>
-      {slug && (
-        <Link to={`/${ node_locale }/blog/${ slug }/`}>
-          {heroImage && heroImage.fluid && heroImage.fluid.aspectRatio && (
-            <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />)
-          }
-          {title && <Title>{title}</Title>}
-          {publishDate && <Date>{publishDate}</Date>}
-          {body && (
-            <Excerpt dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.excerpt }} />
-          )}
-        </Link>
-      )}
-    </Post>
-  );
-};
+const Card = ({ slug, node_locale: locale, heroImage, title, publishDate, body, featured }) => (
+  <Post featured={featured}>
+    {slug && (
+      <Link to={`/${locale}/blog/${slug}/`}>
+        {heroImage && heroImage.fluid && heroImage.fluid.aspectRatio && (
+          <Img fluid={heroImage.fluid} backgroundColor="#eeeeee" />
+        )}
+        {title && <Title>{title}</Title>}
+        {publishDate && <Date>{publishDate}</Date>}
+        {body && <Excerpt dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.excerpt }} />}
+      </Link>
+    )}
+  </Post>
+);
 
 export default Card;

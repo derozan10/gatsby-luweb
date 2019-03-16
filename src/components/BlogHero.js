@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import Container from './Container';
+// // import Container from './Container';
 
 const Wrapper = styled.section`
   position: relative;
@@ -16,15 +16,15 @@ const BgImg = styled(Img)`
   min-height: 300px;
   height: auto;
   @media (min-width: 576px) {
-    height: ${ props => props.height || 'auto' };
+    height: ${props => props.height || 'auto'};
   }
   & > img {
-    object-fit: ${ props => props.fit || 'cover' } !important;
-    object-position: ${ props => props.position || '50% 50%' } !important;
+    object-fit: ${props => props.fit || 'cover'} !important;
+    object-position: ${props => props.position || '50% 50%'} !important;
   }
   &::before {
     content: '';
-    background: linear-gradient(0deg,#000 0,rgba(0,0,0,0) 50%);
+    background: linear-gradient(0deg, #000 0, rgba(0, 0, 0, 0) 50%);
     position: absolute;
     top: 0;
     left: 0;
@@ -55,17 +55,14 @@ const Title = styled.h1`
   }
 `;
 
-const Hero = props => (
-  <Wrapper>
-    <BgImg
-      height={props.height}
-      fluid={props.image.fluid}
-      backgroundColor={'#eeeeee'}
-    />
-    <Title>
-      {props.title}
-    </Title>
-  </Wrapper>
-);
+const Hero = props => {
+  const { height, image, title } = props;
+  return (
+    <Wrapper>
+      <BgImg height={height} fluid={image.fluid} backgroundColor="#eeeeee" />
+      <Title>{title}</Title>
+    </Wrapper>
+  );
+};
 
 export default Hero;
