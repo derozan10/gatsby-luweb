@@ -62,6 +62,7 @@ module.exports = {
       }
     ],
     "no-console": 0,
+    "react/prop-types": "ignore",
     "import/prefer-default-export": 0,
     "import": 0,
     "func-names": 0,
