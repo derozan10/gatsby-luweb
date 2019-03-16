@@ -1,7 +1,22 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl
+        defaultImage: image
+        # twitterUsername
+      }
+    }
+  }
+`;
 
 const SEO = ({ title, description, image, pathname, article }) => (
   <StaticQuery
@@ -22,8 +37,8 @@ const SEO = ({ title, description, image, pathname, article }) => (
         title: title || defaultTitle,
         description: description || defaultDescription,
         image: `${siteUrl}${image || defaultImage}`,
-        url: `${siteUrl}${pathname || "/"}`,
-      }
+        url: `${siteUrl}${pathname || '/'}`,
+      };
 
       return (
         <>
@@ -33,31 +48,25 @@ const SEO = ({ title, description, image, pathname, article }) => (
             <meta name="theme-color" content="#3950D3" />
 
             {seo.url && <meta property="og:url" content={seo.url} />}
-            {(article ? true : null) && (
-              <meta property="og:type" content="article" />
-            )}
+            {(article ? true : null) && <meta property="og:type" content="article" />}
             {seo.title && <meta property="og:title" content={seo.title} />}
-            {seo.description && (
-              <meta property="og:description" content={seo.description} />
-            )}
+            {seo.description && <meta property="og:description" content={seo.description} />}
             {seo.image && <meta property="og:image" content={seo.image} />}
             <meta name="twitter:card" content="summary_large_image" />
             {/* {twitterUsername && (
               <meta name="twitter:creator" content={twitterUsername} />
             )} */}
             {seo.title && <meta name="twitter:title" content={seo.title} />}
-            {seo.description && (
-              <meta name="twitter:description" content={seo.description} />
-            )}
+            {seo.description && <meta name="twitter:description" content={seo.description} />}
             {seo.image && <meta name="twitter:image" content={seo.image} />}
           </Helmet>
         </>
-      )
+      );
     }}
   />
-)
+);
 
-export default SEO
+export default SEO;
 
 SEO.propTypes = {
   title: PropTypes.string,
@@ -65,7 +74,7 @@ SEO.propTypes = {
   image: PropTypes.string,
   pathname: PropTypes.string,
   article: PropTypes.bool,
-}
+};
 
 SEO.defaultProps = {
   title: null,
@@ -73,19 +82,4 @@ SEO.defaultProps = {
   image: null,
   pathname: null,
   article: false,
-}
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl
-        defaultImage: image
-        # twitterUsername
-      }
-    }
-  }
-`
+};
