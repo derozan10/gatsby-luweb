@@ -14,7 +14,7 @@ import 'typeface-lato';
 import GlobalStyle from '../styles/global';
 import theme from '../styles/theme';
 
-export class Layout extends Component {
+export default class Layout extends Component {
   state = {
     navActive: false,
   };
@@ -63,5 +63,3 @@ export class Layout extends Component {
     );
   }
 }
-
-export default Layout;

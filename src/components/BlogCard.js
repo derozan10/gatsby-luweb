@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 const Post = styled.li`
   position: relative;
@@ -17,7 +17,7 @@ const Post = styled.li`
     flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
   }
   &:hover {
-    background: #F3F3F3;
+    background: #f3f3f3;
   }
   a {
     display: flex;
@@ -34,38 +34,36 @@ const Post = styled.li`
       }
     }
   }
-`
+`;
 
 const Title = styled.h2`
   font-size: 1.5em;
   font-weight: 600;
   text-transform: capitalize;
   margin: 1rem 1rem 0.5rem 1rem;
-`
+`;
 
 const Date = styled.h3`
   margin: 0 1rem 1.5rem 1rem;
   color: gray;
-`
+`;
 
 const Excerpt = styled.p`
   margin: 0 1rem 1rem 1rem;
   line-height: 1.6;
-`
+`;
 
-const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
-  return (
-    <Post featured={props.featured}>
-      {slug && (
-        <Link to={`/blog/${slug}/`}>
-          {heroImage && heroImage.fluid && (<Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />)}
-          {title && <Title>{title}</Title>}
-          {publishDate && <Date>{publishDate}</Date>}
-          {body && (<Excerpt dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.excerpt }} />)}
-        </Link>
-      )}
-    </Post>
-  )
-}
+const Card = ({ slug, heroImage, title, featured, publishDate, body }) => (
+  <Post featured={featured}>
+    {slug && (
+      <Link to={`/blog/${slug}/`}>
+        {heroImage && heroImage.fluid && <Img fluid={heroImage.fluid} backgroundColor="#eeeeee" />}
+        {title && <Title>{title}</Title>}
+        {publishDate && <Date>{publishDate}</Date>}
+        {body && <Excerpt dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.excerpt }} />}
+      </Link>
+    )}
+  </Post>
+);
 
-export default Card
+export default Card;
