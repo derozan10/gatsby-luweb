@@ -1,15 +1,15 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import orderBy from 'lodash/orderBy'
-import Helmet from 'react-helmet'
-import moment from 'moment'
-import config from '../utils/siteConfig'
-import Layout from '../components/Layout'
-import BlogCard from '../components/BlogCard'
-import CardList from '../components/CardList'
-import PageTitle from '../components/PageTitle'
-import Pagination from '../components/Pagination'
-import Container from '../components/Container'
+import React from 'react';
+import { graphql } from 'gatsby';
+import orderBy from 'lodash/orderBy';
+import Helmet from 'react-helmet';
+import moment from 'moment';
+import config from '../utils/siteConfig';
+import Layout from '../components/Layout';
+import BlogCard from '../components/BlogCard';
+import CardList from '../components/CardList';
+import PageTitle from '../components/PageTitle';
+import Pagination from '../components/Pagination';
+import Container from '../components/Container';
 
 const TagTemplate = ({ data, pageContext }) => {
   const posts = orderBy(
@@ -17,40 +17,30 @@ const TagTemplate = ({ data, pageContext }) => {
     // eslint-disable-next-line
     [object => new moment(object.publishDateISO)],
     ['desc']
-  )
+  );
 
-  const { title, slug } = data.contentfulTag
-  const numberOfPosts = posts.length
-  const skip = pageContext.skip
-  const limit = pageContext.limit
-  const currentPage = pageContext.currentPage
-  const isFirstPage = currentPage === 1
+  const { title, slug } = data.contentfulTag;
+  const numberOfPosts = posts.length;
+  const {skip} = pageContext;
+  const {limit} = pageContext;
+  const {currentPage} = pageContext;
+  const isFirstPage = currentPage === 1;
 
   return (
     <Layout inverse>
       {isFirstPage ? (
         <Helmet>
           <title>{`Tag: ${title} - ${config.siteTitle}`}</title>
-          <meta
-            property="og:title"
-            content={`Tag: ${title} - ${config.siteTitle}`}
-          />
+          <meta property="og:title" content={`Tag: ${title} - ${config.siteTitle}`} />
           <meta property="og:url" content={`${config.siteUrl}/tag/${slug}/`} />
         </Helmet>
       ) : (
-          <Helmet>
-            <title>{`Tag: ${title} - Page ${currentPage} - ${
-              config.siteTitle
-              }`}</title>
-            <meta
-              property="og:title"
-              content={`Tag: ${title} - Page ${currentPage} - ${
-                config.siteTitle
-                }`}
-            />
-            <meta property="og:url" content={`${config.siteUrl}/tag/${slug}/`} />
-          </Helmet>
-        )}
+        <Helmet>
+          <title>{`Tag: ${title} - Page ${currentPage} - ${config.siteTitle}`}</title>
+          <meta property="og:title" content={`Tag: ${title} - Page ${currentPage} - ${config.siteTitle}`} />
+          <meta property="og:url" content={`${config.siteUrl}/tag/${slug}/`} />
+        </Helmet>
+      )}
 
       <Container>
         <PageTitle small>
@@ -68,8 +58,8 @@ const TagTemplate = ({ data, pageContext }) => {
       </Container>
       <Pagination context={pageContext} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -98,6 +88,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default TagTemplate
+export default TagTemplate;

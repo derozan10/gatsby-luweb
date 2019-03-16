@@ -1,39 +1,30 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Helmet from 'react-helmet'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import BlogSEO from "../components/BlogSeo";
-import BlogHero from '../components/BlogHero'
-import PageBody from '../components/PageBody'
-import TagList from '../components/TagList'
-import PostLinks from '../components/PostLinks'
-import PostDate from '../components/PostDate'
+import Layout from '../components/Layout';
+import Container from '../components/Container';
+import BlogSEO from '../components/BlogSeo';
+import BlogHero from '../components/BlogHero';
+import PageBody from '../components/PageBody';
+import TagList from '../components/TagList';
+import PostLinks from '../components/PostLinks';
+import PostDate from '../components/PostDate';
 
 const service = ({ data, pageContext }) => {
-  const {
-    title,
-    slug,
-    heroImage,
-    body,
-    publishDate,
-    tags,
-    metaDescription
-  } = data.contentfulPost
-  const postNode = data.contentfulPost
+  console.log(data);
+  const { title, slug, heroImage, body, publishDate, tags, metaDescription } = data.contentfulPost;
+  const postNode = data.contentfulPost;
 
-  const previous = pageContext.prev
-  const next = pageContext.next
+  const previous = pageContext.prev;
+  const { next } = pageContext;
 
   return (
     <Layout inverse>
-      <Helmet>
-        {title && <title>{`${title}`}</title>}
-      </Helmet>
+      <Helmet>{title && <title>{`${title}`}</title>}</Helmet>
       <BlogSEO pagePath={`blog/${slug}`} postNode={postNode} postSEO />
       {/* <SEO pagePath={slug} description={metaDescription.internal.content} postNode={postNode} postSEO /> */}
-      {title && heroImage && <BlogHero title={title} image={heroImage} height={'20vh'} />}
+      {title && heroImage && <BlogHero title={title} image={heroImage} height="20vh" />}
       <Container>
         {tags && <TagList tags={tags} />}
         {publishDate && <PostDate date={publishDate} />}
@@ -41,14 +32,14 @@ const service = ({ data, pageContext }) => {
       </Container>
       <PostLinks previous={previous} next={next} />
     </Layout>
-  )
-}
+  );
+};
 
-export default service
+export default service;
 
 export const query = graphql`
-  query($id: String!) {
-    contentfulPost(slug: { eq: $id }) {
+  query($id: String!, $locale: String!) {
+    contentfulPost(contentful_id: { eq: $id }, node_locale: { eq: $locale }) {
       title
       slug
       metaDescription {
@@ -82,6 +73,4 @@ export const query = graphql`
       }
     }
   }
-`
-
-
+`;
