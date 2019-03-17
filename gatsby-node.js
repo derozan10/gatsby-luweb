@@ -1,14 +1,15 @@
-const config = require('./src/utils/siteConfig')
-const path = require(`path`)
+const config = require('./src/utils/siteConfig');
+
+const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   const loadPosts = new Promise((resolve, reject) => {
     graphql(`
       {
         allContentfulPost(
-          filter: {node_locale: {eq: "nl"}}
+          filter: { node_locale: { eq: "nl" }, publishDate: { ne: null }, body: { body: { ne: null } } }
           sort: { fields: [publishDate], order: DESC }
           limit: 10000
         ) {
@@ -21,10 +22,9 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const posts = result.data.allContentfulPost.edges.filter(pst => pst.node.publishDate && pst.node.body);
-      console.log(posts);
+      const posts = result.data.allContentfulPost.edges;
       const postsPerFirstPage = config.postsPerHomePage;
-      const postsPerPage = config.postsPerPage;
+      const { postsPerPage } = config;
       const numPages = Math.ceil(posts.slice(postsPerFirstPage).length / postsPerPage);
 
       // Create main blog page
@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
           numPages: numPages + 1,
           currentPage: 1,
         },
-      })
+      });
 
       // Create additional pagination on home page if needed
       Array.from({ length: numPages }).forEach((_, i) => {
@@ -50,13 +50,13 @@ exports.createPages = ({ graphql, actions }) => {
             numPages: numPages + 1,
             currentPage: i + 2,
           },
-        })
-      })
+        });
+      });
 
       // Create each individual post
       posts.forEach((edge, i) => {
-        const prev = i === 0 ? null : posts[i - 1].node
-        const next = i === posts.length - 1 ? null : posts[i + 1].node
+        const prev = i === 0 ? null : posts[i - 1].node;
+        const next = i === posts.length - 1 ? null : posts[i + 1].node;
         createPage({
           path: `/blog/${edge.node.slug}/`,
           component: path.resolve(`./src/templates/post.js`),
@@ -65,16 +65,16 @@ exports.createPages = ({ graphql, actions }) => {
             prev,
             next,
           },
-        })
-      })
-      resolve()
-    })
-  })
+        });
+      });
+      resolve();
+    });
+  });
 
   const loadTags = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulTag(filter: {node_locale: {eq: "nl"}}) {
+        allContentfulTag(filter: { node_locale: { eq: "nl" } }) {
           edges {
             node {
               slug
@@ -86,31 +86,30 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const tags = result.data.allContentfulTag.edges
-      const postsPerPage = config.postsPerPage
+      const tags = result.data.allContentfulTag.edges;
+      const { postsPerPage } = config;
 
       // Create tag pages with pagination if needed
       tags.map(({ node }) => {
-        const totalPosts = node.post !== null ? node.post.length : 0
-        const numPages = Math.ceil(totalPosts / postsPerPage)
+        const totalPosts = node.post !== null ? node.post.length : 0;
+        const numPages = Math.ceil(totalPosts / postsPerPage);
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
-            path:
-              i === 0 ? `blog/tag/${node.slug}/` : `blog/tag/${node.slug}/${i + 1}/`,
+            path: i === 0 ? `blog/tag/${node.slug}/` : `blog/tag/${node.slug}/${i + 1}/`,
             component: path.resolve(`./src/templates/tag.js`),
             context: {
               slug: node.slug,
               limit: postsPerPage,
               skip: i * postsPerPage,
-              numPages: numPages,
+              numPages,
               currentPage: i + 1,
             },
-          })
-        })
-      })
-      resolve()
-    })
-  })
+          });
+        });
+      });
+      resolve();
+    });
+  });
 
-  return Promise.all([loadPosts, loadTags])
-}
+  return Promise.all([loadPosts, loadTags]);
+};
