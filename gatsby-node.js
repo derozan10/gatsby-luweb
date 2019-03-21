@@ -1,10 +1,14 @@
+const path = require(`path`);
+// const fs = require('fs-extra');
 const config = require('./src/utils/siteConfig');
 
-const path = require(`path`);
+// exports.onPostBuild = () => {
+//   console.log('Copying locales');
+//   fs.copySync(path.join(__dirname, '/src/locales'), path.join(__dirname, '/public/locales'));
+// };
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  const locales = ['nl', 'en'];
 
   const loadPosts = new Promise((resolve, reject) => {
     graphql(`

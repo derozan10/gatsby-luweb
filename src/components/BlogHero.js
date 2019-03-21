@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-// // import Container from './Container';
+import Container from './Container';
 
 const Wrapper = styled.section`
   position: relative;
@@ -37,7 +37,7 @@ const BgImg = styled(Img)`
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
   text-transform: capitalize;
   font-weight: 600;
   position: absolute;
@@ -46,12 +46,11 @@ const Title = styled.h1`
   max-width: 1250px;
   bottom: 0;
   left: 0;
-  padding: 20px;
-  /* transform: translate(-50%, -50%); */
-  text-align: center;
+  line-height: 1.2;
+  padding: 20px 40px;
   color: white;
   @media (max-width: 576px) {
-    font-size: 36px;
+    font-size: 30px;
   }
 `;
 
@@ -60,7 +59,9 @@ const Hero = props => {
   return (
     <Wrapper>
       <BgImg height={height} fluid={image.fluid} backgroundColor="#eeeeee" />
-      <Title>{title}</Title>
+      <Container>
+        <Title>{title}</Title>
+      </Container>
     </Wrapper>
   );
 };

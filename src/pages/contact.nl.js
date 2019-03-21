@@ -53,14 +53,13 @@ const Contact = () => (
       <StyledContact>
         <h1>Contacteer ons</h1>
         <p>
-          Contacteer ons via de contactgegevens hieronder of laat
-          <strong>een berichtje</strong>
-          het contactformulier en we nemen zo snel mogelijk contact met je op.
+          Contacteer ons via de de gegevens hieronder of gebruik het contactformulier. Nadien nemen we zo snel mogelijk
+          contact met je op.
         </p>
         <br />
-        <p>
+        {/* <p>
           Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
-        </p>
+        </p> */}
         <Form />
         <div id="contactData">
           <div>
