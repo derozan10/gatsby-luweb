@@ -1,19 +1,20 @@
-const config = require('./src/utils/siteConfig')
-let contentfulConfig
+const config = require('./src/utils/siteConfig');
+
+let contentfulConfig;
 
 try {
-  contentfulConfig = require('./.contentful')
+  contentfulConfig = require('./.contentful');
 } catch (e) {
   contentfulConfig = {
     production: {
       spaceId: process.env.SPACE_ID,
       accessToken: process.env.ACCESS_TOKEN,
     },
-  }
+  };
 } finally {
-  const { spaceId, accessToken } = contentfulConfig.production
+  const { spaceId, accessToken } = contentfulConfig.production;
   if (!spaceId || !accessToken) {
-    throw new Error('Contentful space ID and access token need to be provided.')
+    throw new Error('Contentful space ID and access token need to be provided.');
   }
 }
 
@@ -36,7 +37,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-99105204-2",
+        trackingId: 'UA-99105204-2',
         head: true,
       },
     },
@@ -74,7 +75,7 @@ module.exports = {
               maxWidth: 650,
               backgroundColor: 'white',
               // linkImagesToOriginal: false,
-              wrapperStyle: 'padding: 40px;'
+              wrapperStyle: 'padding: 40px;',
             },
           },
         ],
@@ -89,10 +90,7 @@ module.exports = {
     },
     {
       resolve: 'gatsby-source-contentful',
-      options:
-        process.env.NODE_ENV === 'development'
-          ? contentfulConfig.development
-          : contentfulConfig.production,
+      options: process.env.NODE_ENV === 'development' ? contentfulConfig.development : contentfulConfig.production,
     },
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -117,16 +115,16 @@ module.exports = {
                 }
               }
             }
-        }`
-      }
+        }`,
+      },
     },
     {
       resolve: `gatsby-plugin-hotjar`,
       options: {
         id: 1183378,
-        sv: 6
+        sv: 6,
       },
     },
     `gatsby-plugin-catch-links`,
-  ]
-}
+  ],
+};
