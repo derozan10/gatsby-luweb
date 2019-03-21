@@ -24,7 +24,7 @@ const StyledSubscription = styled.div`
 const Subscription = props => (
   <StyledSubscription>
     <form
-      name="contact"
+      name="newsletter-subscription"
       className="contactForm"
       method="POST"
       data-netlify="true"
@@ -39,7 +39,7 @@ const Subscription = props => (
           Vul dit niet in <input name="bot-field" />
         </label>
       </p>
-      <input type="hidden" name="form-name" value="blog-subscription" />
+      <input type="hidden" name="form-name" value="newsletter-subscription" />
       <input type="email" id="mailbox" name="email" placeholder="E-Mail" autoComplete="email" required />
 
       <Button primary type="submit">
