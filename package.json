@@ -17,6 +17,7 @@
         "gatsby-plugin-crisp-chat": "^2.1.0",
         "gatsby-plugin-google-analytics": "^2.0.9",
         "gatsby-plugin-google-fonts": "0.0.4",
+        "gatsby-plugin-google-tagmanager": "^2.0.10",
         "gatsby-plugin-hotjar": "^1.0.1",
         "gatsby-plugin-manifest": "^2.0.13",
         "gatsby-plugin-nprogress": "^2.0.10",
@@ -59,7 +60,9 @@
         "typeface-lato": "0.0.54",
         "webpagetest": "^0.3.9"
     },
-    "keywords": ["gatsby"],
+    "keywords": [
+        "gatsby"
+    ],
     "license": "MIT",
     "scripts": {
         "build": "gatsby build",
