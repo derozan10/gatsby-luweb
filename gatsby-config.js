@@ -1,31 +1,7 @@
-const config = require('./src/utils/siteConfig')
-let contentfulConfig
-
-try {
-  contentfulConfig = require('./.contentful')
-} catch (e) {
-  contentfulConfig = {
-    production: {
-      spaceId: process.env.SPACE_ID,
-      accessToken: process.env.ACCESS_TOKEN,
-    },
-  }
-} finally {
-  const { spaceId, accessToken } = contentfulConfig.production
-  if (!spaceId || !accessToken) {
-    throw new Error('Contentful space ID and access token need to be provided.')
-  }
-}
+const siteMetadata = require('./src/data/siteMetadata');
 
 module.exports = {
-  siteMetadata: {
-    title: config.siteTitle,
-    titleTemplate: `%s | ${config.siteTitle}`,
-    description: config.siteDescription,
-    siteUrl: config.siteUrl,
-    image: config.siteLogo,
-    author: config.author,
-  },
+  siteMetadata,
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
@@ -33,60 +9,12 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-offline',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        trackingId: "UA-99105204-2",
-        head: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyForNull: 'any',
-        langKeyDefault: 'nl',
-        useLangKeyLayout: false,
-        prefixDefault: true
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: config.siteTitle,
-        short_name: config.siteTitle,
-        start_url: `/`,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: `standalone`,
-        icon: `static/luweb-logo-blueGradient-small.png`, // This path is relative to the root of the site.
-        legacy: true,
-      },
-    },
-    // {
-    //   resolve: 'gatsby-plugin-crisp-chat',
-    //   options: {
-    //     websiteId: '0dd42ec7-d066-4701-8099-c141a5526b8b',
-    //     // Optional. Disables Crisp Chat during gatsby develop. Defaults to true.
-    //     // enableDuringDevelop: true,
-    //   },
-    // },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-autolink-headers`,
-          {
-            resolve: `gatsby-remark-images-contentful`,
-            options: {
-              maxWidth: 650,
-              backgroundColor: 'white',
-              // linkImagesToOriginal: false,
-              wrapperStyle: 'padding: 40px;'
-            },
-          },
-        ],
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
     {
@@ -97,11 +25,81 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-contentful',
-      options:
-        process.env.NODE_ENV === 'development'
-          ? contentfulConfig.development
-          : contentfulConfig.production,
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: { figureClassName: 'md-figure' },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 740,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: 'margin-bottom: 1.0725rem',
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyForNull: 'en',
+        langKeyDefault: 'en',
+        useLangKeyLayout: true,
+        prefixDefault: false,
+        markdownRemark: {
+          postPage: 'src/templates/blog-post.js',
+          query: `
+          {
+            allMarkdownRemark {
+                edges {
+                node {
+                  fields {
+                    slug,
+                    langKey
+                  }
+                }
+              }
+            }
+          }
+          `,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-i18n-tags',
+      options: {
+        tagPage: 'src/templates/tag-page.js',
+        tagsUrl: '/tags/',
+        langKeyForNull: 'en',
+        langKeyDefault: 'en',
+        prefixDefault: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteMetadata.siteTitle,
+        short_name: siteMetadata.siteTitle,
+        start_url: `/`,
+        background_color: siteMetadata.backgroundColor,
+        theme_color: siteMetadata.themeColor,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `static/luweb-logo-blueGradient-small.png`, // This path is relative to the root of the site.
+        legacy: true,
+      },
     },
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -126,16 +124,23 @@ module.exports = {
                 }
               }
             }
-        }`
-      }
+        }`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-99105204-2',
+        head: true,
+      },
     },
     {
       resolve: `gatsby-plugin-hotjar`,
       options: {
         id: 1183378,
-        sv: 6
+        sv: 6,
       },
     },
     `gatsby-plugin-catch-links`,
-  ]
-}
+  ],
+};

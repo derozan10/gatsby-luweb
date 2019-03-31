@@ -1,15 +1,14 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
-import Container from '../components/Container'
+import Layout from '../components/layout';
+import Container from '../components/Container';
 
-const NotFoundPage = () => (
+const FourOFour = () => (
   <Layout inverse title="Oeps...">
     <Container withPaddingTop>
-      <h1>Oeps...</h1>
-      <p>De pagina die je zoekt werd niet gevonden.</p>
+      <h1>This page was not found</h1>
     </Container>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default FourOFour;

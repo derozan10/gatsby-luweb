@@ -1,12 +1,19 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import CookieConsent from 'react-cookie-consent';
+import { StaticQuery, graphql, withPrefix } from 'gatsby';
+import { addLocaleData, IntlProvider, FormattedMessage } from 'react-intl';
+import enData from 'react-intl/locale-data/en';
+import nlData from 'react-intl/locale-data/nl';
+import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n';
 import Footer from './Footer';
-import SEO from './SEO';
 import Navbar from './Navbar';
-import Backdrop from './Backdrop';
+
+import en from '../data/messages/en';
+import nl from '../data/messages/nl';
 
 import 'typeface-lato';
 // import 'normalize.css';
@@ -14,52 +21,63 @@ import 'typeface-lato';
 import GlobalStyle from '../styles/global';
 import theme from '../styles/theme';
 
-export default class Layout extends Component {
-  state = {
-    navActive: false,
-  };
+const messages = { en, nl };
 
-  componentDidMount() {
-    // window.$crisp = [];
-    // window.CRISP_WEBSITE_ID = "0dd42ec7-d066-4701-8099-c141a5526b8b";
-  }
+addLocaleData([...enData, ...nlData]);
 
-  toggleNav = () => {
-    const { navActive } = this.state;
-    this.setState({ navActive: !navActive });
-  };
+const Layout = props => {
+  const { children, location, title } = props;
+  const url = location.pathname;
+  const isHome = isHomePage(url);
+  const { langs, defaultLangKey } = props.data.site.siteMetadata.languages;
+  const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+  const homeLink = `/${langKey !== 'en' ? langKey : ''}`;
+  const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(item => ({
+    ...item,
+    link: item.link.replace(`/${defaultLangKey}/`, '/'),
+  }));
+  const { menu, author, sourceCodeLink, siteUrl, description } = props.data.site.siteMetadata;
 
-  render() {
-    const { navActive } = this.state;
-    const { title, children } = this.props;
-    return (
-      <>
-        <Helmet>
-          {/* <script src="https://client.crisp.chat/l.js" async /> */}
-          {/* <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"></link> */}
-          <meta name="google-site-verification" content="8L5sdDFtnEJpqybB7QuO7CMBaJW25pArhsZnKBr5EFI" />
-        </Helmet>
-        <Backdrop active={navActive} closeNav={() => this.setState({ navActive: false })} />
-        <SEO title={title} />
-        <ThemeProvider theme={theme}>
-          <>
-            <Navbar hamburgerClick={this.toggleNav} active={navActive} />
-            <div style={{ paddingTop: '60px', minHeight: '80vh' }}>{children}</div>
-            <Footer />
-            <CookieConsent
-              buttonText="Melding sluiten"
-              location="bottom"
-              cookieName="GDPRCookie"
-              style={{ background: 'rgba(43,55,59, 0.9' }}
-              buttonStyle={{ color: '#4e503b', fontSize: '13px', borderRadius: '15px', padding: '2px 8px' }}
-              expires={150}
-            >
-              Deze website gebruikt cookies om de gebruikerservaring te verbeteren.
-            </CookieConsent>
-          </>
-        </ThemeProvider>
-        <GlobalStyle />
-      </>
-    );
-  }
-}
+  return (
+    <ThemeProvider theme={theme}>
+      <IntlProvider locale={langKey} messages={messages[langKey]}>
+        <FormattedMessage id="title">
+          {txt => (
+            <Helmet defaultTitle={txt} titleTemplate={`%s | ${txt}`} defer={false}>
+              <meta name="author" content={author.name} />
+              <meta name="description" content={description} />
+              <meta property="og:title" content={txt} />
+              <meta property="og:description" content={description} />
+              <meta property="og:type" content="website" />
+              <meta property="og:url" content={url} />
+              <meta property="og:image" content={`${siteUrl}${withPrefix('/avatar.jpg')}`} />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:title" content={txt} />
+              <meta name="twitter:description" content={description} />
+              <meta name="twitter:site" content={`@${author.twitter}`} />
+              <meta name="twitter:author" content={`@${author.twitter}`} />
+              <meta name="twitter:image" content={`${siteUrl}${withPrefix('/avatar.jpg')}`} />
+              <meta name="google-site-verification" content="8L5sdDFtnEJpqybB7QuO7CMBaJW25pArhsZnKBr5EFI" />
+            </Helmet>
+          )}
+        </FormattedMessage>
+        <Navbar />
+        <div style={{ paddingTop: '60px', minHeight: '80vh' }}>{children}</div>
+        <Footer />
+        <CookieConsent
+          buttonText="Melding sluiten"
+          location="bottom"
+          cookieName="GDPRCookie"
+          style={{ background: 'rgba(43,55,59, 0.9' }}
+          buttonStyle={{ color: '#4e503b', fontSize: '13px', borderRadius: '15px', padding: '2px 8px' }}
+          expires={150}
+        >
+          Deze website gebruikt cookies om de gebruikerservaring te verbeteren.
+        </CookieConsent>
+      </IntlProvider>
+      <GlobalStyle />
+    </ThemeProvider>
+  );
+};
+
+export default Layout;

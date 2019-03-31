@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import { Fade } from 'react-reveal';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import Container from '../components/Container';
 import CTA from '../components/CTA';
 import Form from '../components/CTAform';
