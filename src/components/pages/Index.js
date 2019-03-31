@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Welcome from '../Welcome';
+import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
 import Layout from '../layout';
 import PostCardList from '../PostCardList';
-import { FormattedMessage } from 'react-intl';
 import BtnLink from '../BtnLink';
-import styled from 'styled-components';
 
 const FeaturedContainer = styled.section`
   margin: ${props => props.theme.blog.list.margin};
@@ -28,7 +27,7 @@ const H2 = styled.h2`
   }
 `;
 
-const Index = (props) => {
+const Index = props => {
   const allStoriesPosts = props.data.all.edges.map(p => p.node);
   const featuredPosts = props.data.featured.edges.map(p => p.node);
   const { author } = props.data.site.siteMetadata;
@@ -37,32 +36,19 @@ const Index = (props) => {
   return (
     <Layout location={props.location}>
       <div>
-        <Welcome author={author} />
         <FeaturedContainer>
           <H2>
-            <FormattedMessage id="index.featured">
-              {(txt) => (
-                <span>{txt}</span>
-              )}
-            </FormattedMessage>
+            <FormattedMessage id="index.featured">{txt => <span>{txt}</span>}</FormattedMessage>
           </H2>
           <PostCardList posts={featuredPosts} author={author} />
         </FeaturedContainer>
         <AllStoriesContainer>
           <H2>
-            <FormattedMessage id="index.stories">
-              {(txt) => (
-                <span>{txt}</span>
-              )}
-            </FormattedMessage>
+            <FormattedMessage id="index.stories">{txt => <span>{txt}</span>}</FormattedMessage>
           </H2>
           <PostCardList posts={allStoriesPosts} author={author} imageOnTop />
           <FormattedMessage id="posts.seeMore">
-            {(txt) => (
-              <BtnLink to={`/${langKey !== 'en' ? langKey : ''}/blog/`}>
-                {txt}
-              </BtnLink>
-            )}
+            {txt => <BtnLink to={`/${langKey !== 'en' ? langKey : ''}/blog/`}>{txt}</BtnLink>}
           </FormattedMessage>
         </AllStoriesContainer>
       </div>
@@ -73,7 +59,7 @@ const Index = (props) => {
 Index.propTypes = {
   data: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Index;

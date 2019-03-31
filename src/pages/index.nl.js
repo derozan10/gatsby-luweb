@@ -1,20 +1,29 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 import { Fade } from 'react-reveal';
 
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
 import Container from '../components/Container';
 import Masonry from '../components/Masonry';
 import Checklist from '../components/Checklist';
+import PostCardList from '../components/PostCardList';
+import BtnLink from '../components/BtnLink';
 
 import speed from '../img/icons/speed.svg';
 import search from '../img/icons/search.svg';
 import analytics from '../img/icons/analytics.svg';
 import marketing from '../img/icons/marketing.svg';
 import CTAform from '../components/CTAform';
+
+const FeaturedContainer = styled.section`
+  margin: ${props => props.theme.blog.list.margin};
+`;
 
 const StyledServices = styled.section`
   z-index: 5;
@@ -126,8 +135,11 @@ const StyledSEO = styled.section`
   }
 `;
 
-const index = props => {
+const indexNl = props => {
   const { data } = props;
+  const featuredPosts = data.featured.edges.map(p => p.node);
+  const { author } = data.site.siteMetadata;
+  const { langKey } = props.pageContext;
   return (
     <Layout title="Freelance webdesign &amp; development" inverse withoutWaves>
       <Hero />
@@ -203,12 +215,18 @@ const index = props => {
           </section>
         </Container>
       </StyledServices>
-      <StyledProjects>
+      <FeaturedContainer>
+        <H2>
+          <FormattedMessage id="index.featured">{txt => <span>{txt}</span>}</FormattedMessage>
+        </H2>
+        <PostCardList posts={featuredPosts} author={author} />
+      </FeaturedContainer>
+      {/* <StyledProjects>
         <Container>
           <h2 id="realisaties">Onze realisaties</h2>
           <Masonry elements={data.allContentfulRealisatie.edges} />
         </Container>
-      </StyledProjects>
+      </StyledProjects> */}
       <StyledSEO>
         <Container>
           <h2>Samenwerken?</h2>
@@ -242,28 +260,28 @@ const index = props => {
   );
 };
 
-export default index;
+export default indexNl;
 
-export const realisatieQuery = graphql`
-  query realisatieQuery {
-    allContentfulRealisatie(filter: { node_locale: { eq: "nl" } }) {
-      edges {
-        node {
-          id
-          text {
-            text
-          }
-          highlightImage {
-            fluid {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          projectUrl
-          childContentfulRealisatieTextTextNode {
-            text
-          }
-        }
-      }
-    }
-  }
-`;
+// export const realisatieQuery = graphql`
+//   query realisatieNlQuery {
+//     allContentfulRealisatie(filter: { node_locale: { eq: "nl" } }) {
+//       edges {
+//         node {
+//           id
+//           text {
+//             text
+//           }
+//           highlightImage {
+//             fluid {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//           projectUrl
+//           childContentfulRealisatieTextTextNode {
+//             text
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

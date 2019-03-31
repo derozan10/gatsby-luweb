@@ -148,7 +148,7 @@ const StyledSEO = styled.section`
   }
 `;
 
-const index = props => {
+const indexEn = props => {
   const { data } = props;
   const featuredPosts = data.featured.edges.map(p => p.node);
   const { author } = data.site.siteMetadata;
@@ -273,7 +273,7 @@ const index = props => {
   );
 };
 
-export default index;
+export default indexEn;
 
 // export const realisatieQuery = graphql`
 //   query realisatieQuery {

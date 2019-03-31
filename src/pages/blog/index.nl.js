@@ -5,7 +5,7 @@ import Blog from '../../components/pages/Blog';
 export default props => <Blog {...props} />;
 
 export const pageQuery = graphql`
-  query BlogEnQuery {
+  query BlogNlQuery {
     site {
       siteMetadata {
         author {
