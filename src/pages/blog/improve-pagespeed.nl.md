@@ -1,11 +1,11 @@
 ---
 title: 5 tips om de laadtijd van je website te verbeteren
-date: "06-03-2019"
+date: "2019-03-06"
 layout: post
 draft: false
 featured: true
 tags:
-  - performance optimalisatie
+  - performantie
 image: ./images/improve-pagespeed/improve-pagespeed.jpg
 ---
 

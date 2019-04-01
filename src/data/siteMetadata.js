@@ -10,6 +10,7 @@ module.exports = {
   themeColor: '#3950D3', // Used for Offline Manifest
   copyright: 'Copyright © 2019 Luweb', // Copyright string for the RSS feed
   sourceCodeLink: 'https://github.com/derozan10/gatsby-luweb',
+  // disqusShortname: 'luweb-1'
   menu: [
     { label: 'home', slug: '/' },
     { label: 'blog', slug: '/blog/' },

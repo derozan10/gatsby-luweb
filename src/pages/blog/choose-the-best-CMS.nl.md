@@ -1,6 +1,6 @@
 ---
 title: Kies het beste CMS voor jouw website in 2019
-date: "26-02-2019"
+date: "2019-02-26"
 layout: post
 draft: false
 featured: true

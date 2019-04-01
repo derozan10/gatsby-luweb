@@ -86,15 +86,15 @@ const ShareWidget = ({ disqusShortname, url, message }) => (
           <FaLinkedinIn />
         </A>
       </li>
-      <DisqusContainer>
+      {/* <DisqusContainer>
         <DisqusCounter url={url} shortname={disqusShortname} />
-      </DisqusContainer>
+      </DisqusContainer> */}
     </Ul>
   </Wrapper>
 );
 
 ShareWidget.propTypes = {
-  disqusShortname: PropTypes.string.isRequired,
+  // disqusShortname: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
 };

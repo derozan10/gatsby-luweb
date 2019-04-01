@@ -5,7 +5,7 @@ layout: post
 draft: false
 featured: true
 tags:
-  - performance optimization
+  - performance
 image: ./images/improve-pagespeed/improve-pagespeed.jpg
 ---
 

@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@contentful/gatsby-transformer-contentful-richtext": "^13.0.1",
     "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.10.0",

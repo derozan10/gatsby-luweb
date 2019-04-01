@@ -152,7 +152,8 @@ class Navbar extends Component {
   render() {
     const { navActive: active } = this.state;
     const { intl } = this.props;
-    const prefix = intl.locale !== 'en' ? intl.locale : '';
+    // const prefix = intl.locale !== 'en' ? intl.locale : '';
+    const prefix = 'en';
 
     return (
       <StyledNavbar>

@@ -41,25 +41,26 @@ const H1 = styled.h1`
 `;
 
 const Page = props => {
+  const { i18n, location } = props;
   const author = getAuthor('hugomn');
-  author.description = props.i18n.description;
+  author.description = i18n.description;
   const structuredData = getStructuredDataForAuthor(author);
 
   return (
-    <Layout location={props.location}>
+    <Layout location={location}>
       <Wrapper>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
-        <FormattedMessage id={props.i18n.titleId}>
+        <FormattedMessage id={i18n.titleId}>
           {title => (
             <Header>
-              <Helmet title={title} meta={[{ name: 'description', content: props.i18n.description }]} />
+              <Helmet title={title} meta={[{ name: 'description', content: i18n.description }]} />
               <H1>
                 <span>{title}</span>
               </H1>
             </Header>
           )}
         </FormattedMessage>
-        <Content>{props.i18n.content}</Content>
+        <Content>{i18n.content}</Content>
       </Wrapper>
     </Layout>
   );

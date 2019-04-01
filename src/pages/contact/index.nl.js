@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
-import Container from '../components/Container';
-// // import Button from '../components/Button';
-import LuwebMap from '../components/LuwebMap';
-import Form from '../components/CTAform';
+import Container from '../../components/Container';
+// // import Button from '../../components/Button';
+import LuwebMap from '../../components/LuwebMap';
+import Form from '../../components/CTAform';
+import Page from '../../components/pages/Page';
 
 // icons
 // import telephone from '../img/icons/_ionicons_svg_ios-call.svg';
@@ -47,9 +47,10 @@ const StyledContact = styled.div`
   }
 `;
 
-const Contact = () => (
-  <Layout inverse title="Contacteer ons">
-    <Container style={{ minHeight: '60vh' }}>
+const i18n = {
+  titleId: 'contact',
+  content: (
+    <>
       <StyledContact>
         <h1>Contacteer ons</h1>
         <p>
@@ -74,9 +75,11 @@ const Contact = () => (
           <div id="btw">BE 0677 875 095</div>
         </div>
       </StyledContact>
-    </Container>
-    <LuwebMap />
-  </Layout>
-);
+    </>
+  ),
+  description: `
+    Developer with 12 years of experience.
+  `,
+};
 
-export default Contact;
+export default props => <Page i18n={i18n} {...props} />;

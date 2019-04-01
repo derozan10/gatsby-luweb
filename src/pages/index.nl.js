@@ -6,7 +6,6 @@ import { FormattedMessage } from 'react-intl';
 import { Fade } from 'react-reveal';
 
 import PropTypes from 'prop-types';
-import Layout from '../components/layout';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
 import Container from '../components/Container';
@@ -21,9 +20,11 @@ import analytics from '../img/icons/analytics.svg';
 import marketing from '../img/icons/marketing.svg';
 import CTAform from '../components/CTAform';
 
-const FeaturedContainer = styled.section`
-  margin: ${props => props.theme.blog.list.margin};
-`;
+import Page from '../components/pages/Page';
+
+// const FeaturedContainer = styled.section`
+//   margin: ${props => props.theme.blog.list.margin};
+// `;
 
 const StyledServices = styled.section`
   z-index: 5;
@@ -135,13 +136,10 @@ const StyledSEO = styled.section`
   }
 `;
 
-const indexNl = props => {
-  const { data } = props;
-  const featuredPosts = data.featured.edges.map(p => p.node);
-  const { author } = data.site.siteMetadata;
-  const { langKey } = props.pageContext;
-  return (
-    <Layout title="Freelance webdesign &amp; development" inverse withoutWaves>
+const i18n = {
+  titleId: 'home',
+  content: (
+    <>
       <Hero />
       <StyledServices>
         <Container withPadding>
@@ -215,12 +213,12 @@ const indexNl = props => {
           </section>
         </Container>
       </StyledServices>
-      <FeaturedContainer>
+      {/* <FeaturedContainer>
         <H2>
           <FormattedMessage id="index.featured">{txt => <span>{txt}</span>}</FormattedMessage>
         </H2>
         <PostCardList posts={featuredPosts} author={author} />
-      </FeaturedContainer>
+      </FeaturedContainer> */}
       {/* <StyledProjects>
         <Container>
           <h2 id="realisaties">Onze realisaties</h2>
@@ -256,32 +254,11 @@ const indexNl = props => {
           </p>
         </Container>
       </StyledSEO>
-    </Layout>
-  );
+    </>
+  ),
+  description: `
+    Developer with 12 years of experience.
+  `,
 };
 
-export default indexNl;
-
-// export const realisatieQuery = graphql`
-//   query realisatieNlQuery {
-//     allContentfulRealisatie(filter: { node_locale: { eq: "nl" } }) {
-//       edges {
-//         node {
-//           id
-//           text {
-//             text
-//           }
-//           highlightImage {
-//             fluid {
-//               ...GatsbyContentfulFluid_withWebp
-//             }
-//           }
-//           projectUrl
-//           childContentfulRealisatieTextTextNode {
-//             text
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export default props => <Page i18n={i18n} {...props} />;

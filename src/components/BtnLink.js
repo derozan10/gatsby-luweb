@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const BtnLink = styled(Link)`
-  font-family: ${({ theme }) => theme.fonts.SansSerif};
+  /* font-family: ${({ theme }) => theme.fonts.SansSerif}; */
   background-color: ${({ theme }) => theme.colors.white};
   padding: 1rem;
   margin: ${({ theme }) => theme.scale(2)} auto;

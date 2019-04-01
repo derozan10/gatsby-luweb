@@ -6,7 +6,6 @@ import { FormattedMessage } from 'react-intl';
 import { Fade } from 'react-reveal';
 
 import PropTypes from 'prop-types';
-import Layout from '../components/layout';
 import Hero from '../components/Hero';
 import Card from '../components/Card';
 import Container from '../components/Container';
@@ -21,22 +20,11 @@ import analytics from '../img/icons/analytics.svg';
 import marketing from '../img/icons/marketing.svg';
 import CTAform from '../components/CTAform';
 
-const FeaturedContainer = styled.section`
-  margin: ${props => props.theme.blog.list.margin};
-`;
+import Page from '../components/pages/Page';
 
-const H2 = styled.h2`
-  font-size: 1.4rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  margin-bottom: 27px;
-  padding-top: 25px;
-  span {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
-    display: inline-block;
-    padding-bottom: 20px;
-    margin-bottom: -1px;
-  }
-`;
+// const FeaturedContainer = styled.section`
+//   margin: ${props => props.theme.blog.list.margin};
+// `;
 
 const StyledServices = styled.section`
   z-index: 5;
@@ -148,20 +136,17 @@ const StyledSEO = styled.section`
   }
 `;
 
-const indexEn = props => {
-  const { data } = props;
-  const featuredPosts = data.featured.edges.map(p => p.node);
-  const { author } = data.site.siteMetadata;
-  const { langKey } = props.pageContext;
-  return (
-    <Layout title="Freelance webdesign &amp; development" inverse withoutWaves>
+const i18n = {
+  titleId: 'home',
+  content: (
+    <>
       <Hero />
       <StyledServices>
         <Container withPadding>
           <h2>Wat we doen</h2>
           <Fade bottom cascade>
             <section className="serviceCards">
-              <Link to={`${langKey}/services`} state={{ service: 'development' }}>
+              <Link to="/nl/diensten" state={{ service: 'development' }}>
                 <Card
                   icon={speed}
                   title="Website"
@@ -173,7 +158,7 @@ const indexEn = props => {
                   }
                 />
               </Link>
-              <Link to={`${langKey}/services`} state={{ service: 'performance' }}>
+              <Link to="/nl/diensten" state={{ service: 'performance' }}>
                 <Card
                   icon={search}
                   title="SEO"
@@ -185,7 +170,7 @@ const indexEn = props => {
                   }
                 />
               </Link>
-              <Link to={`${langKey}/services`} state={{ service: 'analytics' }}>
+              <Link to="/nl/diensten" state={{ service: 'analytics' }}>
                 <Card
                   icon={analytics}
                   title="Analyse en optimalisatie"
@@ -196,7 +181,7 @@ const indexEn = props => {
                   }
                 />
               </Link>
-              <Link to={`${langKey}/services`} state={{ service: 'development' }}>
+              <Link to="/nl/diensten" state={{ service: 'development' }}>
                 <Card
                   icon={marketing}
                   title="Online marketing"
@@ -228,18 +213,18 @@ const indexEn = props => {
           </section>
         </Container>
       </StyledServices>
+      {/* <FeaturedContainer>
+        <H2>
+          <FormattedMessage id="index.featured">{txt => <span>{txt}</span>}</FormattedMessage>
+        </H2>
+        <PostCardList posts={featuredPosts} author={author} />
+      </FeaturedContainer> */}
       {/* <StyledProjects>
         <Container>
           <h2 id="realisaties">Onze realisaties</h2>
           <Masonry elements={data.allContentfulRealisatie.edges} />
         </Container>
       </StyledProjects> */}
-      <FeaturedContainer>
-        <H2>
-          <FormattedMessage id="index.featured">{txt => <span>{txt}</span>}</FormattedMessage>
-        </H2>
-        <PostCardList posts={featuredPosts} author={author} />
-      </FeaturedContainer>
       <StyledSEO>
         <Container>
           <h2>Samenwerken?</h2>
@@ -269,32 +254,11 @@ const indexEn = props => {
           </p>
         </Container>
       </StyledSEO>
-    </Layout>
-  );
+    </>
+  ),
+  description: `
+    Developer with 12 years of experience.
+  `,
 };
 
-export default indexEn;
-
-// export const realisatieQuery = graphql`
-//   query realisatieQuery {
-//     allContentfulRealisatie(filter: { node_locale: { eq: "nl" } }) {
-//       edges {
-//         node {
-//           id
-//           text {
-//             text
-//           }
-//           highlightImage {
-//             fluid {
-//               ...GatsbyContentfulFluid_withWebp
-//             }
-//           }
-//           projectUrl
-//           childContentfulRealisatieTextTextNode {
-//             text
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export default props => <Page i18n={i18n} {...props} />;

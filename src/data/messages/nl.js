@@ -1,22 +1,22 @@
 module.exports = {
-  'title': 'Hugo Nogueira',
-  'header.title': 'Hugo Nogueira',
-  'header.subTitle': 'Engineering lead and agile manager.',
-  'home': 'Página principal',
-  'about': 'Sobre',
-  'blog': 'Blog',
-  'all': 'Todos',
-  'posts': 'Posts',
-  'posts.seeMore': 'Ver todos os posts →',
-  'tags': 'Post Tags',
-  'tags.allTagsLink': 'Ver todas as tags',
+  title: 'Luweb',
+  'header.title': 'Webdesign & development',
+  'header.subTitle': 'Jouw partner voor een online succes',
+  home: 'Home',
+  about: 'Over',
+  blog: 'Blog',
+  all: 'Alles',
+  posts: 'Posts',
+  'posts.seeMore': 'Bekijk alle posts →',
+  tags: 'Post Tags',
+  'tags.allTagsLink': 'Bekijk alle tags',
   'tags.nPostsTaggedWith': `{nPosts, number} {nPosts, plural,
       one {post}
       other {posts}
-    } com a tag`,
+    } getagged met`,
 
-  'contact': 'Contato',
-  'call': 'Agende uma call',
-  'index.featured': 'Posts em destaque',
-  'index.stories': 'Todos os posts'
+  contact: 'Contacteer',
+  call: 'Plan een gesprek',
+  'index.featured': 'Uitgelicht',
+  'index.stories': 'Alle posts',
 };

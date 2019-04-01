@@ -113,7 +113,11 @@ class BlogPostRoute extends React.PureComponent {
   render() {
     const post = this.props.data.markdownRemark;
     const structuredData = getStructuredData(post);
-    const { author, disqusShortname, siteUrl } = this.props.data.site.siteMetadata;
+    const {
+      author,
+      // disqusShortname,
+      siteUrl,
+    } = this.props.data.site.siteMetadata;
     const url = `${siteUrl}${post.fields.slug}`;
 
     return (
@@ -148,13 +152,13 @@ class BlogPostRoute extends React.PureComponent {
           /> */}
           <Content dangerouslySetInnerHTML={{ __html: post.html }} />
           <Tags tags={post.fields.tagSlugs} />
-          <Comments
+          {/* <Comments
             shortname={disqusShortname}
             identifier={post.fields.slug}
             title={post.frontmatter.title}
             url={url}
-          />
-          <ShareWidget disqusShortname={disqusShortname} url={url} message={post.excerpt} />
+          /> */}
+          {/* <ShareWidget disqusShortname={disqusShortname} url={url} message={post.excerpt} /> */}
           {/* <PostCardList
             posts={post.fields.readNextPosts}
             langKey={langKey}
@@ -200,53 +204,53 @@ export const pageQuery = graphql`
           }
           publicURL
         }
-        structuredData {
-          alternativeHeadline
-          type
-          dependencies
-          proficiencyLevel
-          articleSection
-          pageEnd
-          pageStart
-          pagination
-          about {
-            name
-            alternateName
-            description
-            identifier
-            image
-            sameAs
-          }
-          accessMode
-          accessModeSufficient
-          accessibilityAPI
-          accessibilityControl
-          accessibilitySummary
-          aggregateRating
-          audience
-          author
-          comment
-          commentCount
-          contentLocation
-          dateCreated
-          dateModified
-          datePublished
-          discussionUrl
-          educationalUse
-          isAccessibleForFree
-          isFamilyFriendly
-          keywords
-          locationCreated
-          thumbnailUrl
-          version
-          video
-        }
+        # structuredData {
+        #   alternativeHeadline
+        #   type
+        #   dependencies
+        #   proficiencyLevel
+        #   articleSection
+        #   pageEnd
+        #   pageStart
+        #   pagination
+        #   about {
+        #     name
+        #     alternateName
+        #     description
+        #     identifier
+        #     image
+        #     sameAs
+        #   }
+        #   accessMode
+        #   accessModeSufficient
+        #   accessibilityAPI
+        #   accessibilityControl
+        #   accessibilitySummary
+        #   aggregateRating
+        #   audience
+        #   author
+        #   comment
+        #   commentCount
+        #   contentLocation
+        #   dateCreated
+        #   dateModified
+        #   datePublished
+        #   discussionUrl
+        #   educationalUse
+        #   isAccessibleForFree
+        #   isFamilyFriendly
+        #   keywords
+        #   locationCreated
+        #   thumbnailUrl
+        #   version
+        #   video
+        # }
       }
     }
     site {
       siteMetadata {
         siteUrl
-        disqusShortname
+        # disqusShortname
         author {
           name
           email
