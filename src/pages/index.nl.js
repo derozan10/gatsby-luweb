@@ -146,7 +146,7 @@ const i18n = {
           <h2>Wat we doen</h2>
           <Fade bottom cascade>
             <section className="serviceCards">
-              <Link to="/nl/diensten" state={{ service: 'development' }}>
+              <Link to="/services" state={{ service: 'development' }}>
                 <Card
                   icon={speed}
                   title="Website"
@@ -158,7 +158,7 @@ const i18n = {
                   }
                 />
               </Link>
-              <Link to="/nl/diensten" state={{ service: 'performance' }}>
+              <Link to="/services" state={{ service: 'performance' }}>
                 <Card
                   icon={search}
                   title="SEO"
@@ -170,7 +170,7 @@ const i18n = {
                   }
                 />
               </Link>
-              <Link to="/nl/diensten" state={{ service: 'analytics' }}>
+              <Link to="/services" state={{ service: 'analytics' }}>
                 <Card
                   icon={analytics}
                   title="Analyse en optimalisatie"
@@ -181,7 +181,7 @@ const i18n = {
                   }
                 />
               </Link>
-              <Link to="/nl/diensten" state={{ service: 'development' }}>
+              <Link to="/services" state={{ service: 'development' }}>
                 <Card
                   icon={marketing}
                   title="Online marketing"

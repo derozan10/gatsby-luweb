@@ -2,8 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Container from './Container';
+import SelectLanguage from './SelectLanguage';
 import smallLogo from '../img/logos/luweb-logo-white-small.svg';
 import lucas from '../img/avatar.jpg';
+import languages from '../data/languages';
+
+const { langs } = languages;
 
 const StyledFooter = styled.div`
   color: ${props => props.theme.colors.neutral.two};
@@ -146,6 +150,7 @@ const Footer = () => (
           <p>BE0677875095</p>
         </div>
       </StyledFooter>
+      <SelectLanguage langs={langs} className="select-languages" />
     </Container>
   </div>
 );

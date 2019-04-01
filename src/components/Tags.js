@@ -19,7 +19,6 @@ const Li = styled.li`
 `;
 
 const A = styled(Link)`
-  font-family: ${({ theme }) => theme.fonts.SansSerif};
   font-size: ${({ theme }) => theme.scale(0)};
   color: ${({ theme }) => theme.colors.black};
   background: rgba(0, 0, 0, 0.05);

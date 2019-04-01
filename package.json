@@ -57,6 +57,7 @@
     "react-dom": "^16.7.0",
     "react-gravatar": "^2.6.3",
     "react-helmet": "^5.2.0",
+    "react-icon-base": "^2.1.2",
     "react-icons": "^3.5.0",
     "react-images": "^0.5.19",
     "react-intl": "^2.8.0",

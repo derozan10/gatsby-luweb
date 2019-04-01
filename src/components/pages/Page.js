@@ -48,20 +48,20 @@ const Page = props => {
 
   return (
     <Layout location={location}>
-      <Wrapper>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
-        <FormattedMessage id={i18n.titleId}>
-          {title => (
-            <Header>
-              <Helmet title={title} meta={[{ name: 'description', content: i18n.description }]} />
-              <H1>
-                <span>{title}</span>
-              </H1>
-            </Header>
-          )}
-        </FormattedMessage>
-        <Content>{i18n.content}</Content>
-      </Wrapper>
+      {/* <Wrapper> */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
+      <FormattedMessage id={i18n.titleId}>
+        {title => (
+          <Header>
+            <Helmet title={title} meta={[{ name: 'description', content: i18n.description }]} />
+            <H1>
+              <span>{title}</span>
+            </H1>
+          </Header>
+        )}
+      </FormattedMessage>
+      <Content>{i18n.content}</Content>
+      {/* </Wrapper> */}
     </Layout>
   );
 };
