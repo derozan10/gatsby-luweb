@@ -5,8 +5,9 @@ layout: post
 draft: false
 featured: true
 tags:
-  - CMS
+    - CMS
 image: ./images/choose-cms/choose-cms.jpg
+description: ""
 ---
 
 If you are convinced about the benefits of a CMS, you naturally have to make a choice from the many options. We go through the most popular platforms so you can make the best choice.
@@ -17,8 +18,8 @@ If you are convinced about the benefits of a CMS, you naturally have to make a c
 <a href="https://wordpress.org" target="_blank">WordPress</a> has dominated the CMS market for years and has become pretty much the **benchmark for CMS**. It's a very user-friendly and popular system, with **thousands of (both free and paying) plugins and themes**. You will undoubtedly find a theme that appeals to you and integration with other services is usually very smooth. In many cases, the platform is the best choice. If you want to integrate e-commerce into your website, it is also good to know that WordPress has a very handy and popular plugin for this: the WooCommerce plugin.
 Attention! Wordpress has **2 variants: wordpress.org and wordpress.com**:
 
-- The **.org version** can be downloaded for free. You then purchase your domain name and hosting yourself.
-- The **.com variant** is more an all-in-one, paying package that includes hosting and domain name. If you don't know anything about hosting, we recommend that you use the .com version. Furthermore, the cost price of both variants is very dependent on the theme that you install.
+-   The **.org version** can be downloaded for free. You then purchase your domain name and hosting yourself.
+-   The **.com variant** is more an all-in-one, paying package that includes hosting and domain name. If you don't know anything about hosting, we recommend that you use the .com version. Furthermore, the cost price of both variants is very dependent on the theme that you install.
 
 ## Drupal
 

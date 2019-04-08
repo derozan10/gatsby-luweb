@@ -10,9 +10,8 @@ import Backdrop from './Backdrop';
 import Logo from '../img/logos/luweb-logo-blueGradient.svg';
 
 const StyledNavbar = styled.div`
-  position: fixed;
+  position: relative;
   z-index: 1000;
-  background-color: #fff;
   width: 100%;
   box-shadow: 0 29px 60px 0 rgba(54, 57, 73, 0.09);
   nav {
@@ -184,7 +183,7 @@ class Navbar extends Component {
                   <FormattedMessage id={menuItem.label}>
                     {label => (
                       <Link to={`/${lang}/${menuItem.slug}`} activeClassName="active">
-                        {menuItem.label}
+                        {label}
                       </Link>
                     )}
                   </FormattedMessage>

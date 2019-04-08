@@ -111,6 +111,7 @@ const Author = styled(PostAuthor)`
 
 class BlogPostRoute extends React.PureComponent {
   render() {
+    const { langKey } = this.props.pageContext;
     const post = this.props.data.markdownRemark;
     const structuredData = getStructuredData(post);
     const {
@@ -146,10 +147,7 @@ class BlogPostRoute extends React.PureComponent {
             <Author author={author} date={post.frontmatter.date} timeToRead={post.timeToRead} showFollow />
             <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
           </header>
-          {/* <EditBtn
-            fileAbsolutePath={post.fileAbsolutePath}
-            currentLangKey={langKey}
-          /> */}
+          <EditBtn fileAbsolutePath={post.fileAbsolutePath} currentLangKey={langKey} />
           <Content dangerouslySetInnerHTML={{ __html: post.html }} />
           <Tags tags={post.fields.tagSlugs} />
           {/* <Comments
@@ -158,13 +156,14 @@ class BlogPostRoute extends React.PureComponent {
             title={post.frontmatter.title}
             url={url}
           /> */}
-          {/* <ShareWidget disqusShortname={disqusShortname} url={url} message={post.excerpt} /> */}
-          {/* <PostCardList
-            posts={post.fields.readNextPosts}
-            langKey={langKey}
-            showBtnMorePosts
-            title="posts.readNext"
-          /> */}
+          <ShareWidget
+            // disqusShortname={disqusShortname}
+            url={url}
+            message={post.excerpt}
+          />
+          {post.fields.readNextPosts && (
+            <PostCardList posts={post.fields.readNextPosts} langKey={langKey} showBtnMorePosts title="posts.readNext" />
+          )}
         </Post>
       </Layout>
     );
@@ -204,47 +203,7 @@ export const pageQuery = graphql`
           }
           publicURL
         }
-        # structuredData {
-        #   alternativeHeadline
-        #   type
-        #   dependencies
-        #   proficiencyLevel
-        #   articleSection
-        #   pageEnd
-        #   pageStart
-        #   pagination
-        #   about {
-        #     name
-        #     alternateName
-        #     description
-        #     identifier
-        #     image
-        #     sameAs
-        #   }
-        #   accessMode
-        #   accessModeSufficient
-        #   accessibilityAPI
-        #   accessibilityControl
-        #   accessibilitySummary
-        #   aggregateRating
-        #   audience
-        #   author
-        #   comment
-        #   commentCount
-        #   contentLocation
-        #   dateCreated
-        #   dateModified
-        #   datePublished
-        #   discussionUrl
-        #   educationalUse
-        #   isAccessibleForFree
-        #   isFamilyFriendly
-        #   keywords
-        #   locationCreated
-        #   thumbnailUrl
-        #   version
-        #   video
-        # }
+        description
       }
     }
     site {

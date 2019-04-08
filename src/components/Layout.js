@@ -64,7 +64,7 @@ const Layout = props => {
           </FormattedMessage>
           <Navbar isHome={isHome} homeLink={homeLink} url={url} menu={menu} lang={langKey} />
           {isHome ? (
-            <main>{children}</main>
+            <>{children}</>
           ) : (
             <Container>
               <main>{children}</main>

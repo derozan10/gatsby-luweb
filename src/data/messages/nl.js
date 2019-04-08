@@ -1,11 +1,12 @@
 module.exports = {
   title: 'Luweb',
-  'header.title': 'Webdesign & development',
+  'header.title': 'Webdesign, development & online marketing',
   'header.subTitle': 'Jouw partner voor een online succes',
   home: 'Home',
   about: 'Over',
   blog: 'Blog',
   services: 'Diensten',
+  contact: 'Contact',
   all: 'Alles',
   posts: 'Posts',
   'posts.seeMore': 'Bekijk alle posts →',
@@ -16,7 +17,6 @@ module.exports = {
       other {posts}
     } getagged met`,
 
-  contact: 'Contacteer',
   call: 'Plan een gesprek',
   'index.featured': 'Uitgelicht',
   'index.stories': 'Alle posts',

@@ -5,8 +5,9 @@ layout: post
 draft: false
 featured: true
 tags:
-  - CMS
+    - CMS
 image: ./images/choose-cms/choose-cms.jpg
+description: ""
 ---
 
 Als je overtuigd bent over de voordelen van een CMS, moet je uiteraard een keuze maken uit de vele opties. We overlopen de meest populaire platformen, zodat je de beste keuze kan maken voor jou.

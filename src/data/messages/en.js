@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Luweb',
-  'header.title': 'Webdesign & development',
+  'header.title': 'Webdesign, development & online marketing',
   'header.subTitle': 'Your Partner For An Online Success',
   home: 'Home',
   about: 'About',
