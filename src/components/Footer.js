@@ -7,8 +7,6 @@ import smallLogo from '../img/logos/luweb-logo-white-small.svg';
 import lucas from '../img/avatar.jpg';
 import languages from '../data/languages';
 
-const { langs } = languages;
-
 const StyledFooter = styled.div`
   color: ${props => props.theme.colors.neutral.two};
   padding: 40px 0;
@@ -108,7 +106,7 @@ const StyledFooter = styled.div`
   }
 `;
 
-const Footer = () => (
+const Footer = ({ author, langs, sourceCodeLink, currentLangKey }) => (
   <div style={{ backgroundColor: '#0b1542' }}>
     <Container>
       <StyledFooter>

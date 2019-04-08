@@ -29,16 +29,15 @@ addLocaleData([...enData, ...nlData]);
 const Layout = props => {
   const { children, location, title, data } = props;
   const url = location.pathname;
-  const isHome = isHomePage(url);
+  const isHome = url.split('/').filter(str => str !== '').length <= 1;
   const { langs, defaultLangKey } = data.site.siteMetadata.languages;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-  const homeLink = `/${langKey !== 'en' ? langKey : ''}`;
+  const homeLink = `/${langKey !== 'nl' ? langKey : 'nl'}`;
   const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(item => ({
     ...item,
-    link: item.link.replace(`/${defaultLangKey}/`, '/'),
+    link: item.link.replace(`/${defaultLangKey}/`, '/en/'),
   }));
   const { menu, author, sourceCodeLink, siteUrl, description } = data.site.siteMetadata;
-  // console.log(props)
   return (
     <ThemeProvider theme={theme}>
       <IntlProvider locale={langKey} messages={messages[langKey]}>
@@ -63,10 +62,14 @@ const Layout = props => {
               </Helmet>
             )}
           </FormattedMessage>
-          <Navbar isHome={isHome} homeLink={homeLink} url={url} menu={menu} />
-          <Container>
+          <Navbar isHome={isHome} homeLink={homeLink} url={url} menu={menu} lang={langKey} />
+          {isHome ? (
             <main>{children}</main>
-          </Container>
+          ) : (
+            <Container>
+              <main>{children}</main>
+            </Container>
+          )}
           <Footer author={author} langs={langsMenu} sourceCodeLink={sourceCodeLink} />
           <CookieConsent
             buttonText="Melding sluiten"
@@ -106,11 +109,14 @@ export default props => (
               twitter
             }
             sourceCodeLink
-            # menu {
-            #   label
-            #   link
-            #   slug
-            # }
+            menu {
+              label
+              slug
+              subDirectories {
+                label
+                slug
+              }
+            }
           }
         }
       }

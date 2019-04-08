@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 // import Slide from 'react-reveal/Slide';
+
 import Container from './Container';
 import Backdrop from './Backdrop';
 
@@ -151,9 +153,7 @@ class Navbar extends Component {
 
   render() {
     const { navActive: active } = this.state;
-    const { intl } = this.props;
-    // const prefix = intl.locale !== 'en' ? intl.locale : '';
-    const prefix = 'en';
+    const { lang, menu } = this.props;
 
     return (
       <StyledNavbar>
@@ -161,7 +161,7 @@ class Navbar extends Component {
         <Container>
           <nav>
             <div className="flex">
-              <Link to={`${prefix}/`}>
+              <Link to={`${lang}/`}>
                 <img id="logo" src={Logo} alt="Luweb logo" />
               </Link>
               <div
@@ -179,32 +179,17 @@ class Navbar extends Component {
               </div>
             </div>
             <ul id={active ? 'active' : ''}>
-              <li>
-                <Link to={`${prefix}/`} activeClassName="active">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/about`} activeClassName="active">
-                  Over
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/services`} activeClassName="active">
-                  Diensten
-                </Link>
-              </li>
-              {/* <li><Link to="/projecten" activeClassName="active">Projecten</Link></li> */}
-              <li>
-                <Link to={`${prefix}/contact`} activeClassName="active">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/blog`} activeClassName="active">
-                  Blog
-                </Link>
-              </li>
+              {menu.map(menuItem => (
+                <li key={menuItem.slug}>
+                  <FormattedMessage id={menuItem.label}>
+                    {label => (
+                      <Link to={`/${lang}/${menuItem.slug}`} activeClassName="active">
+                        {menuItem.label}
+                      </Link>
+                    )}
+                  </FormattedMessage>
+                </li>
+              ))}
             </ul>
           </nav>
         </Container>
@@ -213,4 +198,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default injectIntl(Navbar);

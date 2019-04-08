@@ -5,6 +5,7 @@ module.exports = {
   home: 'Home',
   about: 'Over',
   blog: 'Blog',
+  services: 'Diensten',
   all: 'Alles',
   posts: 'Posts',
   'posts.seeMore': 'Bekijk alle posts →',

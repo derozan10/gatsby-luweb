@@ -7,12 +7,6 @@ import { getStructuredDataForAuthor } from '../../structuredData';
 import { getAuthor } from '../../data/authors';
 import Layout from '../layout';
 
-const Wrapper = styled.article`
-  margin: ${props => props.theme.page.margin};
-  padding: ${props => props.theme.page.padding};
-  max-width: ${props => props.theme.page.maxWidth};
-`;
-
 const Header = styled.header`
   font-family: ${props => props.theme.page.header.fontFamily};
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -42,26 +36,25 @@ const H1 = styled.h1`
 
 const Page = props => {
   const { i18n, location } = props;
-  const author = getAuthor('hugomn');
+  const author = getAuthor('lucas');
   author.description = i18n.description;
   const structuredData = getStructuredDataForAuthor(author);
-
   return (
     <Layout location={location}>
-      {/* <Wrapper> */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
-      <FormattedMessage id={i18n.titleId}>
-        {title => (
-          <Header>
-            <Helmet title={title} meta={[{ name: 'description', content: i18n.description }]} />
-            <H1>
-              <span>{title}</span>
-            </H1>
-          </Header>
-        )}
-      </FormattedMessage>
-      <Content>{i18n.content}</Content>
-      {/* </Wrapper> */}
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
+        <FormattedMessage id={i18n.titleId}>
+          {title => (
+            <Header>
+              <Helmet title={title} meta={[{ name: 'description', content: i18n.description }]} />
+              <H1>
+                <span>{title}</span>
+              </H1>
+            </Header>
+          )}
+        </FormattedMessage>
+        <Content>{i18n.content}</Content>
+      </>
     </Layout>
   );
 };

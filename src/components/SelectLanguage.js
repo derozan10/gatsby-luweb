@@ -38,10 +38,11 @@ const getIcon = langKey => {
 };
 
 const SelectLanguage = props => {
-  const links = props.langs.map(lang => (
-    <Link key={lang.langKey} to={lang.link}>
-      <Li selected={lang.selected}>{getIcon(lang.langKey)}</Li>
-    </Link>
+  const { langs } = props;
+  const links = langs.map(lang => (
+    <Li key={lang.langKey} selected={lang.selected}>
+      <Link to={lang.link}>{getIcon(lang.langKey)}</Link>
+    </Li>
   ));
 
   return (

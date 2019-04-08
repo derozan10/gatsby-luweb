@@ -1,12 +1,11 @@
 import React from 'react';
-// import Icon from 'react-icon-base';
 
-const Br = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="450" height="390">
-    <rect width="450" height="390" />
-    <rect x="150" width="150" height="390" fill="#FAE042" />
-    <rect x="300" width="150" height="390" fill="#ED2939" />
+const Be = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24">
+    <rect width="33.33%" />
+    <rect x="33.33%" width="33.33%" fill="#FAE042" />
+    <rect x="66.66%" width="33.33%" fill="#ED2939" />
   </svg>
 );
 
-export default Br;
+export default Be;

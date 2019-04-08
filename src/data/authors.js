@@ -1,5 +1,5 @@
 const authors = {
-  hugomn: {
+  lucas: {
     name: 'Lucas Van Remoortere',
     additionalName: 'hugomn',
     address: 'Antwerp',

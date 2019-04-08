@@ -6,6 +6,7 @@ module.exports = {
   about: 'About',
   blog: 'Blog',
   all: 'All',
+  services: 'Services',
   posts: 'Posts',
   'posts.seeMore': 'See all posts →',
   tags: 'Post Tags',

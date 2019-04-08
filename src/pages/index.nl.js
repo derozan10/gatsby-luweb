@@ -1,8 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
-import { Link, graphql } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import { Link } from 'gatsby';
 import { Fade } from 'react-reveal';
 
 import PropTypes from 'prop-types';
@@ -21,10 +20,6 @@ import marketing from '../img/icons/marketing.svg';
 import CTAform from '../components/CTAform';
 
 import Page from '../components/pages/Page';
-
-// const FeaturedContainer = styled.section`
-//   margin: ${props => props.theme.blog.list.margin};
-// `;
 
 const StyledServices = styled.section`
   z-index: 5;

@@ -1,8 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
-import { Link, graphql } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import { Link } from 'gatsby';
 import { Fade } from 'react-reveal';
 
 import PropTypes from 'prop-types';

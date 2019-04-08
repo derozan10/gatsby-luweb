@@ -13,15 +13,36 @@ module.exports = {
   // disqusShortname: 'luweb-1'
   menu: [
     { label: 'home', slug: '/' },
-    { label: 'blog', slug: '/blog/' },
-    { label: 'about', slug: '/about/' },
-    { label: 'contact', slug: '/contact/' },
-    { label: 'call', link: 'http://call.hugomagalhaes.com/' },
+    { label: 'about', slug: 'about' },
+    {
+      label: 'services',
+      slug: 'services',
+      subDirectories: [
+        {
+          label: 'website',
+          slug: 'webdesign-development',
+        },
+        {
+          label: 'seo',
+          slug: 'seo',
+        },
+        {
+          label: 'optimization',
+          slug: 'optimization',
+        },
+        {
+          label: 'online marketing',
+          slug: 'online-marketing',
+        },
+      ],
+    },
+    { label: 'contact', slug: 'contact' },
+    { label: 'blog', slug: 'blog' },
   ],
   languages,
   author: {
     name: 'Lucas Van Remoortere',
-    bio: 'Front End Developer. React, and Javascript enthusiast. Antwerp, Belgium',
+    bio: 'Front End Developer. React, and Javascript enthousiast. Antwerp, Belgium',
     homeCity: 'Antwerp',
     email: 'lucas@luweb.be',
     twitter: 'LuWebDev',
@@ -36,7 +57,7 @@ module.exports = {
     {
       type: 'phone',
       value: '+32 496 061042',
-      country: 'de',
+      country: 'be',
       link: 'tel:+32 496 061042',
     },
   ],
