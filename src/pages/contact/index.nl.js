@@ -52,7 +52,6 @@ const i18n = {
   content: (
     <>
       <StyledContact>
-        <h1>Contacteer ons</h1>
         <p>
           Contacteer ons via de de gegevens hieronder of gebruik het contactformulier. Nadien nemen we zo snel mogelijk
           contact met je op.

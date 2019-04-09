@@ -75,10 +75,9 @@ const StyledServices = styled.div`
 `;
 
 const i18n = {
-  titleId: 'about',
+  titleId: 'services',
   content: (
     <>
-      <h1>Onze diensten - altijd een oplossing op maat</h1>
       <StyledServices>
         <div id="serviceSections">
           <section className="serviceSection" id="website">

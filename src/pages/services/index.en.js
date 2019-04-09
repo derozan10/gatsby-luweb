@@ -2,10 +2,10 @@ import React from 'react';
 import Page from '../../components/pages/Page';
 
 const i18n = {
-  titleId: 'about',
+  titleId: 'services',
   content: (
     <>
-      <h1>services in english</h1>
+      <p>services</p>
     </>
   ),
   description: `

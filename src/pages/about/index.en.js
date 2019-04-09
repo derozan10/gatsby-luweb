@@ -5,11 +5,11 @@ const i18n = {
   titleId: 'about',
   content: (
     <>
-      <h1>about me in english</h1>
+      <p>scrrrrr</p>
     </>
   ),
   description: `
-    Developer with 12 years of experience.
+    About Luweb
   `,
 };
 

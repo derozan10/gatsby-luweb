@@ -28,7 +28,7 @@ module.exports = {
         },
         {
           label: 'optimization',
-          slug: 'optimization',
+          slug: 'website-optimization',
         },
         {
           label: 'online marketing',

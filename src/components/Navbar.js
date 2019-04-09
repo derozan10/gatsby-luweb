@@ -35,26 +35,61 @@ const StyledNavbar = styled.div`
       margin: 0;
       text-decoration: none;
     }
-    a,
-    li,
-    li > span,
-    li > ul > li {
-      color: ${props => props.theme.colors.base};
-      text-decoration: none;
-      border-bottom-width: 0;
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      transition: all 0.1s ease-in;
-    }
-    a {
-      position: relative;
-    }
-    a.active,
-    a:hover {
-      color: ${props => props.theme.colors.lightBlue};
+    ul {
+      display: flex;
+      list-style-type: none;
+      top: 80px;
+      box-sizing: border-box;
+      a,
+      li,
+      li > span,
+      li > ul > li {
+        color: ${props => props.theme.colors.base};
+        text-decoration: none;
+        border-bottom-width: 0;
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: all 0.1s ease-in;
+      }
+      a {
+        position: relative;
+      }
+      a.active,
+      a:hover {
+        color: ${props => props.theme.colors.lightBlue};
+      }
+      li {
+        padding: 0 20px;
+        font-size: 18px;
+        position: relative;
+        &:hover > .subDirectory {
+          display: flex;
+        }
+      }
+      @media (max-width: 576px) {
+        height: 0px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 1);
+        z-index: 10;
+        li {
+          display: none;
+        }
+      }
+      .subDirectory {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        top: 20px;
+        left: -20px;
+        padding: 20px;
+        background-color: #fff;
+        &:hover {
+          display: flex;
+        }
+      }
     }
     .hamburger {
       height: 24px;
@@ -107,36 +142,6 @@ const StyledNavbar = styled.div`
         left: 50%;
       }
     }
-
-    ul {
-      display: flex;
-      list-style-type: none;
-      top: 80px;
-      box-sizing: border-box;
-      li {
-        padding: 0 20px;
-        font-size: 18px;
-      }
-      @media (max-width: 576px) {
-        height: 0px;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 1);
-        z-index: 10;
-        li {
-          display: none;
-        }
-      }
-    }
-    ul#active {
-      @media (max-width: 576px) {
-        height: auto;
-        li {
-          display: block;
-          text-align: center;
-          padding: 20px 0;
-        }
-      }
-    }
   }
 `;
 
@@ -187,6 +192,21 @@ class Navbar extends Component {
                       </Link>
                     )}
                   </FormattedMessage>
+                  {menuItem.subDirectories && (
+                    <ul className="subDirectory">
+                      {menuItem.subDirectories.map(subDirectory => (
+                        <FormattedMessage id={subDirectory.label} key={subDirectory.label}>
+                          {label => (
+                            <li>
+                              <Link to={`/${lang}/${menuItem.slug}/${subDirectory.slug}`} activeClassName="active">
+                                {label}
+                              </Link>
+                            </li>
+                          )}
+                        </FormattedMessage>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>

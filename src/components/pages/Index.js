@@ -44,8 +44,8 @@ const H2 = styled.h2`
 `;
 
 const Index = props => {
-  console.log(props);
-  const allStoriesPosts = props.data.all && props.data.all.edges.map(p => p.node);
+  const { langKey: lang } = props.pageContext;
+  // const allStoriesPosts = props.data.all && props.data.all.edges.map(p => p.node);
   const featuredPosts = props.data.featured && props.data.featured.edges.map(p => p.node);
   const { author } = props.data.site.siteMetadata;
   const { langKey } = props.pageContext;
@@ -58,7 +58,7 @@ const Index = props => {
           <h2>What we do</h2>
           <Fade bottom cascade>
             <section className="serviceCards">
-              <Link to="/services" state={{ service: 'development' }}>
+              <Link to={`/${lang}/services/webdesign-development`} state={{ service: 'development' }}>
                 <Card
                   icon={speed}
                   title="Website"
@@ -70,7 +70,7 @@ const Index = props => {
                   }
                 />
               </Link>
-              <Link to="/services" state={{ service: 'performance' }}>
+              <Link to={`/${lang}/services/seo`} state={{ service: 'performance' }}>
                 <Card
                   icon={search}
                   title="SEO"
@@ -82,7 +82,7 @@ const Index = props => {
                   }
                 />
               </Link>
-              <Link to="/services" state={{ service: 'analytics' }}>
+              <Link to={`/${lang}/services/optimization`} state={{ service: 'analytics' }}>
                 <Card
                   icon={analytics}
                   title="Analyse en optimalisatie"
@@ -93,7 +93,7 @@ const Index = props => {
                   }
                 />
               </Link>
-              <Link to="/services" state={{ service: 'development' }}>
+              <Link to={`/${lang}/services/online-marketing`} state={{ service: 'development' }}>
                 <Card
                   icon={marketing}
                   title="Online marketing"
@@ -130,19 +130,19 @@ const Index = props => {
               <FormattedMessage id="index.featured">{txt => <span>{txt}</span>}</FormattedMessage>
             </H2>
             <PostCardList posts={featuredPosts} author={author} />
+            <FormattedMessage id="posts.seeMore">
+              {txt => <BtnLink to={`/${langKey !== 'en' ? langKey : ''}/blog/`}>{txt}</BtnLink>}
+            </FormattedMessage>
           </FeaturedContainer>
         )}
-        {allStoriesPosts && (
+        {/* {allStoriesPosts && (
           <AllStoriesContainer>
             <H2>
               <FormattedMessage id="index.stories">{txt => <span>{txt}</span>}</FormattedMessage>
             </H2>
             <PostCardList posts={allStoriesPosts} author={author} imageOnTop />
-            <FormattedMessage id="posts.seeMore">
-              {txt => <BtnLink to={`/${langKey !== 'en' ? langKey : ''}/blog/`}>{txt}</BtnLink>}
-            </FormattedMessage>
           </AllStoriesContainer>
-        )}
+        )} */}
         <StyledSEO>
           <h2>Samenwerken?</h2>
           <div className="flexSEO">

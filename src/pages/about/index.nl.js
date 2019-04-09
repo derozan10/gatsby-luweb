@@ -5,7 +5,6 @@ const i18n = {
   titleId: 'about',
   content: (
     <>
-      <h1>Over Luweb</h1>
       <p>
         Luweb is een kleine onderneming, opgestart in 2017 door{' '}
         <a href="https://www.lucasvanremoortere.com" target="_blank" rel="noopener noreferrer">
@@ -37,7 +36,7 @@ const i18n = {
     </>
   ),
   description: `
-    Developer with 12 years of experience.
+    Over Luweb
   `,
 };
 
