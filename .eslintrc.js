@@ -19,6 +19,8 @@ module.exports = {
     "jest": true
   },
   "rules": {
+    "react/destructuring-assignment": 0,
+    "prefer-destructuring": 0,
     "no-debugger": 0,
     "no-alert": 0,
     "no-await-in-loop": 0,
