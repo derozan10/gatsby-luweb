@@ -5,7 +5,7 @@ import { Fade } from 'react-reveal';
 import Page from '../../components/pages/Page';
 import Form from '../../components/CTAform';
 
-import marketing from '../../img/icons/marketing.svg';
+// import marketing from '../../img/icons/marketing.svg';
 
 // import designImg from '../img/design.jpg'
 import Checklist from '../../components/Checklist';
@@ -16,7 +16,6 @@ const i18n = {
     <>
       <div className="serviceDescription">
         <div className="title">
-          <img src={marketing} alt="" />
           <h2>Online marketing</h2>
         </div>
         <p>

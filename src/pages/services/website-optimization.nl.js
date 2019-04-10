@@ -5,7 +5,7 @@ import { Fade } from 'react-reveal';
 import Page from '../../components/pages/Page';
 import Form from '../../components/CTAform';
 
-import marketing from '../../img/icons/marketing.svg';
+// import marketing from '../../img/icons/marketing.svg';
 
 // import designImg from '../img/design.jpg'
 import Checklist from '../../components/Checklist';
@@ -14,7 +14,11 @@ const i18n = {
   titleId: 'optimization',
   content: (
     <>
-      <p>website optim</p>
+      <p>
+        Bij de lancering van je website zetten we tracking tools op, waarmee we inzichten verwerven over de bezoekers en
+        hun gedrag. We analyseren zo wat werkt (en wat niet) en gebruiken deze kennis om alle online kanalen aan te
+        passen en zo de conversie te verhogen.
+      </p>
       <Fade right>
         <section id="form">
           <h2>Contacteer ons voor je gratis offerte</h2>

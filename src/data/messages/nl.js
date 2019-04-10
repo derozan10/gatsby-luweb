@@ -5,13 +5,20 @@ module.exports = {
   home: 'Home',
   about: 'Over',
   blog: 'Blog',
+  contact: 'Contact',
   services: 'diensten',
   'webdesign-development': 'Webdesign & development',
-  contact: 'Contact',
-  website: 'Website',
-  optimization: 'website optimalisatie',
-  'online marketing': 'online marketing',
+  'webdesign-development.meta':
+    'We maken super performante websites die doelgericht, gebruiksvriendelijk en geoptimaliseerd zijn voor alle mobiele apparaten.',
   seo: 'seo optimalisatie',
+  'seo.meta':
+    'We verbeteren je online zichtbaarheid door actief aan "Search Engine Optimization" te doen. Zo scoor je beter in zoekmachines als Google',
+  optimization: 'website optimalisatie',
+  'website-optimization.meta':
+    'Meten is weten. We zoeken wat werkt (en wat niet) zodat we onze strategie hierop kunnen aanpassen.',
+  'online marketing': 'online marketing',
+  'online-marketing.meta':
+    'We verhogen de zichtbaarheid van jouw onderneming en betrekken klanten door slim gebruik te maken van alle relevante kanalen.',
   all: 'Alles',
   posts: 'Posts',
   'posts.seeMore': 'Bekijk alle posts →',

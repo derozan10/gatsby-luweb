@@ -10,10 +10,11 @@ import Backdrop from './Backdrop';
 import Logo from '../img/logos/luweb-logo-blueGradient.svg';
 
 const StyledNavbar = styled.div`
-  position: relative;
+  position: fixed;
   z-index: 1000;
   width: 100%;
   box-shadow: 0 29px 60px 0 rgba(54, 57, 73, 0.09);
+  background-color: #fff;
   nav {
     display: flex;
     justify-content: space-between;
@@ -63,7 +64,6 @@ const StyledNavbar = styled.div`
       }
       li {
         padding: 0 20px;
-        font-size: 18px;
         position: relative;
         &:hover > .subDirectory {
           display: flex;
@@ -160,59 +160,74 @@ class Navbar extends Component {
     const { lang, menu } = this.props;
 
     return (
-      <StyledNavbar>
-        <Backdrop active={active} closeNav={() => this.setState({ navActive: false })} />
-        <Container>
-          <nav>
-            <div className="flex">
-              <Link to={`${lang}/`}>
-                <img id="logo" src={Logo} alt="Luweb logo" />
-              </Link>
-              <div
-                className={`hamburger ${active ? 'cross' : ''}`}
-                aria-label="Menu"
-                role="menuitem"
-                onClick={() => this.toggleNav}
-                onKeyPress={() => this.toggleNav}
-                tabIndex="0"
-              >
-                <span />
-                <span />
-                <span />
-                <span />
+      <>
+        <StyledNavbar>
+          <Backdrop active={active} closeNav={() => this.setState({ navActive: false })} />
+          <Container>
+            <nav>
+              <div className="flex">
+                <Link to={`${lang}/`}>
+                  <img id="logo" src={Logo} alt="Luweb logo" />
+                </Link>
+                <div
+                  className={`hamburger ${active ? 'cross' : ''}`}
+                  aria-label="Menu"
+                  role="menuitem"
+                  onClick={() => this.toggleNav}
+                  onKeyPress={() => this.toggleNav}
+                  tabIndex="0"
+                >
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </div>
               </div>
-            </div>
-            <ul id={active ? 'active' : ''}>
-              {menu.map(menuItem => (
-                <li key={menuItem.slug}>
-                  <FormattedMessage id={menuItem.label}>
-                    {label => (
-                      <Link to={`/${lang}/${menuItem.slug}`} activeClassName="active">
-                        {label}
-                      </Link>
+              <ul id={active ? 'active' : ''}>
+                {menu.map(menuItem => (
+                  <li key={menuItem.slug}>
+                    <FormattedMessage id={menuItem.label}>
+                      {label =>
+                        menuItem.subDirectories ? (
+                          label
+                        ) : (
+                          <Link to={`/${lang}/${menuItem.slug}`} activeClassName="active">
+                            {label}
+                          </Link>
+                        )
+                      }
+                    </FormattedMessage>
+                    {menuItem.subDirectories && (
+                      <ul className="subDirectory">
+                        {menuItem.subDirectories.map(subDirectory => (
+                          <FormattedMessage id={subDirectory.label} key={subDirectory.label}>
+                            {label => (
+                              <li>
+                                <Link to={`/${lang}/${menuItem.slug}/${subDirectory.slug}`} activeClassName="active">
+                                  {label}
+                                </Link>
+                              </li>
+                            )}
+                          </FormattedMessage>
+                        ))}
+                      </ul>
                     )}
-                  </FormattedMessage>
-                  {menuItem.subDirectories && (
-                    <ul className="subDirectory">
-                      {menuItem.subDirectories.map(subDirectory => (
-                        <FormattedMessage id={subDirectory.label} key={subDirectory.label}>
-                          {label => (
-                            <li>
-                              <Link to={`/${lang}/${menuItem.slug}/${subDirectory.slug}`} activeClassName="active">
-                                {label}
-                              </Link>
-                            </li>
-                          )}
-                        </FormattedMessage>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </Container>
-      </StyledNavbar>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </Container>
+        </StyledNavbar>
+        <div
+          style={{
+            position: 'relative',
+            display: 'block',
+            width: '100%',
+            height: '80px',
+            content: "''",
+          }}
+        />
+      </>
     );
   }
 }

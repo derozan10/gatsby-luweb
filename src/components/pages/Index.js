@@ -4,29 +4,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'gatsby';
+import { Link, graphql, StaticQuery } from 'gatsby';
 import { Fade } from 'react-reveal';
 
 import Layout from '../layout';
 import Hero from '../Hero';
-import Card from '../Card';
+import ServiceCard from '../ServiceCard';
 import Container from '../Container';
-import Masonry from '../Masonry';
+// import Masonry from '../Masonry';
 import Checklist from '../Checklist';
 import PostCardList from '../PostCardList';
 import BtnLink from '../BtnLink';
 import CTAform from '../CTAform';
 
-import speed from '../../img/icons/speed.svg';
-import search from '../../img/icons/search.svg';
-import analytics from '../../img/icons/analytics.svg';
-import marketing from '../../img/icons/marketing.svg';
-
 const FeaturedContainer = styled.section`
-  margin: ${props => props.theme.blog.list.margin};
-`;
-
-const AllStoriesContainer = styled.section`
   margin: ${props => props.theme.blog.list.margin};
 `;
 
@@ -58,53 +49,29 @@ const Index = props => {
           <h2>What we do</h2>
           <Fade bottom cascade>
             <section className="serviceCards">
-              <Link to={`/${lang}/services/webdesign-development`} state={{ service: 'development' }}>
-                <Card
-                  icon={speed}
-                  title="Website"
-                  text={
-                    <p>
-                      We maken super performante websites die doelgericht, gebruiksvriendelijk en geoptimaliseerd zijn
-                      voor alle mobiele apparaten.
-                    </p>
+              <StaticQuery
+                query={graphql`
+                  query serviceQuery {
+                    site {
+                      siteMetadata {
+                        menu {
+                          label
+                          slug
+                          subDirectories {
+                            label
+                            slug
+                          }
+                        }
+                      }
+                    }
                   }
-                />
-              </Link>
-              <Link to={`/${lang}/services/seo`} state={{ service: 'performance' }}>
-                <Card
-                  icon={search}
-                  title="SEO"
-                  text={
-                    <p>
-                      We verbeteren je online zichtbaarheid door actief aan 'Search Engine Optimization' te doen. Zo
-                      scoor je beter in zoekmachines als Google
-                    </p>
-                  }
-                />
-              </Link>
-              <Link to={`/${lang}/services/optimization`} state={{ service: 'analytics' }}>
-                <Card
-                  icon={analytics}
-                  title="Analyse en optimalisatie"
-                  text={
-                    <p>
-                      Meten is weten. We zoeken wat werkt (en wat niet) zodat we onze strategie hierop kunnen aanpassen.
-                    </p>
-                  }
-                />
-              </Link>
-              <Link to={`/${lang}/services/online-marketing`} state={{ service: 'development' }}>
-                <Card
-                  icon={marketing}
-                  title="Online marketing"
-                  text={
-                    <p>
-                      We verhogen de zichtbaarheid van jouw onderneming en betrekken klanten door slim gebruik te maken
-                      van alle relevante kanalen.
-                    </p>
-                  }
-                />
-              </Link>
+                `}
+                render={data => {
+                  const services = data.site.siteMetadata.menu.filter(menuItem => menuItem.label === 'services')[0]
+                    .subDirectories;
+                  return services.map(service => <ServiceCard service={service} lang={lang} />);
+                }}
+              />
             </section>
           </Fade>
           <section className="contactSection">
@@ -135,14 +102,6 @@ const Index = props => {
             </FormattedMessage>
           </FeaturedContainer>
         )}
-        {/* {allStoriesPosts && (
-          <AllStoriesContainer>
-            <H2>
-              <FormattedMessage id="index.stories">{txt => <span>{txt}</span>}</FormattedMessage>
-            </H2>
-            <PostCardList posts={allStoriesPosts} author={author} imageOnTop />
-          </AllStoriesContainer>
-        )} */}
         <StyledSEO>
           <h2>Samenwerken?</h2>
           <div className="flexSEO">

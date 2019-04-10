@@ -1,5 +1,6 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
+import { FormattedMessage } from 'react-intl';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
@@ -53,14 +54,18 @@ const StyledCard = styled.div`
   }
 `;
 
-const Card = ({ icon, title, text }) => (
-  <Fade>
-    <StyledCard>
-      <h3>{title}</h3>
-      {text}
-      <img className="cardIcon" src={icon} alt="icon" />
-    </StyledCard>
-  </Fade>
-);
+const Card = props => {
+  console.log(props);
+  const { service, lang } = props;
+  return (
+    <Link to={`/${lang}/services/${service.slug}`}>
+      <StyledCard>
+        <h3>{service.label}</h3>
+        <FormattedMessage id={`${service.slug}.meta`}>{text => <p>{text}</p>}</FormattedMessage>
+        <img className="cardIcon" src={`/serviceIcons/${service.slug}.svg`} alt="icon" />
+      </StyledCard>
+    </Link>
+  );
+};
 
 export default Card;
