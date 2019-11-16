@@ -1,37 +1,35 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
+import React from 'react';
+import { graphql, Link } from 'gatsby';
 // import Img from "gatsby-image";
 // import Gallery from '../../../components/Gallery'
-import styled from 'styled-components'
-import oxacoMobile from '../../img/projecten/oxaco/oxaco-mobile.png'
+import styled from 'styled-components';
+import oxacoMobile from '../../img/projecten/oxaco/oxaco-mobile.png';
 
-import Layout from '../../components/Layout'
-import Container from '../../components/Container'
+import Layout from '../../components/Layout';
+import Container from '../../components/Container';
 
 const StyledRealisaties = styled.div`
-    padding: 20px 0;
-    img {
-      width: 500px;
-      height: auto;
-    }
-`
+  padding: 20px 0;
+  img {
+    width: 500px;
+    height: auto;
+  }
+`;
 
-const projecten = (props) => {
-  return (
-    <Layout inverse title="Onze projecten - trots op wat we maken">
-      <StyledRealisaties>
-        <Container>
-          <h1>Bekijk onze realisaties</h1>
-          <Link to="/projecten/oxaco">
-            <img src={oxacoMobile} alt="oxaco website op smartphones" />
-          </Link>
-        </Container>
-      </StyledRealisaties>
-    </Layout>
-  )
-}
+const projecten = props => (
+  <Layout inverse title="Onze projecten - trots op wat we maken">
+    <StyledRealisaties>
+      <Container>
+        <h1>Realisaties</h1>
+        <Link to="/projecten/oxaco">
+          <img src={oxacoMobile} alt="oxaco website op smartphones" />
+        </Link>
+      </Container>
+    </StyledRealisaties>
+  </Layout>
+);
 
-export default projecten
+export default projecten;
 
 // export const REALISATIEQUERY = graphql`
 //   query REALISATIEQUERY {

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
-import CookieConsent from 'react-cookie-consent';
+// import CookieConsent from 'react-cookie-consent';
 import Footer from './Footer';
 import SEO from './SEO';
 import Navbar from './Navbar';
@@ -44,9 +44,9 @@ export default class Layout extends Component {
         <ThemeProvider theme={theme}>
           <>
             <Navbar hamburgerClick={this.toggleNav} active={navActive} />
-            <div style={{ paddingTop: '60px', minHeight: '80vh' }}>{children}</div>
+            <div style={{ paddingTop: '80px', minHeight: '80vh' }}>{children}</div>
             <Footer />
-            <CookieConsent
+            {/* <CookieConsent
               buttonText="Melding sluiten"
               location="bottom"
               cookieName="GDPRCookie"
@@ -55,7 +55,7 @@ export default class Layout extends Component {
               expires={150}
             >
               Deze website gebruikt cookies om de gebruikerservaring te verbeteren.
-            </CookieConsent>
+            </CookieConsent> */}
           </>
         </ThemeProvider>
         <GlobalStyle />
