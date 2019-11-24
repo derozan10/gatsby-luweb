@@ -1,7 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-// import Img from "gatsby-image";
-// import Gallery from '../../../components/Gallery'
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import oxacoMobile from '../../img/projecten/oxaco/oxaco-mobile.png';
 
@@ -30,21 +28,3 @@ const projecten = props => (
 );
 
 export default projecten;
-
-// export const REALISATIEQUERY = graphql`
-//   query REALISATIEQUERY {
-//     allFile(filter: { sourceInstanceName: { eq: "realisatieImages" } }) {
-//       edges {
-//         node {
-//           name
-//           childImageSharp {
-//             fluid {
-//               ...GatsbyImageSharpFluid
-//               src
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

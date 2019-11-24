@@ -44,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: "GTM-PLT6JMD",
+        id: 'GTM-PLT6JMD',
         // Include GTM in development.
         // Defaults to false meaning GTM will only be loaded in production.
         includeInDevelopment: false,
@@ -96,13 +96,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `realisatieImages`,
-        path: `${__dirname}/src/img/projecten`,
+        name: `images`,
+        path: `${__dirname}/src/img`,
       },
     },
     {
       resolve: 'gatsby-source-contentful',
-      options: process.env.NODE_ENV === 'development' ? contentfulConfig.development : contentfulConfig.production,
+      options:
+        process.env.NODE_ENV === 'development'
+          ? contentfulConfig.development
+          : contentfulConfig.production,
     },
     {
       resolve: `gatsby-plugin-sitemap`,

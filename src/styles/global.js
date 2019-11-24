@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -170,12 +170,13 @@ p, ul li {
 p a {
   border-bottom: 1px solid #232525;
   text-decoration: none;
-  color: #333;
+
+  color: #3b69a1;
+  border-bottom: 1px solid #3b69a1;
 }
 
 p a:hover {
-  border-bottom: 1px solid #3b69a1;
-  color: #3b69a1;
+  color: #2b4f7b;
 }
 
 
@@ -337,5 +338,5 @@ p a.gatsby-resp-image-link, p a.gatsby-resp-image-link:hover  {
   text-decoration:none;
   border-bottom: none;
 }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;

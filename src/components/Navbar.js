@@ -1,28 +1,27 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import Slide from 'react-reveal/Slide';
-import Container from '../components/Container'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import Container from './Container';
 
-import Logo from '../img/logos/luweb-logo-blueGradient.svg'
+import Logo from '../img/logos/luweb-logo-blueGradient.svg';
 
 const StyledNavbar = styled.div`
   position: fixed;
   z-index: 1000;
   background-color: #fff;
   width: 100%;
-  box-shadow: 0 29px 60px 0 rgba(54,57,73,.09);
+  box-shadow: 0 29px 60px 0 rgba(54, 57, 73, 0.09);
   nav {
     display: flex;
     justify-content: space-between;
     @media (min-width: 577px) {
       align-items: center;
     }
-    @media(max-width: 576px) {
+    @media (max-width: 576px) {
       flex-direction: column;
     }
     .flex {
-      padding: ${props => props.smaller ? '10px 0' : '20px 0'};
+      padding: ${props => (props.smaller ? '10px 0' : '20px 0')};
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -33,21 +32,25 @@ const StyledNavbar = styled.div`
       margin: 0;
       text-decoration: none;
     }
-    a, li, li > span, li > ul > li {
-        color: ${props => props.theme.colors.base};
-        text-decoration: none;
-        border-bottom-width: 0;
-        display: block;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        transition: all 0.1s ease-in;
+    a,
+    li,
+    li > span,
+    li > ul > li {
+      color: ${props => props.theme.colors.base};
+      text-decoration: none;
+      border-bottom-width: 0;
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.1s ease-in;
     }
     a {
       position: relative;
     }
-    a.active, a:hover {
+    a.active,
+    a:hover {
       color: ${props => props.theme.colors.lightBlue};
     }
     .hamburger {
@@ -55,7 +58,7 @@ const StyledNavbar = styled.div`
       width: 36px;
       position: relative;
       transform: rotate(0deg);
-      transition: .5s ease-in-out;
+      transition: 0.5s ease-in-out;
       cursor: pointer;
       @media (min-width: 577px) {
         display: none;
@@ -70,12 +73,13 @@ const StyledNavbar = styled.div`
         opacity: 1;
         left: 0;
         transform: rotate(0deg);
-        transition: .25s ease-in-out;
+        transition: 0.25s ease-in-out;
       }
       span:nth-child(1) {
         top: 0px;
       }
-      span:nth-child(2), span:nth-child(3) {
+      span:nth-child(2),
+      span:nth-child(3) {
         top: 10px;
       }
       span:nth-child(4) {
@@ -83,23 +87,23 @@ const StyledNavbar = styled.div`
       }
     }
     .hamburger.cross {
-        span:nth-child(1) {
-          top: 10px;
-          width: 0%;
-          left: 50%;
-        }
-        span:nth-child(2) {
-          transform: rotate(45deg);
-        }
-        span:nth-child(3) {
-          transform: rotate(-45deg);
-        }
-        span:nth-child(4) {
-          top: 10px;
-          width: 0%;
-          left: 50%;
-        }
+      span:nth-child(1) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
       }
+      span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      span:nth-child(4) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+      }
+    }
 
     ul {
       display: flex;
@@ -113,7 +117,7 @@ const StyledNavbar = styled.div`
       @media (max-width: 576px) {
         height: 0px;
         flex-direction: column;
-        background-color: rgba(255,255,255,1);
+        background-color: rgba(255, 255, 255, 1);
         z-index: 10;
         li {
           display: none;
@@ -121,7 +125,7 @@ const StyledNavbar = styled.div`
       }
     }
     ul#active {
-      @media(max-width: 576px) {
+      @media (max-width: 576px) {
         height: auto;
         li {
           display: block;
@@ -131,36 +135,59 @@ const StyledNavbar = styled.div`
       }
     }
   }
-`
+`;
 
-const Navbar = (props) => {
-  return (
-    <StyledNavbar {...props}>
-      <Container>
-        <nav>
-          <div className="flex">
-            <Link to="/">
-              <img id="logo" src={Logo} alt="Luweb logo" />
+const Navbar = ({ active, hamburgerClick, smaller }) => (
+  <StyledNavbar smaller={smaller}>
+    <Container>
+      <nav>
+        <div className="flex">
+          <Link to="/">
+            <img id="logo" src={Logo} alt="Luweb logo" />
+          </Link>
+          <button
+            className={`hamburger ${active ? 'cross' : ''}`}
+            aria-label="Menu"
+            onClick={hamburgerClick}
+            type="button"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <ul id={active ? 'active' : ''}>
+          <li>
+            <Link to="/" activeClassName="active">
+              Home
             </Link>
-            <div className={`hamburger ${props.active ? 'cross' : ''}`} aria-label="Menu" onClick={props.hamburgerClick}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <ul id={props.active ? 'active' : ''}>
-            <li><Link to="/" activeClassName="active">Home</Link></li>
-            <li><Link to="/over" activeClassName="active">Over</Link></li>
-            <li><Link to="/diensten" activeClassName="active">Diensten</Link></li>
-            {/* <li><Link to="/projecten" activeClassName="active">Projecten</Link></li> */}
-            <li><Link to="/contact" activeClassName="active">Contact</Link></li>
-            <li><Link to="/blog" activeClassName="active">Blog</Link></li>
-          </ul>
-        </nav>
-      </Container>
-    </StyledNavbar >
-  )
-}
+          </li>
+          <li>
+            <Link to="/over" activeClassName="active">
+              Over
+            </Link>
+          </li>
+          <li>
+            <Link to="/diensten" activeClassName="active">
+              Diensten
+            </Link>
+          </li>
+          {/* <li><Link to="/projecten" activeClassName="active">Projecten</Link></li> */}
+          <li>
+            <Link to="/contact" activeClassName="active">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/blog" activeClassName="active">
+              Blog
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </Container>
+  </StyledNavbar>
+);
 
-export default Navbar
+export default Navbar;

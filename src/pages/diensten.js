@@ -100,8 +100,9 @@ class Diensten extends Component {
                       <li>goed beveiligd (SSL-encryptie)</li>
                     </Checklist>
                     <p>
-                      Door onze expertise in web development kunnen we met verschillende tools werken. We bekijken welke
-                      hiervan de beste is voor jouw project. Meestal maken we gebruik van ReactJS of WordPress.
+                      Door onze expertise in web development kunnen we met verschillende tools
+                      werken. We bekijken welke hiervan de beste is voor jouw project. Meestal maken
+                      we gebruik van ReactJS of WordPress.
                     </p>
                   </div>
                 </section>
@@ -112,10 +113,10 @@ class Diensten extends Component {
                       <h2>SEO optimalisatie</h2>
                     </div>
                     <p>
-                      Websites die mobielvriendelijk, performant, zorgvuldig opgesteld, inhoudelijk sterk... zijn,
-                      worden hoger weergegeven in zoekmachines als Google. We houden dan ook rekening met al deze zaken
-                      voor jouw website. Daarnaast kunnen we nog extra advertenties inzetten om nog hoger te eindigen in
-                      zoekmachines.
+                      Websites die mobielvriendelijk, performant, zorgvuldig opgesteld, inhoudelijk
+                      sterk... zijn, worden hoger weergegeven in zoekmachines als Google. We houden
+                      dan ook rekening met al deze zaken voor jouw website. Daarnaast kunnen we nog
+                      extra advertenties inzetten om nog hoger te eindigen in zoekmachines.
                     </p>
                   </div>
                 </section>
@@ -126,9 +127,10 @@ class Diensten extends Component {
                       <h2>Analyse en optimalisatie</h2>
                     </div>
                     <p>
-                      Bij de lancering van je website zetten we tracking tools op, waarmee we inzichten verwerven over
-                      de bezoekers en hun gedrag. We analyseren zo wat werkt (en wat niet) en gebruiken deze kennis om
-                      alle online kanalen aan te passen en zo de conversie te verhogen.
+                      Bij de lancering van je website zetten we tracking tools op, waarmee we
+                      inzichten verwerven over de bezoekers en hun gedrag. We analyseren zo wat
+                      werkt (en wat niet) en gebruiken deze kennis om alle online kanalen aan te
+                      passen en zo de conversie te verhogen.
                     </p>
                   </div>
                 </section>
@@ -139,9 +141,10 @@ class Diensten extends Component {
                       <h2>Online marketing</h2>
                     </div>
                     <p>
-                      Facebook, Instagram, LinkedIn... We bekijken welke kanalen voor jou het meeste relevant zijn en
-                      zetten hier maximaal op in. We optimaliseren de conversie door je doelgroep zo specifiek mogelijk
-                      te maken. Op deze manier optimaliseren we jouw marketing-budget.
+                      Facebook, Instagram, LinkedIn... We bekijken welke kanalen voor jou het meeste
+                      relevant zijn en zetten hier maximaal op in. We optimaliseren de conversie
+                      door je doelgroep zo specifiek mogelijk te maken. Op deze manier optimaliseren
+                      we jouw marketing-budget.
                     </p>
                   </div>
                 </section>

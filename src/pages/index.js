@@ -142,8 +142,8 @@ const index = props => {
                   title="Website"
                   text={
                     <p>
-                      We maken super performante websites die doelgericht, gebruiksvriendelijk en geoptimaliseerd zijn
-                      voor alle mobiele apparaten.
+                      We maken super performante websites die doelgericht, gebruiksvriendelijk en
+                      geoptimaliseerd zijn voor alle mobiele apparaten.
                     </p>
                   }
                 />
@@ -154,8 +154,8 @@ const index = props => {
                   title="SEO"
                   text={
                     <p>
-                      We verbeteren je online zichtbaarheid door actief aan 'Search Engine Optimization' te doen. Zo
-                      scoor je beter in zoekmachines als Google
+                      We verbeteren je online zichtbaarheid door actief aan 'Search Engine
+                      Optimization' te doen. Zo scoor je beter in zoekmachines als Google
                     </p>
                   }
                 />
@@ -166,7 +166,8 @@ const index = props => {
                   title="Analyse en optimalisatie"
                   text={
                     <p>
-                      Meten is weten. We zoeken wat werkt (en wat niet) zodat we onze strategie hierop kunnen aanpassen.
+                      Meten is weten. We zoeken wat werkt (en wat niet) zodat we onze strategie
+                      hierop kunnen aanpassen.
                     </p>
                   }
                 />
@@ -177,8 +178,8 @@ const index = props => {
                   title="Online marketing"
                   text={
                     <p>
-                      We verhogen de zichtbaarheid van jouw onderneming en betrekken klanten door slim gebruik te maken
-                      van alle relevante kanalen.
+                      We verhogen de zichtbaarheid van jouw onderneming en betrekken klanten door
+                      slim gebruik te maken van alle relevante kanalen.
                     </p>
                   }
                 />
@@ -216,9 +217,9 @@ const index = props => {
             <div>
               <h3>Professionele website laten maken</h3>
               <p>
-                Luweb heeft voldoende ervaring om een goed converterende website te maken die
-                gezien mag worden. Daarnaast denken we mee na over het online imago alsook de strategie van je bedrijf.
-                Zo haal je het meeste rendement uit je website.
+                Luweb heeft voldoende ervaring om een goed converterende website te maken die gezien
+                mag worden. Daarnaast denken we mee na over het online imago alsook de strategie van
+                je bedrijf. Zo haal je het meeste rendement uit je website.
               </p>
             </div>
             <div>
@@ -233,8 +234,9 @@ const index = props => {
             </div>
           </div>
           <p>
-            We zoeken steeds naar de beste oplossing binnen jouw budget. Nog niet meteen nood aan sociale media maar wil
-            je gewoon starten met een website? Geen probleem, uiteraard kunnen we jouw pakket later nog uitbreiden.
+            We zoeken steeds naar de beste oplossing binnen jouw budget. Nog niet meteen nood aan
+            sociale media maar wil je gewoon starten met een website? Geen probleem, uiteraard
+            kunnen we jouw pakket later nog uitbreiden.
           </p>
         </Container>
       </StyledSEO>
