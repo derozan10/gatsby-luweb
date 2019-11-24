@@ -58,9 +58,6 @@ const Contact = () => (
           Nadien nemen we zo snel mogelijk contact met je op.
         </p>
         <br />
-        {/* <p>
-          Voor je het weet, staat je splinternieuwe site <strong>online</strong>!
-        </p> */}
         <Form />
         <div id="contactData">
           <div>

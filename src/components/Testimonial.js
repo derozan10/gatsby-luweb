@@ -21,7 +21,7 @@ const StyledTestimonial = styled.div`
     background-color: #e7f2ff;
     color: #14377f;
     padding: 40px 10%;
-    right: 80px;
+    right: 5%;
     position: relative;
     z-index: 0;
     h2,
@@ -41,7 +41,7 @@ const StyledTestimonial = styled.div`
   }
   .gatsby-image-wrapper {
     box-shadow: ${({ theme }) => theme.boxShadow};
-    width: 20%;
+    min-width: 200px;
     height: 300px;
     position: relative;
     z-index: 1;
@@ -61,6 +61,20 @@ const StyledTestimonial = styled.div`
     }
     font-size: 18px;
     color: #14377f;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .gatsby-image-wrapper {
+      width: 20px;
+      height: 250px;
+      margin: 0 auto;
+    }
+    div.testimonialText {
+      right: 0;
+      bottom: 20px;
+      width: 100%;
+      max-width: inherit;
+    }
   }
 `;
 
