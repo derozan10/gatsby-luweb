@@ -216,7 +216,7 @@ const index = props => {
             <div>
               <h3>Professionele website laten maken</h3>
               <p>
-                Luweb heeft als webdesign bureau voldoende ervaring om een goed converterende website te maken die
+                Luweb heeft voldoende ervaring om een goed converterende website te maken die
                 gezien mag worden. Daarnaast denken we mee na over het online imago alsook de strategie van je bedrijf.
                 Zo haal je het meeste rendement uit je website.
               </p>
