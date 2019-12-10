@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import Socialbar from './Socialbar';
 import Container from './Container';
-import { Link } from "gatsby";
-import Fade from 'react-reveal';
+// import Fade from 'react-reveal';
 
-import headerImage from '../img/hero-bg.jpg'
+import headerImage from '../img/hero-bg.jpg';
 import Button from './Button';
 
 const StyledHero = styled.div`
@@ -20,17 +20,18 @@ const StyledHero = styled.div`
     min-height: 600px;
   }
   &:before {
-    content: "";
+    content: '';
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top,#474747,#000000,#474747);
+    background: linear-gradient(to top, #474747, #000000, #474747);
     opacity: 0.7;
   }
   #siteTitle {
     padding: 20vh 10vw;
-    @media(max-width: 576px) {
+    @media (max-width: 576px) {
       padding: 15vh 0 20vh 0;
     }
     display: flex;
@@ -43,13 +44,13 @@ const StyledHero = styled.div`
       text-align: center;
       font-size: 48px;
       text-transform: uppercase;
-      @media(max-width: 576px) {
+      @media (max-width: 576px) {
         font-size: 32px;
       }
     }
   }
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     transform: skewY(-5deg);
@@ -60,24 +61,24 @@ const StyledHero = styled.div`
     right: 0;
     background: #fff;
   }
-`
+`;
 
-const Hero2 = (props) => {
-  return (
-    <StyledHero>
-      <Container>
-        <Fade bottom cascade>
-          <div id="siteTitle">
-            <h1>Jouw partner voor een online succes</h1>
-            <Link to="/contact">
-              <Button primary style={{ margin: "0 15px 15px 0" }}>Offerte opvragen</Button>
-            </Link>
-          </div>
-        </Fade>
-        <Socialbar />
-      </Container>
-    </StyledHero>
-  )
-}
+const Hero2 = props => (
+  <StyledHero>
+    <Container>
+      {/* <Fade bottom cascade> */}
+      <div id="siteTitle">
+        <h1>Jouw partner voor een online succes</h1>
+        <Link to="/contact">
+          <Button primary style={{ margin: '0 15px 15px 0' }}>
+            Offerte opvragen
+          </Button>
+        </Link>
+      </div>
+      {/* </Fade> */}
+      <Socialbar />
+    </Container>
+  </StyledHero>
+);
 
-export default Hero2
+export default Hero2;
