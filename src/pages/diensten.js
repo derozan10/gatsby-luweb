@@ -79,7 +79,11 @@ const StyledServices = styled.div`
 class Diensten extends Component {
   render() {
     return (
-      <Layout inverse title="Onze diensten">
+      <Layout
+        inverse
+        title="Onze diensten"
+        description="Bij Luweb kan je terecht voor jouw nieuwe website tegen een erg aantrekklijke prijs. We zijn jouw geknipte partner voor webdesign, web development, SEO optimalisatie, online marketing... "
+      >
         <Container>
           <div style={{ padding: '20px 0' }}>
             <h1>Onze diensten - altijd een oplossing op maat</h1>

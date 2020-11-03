@@ -3,7 +3,7 @@ module.exports = {
   siteTitleAlt: 'Luweb', // This allows an alternative site title for SEO schema.
   publisher: 'Luweb', // Organization name used for SEO schema
   siteDescription:
-    'Web development te Antwerpen - gespecialiseerd in performante websites met een goed oog voor design',
+    'Op zoek naar een partner voor de opbouw of onderhoud van jouw website? Luweb creëert performante websites aan een betaalbare prijs',
   siteUrl: 'https://www.luweb.be', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
   postsPerHomePage: 7, // Number of posts shown on the 1st page of of the index.js template (home page)
   postsPerPage: 6, // Number of posts shown on paginated pages
@@ -17,5 +17,5 @@ module.exports = {
   siteLogo: '/luweb-logo-blueGradient-small.png', // Logo used for SEO, RSS, and App manifest
   backgroundColor: '#fff', // Used for Offline Manifest
   themeColor: '#3950D3', // Used for Offline Manifest
-  copyright: 'Copyright © 2019 Luweb', // Copyright string for the RSS feed
-}
+  copyright: 'Copyright © 2020 Luweb', // Copyright string for the RSS feed
+};

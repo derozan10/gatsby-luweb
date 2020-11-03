@@ -31,16 +31,19 @@ export default class Layout extends Component {
 
   render() {
     const { navActive } = this.state;
-    const { title, children } = this.props;
+    const { title, children, description } = this.props;
     return (
       <>
         <Helmet>
           {/* <script src="https://client.crisp.chat/l.js" async /> */}
           {/* <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"></link> */}
-          <meta name="google-site-verification" content="8L5sdDFtnEJpqybB7QuO7CMBaJW25pArhsZnKBr5EFI" />
+          <meta
+            name="google-site-verification"
+            content="8L5sdDFtnEJpqybB7QuO7CMBaJW25pArhsZnKBr5EFI"
+          />
         </Helmet>
         <Backdrop active={navActive} closeNav={() => this.setState({ navActive: false })} />
-        <SEO title={title} />
+        <SEO title={title} description={description} />
         <ThemeProvider theme={theme}>
           <>
             <Navbar hamburgerClick={this.toggleNav} active={navActive} />

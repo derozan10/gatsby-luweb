@@ -48,7 +48,11 @@ const StyledContact = styled.div`
 `;
 
 const Contact = () => (
-  <Layout inverse title="Contacteer ons">
+  <Layout
+    inverse
+    title="Contacteer ons"
+    description="Wil je meer te weten komen over onze diensten? Contacteer ons via het contactformulier."
+  >
     <Container style={{ minHeight: '60vh' }}>
       <StyledContact>
         <h1>Contact</h1>
