@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 
 import Masonry from 'react-masonry-component';
 
-import './showcase.sass';
+import './showcase.css';
 
 const Gallery = ({ elements }) => (
   <Masonry className="showcase">

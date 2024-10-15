@@ -31,28 +31,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
-    'gatsby-plugin-robots-txt',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-99105204-2',
-        head: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: 'GTM-PLT6JMD',
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
-        // Specify optional GTM environment details.
-        // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
-        // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -66,31 +46,6 @@ module.exports = {
         display: `standalone`,
         icon: `static/luweb-logo-blueGradient-small.png`, // This path is relative to the root of the site.
         legacy: true,
-      },
-    },
-    // {
-    //   resolve: 'gatsby-plugin-crisp-chat',
-    //   options: {
-    //     websiteId: '0dd42ec7-d066-4701-8099-c141a5526b8b',
-    //     // Optional. Disables Crisp Chat during gatsby develop. Defaults to true.
-    //     // enableDuringDevelop: true,
-    //   },
-    // },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-autolink-headers`,
-          {
-            resolve: `gatsby-remark-images-contentful`,
-            options: {
-              maxWidth: 650,
-              backgroundColor: 'white',
-              // linkImagesToOriginal: false,
-              wrapperStyle: 'padding: 40px;',
-            },
-          },
-        ],
       },
     },
     {

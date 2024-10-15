@@ -14,17 +14,13 @@
     "gatsby": "^2.17.15",
     "gatsby-image": "^2.2.33",
     "gatsby-plugin-catch-links": "^2.1.17",
-    "gatsby-plugin-crisp-chat": "^2.2.0",
-    "gatsby-plugin-google-analytics": "^2.1.27",
     "gatsby-plugin-google-fonts": "0.0.4",
-    "gatsby-plugin-google-tagmanager": "^2.1.17",
     "gatsby-plugin-hotjar": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.28",
     "gatsby-plugin-nprogress": "^2.1.14",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-postcss": "^2.1.15",
     "gatsby-plugin-react-helmet": "^3.1.15",
-    "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.23",
     "gatsby-plugin-sharp": "^2.3.0",
     "gatsby-plugin-sitemap": "^2.2.21",
@@ -39,7 +35,7 @@
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "pagespeed-insights": "^1.0.2",
-    "postcss-browser-reporter": "^0.5.0",
+    "postcss-browser-reporter": "^0.7.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
     "postcss-reporter": "^6.0.1",
@@ -58,7 +54,7 @@
     "reactstrap": "^7.1.0",
     "styled-components": "^4.4.1",
     "typeface-lato": "0.0.54",
-    "webpagetest": "^0.3.9"
+    "webpagetest": "^0.7.5"
   },
   "keywords": [
     "gatsby"

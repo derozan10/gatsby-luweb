@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const List = styled.ul`
   list-style-type: none;
@@ -15,10 +15,8 @@ const List = styled.ul`
   li {
     border-color: transparent;
   }
-`
+`;
 
-const CardList = props => {
-  return <List>{props.children}</List>
-}
+const CardList = props => <List>{props.children}</List>;
 
-export default CardList
+export default CardList;

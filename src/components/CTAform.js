@@ -63,13 +63,34 @@ const CTAform = props => (
       <input type="text" id="nameBox" autoComplete="name" name="name" placeholder="Naam" required />
 
       <label htmlFor="companyBox">Organisatie</label>
-      <input type="text" id="companyBox" name="organisatie" autoComplete="on" placeholder="Bedrijf" required />
+      <input
+        type="text"
+        id="companyBox"
+        name="organisatie"
+        autoComplete="on"
+        placeholder="Bedrijf"
+        required
+      />
 
       <label htmlFor="mailbox">E-Mail</label>
-      <input type="email" id="mailbox" name="email" placeholder="E-Mail" autoComplete="email" required />
+      <input
+        type="email"
+        id="mailbox"
+        name="email"
+        placeholder="E-Mail"
+        autoComplete="email"
+        required
+      />
 
       <label htmlFor="phone">Telefoon</label>
-      <input type="tel" id="phone" name="phone" placeholder="Telefoon" autoComplete="tel" required />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Telefoon"
+        autoComplete="tel"
+        required
+      />
 
       <Button primary type="submit">
         {props.cta ? props.cta : 'Contacteer ons'}

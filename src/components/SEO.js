@@ -42,7 +42,11 @@ const SEO = ({ title, description, image, pathname, article }) => (
 
       return (
         <>
-          <Helmet title={seo.title} titleTemplate={titleTemplate} htmlAttributes={{ lang: 'nl-BE' }}>
+          <Helmet
+            title={seo.title}
+            titleTemplate={titleTemplate}
+            htmlAttributes={{ lang: 'nl-BE' }}
+          >
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
             <meta name="theme-color" content="#3950D3" />

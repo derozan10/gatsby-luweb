@@ -5,8 +5,6 @@ module.exports = {
   siteDescription:
     'Op zoek naar een partner voor de opbouw of onderhoud van jouw website? Luweb creëert performante websites aan een betaalbare prijs',
   siteUrl: 'https://www.luweb.be', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
-  postsPerHomePage: 7, // Number of posts shown on the 1st page of of the index.js template (home page)
-  postsPerPage: 6, // Number of posts shown on paginated pages
   author: 'Lucas Van Remoortere', // Author for RSS author segment and SEO schema
   authorUrl: 'https://www.lucasvanremoortere.com', // URL used for author and publisher schema, can be a social profile or other personal site
   userTwitter: '@Lucas_VanRe', // Change for Twitter Cards
@@ -17,5 +15,5 @@ module.exports = {
   siteLogo: '/luweb-logo-blueGradient-small.png', // Logo used for SEO, RSS, and App manifest
   backgroundColor: '#fff', // Used for Offline Manifest
   themeColor: '#3950D3', // Used for Offline Manifest
-  copyright: 'Copyright © 2020 Luweb', // Copyright string for the RSS feed
+  copyright: 'Copyright © 2024 Luweb', // Copyright string for the RSS feed
 };

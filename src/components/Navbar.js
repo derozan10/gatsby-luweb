@@ -179,11 +179,6 @@ const Navbar = ({ active, hamburgerClick, smaller }) => (
               Contact
             </Link>
           </li>
-          <li>
-            <Link to="/blog" activeClassName="active">
-              Blog
-            </Link>
-          </li>
         </ul>
       </nav>
     </Container>
