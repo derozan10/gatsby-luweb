@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Container from './Container';
 
-import Logo from '../img/logos/luweb-logo-blueGradient.svg';
+import Logo from '../img/logos/v2/luweb.svg';
 
 const StyledNavbar = styled.div`
   position: fixed;
@@ -27,7 +27,7 @@ const StyledNavbar = styled.div`
       justify-content: space-between;
     }
     #logo {
-      height: 40px;
+      height: 50px;
       width: auto;
       margin: 0;
       text-decoration: none;

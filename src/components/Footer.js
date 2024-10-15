@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Container from './Container';
-import smallLogo from '../img/logos/luweb-logo-white-small.svg';
+import smallLogo from '../img/logos/v2/luweb_small_white.svg';
 import lucas from '../img/avatar.jpg';
 
 const StyledFooter = styled.div`

@@ -12,7 +12,7 @@ module.exports = {
   // shareImage: '/logos/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
   // shareImageWidth: 900, // Change to the width of your default share image
   // shareImageHeight: 600, // Change to the height of your default share image
-  siteLogo: '/luweb-logo-blueGradient-small.png', // Logo used for SEO, RSS, and App manifest
+  siteLogo: '/luweb_square_inverse.jpg', // Logo used for SEO, RSS, and App manifest
   backgroundColor: '#fff', // Used for Offline Manifest
   themeColor: '#3950D3', // Used for Offline Manifest
   copyright: 'Copyright © 2024 Luweb', // Copyright string for the RSS feed
