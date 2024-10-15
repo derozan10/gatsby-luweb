@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "engines": {
-    "node": "10.14"
+    "node": "20"
   },
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
@@ -24,7 +24,6 @@
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-postcss": "^2.1.15",
     "gatsby-plugin-react-helmet": "^3.1.15",
-    "gatsby-plugin-sass": "^2.1.23",
     "gatsby-plugin-sharp": "^2.3.0",
     "gatsby-plugin-sitemap": "^2.2.21",
     "gatsby-plugin-styled-components": "^3.1.13",
@@ -35,7 +34,6 @@
     "gatsby-transformer-remark": "^2.6.35",
     "gatsby-transformer-sharp": "^2.3.5",
     "google-map-react": "^1.1.5",
-    "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "pagespeed-insights": "^1.0.2",
     "postcss-browser-reporter": "^0.7.0",
