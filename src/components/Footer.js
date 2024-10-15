@@ -38,19 +38,6 @@ const StyledFooter = styled.div`
         font-size: 14px;
       }
     }
-    #address {
-      color: ${props => props.theme.colors.neutral.five};
-      font-weight: 300;
-      line-height: 1.5;
-      font-size: 14px;
-      #name {
-        font-size: 16px;
-      }
-      span {
-        display: block;
-        font-style: normal;
-      }
-    }
   }
   #footerMid {
     display: flex;
@@ -116,12 +103,6 @@ const Footer = () => (
               <span id="jobTitle">Freelance webdeveloper</span>
             </p>
           </div>
-          <address id="address">
-            <span>
-              Zwaluwstraat 21, <br />
-              2530 Boechout
-            </span>
-          </address>
         </div>
         <div id="footerMid">
           <img
@@ -165,8 +146,7 @@ const Footer = () => (
               </svg>
             </a>
           </div>
-          <a href="mailto:">info@luweb.be</a>
-          <a href="tel:+32496061042">0496/06.10.42</a>
+          <a href="mailto:info@luweb.be">info@luweb.be</a>
           <p>BE 0742.745.331</p>
         </div>
       </StyledFooter>

@@ -65,14 +65,8 @@ const Contact = () => (
         <Form />
         <div id="contactData">
           <div>
-            <a href="mailto:lucas@luweb.be">info@luweb.be</a>
-            <a href="tel:+496061042">0496/06.10.42</a>
+            <a href="mailto:info@luweb.be">info@luweb.be</a>
           </div>
-          <address>
-            Zwaluwstraat 21
-            <br />
-            2530 Boechout
-          </address>
           <div id="btw">BE 0677 875 095</div>
         </div>
       </StyledContact>
